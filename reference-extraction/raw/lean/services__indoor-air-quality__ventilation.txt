@@ -1,0 +1,87 @@
+﻿{LINK:/}Home
+ ›
+ {LINK:/services/}Services
+ ›
+ {LINK:/services/indoor-air-quality/}Indoor Air Quality
+ ›
+ Ventilation
+Ventilation (HRV / ERV)
+### Fresh-air ventilation for tightly-sealed modern homes.
+Modern Hoboken condos and renovated brownstones are too tight — trapped CO2, cooking odors, and stale air. HRV/ERV systems bring fresh air in without losing heating or cooling.
+[[RATING BLOCK: 4.9 across 230+ reviews · 4.8 Google · 5.0 Yelp]]
+[[SERVICE FORM — standard block]]
+What it is
+### How HRVs and ERVs work.
+A small ventilation unit gets installed in your basement or mechanical area. It continuously exhausts stale air from bathrooms, kitchen, and laundry — while bringing in an equal amount of fresh outdoor air. A heat-exchange core transfers heat (and in ERV models, also humidity) between the two airstreams.
+The result: continuous fresh-air ventilation without throwing away your heated air in winter or your conditioned air in summer. Required by modern building codes for tightly-built homes. Increasingly common in renovations. Why ventilation matters in Hudson County
+### Modern homes are too tight without it.
+Older Hoboken buildings were so leaky they ventilated themselves. New construction and renovated homes are sealed for efficiency — which means manual ventilation is necessary. ### Solves stuffy / stale air
+If your home feels stuffy in winter when windows are closed for weeks at a time, that’s CO2 and VOC buildup. Modern tight construction needs mechanical ventilation to feel fresh. ### Energy-efficient fresh air
+Opening a window in January throws away expensive heated air. An HRV recovers 70–90% of that heat as it ventilates — you get fresh air without the energy penalty. ### Required by modern code
+Most new-construction Hoboken/JC condos already have HRV/ERV systems. Renovations that significantly tighten the envelope (spray foam insulation, new windows, sealed-tight envelope) often require ventilation by code.
+Brands we install
+### HRV/ERV brands we install.
+Ventilation specialists are a smaller market than other HVAC categories. We work with the most reliable brands in the local market.
+Honeywell
+Carrier
+Bosch
+Trane
+Sizing & options
+### Picking HRV vs. ERV and the right capacity.
+Three key decisions for ventilation specs.
+01
+### HRV vs. ERV
+HRV: transfers heat only between airstreams. Better for very cold climates. ERV: transfers heat AND humidity — recovers humidity in winter (better humidity balance) and reduces incoming humidity in summer. ERV is usually the better choice for NJ’s climate.
+02
+### Capacity (CFM)
+Sized by home volume and occupancy. Typical residential: 80–160 CFM. We use ASHRAE 62.2 calculation — not a guess. Oversizing wastes energy; undersizing leaves the air still stuffy.
+03
+### Integrated vs. dedicated ducts
+Integrated: shares your HVAC ductwork. Cheaper to install. Dedicated: separate ductwork for ventilation only. Better air distribution, more expensive. Depends on your home’s ductwork.
+04
+### Smart controls
+Some systems include CO2 / VOC sensors that ramp ventilation when air quality drops — e.g. after cooking or when the home is crowded. Modest upgrade, real-world benefit.
+What installation involves
+Ventilation installs are mid-sized retrofits. Three pieces drive the scope.
+01
+### Ductwork design
+Integrated HRV: connects to existing HVAC ductwork. Dedicated HRV: needs new supply and exhaust ductwork running to specific rooms. Significant scope difference.
+02
+### Exterior intake / exhaust
+Fresh air comes from outside; stale air exhausts outside. Two penetrations needed in the exterior wall, with proper hooding and screening. We coordinate with HOA approval for condo buildings.
+03
+### Electrical & controls
+Small 120V circuit. Wall-mounted controller or integration with thermostat. Quick add-on.
+Integrated HRV/ERV install: typically $2,500–$5,000. Dedicated-duct install: $4,500–$8,500 depending on home size. {LINK:tel:2012455151}Call 201-245-5151 for an in-home assessment.
+Service options
+### Install or maintain — we do both.
+HRVs/ERVs need an annual filter change and core cleaning. Easy bundle with HVAC tune-ups.
+{LINK:/services/indoor-air-quality/} ### Install HRV / ERV
+Sized to ASHRAE 62.2. Integrated or dedicated. Most installs in 1–2 days.
+- HRV or ERV sizing
+- ASHRAE 62.2 calculation
+- Exterior penetrations included
+- Smart controls option
+Explore Install {LINK:/services/heating/maintenance/} ### Bundle With Tune-Ups
+Add HRV filter change and core inspection to your annual heating tune-up.
+- Bundle with Combo Plan
+- Annual filter swap
+- Core cleaning as needed
+- Airflow verification
+Explore Maintenance Other IAQ solutions
+### Considering other IAQ solutions?
+Each solution tackles a different indoor-air problem. Many homes need more than one.
+{LINK:/services/indoor-air-quality/air-purifiers/}Air Purifiers {LINK:/services/indoor-air-quality/humidifiers/}Humidifiers {LINK:/services/indoor-air-quality/dehumidifiers/}Dehumidifiers {LINK:/services/indoor-air-quality/}All IAQ Services Where we work
+### Ventilation installs across Hudson & Bergen County.
+10 cities. Local techs answering local phones.
+[[10-CITY LINK ROW]] Quick answers
+### Common questions about HRV / ERV systems.
+Do I really need mechanical ventilation? If your home is well-sealed (recent build, foam-insulated, new windows, tight envelope), yes — without ventilation, CO2 and VOCs build up and air feels stuffy. Older drafty homes ventilate naturally (with the energy penalty that comes with drafts). Modern tight construction needs mechanical ventilation.
+HRV or ERV? For NJ’s climate (cold dry winters, humid summers), ERV is usually the better choice — recovers humidity in winter (less dry indoor air) and rejects incoming humidity in summer (less load on dehumidifier). HRV is more common in extremely cold climates.
+Will an HRV make my house cold in winter? Properly sized and installed — no. The heat-recovery core captures 70–90% of the heat from outgoing air and transfers it to incoming air. The fresh air arrives at near-room temperature, not arctic-cold. Some homeowners add a small electric pre-heater for extreme cold days.
+Doesn’t opening a window do the same thing? Opening a window ventilates but throws away heated/cooled air. HRV/ERV ventilates and recovers most of that energy. Over a heating season, the savings vs. open windows are substantial.
+Code requirement — do I need ventilation? If your home was built or renovated to modern energy code (tightness below 3 ACH50), the code references ASHRAE 62.2 for ventilation. Inspectors increasingly catch this. New construction Hoboken/JC condos almost always include HRV/ERV from the start.
+How much does it cost to run? Modest — an HRV uses ~50–100 watts continuously, similar to a small ceiling fan. Annual operating cost: $50–$120 depending on settings. The energy recovery from the core more than offsets this for tight homes.
+### Fresh air, no energy penalty.
+Free in-home assessment. Most installs in 1–2 days.
+{LINK:/contact/}Schedule Service {LINK:tel:2012455151} Call 201-245-5151

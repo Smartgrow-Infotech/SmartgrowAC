@@ -1,0 +1,1745 @@
+================================================================================
+contentReference.txt  —  SMARTGROWINFOTECH  (REWRITTEN FOR USA)
+Derived from the tanousnj.com structural extraction · Written 2026-09-01
+Business: HVAC services · Coverage: nationwide via 10 metro hubs
+Scope of this pass: 23 core pages fully written · remaining 37 specced in §11
+================================================================================
+
+################################################################################
+##  §0  READ THIS FIRST — PLACEHOLDER & LIABILITY WARNING
+################################################################################
+
+I invented the following because you asked for placeholders. NONE of it is real.
+Every item MUST be replaced with verified data before this site goes live.
+
+  PHONE          (888) 555-0142
+                 555-0100 through 555-0199 is the range reserved for fictional
+                 use. It is safe in a mockup. It is NOT a working number.
+  ADDRESS        4514 Cole Avenue, Suite 600, Dallas, TX 75205
+  EMAIL          service@smartgrowinfotech.com
+  FOUNDED        2009 ("17 years")
+  ALL STATISTICS 2,400+ reviews · 4.9 average · 38 states licensed ·
+                 190+ technicians · 41,000+ jobs — ALL INVENTED
+  ALL TESTIMONIALS  Written as sample copy. Attributed to invented people.
+  LICENSE NUMBERS   Deliberately left as [TX-LIC-PLACEHOLDER] style tokens.
+
+  ⚠ I did NOT fabricate realistic-looking contractor license numbers. Publishing
+    a fake license number is a regulatory problem in most states, not a
+    copywriting one. Every licence slot is an obvious placeholder token so it
+    cannot be shipped by accident.
+
+  ⚠ Do not publish invented review counts or ratings. Google's structured-data
+    policy treats unverifiable AggregateRating as a manual-action risk, and the
+    reference site we studied has exactly this problem (see its §13). Wire
+    real review data or remove the markup.
+
+  Everything is centralised in ONE config file at build time
+  (src/config/site.ts) so all of it is swappable in a single edit. See
+  designReference.txt §15.
+
+################################################################################
+##  §1  SITE OVERVIEW
+################################################################################
+
+BRAND NAME
+  Display:  SmartgrowInfotech
+  Legal:    SmartgrowInfotech LLC   [PLACEHOLDER — confirm actual entity]
+  Short:    SGI  (as used inside the logo mark)
+
+WHAT THE COMPANY DOES — one line
+  Nationwide HVAC repair, replacement and maintenance for homes and multi-site
+  commercial facilities, delivered by licensed local technicians in 10 major
+  U.S. metros.
+
+POSITIONING — the one sentence everything else supports
+  "Most national HVAC coverage is a referral network wearing a national badge.
+   We run our own dispatch, our own standards and our own invoice in every
+   market we serve."
+
+  This is the direct translation of the reference site's moat. Theirs was
+  physical difficulty ("crane lifts, permits, police escorts — work most
+  contractors won't take on"). At national scale the equivalent moat is
+  OPERATIONAL CONSISTENCY ACROSS MARKETS — genuinely hard, genuinely rare, and
+  genuinely worth paying for. It is what multi-site facility managers actually
+  buy.
+
+TARGET AUDIENCES
+  a) Homeowners in the 10 served metros — repair, replacement, maintenance.
+  b) Multi-site facility & operations managers — retail chains, restaurant
+     groups, medical office networks, franchise operators. THE HIGHEST-VALUE
+     AUDIENCE and the main reason to be national at all.
+  c) Property management companies — multifamily portfolios across metros.
+  d) HOA / condo boards — per-unit programs, common-area systems.
+  e) Hospitality operators — hotels, restaurant groups.
+  f) Light commercial — single-site offices, retail, medical/dental.
+
+PRIMARY CONVERSION GOAL
+  Phone call to (888) 555-0142. Secondary: the service request form.
+  Tertiary (and highest value): the national-accounts consultation request.
+
+CONVERSION CHANNELS
+  · Phone — header, mobile icon button, sticky mobile bar, every hero, every
+    section close, footer
+  · Service request form — 6 fields, modal + inline variants
+  · National accounts form — longer, qualified, routes to a different inbox
+  · Email — service@smartgrowinfotech.com
+  · NO chat widget, NO booking tool at launch (deliberate — see §10 tone)
+
+LANGUAGES / REGIONS
+  English (en-US) only at launch. Spanish is a real consideration for the
+  Houston / Phoenix / Miami / LA metros — flagged, not scoped.
+
+SITE TYPE
+  Multi-page programmatic-SEO marketing site. Four-level hierarchy:
+  service → sub-service → system → metro. Next.js App Router, statically
+  generated. Full page count target: 60. Written in this pass: 23.
+
+################################################################################
+##  §2  COMPANY FACTS  (single source of truth — src/config/site.ts)
+################################################################################
+
+  Name             SmartgrowInfotech
+  Tagline          Nationwide HVAC. Local technicians.
+  Founded          2009                                    [PLACEHOLDER]
+  Years in service 17
+  HQ               4514 Cole Avenue, Suite 600
+                   Dallas, TX 75205                        [PLACEHOLDER]
+  Phone            (888) 555-0142  →  tel:+18885550142      [PLACEHOLDER]
+  Email            service@smartgrowinfotech.com            [PLACEHOLDER]
+  Hours            Dispatch answered 24/7, 365 days
+  Metros served    10
+  States licensed  38                                       [PLACEHOLDER]
+  Technicians      190+                                     [PLACEHOLDER]
+  Jobs completed   41,000+                                  [PLACEHOLDER]
+  Rating           4.9 average · 2,400+ reviews             [PLACEHOLDER]
+  Licenses         [STATE]-HVAC-[PLACEHOLDER] per state     [PLACEHOLDER]
+  Insurance        General liability + workers' comp, COI on request
+
+THE 10 METROS  (chosen for genuine climate + building-stock contrast, so the
+metro pages have real differentiated content rather than find-and-replace copy)
+
+  METRO                    CLIMATE PROFILE          DOMINANT HVAC REALITY
+  ─────────────────────────────────────────────────────────────────────────────
+  Dallas–Fort Worth, TX    Hot summer / mild winter  HQ. Heat pumps, 2-stage AC,
+   (HQ)                                              attic air handlers, radiant
+                                                     barrier retrofits
+  Phoenix, AZ              Extreme dry heat          Packaged units on roofs,
+                                                     brutal AC duty cycles,
+                                                     refrigerant leaks
+  Houston, TX              Hot + very humid          Dehumidification is the real
+                                                     problem, not cooling
+  Miami, FL                Hot + humid + salt air    Coastal corrosion, condo
+                                                     high-rise systems, hurricane
+                                                     tie-down codes
+  Atlanta, GA              Mixed humid               Crawlspace ductwork, split
+                                                     systems, humidity swings
+  Los Angeles, CA          Mild, wide daily swing    Older homes without ducts,
+                                                     Title 24 compliance,
+                                                     ductless retrofits
+  Phoenix / LA contrast gives the dry-vs-mild story.
+  Chicago, IL              Cold + humid summer       Steam and hydronic boilers,
+                                                     two-flat buildings, 90%+
+                                                     AFUE conversions
+  Denver, CO               Cold + high altitude      Altitude derating on
+                                                     combustion, dry winter air,
+                                                     swamp-cooler conversions
+  Philadelphia, PA         Cold + humid summer       Rowhomes, oil-to-gas
+                                                     conversions, no ductwork
+  New York, NY             Cold + dense urban        PTAC and water-source heat
+                                                     pumps, high-rise access,
+                                                     building coordination
+
+  This list is the single strongest content decision in the rewrite. Ten metros
+  with ten genuinely different HVAC problems means ten metro pages that are
+  actually worth reading — which is exactly what the reference site achieved
+  locally with neighborhood detail, reproduced at national scale with climate
+  and building-stock detail instead.
+
+################################################################################
+##  §3  SITE ARCHITECTURE  (60 pages · 23 written in this pass)
+################################################################################
+
+Legend:  ✍ = fully written below   □ = specced in §11, not yet written
+
+  ✍ /
+  ✍ /services/
+  ✍ /services/air-conditioning/
+  ✍ /services/air-conditioning/repair/
+  ✍ /services/air-conditioning/maintenance/
+  ✍ /services/air-conditioning/installation-replacement/
+  ✍ /services/heating/
+  ✍ /services/heating/repair/
+  ✍ /services/heating/maintenance/
+  ✍ /services/heating/installation-replacement/
+  □ /services/heating/furnace-repair/
+  □ /services/heating/heat-pump-repair/          (replaces "boiler-repair" as
+                                                  the national-relevant deep dive;
+                                                  boilers become a Chicago/NYC/
+                                                  Philadelphia metro topic)
+  ✍ /services/indoor-air-quality/
+  □ /services/indoor-air-quality/air-purifiers/
+  □ /services/indoor-air-quality/humidifiers/
+  □ /services/indoor-air-quality/dehumidifiers/
+  □ /services/indoor-air-quality/ventilation/
+  ✍ /services/water-heaters/
+  □ /services/water-heaters/repair/
+  □ /services/water-heaters/maintenance/
+  □ /services/water-heaters/installation-replacement/
+  □ /services/water-heaters/tankless-water-heaters/
+
+  ✍ /hvac-systems/
+  ✍ /hvac-systems/ductless-mini-splits/
+  □ /hvac-systems/heat-pumps/
+  □ /hvac-systems/central-hvac-systems/
+  □ /hvac-systems/zoning-systems/
+  □ /hvac-systems/ptac-units/
+  □ /hvac-systems/water-source-heat-pumps/
+  □ /hvac-systems/rooftop-units/
+  □ /hvac-systems/smart-thermostats/              (NEW — was only a homepage
+                                                   carousel slide on the reference)
+
+  ✍ /commercial/
+  ✍ /commercial/national-accounts/                (NEW — the national moat page)
+  □ /commercial/property-management/
+  □ /commercial/multifamily/                      (renamed from condo-buildings)
+  □ /commercial/hospitality/
+  □ /commercial/light-commercial/
+  □ /commercial/rooftop-replacement/
+  □ /commercial/maintenance-contracts/
+
+  ✍ /service-areas/
+  ✍ /service-areas/dallas-fort-worth/
+  ✍ /service-areas/phoenix/
+  □ /service-areas/houston/
+  □ /service-areas/miami/
+  □ /service-areas/atlanta/
+  □ /service-areas/los-angeles/
+  □ /service-areas/chicago/
+  □ /service-areas/denver/
+  □ /service-areas/philadelphia/
+  □ /service-areas/new-york/
+
+  ✍ /maintenance-plan/
+  ✍ /emergency-hvac/
+  ✍ /about/
+  ✍ /contact/
+  □ /financing/
+  □ /reviews/
+  □ /careers/                                     (NEW — reference had none;
+                                                   a 190-tech national operator
+                                                   needs one)
+  □ /blog/
+  □ /blog/<3 cornerstone posts, retargeted national>
+  □ /privacy-policy/
+  □ /terms/
+  □ /accessibility/                               (NEW — reference had none)
+
+################################################################################
+##  §4  NAVIGATION MAP
+################################################################################
+
+LOGO → /   (horizontal lockup, teal star + navy wordmark on light surfaces)
+
+─── DESKTOP NAVBAR (5 mega-menu items, in order) ───
+
+1. Services → /services/
+   Col "Air Conditioning": All AC Services · AC Repair · AC Maintenance ·
+     Install & Replace
+   Col "Heating": All Heating · Heating Repair · Heating Maintenance ·
+     Install & Replace · Furnace Repair · Heat Pump Repair
+   Col "Indoor Air Quality": All IAQ · Air Purifiers · Humidifiers ·
+     Dehumidifiers · Ventilation (ERV/HRV)
+   Col "Water Heaters": All Water Heaters · Repair · Maintenance ·
+     Install & Replace · Tankless
+   Col 5 — FEATURED (circuit eyebrow + mono label):
+     Eyebrow: "NO HEAT? NO COOL?"
+     Heading: "Dispatch answered 24/7."
+     Body:    "Emergency HVAC in all 10 metros. We'll tell you the real
+               arrival window — not a marketing one."
+     CTA:     "Call (888) 555-0142" → tel:
+
+2. Systems → /hvac-systems/
+   Col "For Homes": Ductless Mini-Splits — "No ductwork required" ·
+     Heat Pumps — "One system, both seasons" ·
+     Central HVAC — "Traditional split systems" ·
+     Zoning Systems — "Room-by-room control" ·
+     Smart Thermostats — "Installed and paired properly"
+   Col "For Buildings": PTAC Units — "Hotels & high-rise condos" ·
+     Water-Source Heat Pumps — "Mid- and high-rise" ·
+     Rooftop Units — "Commercial packaged systems"
+   Col "Browse": All HVAC Systems → · All Services → · Commercial Work →
+   Col 4 — FEATURED:
+     Eyebrow: "NOT SURE WHAT FITS?"
+     Heading: "Get a load calculation, not a guess."
+     Body:    "Manual J on every residential install. Manual N on commercial.
+               We size to the building, not to the invoice."
+     CTA:     "Request an estimate →" → /contact/
+
+3. Commercial → /commercial/
+   Col "By Program": National Accounts — "Multi-site, one agreement" ·
+     Property Management — "Portfolio contracts" ·
+     Multifamily & HOA — "Per-unit programs" ·
+     Hospitality — "Hotels & restaurant groups" ·
+     Light Commercial — "Single-site offices & retail"
+   Col "Services": Rooftop Replacement — "Crane, permits, coordination" ·
+     Maintenance Contracts — "Quarterly to annual" ·
+     Emergency HVAC — "24/7 priority dispatch"
+   Col 3 — FEATURED:
+     Eyebrow: "MULTI-SITE OPERATORS"
+     Heading: "One agreement. Ten metros. One invoice."
+     Body:    "Stop managing ten vendor relationships. Consolidated SLAs,
+               unified reporting, one account manager."
+     CTA:     "See national accounts →" → /commercial/national-accounts/
+
+4. Coverage → /service-areas/
+   Col "Southwest": Dallas–Fort Worth · Houston · Phoenix
+   Col "West & Mountain": Los Angeles · Denver
+   Col "Midwest & Northeast": Chicago · Philadelphia · New York
+   Col "Southeast": Atlanta · Miami · All 10 Metros →
+   Col 5 — FEATURED:
+     Eyebrow: "HEADQUARTERS"
+     Heading: "Dallas, TX."
+     Body:    "4514 Cole Avenue, Suite 600. National dispatch, local crews —
+               every technician licensed in the state they work in."
+     CTA:     "Dallas–Fort Worth HVAC →"
+
+5. Company → /about/
+   Col "Plans & Service": Maintenance Plan · Emergency HVAC · Financing
+   Col "Company": About · Reviews · Careers · Blog · Contact
+   Col 3 — FEATURED:
+     Eyebrow: "RECOMMENDED"
+     Heading: "Maintenance Plan from $189/yr."
+     Body:    "Essential $189 · Complete $259 · Facility on request.
+               Cancel any time."
+     CTA:     "See plans →" → /maintenance-plan/
+
+NAV CTA CLUSTER (right):  "(888) 555-0142" text link · "Schedule Service" button
+
+─── MOBILE (< 1024px) ───
+  Header collapses to: logo · orange phone icon button · hamburger
+  Right-side drawer, 5 accordion sections mirroring the mega-menus
+  Drawer footer: mono label "DISPATCH ANSWERED 24/7" · phone as large Satoshi
+    link · "Financing options" link · full-width "Schedule Service" button
+  Sticky bottom bar after hero scroll: [Call] [Schedule]
+
+─── BREADCRUMBS ───
+  Home › Services › Air Conditioning › AC Repair
+  Home › Coverage › Dallas–Fort Worth
+  Home › Commercial › National Accounts
+  Current item unlinked. Separator "›". Mirrored in BreadcrumbList schema.
+
+─── FOOTER ───
+  Brand block: white-wordmark logo · tagline "Nationwide HVAC service,
+    delivered by licensed local technicians. Serving 10 major U.S. metros
+    since 2009." · badges: "★ 4.9 AVERAGE" "38 STATES LICENSED" "24/7 DISPATCH"
+    "FULLY INSURED" · contact line: phone · email · HQ address ·
+    sub-line "Dispatch answered 24/7"
+  CTA block: pulsing green availability dot + mono label "DISPATCH ANSWERED
+    24/7" · [Schedule Service] [Call (888) 555-0142]
+
+  Col "Services": Air Conditioning · Heating · Indoor Air Quality ·
+    Water Heaters · Maintenance Plan · Emergency HVAC
+  Col "Systems": Ductless Mini-Splits · Heat Pumps · Central HVAC ·
+    PTAC Units · Rooftop Units · All Systems →
+  Col "Commercial": National Accounts · Property Management · Multifamily &
+    HOA · Hospitality · Light Commercial · Maintenance Contracts
+  Col "Company": About · Reviews · Careers · Financing · Blog · Contact
+
+  Coverage strip (full width, above legal row):
+    Dallas–Fort Worth · Houston · Phoenix · Los Angeles · Denver · Chicago ·
+    Philadelphia · New York · Atlanta · Miami        [All 10 metros →]
+
+  Legal row:
+    "© 2026 SmartgrowInfotech. Licensed and insured in every market we serve.
+     License numbers by state: [see /licenses]"
+    Privacy · Terms · Accessibility · Sitemap
+
+  NOTE: the reference had a broken footer link and no social links. We fix the
+  first and deliberately keep the second decision under review — add socials
+  only if real accounts exist.
+
+################################################################################
+##  §5  PAGE-BY-PAGE CONTENT  (23 pages, full copy)
+################################################################################
+
+═══════════════════════════════════════════════════════════════════════════════
+5.1  HOMEPAGE  —  /
+═══════════════════════════════════════════════════════════════════════════════
+<title>       SmartgrowInfotech | Nationwide HVAC Service & Repair
+<meta desc>   Nationwide HVAC repair, replacement and maintenance for homes and
+              multi-site facilities. Licensed local technicians in 10 major U.S.
+              metros. Dispatch answered 24/7.
+
+Section order: hero → services → why → coverage → plan → upgrades → brands → faq
+
+── SECTION 1 · HERO ──────────────────────────────────────────────────────────
+  Eyebrow (circuit, mono):  NATIONWIDE HVAC · SINCE 2009
+  H1:   Nationwide HVAC service.
+        Local licensed technicians.
+  Lead: Repair, replacement and maintenance for homes and multi-site facilities
+        across 10 major U.S. metros. One number, one standard, one invoice.
+  CTAs: [Schedule Service] → /contact/    [Call (888) 555-0142] → tel:
+  Media: technician at an outdoor condenser, 4:3, with the dotted-grid brand
+         motif fading behind the text column
+
+  STAT ROW (5, below hero, hidden < 768px):
+    17       Years in service
+    10       Metros served
+    4.9★     Average rating
+    2,400+   Verified reviews
+    24/7     Dispatch answered
+
+── SECTION 2 · WHAT WE SERVICE ───────────────────────────────────────────────
+  Eyebrow: WHAT WE SERVICE
+  H2:      Every system in the building — residential and commercial.
+
+  1. Air Conditioning
+     Repair, maintenance and replacement for split systems, packaged units,
+     ductless and PTAC.
+     → Explore AC services · /services/air-conditioning/
+
+  2. Heating
+     Furnaces, heat pumps, boilers and hydronic systems — diagnosed before
+     we quote.
+     → Explore heating · /services/heating/
+
+  3. Indoor Air Quality
+     Filtration, humidity control and fresh-air ventilation for tight modern
+     buildings.
+     → Explore IAQ · /services/indoor-air-quality/
+
+  4. Water Heaters
+     Tank, tankless, hybrid heat-pump and commercial units.
+     → Explore water heaters · /services/water-heaters/
+
+── SECTION 3 · WHY ───────────────────────────────────────────────────────────
+  Eyebrow: WHY TEAMS STANDARDIZE ON US
+  H2 (3 lines):  One vendor.
+                 Every market.
+                 One standard.
+  Lead: Most national HVAC coverage is a referral network wearing a national
+        badge — different pricing, different standards, a different invoice
+        every time. We run our own dispatch, our own SLAs and our own quality
+        bar in every metro we serve.
+  CTA (pill):  How we operate → /about/
+
+  1. Licensed in every market we serve
+     We don't subcontract into markets we can't stand behind. Every technician
+     on a SmartgrowInfotech job holds the license their state requires, and we
+     publish the numbers by state.
+
+  2. One agreement, ten metros, one invoice
+     Multi-site operators get a single contract, a single account manager and
+     consolidated billing across every location — not ten separate vendor
+     relationships and ten different renewal dates.
+
+  3. Diagnosis before quote. Every time.
+     We publish install price ranges and refuse to publish repair prices,
+     because a repair price without a diagnosis is a guess. You get the number
+     after we look, in writing, before any work starts.
+
+── SECTION 4 · COVERAGE ──────────────────────────────────────────────────────
+  Eyebrow: WHERE WE WORK
+  H2:      10 metros. Local crews in every one.
+  Lead:    Same pricing model, same SLAs, same reporting — whether the call is
+           in Phoenix or Philadelphia.
+  10 metro tiles → each metro page
+  CTA: See all coverage → /service-areas/
+
+── SECTION 5 · MAINTENANCE PLAN ──────────────────────────────────────────────
+  Eyebrow: MAINTENANCE PLAN
+  H2:      Priority service, at a predictable number.
+  Sub:     Two visits a year. Front-of-line scheduling. Discounted replacement
+           pricing. Cancel any time.
+
+  Tab 1 — Essential · $189/yr · 1 annual visit
+    "One full system tune-up per year. Right for single-system homes in mild
+     climates where one seasonal check is enough."
+    · One full system tune-up per year
+    · Priority scheduling on repair calls
+    · 15% off replacement pricing
+    · Free diagnostic on repair visits
+    · Cancel any time
+    CTA: Start Essential → /contact/
+
+  Tab 2 — Complete · $259/yr · 2 visits · MOST POPULAR
+    "Pre-season cooling tune-up plus pre-season heating tune-up. The right
+     choice in any metro with a real winter and a real summer."
+    · Spring cooling + fall heating tune-ups
+    · Priority scheduling on repair calls
+    · 15% off replacement pricing
+    · Free diagnostic on repair visits
+    · Flexible scheduling · cancel any time
+    CTA: Start Complete → /contact/
+
+  Tab 3 — Facility · Custom pricing
+    "Multi-system, rooftop, PTAC and multi-site facility contracts. Priced on
+     equipment count, visit frequency and response tier."
+    · Multi-system and multi-site contracts
+    · Rooftop and packaged-unit programs
+    · PTAC and per-unit programs
+    · Quarterly, semi-annual or annual cadence
+    · Defined response SLAs in writing
+    CTA: Call (888) 555-0142 → tel:
+
+  NOTE ON PRICING: $189/$259 are national list prices. Real HVAC pricing varies
+  40–60% between Phoenix and Philadelphia. Either (a) publish these as "from"
+  prices with a per-metro modifier, or (b) hold a per-metro price table in
+  config. Recommend (a) for launch, (b) at scale. FLAGGED FOR YOUR DECISION.
+
+── SECTION 6 · COMFORT UPGRADES (carousel, 6 slides) ─────────────────────────
+  Eyebrow: COMFORT UPGRADES
+  H2:      Upgrades that pay for themselves.
+  Lead:    What homeowners across our metros are actually choosing — and what
+           each one is genuinely good at.
+
+  1. Ductless Mini-Splits — "Heating and cooling without ductwork. The answer
+     for older LA and Philadelphia homes, additions, and any room the existing
+     system never reached."  → /hvac-systems/ductless-mini-splits/
+  2. Heat Pumps — "One system for both seasons. Cold-climate models hold full
+     output to 5°F, and federal 25C credits still apply."
+     → /hvac-systems/heat-pumps/
+  3. Smart Zoning — "Different temperatures upstairs and down without running
+     two systems. The fix for two-story homes that fight their thermostat."
+     → /hvac-systems/zoning-systems/
+  4. Whole-Home Dehumidification — "The real fix for Houston, Miami and Atlanta
+     summers. Your AC cools; it was never designed to dry."
+     → /services/indoor-air-quality/dehumidifiers/
+  5. High-Efficiency Filtration — "MERV 13 and above, sized so it doesn't choke
+     your blower. Wildfire smoke, pollen, and construction dust."
+     → /services/indoor-air-quality/air-purifiers/
+  6. Smart Thermostats — "Ecobee and Honeywell, installed and actually paired
+     right — including with two-stage and ductless equipment."
+     → /hvac-systems/smart-thermostats/
+
+  ⚠ FIX INHERITED FROM REFERENCE: on the reference site all six of these CTAs
+    pointed at /contact/ instead of their matching system pages. Ours point to
+    the real pages. Do not reintroduce this.
+
+  Footer CTA: Get an upgrade estimate → /contact/
+
+── SECTION 7 · BRANDS (marquee) ──────────────────────────────────────────────
+  Eyebrow: EQUIPMENT WE INSTALL & SERVICE
+  H2:      Every major brand. Eight we install in volume.
+  Body:    We install Carrier, Trane, Lennox, Rheem, Daikin, Mitsubishi
+           Electric, Navien and Honeywell. We service every major brand —
+           including York, Goodman, American Standard, Bryant, Bosch, LG,
+           Amana, Ruud, A.O. Smith, Bradford White, Rinnai, Weil-McLain,
+           AAON and ClimateMaster.
+
+  NOTE: I changed the install-brand list from the reference's (Fujitsu,
+  Friedrich, York, Coleman, Rheem, Navien, AprilAire, Honeywell). Theirs was a
+  small regional dealer's real mix. A national operator's primary lines would
+  realistically be Carrier / Trane / Lennox / Daikin. REPLACE WITH YOUR ACTUAL
+  DEALER AGREEMENTS — this is a factual claim, not copy.
+
+── SECTION 8 · FAQ ───────────────────────────────────────────────────────────
+  Eyebrow: QUICK ANSWERS
+  H2:      Straight answers to the six questions we get most.
+  Side CTA card: "Have a different question?" / (888) 555-0142 /
+                 "Dispatch answered 24/7 across all 10 metros"
+
+  Q: Are you a national franchise or a referral network?
+  A: Neither. We employ our technicians and run our own dispatch in every metro
+     we serve. When you call one number you reach one company — not a lead
+     broker routing you to whoever bid lowest that morning.
+
+  Q: Do you really answer the phone 24/7?
+  A: Yes. Calls to (888) 555-0142 reach a person around the clock, every day.
+     What we won't do is promise an arrival window before we know the
+     situation, your location and what's already on the board. You'll get a
+     real answer on the call.
+
+  Q: Which metros do you cover?
+  A: Dallas–Fort Worth, Houston, Phoenix, Los Angeles, Denver, Chicago,
+     Philadelphia, New York, Atlanta and Miami — plus surrounding service
+     radius. If you're just outside one, call and we'll tell you honestly
+     whether we can serve you well.
+
+  Q: Can you handle multi-site facilities across several states?
+  A: That's the core of our commercial business. One master agreement,
+     per-location service plans, one account manager, consolidated invoicing
+     and unified reporting across every site.
+
+  Q: What brands do you install?
+  A: Carrier, Trane, Lennox, Rheem, Daikin, Mitsubishi Electric, Navien and
+     Honeywell as primary lines. We service every major brand regardless of
+     who installed it.
+
+  Q: Do you offer financing?
+  A: Yes — residential financing on qualifying replacements and efficiency
+     upgrades, with soft pre-qualification that doesn't affect your credit
+     score. Commercial customers typically use their own capital programs.
+
+═══════════════════════════════════════════════════════════════════════════════
+5.2  /services/
+═══════════════════════════════════════════════════════════════════════════════
+<title>  HVAC Services — Repair, Maintenance & Installation | SmartgrowInfotech
+<meta>   Complete HVAC services nationwide. Air conditioning, heating, indoor
+         air quality and water heaters for homes and commercial facilities in
+         10 major U.S. metros.
+
+  Eyebrow: ALL SERVICES
+  H1:      HVAC services for homes and facilities, in 10 major metros.
+  Lead:    From a single no-cool call to a 40-location rooftop program. Licensed
+           local technicians, national standards, dispatch answered 24/7.
+  Rating block · [Schedule Service] [Call (888) 555-0142]
+
+  REPAIR-OR-REPLACE DECISION BLOCK
+    H2: Repair or replace?
+    Sub: Quick decision factors. Or call and we'll give you an honest answer
+         either way.
+    Repair makes sense if…
+      · System is under 10 years old
+      · Repair cost is under 30% of replacement
+      · Maintenance has been kept up
+      · It's a single component — capacitor, ignitor, sensor, contactor
+    Replace makes sense if…
+      · System is 12+ years old
+      · Repair cost is 50%+ of replacement
+      · It still runs R-22 or R-410A phase-down affects your parts
+      · Energy bills climbing with no change in usage
+    Note: Not sure which side you're on? Call (888) 555-0142 — we'll tell you
+          straight.
+
+  ⚠ REFRIGERANT NOTE: I updated the reference's "R-22 phased out 2020" to also
+    cover the R-410A phase-down under the AIM Act, which is the live issue in
+    2026. VERIFY current EPA status before publishing — refrigerant regulation
+    moves fast and a stale claim reads as incompetence to a facility manager.
+
+  FOUR SERVICE PILLARS (editorial rows, alternating)
+    Air Conditioning — "Split systems, packaged rooftop units, ductless and
+      PTAC. Whether it's one no-cool call in a Phoenix July or a scheduled
+      replacement program across a retail portfolio, the diagnostic discipline
+      is the same."
+      Sublinks: AC Repair · AC Maintenance · Installation & Replacement
+    Heating — "Furnaces, heat pumps, boilers and hydronic systems. From a
+      Chicago two-flat's cast-iron boiler to a cold-climate heat pump in
+      Denver, we service and install every heating type in use across our
+      metros."
+      Sublinks: Heating Repair · Furnace Repair · Heat Pump Repair ·
+                Maintenance · Installation & Replacement
+    Indoor Air Quality — "Filtration, humidity control and fresh-air
+      ventilation. Humidity in Houston, wildfire smoke in Los Angeles, bone-dry
+      winter air in Denver — three different problems with three different
+      right answers."
+      Sublinks: Air Purifiers · Humidifiers · Dehumidifiers · Ventilation
+    Water Heaters — "Tank, tankless, hybrid heat pump and commercial. Right-
+      sized to actual demand, with the gas line and venting work included in
+      the quote rather than discovered on install day."
+      Sublinks: Repair · Maintenance · Installation & Replacement · Tankless
+
+  Equipment tile row → 8 system pages
+  Maintenance plan promo banner
+  Coverage strip → 10 metros
+  6 FAQs (see §8)
+  Final CTA: "Ready to schedule?" / "Dispatch answered 24/7. Emergency service
+    available in all 10 metros."
+
+═══════════════════════════════════════════════════════════════════════════════
+5.3  /services/air-conditioning/
+═══════════════════════════════════════════════════════════════════════════════
+<title>  AC Repair, Maintenance & Installation | SmartgrowInfotech
+<meta>   Air conditioning repair, maintenance and installation nationwide.
+         Split systems, packaged units, ductless and PTAC. Licensed local techs
+         in 10 metros. Dispatch answered 24/7.
+
+  Eyebrow: AIR CONDITIONING
+  H1:      AC repair, maintenance and installation — nationwide.
+  Lead:    Split systems, packaged rooftop units, ductless heads and PTAC.
+           Diagnosed before we quote, in every market we serve.
+
+  "PICK YOUR PATH" — 3 action cards
+    AC Repair — "Same-day diagnostic on most calls. Every major brand,
+      regardless of who installed it."
+      · Full-system diagnostic before any quote
+      · Refrigerant · capacitor · compressor · control board
+      · All major brands serviced
+      · 24/7 emergency dispatch
+    AC Maintenance — "Annual tune-ups catch the failures that become July
+      emergencies — and keep your manufacturer warranty valid."
+      · Full multi-point tune-up
+      · Coil, filter and drain service
+      · Refrigerant charge verification
+      · Plans from $189/yr
+    AC Install & Replace — "Manual J load calculation on every install. Sized
+      to the building, not to the invoice."
+      · Free in-home estimate
+      · Manual J right-sizing
+      · Ductless, central, packaged and PTAC
+      · Financing available
+
+  COMMON AC PROBLEMS (6-card grid)
+    AC won't turn on — "Tripped breaker, failed capacitor, dead thermostat or
+      control board. We isolate the cause before quoting parts."
+    Blowing warm air — "Low refrigerant, frozen evaporator coil, dirty filter
+      or a failing compressor. Often same-day once diagnosed."
+    Short cycling — "Turns on and off in minutes. Usually an oversized unit,
+      a dirty filter, or thermostat placement — sometimes an install error."
+    Water around the air handler — "Clogged condensate drain, iced coil, or a
+      failed condensate pump. Fast to find, usually fast to fix."
+    Rising electric bills — "Dirty coils, duct leakage, an aging compressor or
+      a wrong-size system. We'll show you the measurements."
+    Won't reach setpoint — "In Phoenix and Dallas this is often correct
+      operation at design temperature. We'll tell you if it's the equipment or
+      the envelope — and we won't sell you a bigger unit to fix insulation."
+
+  Equipment tiles · Coverage strip · 6 FAQs · Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.4  /services/air-conditioning/repair/
+═══════════════════════════════════════════════════════════════════════════════
+  Eyebrow: AC REPAIR
+  H1:      AC repair — diagnosed before we quote.
+  Lead:    Split systems, packaged units, ductless and PTAC. Same-day
+           diagnostic on most calls. Licensed technicians in all 10 metros.
+  Inline service form in hero.
+
+  SYMPTOMS WE DIAGNOSE (6 cards)
+    Won't turn on · Blowing warm air · Short cycling · Water leaking ·
+    Tripping the breaker · Loud or new noises
+    (each with a 25–35 word plain-language cause list)
+
+  HOW A REPAIR VISIT WORKS (4 numbered steps)
+    01 Phone triage — "We ask what it's doing, the brand and rough age, and
+       whether it's a genuine emergency, before dispatching a truck. Some
+       problems get solved on the call, and that costs you nothing."
+    02 On-site diagnostic — "Full system check — refrigerant, electrical,
+       airflow, drainage, controls. We look past the obvious symptom so the
+       repair fixes the actual cause."
+    03 Written quote — "Parts, labor and your options in writing before any
+       work begins. If repair-versus-replace is close, you get both numbers."
+    04 Repair and verify — "We fix it, run a full cycle, and show you what we
+       did. Workmanship warranty on top of the parts warranty."
+
+  WHAT AFFECTS THE COST (3 numbered)
+    01 System type and age — "A capacitor on a 5-year-old split system is a
+       different job than a control board on a 12-year-old ductless head.
+       Older systems sometimes need parts sourced."
+    02 Refrigerant and access — "Refrigerant type matters — R-22 is gone and
+       R-410A is in phase-down, both of which affect cost. Rooftop and
+       high-rise condensers may need lift access or building coordination."
+    03 Warranty status — "Many systems under 10 years still carry parts
+       warranty. We check before quoting so you don't pay twice."
+    Note: "We don't publish repair prices. A price before a diagnosis is a
+           guess, and guesses get corrected upward on install day. Call
+           (888) 555-0142 for a real conversation."
+
+  Sibling cards (Maintenance · Install) · Coverage · 6 FAQs · Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.5  /services/air-conditioning/maintenance/
+═══════════════════════════════════════════════════════════════════════════════
+  Eyebrow: AC MAINTENANCE
+  H1:      AC tune-ups and maintenance plans.
+  Lead:    Annual service catches refrigerant loss, dirty coils and electrical
+           wear before they become emergency calls. Essential $189 ·
+           Complete $259.
+
+  WHY ANNUAL MAINTENANCE (6 cards)
+    Keeps your warranty valid — "Nearly every manufacturer requires documented
+      annual service to honor parts coverage. Skip it and a compressor claim
+      can be denied."
+    Catches refrigerant loss early — "A slow leak quietly destroys efficiency
+      and then the compressor. Catching it at a tune-up is a small repair.
+      Catching it after the compressor fails is not."
+    Prevents peak-season failures — "Most July emergency calls trace back to
+      something visible the previous spring — weak capacitors, dirty coils,
+      loose connections."
+    Restores measurable efficiency — "Dirty coils and low charge force the
+      system to work harder. A proper tune-up usually shows up on the bill."
+    Extends equipment life — "Maintained systems commonly run 15–18 years.
+      Neglected ones often fail around year 10."
+    Documented for facility records — "Every visit produces a written report
+      with measurements — useful for warranty claims, capex planning and
+      insurance."
+
+  WHAT WE ACTUALLY DO (4 steps) · WHAT AFFECTS PRICE (3) ·
+  Siblings · Coverage · 6 FAQs · Final CTA
+
+  Tune-up inclusion list (verbatim, use as-is):
+    "Refrigerant charge verification, evaporator and condenser coil cleaning,
+     condensate drain clearing, electrical connection torque check, capacitor
+     and contactor testing, blower and filter service, thermostat calibration,
+     temperature-split and airflow measurement, and a written findings report.
+     Typically 60–90 minutes per system."
+
+═══════════════════════════════════════════════════════════════════════════════
+5.6  /services/air-conditioning/installation-replacement/
+═══════════════════════════════════════════════════════════════════════════════
+  Eyebrow: AC INSTALL & REPLACE
+  H1:      AC installation and replacement, right-sized.
+  Lead:    Manual J load calculation on every install. Permits pulled, old
+           equipment hauled, financing available.
+
+  SIGNS IT'S TIME TO REPLACE (6 cards)
+    12+ years old · Repair cost 50%+ of replacement · R-22 or R-410A supply
+    issues · Climbing bills at steady usage · Can't hold setpoint at design
+    temperature · Multiple failures in one season
+
+  HOW A NEW INSTALL WORKS (4 steps)
+    01 In-home estimate — "Manual J load calculation, not a rule of thumb. We
+       measure the space, insulation, window load, orientation and ductwork
+       before specifying anything."
+    02 Options and written quote — "Two or three real options with efficiency
+       ratings, brand, warranty and full installed price. Financing shown
+       alongside the cash price."
+    03 Permits and installation — "We pull the permits and coordinate building
+       access. Old equipment leaves the same day."
+    04 Commissioning and walkthrough — "Full system test, measured airflow and
+       charge, warranty registration, and a walkthrough so you know how to run
+       it. We follow up after the first season."
+
+  PRICE BANDS (national ranges — vary meaningfully by metro)
+    Ductless single-zone .................. $4,500 – $8,000
+    Ductless multi-zone ................... $11,000 – $22,000
+    Central AC replacement (existing ducts) $7,000 – $13,500
+    Full system with new ductwork ......... $16,000 – $28,000
+    Packaged rooftop (residential) ........ $9,000 – $16,000
+    PTAC unit swap ........................ $1,600 – $2,800
+
+  ⚠ These are my estimates scaled from the reference's 2026 Northeast figures
+    plus a national spread. They are PLAUSIBLE, NOT SOURCED. Replace with your
+    real numbers before publishing — published prices you can't honor are worse
+    than no prices.
+
+  Siblings · Coverage · 6 FAQs · Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.7  /services/heating/
+═══════════════════════════════════════════════════════════════════════════════
+  Eyebrow: HEATING
+  H1:      Furnace, heat pump and boiler service — nationwide.
+  Lead:    From a Chicago cast-iron boiler to a Denver cold-climate heat pump.
+           Every heating type in use across our metros, diagnosed before we
+           quote.
+
+  3 action cards: Heating Repair · Heating Maintenance · Install & Replace
+  2 deep-dive cards: Furnace Repair · Heat Pump Repair
+  Repair-or-replace block:
+    Repair if: under 12 years (furnace) or 20 (boiler) · repair under 30% of
+      replacement · maintenance kept up · single component
+    Replace if: 15+ years (furnace) or 25+ (boiler) · repair 50%+ of
+      replacement · AFUE under 80% · repeated failures over two winters
+  6 common problems · Equipment tiles · Coverage · 6 FAQs · Final CTA
+
+  METRO-AWARE ANGLE (the thing that makes this page non-generic):
+    "Heating means something different in each of our metros. In Chicago and
+     Philadelphia it's boilers and 90%+ AFUE conversions. In Denver it's
+     combustion derated for altitude. In Dallas and Atlanta it's heat pumps
+     with modest backup. In Phoenix and Miami it's a heat strip that runs
+     twelve days a year and gets ignored until it doesn't work. We staff for
+     the equipment that's actually in the ground in each market."
+
+  ⚠ ALTITUDE NOTE: combustion equipment genuinely requires derating above
+    ~2,000 ft, which affects Denver installs. This is a real technical
+    differentiator worth keeping — have a licensed tech verify the claim
+    wording before publishing.
+
+═══════════════════════════════════════════════════════════════════════════════
+5.8  /services/heating/repair/
+═══════════════════════════════════════════════════════════════════════════════
+  H1: Heating repair — diagnosed before we quote.
+  Lead: Furnaces, heat pumps, boilers, hydronic and steam. Same-day diagnostic
+        on most calls, and honest triage on the phone about what's a genuine
+        emergency.
+  Symptoms (6) · Process (4) · Cost drivers (3) · Siblings · Coverage · FAQs
+  Emergency threshold copy:
+    "When is no heat a true emergency? Below about 25°F with pipes at risk, or
+     with infants, elderly or medically vulnerable people in the building —
+     that's an emergency and we treat it as one. A mild evening with blankets
+     and a working fireplace usually isn't. We'll help you decide on the call
+     rather than upselling you into an after-hours rate."
+
+═══════════════════════════════════════════════════════════════════════════════
+5.9  /services/heating/maintenance/
+═══════════════════════════════════════════════════════════════════════════════
+  H1: Heating tune-ups and combustion safety checks.
+  Lead: Pre-season service for furnaces, heat pumps and boilers. Calibrated
+        combustion analysis, CO safety inspection, and a written report.
+        Essential $189 · Complete $259.
+  Lead safety card:
+    "Carbon monoxide is the reason this isn't optional. Cracked heat
+     exchangers, blocked flues and improper venting are the usual causes, and
+     all three are found with a calibrated combustion analyzer — not a look
+     and a sniff. We put a probe in the flue and measure CO, O₂, CO₂, flue
+     temperature and combustion efficiency. The numbers pass spec or they
+     don't."
+  Why (6) · Process (4) · Price drivers (3) · Siblings · Coverage · FAQs
+
+═══════════════════════════════════════════════════════════════════════════════
+5.10  /services/heating/installation-replacement/
+═══════════════════════════════════════════════════════════════════════════════
+  H1: Furnace, heat pump and boiler installation.
+  Lead: High-efficiency condensing furnaces, cold-climate heat pumps and
+        hydronic boilers. Manual J sized, permits and venting handled,
+        financing available.
+  Signs to replace (6) · Process (4) · Price drivers (3)
+  PRICE BANDS:
+    Condensing furnace replacement ........ $5,500 – $11,000
+    Cold-climate ducted heat pump ......... $12,000 – $20,000
+    Ductless heat pump (single-zone) ...... $5,500 – $9,000
+    Hydronic boiler replacement ........... $9,000 – $18,000
+    Oil-to-gas conversion ................. $12,000 – $24,000
+  Incentives block:
+    "Federal 25C credits, state efficiency programs and utility rebates
+     frequently apply to heat pump and high-efficiency installations, and the
+     programs differ in every one of our metros. We identify what applies in
+     your market and provide the documentation you need to claim it."
+    ⚠ VERIFY 25C status and amounts at publish time. Tax credit programs
+      change annually and a stale figure is worse than no figure.
+
+═══════════════════════════════════════════════════════════════════════════════
+5.11  /services/indoor-air-quality/
+═══════════════════════════════════════════════════════════════════════════════
+  Eyebrow: INDOOR AIR QUALITY
+  H1:      Cleaner, drier, better-ventilated air.
+  Lead:    Filtration, humidity control and fresh-air ventilation. Three
+           different problems with three different right answers — and we'll
+           tell you which one you actually have.
+
+  THE METRO-SPECIFIC IAQ FRAMING (this is the page's whole value)
+    "Indoor air quality is the most over-sold category in HVAC, so here's the
+     honest version. What you need depends almost entirely on where you live.
+
+     Houston, Miami, Atlanta — humidity. Your AC removes moisture as a side
+       effect of cooling, and modern oversized systems short-cycle before they
+       dehumidify properly. The result is cool, clammy air and mold risk. You
+       need dehumidification, not filtration.
+
+     Denver, Chicago, Philadelphia, Dallas — winter dryness. Heated air drops
+       to desert humidity. Static shock, cracked wood floors, dry sinuses. You
+       need a humidifier.
+
+     Los Angeles, Denver, Phoenix — particulates. Wildfire smoke and dust are
+       the real load. You need proper filtration, sized so it doesn't choke
+       your blower.
+
+     New York, and any tight modern build — ventilation. Well-sealed buildings
+       trap CO₂ and VOCs. You need mechanical fresh air with energy recovery.
+
+     Most buildings need one of these. Some need two. Almost none need all
+     four, and anyone selling you all four hasn't measured anything."
+
+  4 solution cards: Air Purifiers · Humidifiers · Dehumidifiers · Ventilation
+  6 common issues · Pairs-with tiles · Coverage · 6 FAQs · Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.12  /services/water-heaters/
+═══════════════════════════════════════════════════════════════════════════════
+  H1:   Water heater repair, replacement and tankless.
+  Lead: Tank, tankless, hybrid heat pump and commercial. Right-sized to actual
+        demand, with gas line and venting work priced in the quote rather than
+        discovered on install day.
+  3 action cards · Tankless deep-dive card · Repair-or-replace block ·
+  6 common problems · Related services · Coverage · 6 FAQs · Final CTA
+
+  LIFESPANS: Tank (gas) 8–12 yr · Tank (electric) 10–15 yr · Tankless 18–25 yr
+    · Hybrid heat pump 10–15 yr
+  SIZING: Tank 40 gal (1–2 people) · 50 gal (3–4) · 75 gal (5+)
+          Tankless by GPM: 1 bath 5–7 · 2 bath 7–9 · 3+ bath 9–11
+  PRICE BANDS:
+    Tank replacement (in-kind) ............ $1,800 – $3,600
+    Tankless (in-kind replacement) ........ $4,200 – $6,200
+    Tank-to-tankless conversion ........... $5,800 – $9,500
+    Hybrid heat-pump water heater ......... $3,800 – $6,000
+  HARD WATER: "Water hardness varies enormously across our metros — Phoenix and
+    Denver are hard enough that annual tankless descaling isn't optional, while
+    Atlanta and Miami are comparatively soft. We test on the first visit and
+    tell you your actual interval instead of a generic one."
+    ⚠ Verify the hardness claims per metro before publishing. They are
+      directionally right but I have not sourced them.
+
+═══════════════════════════════════════════════════════════════════════════════
+5.13  /hvac-systems/
+═══════════════════════════════════════════════════════════════════════════════
+  H1:   Every major HVAC system, explained honestly.
+  Lead: Ductless, heat pumps, central split systems, zoning, PTAC,
+        water-source and commercial rooftop. Which one is right depends on the
+        building — so here's what each is actually good at.
+
+  FOR HOMES (4 cards): Ductless Mini-Splits · Heat Pumps · Central HVAC ·
+    Zoning Systems
+  FOR BUILDINGS (3 cards): PTAC Units · Water-Source Heat Pumps · Rooftop Units
+  Specialty spotlight: Ductless
+  By-service-type tiles · Coverage · 6 FAQs · Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.14  /hvac-systems/ductless-mini-splits/
+═══════════════════════════════════════════════════════════════════════════════
+  H1:   Ductless mini-splits — cooling and heating without ductwork.
+  Lead: The right answer for older homes with no ducts, additions, converted
+        attics, garages and any room your existing system never reached.
+
+  WHAT IT IS (plain English, 2 paragraphs)
+    "A small outdoor condenser connects to one or more indoor heads through
+     thin refrigerant lines about the diameter of a garden hose. The indoor
+     head mounts on the wall, conditions that room directly, and drains
+     condensate through a small line. No ductwork, no air handler closet, no
+     tearing into finished walls.
+
+     Each head has its own thermostat, so you can run a bedroom at 68 and leave
+     the rest of the house at 74. Almost every modern unit is also a heat pump,
+     which means one system covers both seasons."
+
+  WHY DUCTLESS (3 benefit cards)
+    Built for buildings that never had ducts · True per-room control ·
+    Efficient in both directions
+  BRANDS: Mitsubishi Electric · Daikin · Carrier · LG
+  SIZING & OPTIONS (4 numbered): Single vs multi-zone · BTU per room ·
+    Head style and placement · Outdoor unit placement
+  WHAT INSTALLATION INVOLVES (3): Line-set routing · Outdoor unit placement ·
+    Permits and HOA approval
+  PRICE: single-zone $4,500–$8,000 · multi-zone $11,000–$22,000
+  Service cards · Other systems · Coverage · 6 FAQs · Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.15  /commercial/
+═══════════════════════════════════════════════════════════════════════════════
+  Eyebrow: COMMERCIAL
+  H1:      Commercial HVAC for facilities, portfolios and multi-site operators.
+  Lead:    Single-site offices to 200-location national programs. One
+           agreement, defined SLAs, consolidated reporting.
+
+  BY PROGRAM (5 cards)
+    National Accounts — "Multi-site operators across several states. One master
+      agreement, one account manager, one invoice." → /commercial/national-accounts/
+    Property Management — "Portfolio contracts across buildings and metros,
+      with per-property service plans."
+    Multifamily & HOA — "Per-unit programs, common-area systems, board-friendly
+      documentation and per-unit invoicing."
+    Hospitality — "Hotels and restaurant groups. Rolling PTAC programs, kitchen
+      makeup-air, and work scheduled around your operating hours."
+    Light Commercial — "Single-site offices, retail, medical and dental. Clear
+      per-visit pricing and after-hours availability."
+
+  COMMERCIAL SERVICES (3 cards)
+    Rooftop Replacement — "Crane coordination, permits, structural review and
+      single-shift execution."
+    Maintenance Contracts — "Quarterly to annual cadence, tiered response SLAs,
+      written reports every visit."
+    Emergency HVAC — "24/7 dispatch with priority routing for contract clients."
+
+  MOAT SECTION
+    Eyebrow: WHY MULTI-SITE OPERATORS CONSOLIDATE
+    H2:      One agreement. Ten metros. One invoice.
+    Body:    "If you operate in more than three markets, you already know the
+              problem: a different contractor in every city, a different rate
+              card, a different response standard, and a stack of invoices
+              nobody can compare. Consolidating on one vendor isn't about
+              price — it's about being able to answer 'how is our HVAC
+              performing' with a number instead of a shrug."
+    → See national accounts
+
+  Coverage · 6 FAQs · Final CTA: "Talk to our commercial team."
+
+═══════════════════════════════════════════════════════════════════════════════
+5.16  /commercial/national-accounts/   ★ NEW — THE STRATEGIC PAGE
+═══════════════════════════════════════════════════════════════════════════════
+<title>  National HVAC Accounts — Multi-Site Facility Programs | SmartgrowInfotech
+<meta>   One HVAC agreement across every market you operate in. Defined SLAs,
+         consolidated invoicing, unified reporting. Multi-site programs for
+         retail, restaurant, medical and franchise operators.
+
+  Eyebrow: NATIONAL ACCOUNTS
+  H1:      One HVAC agreement across every market you operate in.
+  Lead:    For operators running 5 to 500 locations. Defined response SLAs,
+           one account manager, consolidated invoicing, and reporting you can
+           actually take to a board meeting.
+
+  WHAT WE DO
+    "Multi-site facility managers don't have an HVAC problem. They have a
+     vendor-management problem. Twelve contractors across nine states, each
+     with their own rate card, their own idea of what 'emergency response'
+     means, and their own invoice format. Nobody can tell you what HVAC costs
+     per square foot across the portfolio, because the data was never
+     comparable to begin with.
+
+     We solve that by being one vendor with one standard. Same diagnostic
+     process, same reporting format, same escalation path, same rate structure
+     — in Dallas, in Denver, in Miami."
+
+  WHY OPERATORS CONSOLIDATE (3 cards)
+    Comparable data across every site
+      "Every visit produces the same written report in the same format. After
+       one year you can rank your locations by HVAC cost, identify which
+       equipment is failing early, and build a capex plan from evidence
+       instead of from whoever shouted loudest."
+    Response SLAs in writing, per tier
+      "Not 'reasonable response.' A defined number of hours, by site tier, by
+       severity, agreed in the contract. Priority sites get priority routing —
+       and you decide which sites those are."
+    One relationship, one invoice
+      "One master agreement with per-location addendums. Add or remove sites
+       mid-term as your footprint changes. Consolidated monthly statement or
+       per-location invoicing, whichever your accounting system wants."
+
+  WHO THIS IS FOR (4 chips)
+    Retail chains · Restaurant groups · Medical & dental networks ·
+    Franchise operators
+
+  HOW A NATIONAL PROGRAM IS BUILT (4 steps)
+    01 Portfolio review — "We walk your site list with you: locations,
+       equipment types and ages, current vendors, current pain points, and
+       which sites genuinely can't go down. No charge."
+    02 Tiering and SLA design — "Not every location needs same-day response.
+       We tier your sites and price each tier honestly, so you're not paying
+       premium response on a back-office location."
+    03 Master agreement and onboarding — "One agreement with per-location
+       addendums. COIs issued to your entity. Equipment inventoried and
+       baselined at the first visit."
+    04 Scheduled execution and reporting — "Planned maintenance on cadence,
+       emergency response by SLA, and a quarterly portfolio report with cost
+       breakdown and recommended capex."
+
+  WHAT AFFECTS PRICING (3)
+    01 Site count and density — "Sites clustered inside our metros price
+       better than isolated outliers. We'll tell you honestly which of your
+       locations we can serve well and which we can't."
+    02 Equipment mix — "Packaged rooftop units, split systems and PTAC arrays
+       have genuinely different service economics. Mixed portfolios get mixed
+       per-site rates rather than one blended number that overcharges half
+       your sites."
+    03 Response tier — "Next-business-day, same-day and after-hours tiers are
+       priced separately and assigned per site."
+
+  ⚠ HONEST-COVERAGE COMMITMENT (keep this — it's the trust anchor)
+    "We will tell you which of your locations we cannot serve well. A national
+     program that quietly subcontracts your Boise location to whoever answered
+     the phone is not a national program — it's a markup. If a site falls
+     outside our coverage, we'll say so and help you source it properly rather
+     than pretending."
+
+  National accounts inquiry form (longer, qualified — see §6)
+  Coverage strip · 6 FAQs · Final CTA: "Start with a portfolio review."
+
+═══════════════════════════════════════════════════════════════════════════════
+5.17  /maintenance-plan/
+═══════════════════════════════════════════════════════════════════════════════
+  H1:   Two visits a year. Priority service. From $189/yr.
+  Lead: Pre-season cooling and heating tune-ups, front-of-line scheduling,
+        discounted replacement pricing, and a written report every visit.
+        Cancel any time.
+  Inline form in hero.
+  3 plans (Essential / Complete / Facility) — full detail in §5.1 §6
+  WHAT'S INCLUDED (3 cards)
+    Cooling tune-up (spring) · Heating tune-up (fall) · Priority + perks
+  6 plan FAQs · Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.18  /emergency-hvac/
+═══════════════════════════════════════════════════════════════════════════════
+  Eyebrow: DISPATCH ANSWERED 24/7
+  H1:      Emergency HVAC in all 10 metros.
+  Lead:    A person answers, day or night. What you'll get is an honest arrival
+           window based on the actual situation, your location and what's
+           already on the board — not a marketing promise.
+  CTA: Call (888) 555-0142 now
+
+  WHEN TO CALL IMMEDIATELY (6 cards)
+    No heat in freezing weather — "Pipe-freeze risk starts within hours.
+      Calling early is the difference between a repair and a flood."
+    No cooling in extreme heat — "In Phoenix, Dallas or Houston, indoor
+      temperatures reach genuinely dangerous levels fast — especially with
+      infants, elderly residents or pets."
+    Gas smell — "Leave the building. Call your gas utility's emergency line
+      first, then 911 if directed. Call us once the site is safe."
+    CO detector alarm — "Leave the building and call 911. Then call us. Do not
+      re-enter to investigate."
+    Water leaking from equipment — "Shut off the supply and kill power at the
+      breaker. Move anything valuable clear."
+    Facility system failure — "Rooftop or central plant failure during
+      occupancy. Contract clients get priority routing."
+
+  ⚠ SAFETY COPY: the reference site published a specific utility emergency
+    number. Ours must NOT — we serve 10 metros with different utilities.
+    The correct instruction is "your gas utility's emergency line, then 911."
+    Do not add a specific number.
+
+  WHILE YOU WAIT (3 guidance blocks)
+  OUR PROMISE
+    H2: No fake arrival guarantees. Just an honest answer.
+    "Plenty of contractors advertise a 60-minute response. We don't, because
+     across ten metros and real traffic it isn't a promise anyone can keep —
+     it's a lead-generation tactic. What we do instead: a person answers, we
+     triage honestly, and we tell you a real window. If that window is
+     tomorrow morning, we say tomorrow morning, so you can make an actual
+     decision instead of waiting on a truck that was never coming."
+  Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.19  /about/
+═══════════════════════════════════════════════════════════════════════════════
+  Eyebrow: ABOUT SMARTGROWINFOTECH
+  H1:      Built to be one contractor in ten markets — not ten contractors
+           with one logo.
+  Lead:    Founded 2009. 190+ technicians. 10 metros. Every one of them
+           employed, licensed and trained to the same standard.
+
+  H2: Why we built it this way.
+    "SmartgrowInfotech started in Dallas in 2009 as a single-market HVAC
+     contractor. We went national for an unglamorous reason: our best
+     commercial customers kept opening locations in cities we didn't serve,
+     and every time they did, they got a worse experience from someone else
+     and blamed the category.
+
+     So we expanded deliberately — one metro at a time, hiring and licensing
+     locally rather than buying a franchise network. It's slower. It's why
+     we're in ten metros and not fifty. It's also why the technician who shows
+     up in Denver works to the same checklist as the one in Miami."
+
+  H2: What we stand for.
+    Honest answers. "We don't publish repair prices, because a price before a
+      diagnosis is a guess. We do publish install ranges, because you deserve
+      to know roughly what you're walking into. If a $300 repair buys you five
+      more years, that's the recommendation you'll get."
+    Local licensing, not local subcontracting. "Every technician holds the
+      license their state requires and works for us. We do not broker your job
+      to the lowest bidder in your zip code and take a margin."
+    We'll tell you where we're weak. "There are markets we don't serve well
+      and jobs we're not the right fit for. Saying so costs us a call and
+      earns the next five."
+
+  BY THE NUMBERS
+    17 Years in service · 10 Metros served · 190+ Technicians ·
+    38 States licensed · 41,000+ Jobs completed · 24/7 Dispatch answered
+
+  Licensing block: "We hold contractor and HVAC licenses in every state we
+    operate in. Numbers are published by state at /licenses and included on
+    every invoice and COI."
+  Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.20  /contact/
+═══════════════════════════════════════════════════════════════════════════════
+  H1:   Get in touch.
+  Lead: Dispatch answered 24/7. Web forms and email get a callback the same
+        business day.
+  Blocks:
+    "Call us — answered 24/7"  →  (888) 555-0142
+    "Email"                    →  service@smartgrowinfotech.com
+    "National accounts"        →  accounts@smartgrowinfotech.com
+    "Headquarters"             →  4514 Cole Avenue, Suite 600
+                                  Dallas, TX 75205
+                                  (corporate office — service is dispatched
+                                   from local metro crews, not from here)
+  Inline service form
+  Coverage section: "10 metros. Local crews in every one."
+  Final CTA: "Or just call. Someone picks up."
+
+═══════════════════════════════════════════════════════════════════════════════
+5.21  /service-areas/
+═══════════════════════════════════════════════════════════════════════════════
+  H1:   HVAC service in 10 major U.S. metros.
+  Lead: Local licensed crews, national standards. Same diagnostic process,
+        same reporting, same escalation path — wherever the call comes from.
+
+  HQ SPOTLIGHT: Dallas–Fort Worth
+  ALL 10 METROS — each tile carries city, state, region label and a one-line
+  climate/building hook:
+    Dallas–Fort Worth, TX — "HQ. Heat pumps, attic air handlers, and cooling
+      loads that run eight months a year."
+    Houston, TX — "Humidity is the real problem here, not temperature."
+    Phoenix, AZ — "Packaged rooftop units under the hardest duty cycle in the
+      country."
+    Los Angeles, CA — "Older homes without ductwork. Ductless retrofit country."
+    Denver, CO — "Altitude-derated combustion and genuinely dry winter air."
+    Chicago, IL — "Boilers, two-flats, and 90%+ AFUE conversions."
+    Philadelphia, PA — "Rowhomes, oil-to-gas conversions, and no room for ducts."
+    New York, NY — "PTAC, water-source heat pumps, and building coordination."
+    Atlanta, GA — "Crawlspace ductwork and humidity swings in both seasons."
+    Miami, FL — "Salt-air corrosion and high-rise condo systems."
+
+  6 FAQs including:
+    Q: Do you charge travel fees to outlying areas?
+    A: Not inside our published metro service radius. Outside it we'll tell you
+       honestly whether we can serve you well rather than adding a fee and
+       hoping.
+    Q: Why only ten metros?
+    A: Because we employ and license our technicians rather than brokering
+       work. Adding a market means hiring and licensing a crew there, which is
+       slow. We'd rather serve ten metros properly than fifty on paper.
+
+═══════════════════════════════════════════════════════════════════════════════
+5.22  /service-areas/dallas-fort-worth/     (metro template, instance 1 — HQ)
+═══════════════════════════════════════════════════════════════════════════════
+<title>  HVAC Service in Dallas–Fort Worth, TX | SmartgrowInfotech
+<meta>   HVAC repair, replacement and maintenance across Dallas–Fort Worth.
+         Our headquarters metro. Licensed local technicians, 24/7 dispatch.
+
+  Eyebrow: DALLAS–FORT WORTH, TX
+  H1:      HVAC service in Dallas–Fort Worth.
+  Lead:    Our home metro since 2009. Heat pumps, attic air handlers and
+           cooling loads that run most of the year — across Dallas, Fort Worth,
+           Plano, Arlington, Irving and Frisco.
+  Badge:   HEADQUARTERS METRO
+
+  AEO INTRO PARAGRAPH (the dense, quotable one)
+    "SmartgrowInfotech has served the Dallas–Fort Worth metroplex since 2009,
+     and DFW remains our headquarters and largest market. We install and
+     service air conditioning, heat pumps, furnaces, ductless mini-splits,
+     water heaters and indoor air quality systems for single-family homes,
+     multifamily properties and commercial facilities across Dallas, Fort
+     Worth, Plano, Arlington, Irving, Frisco, Garland and Richardson. Our
+     technicians are licensed in Texas, dispatch is answered 24 hours a day,
+     and our corporate office is at 4514 Cole Avenue, Suite 600, Dallas."
+
+  WHY DFW IS DIFFERENT (2 paragraphs — the genuine local content)
+    "DFW runs its air conditioning roughly eight months a year, and that duty
+     cycle is what defines the work here. Systems that would last eighteen
+     years in Philadelphia see their compressors work twice as hard, and we
+     see failures cluster around year ten to twelve rather than fifteen.
+
+     The other defining feature is where the equipment lives. Most DFW homes
+     put the air handler in an unconditioned attic that reaches 140°F in
+     August, which is a genuinely hostile place for a blower motor and a
+     drain pan. A large share of our summer emergency calls are condensate
+     overflows from attic units — a $200 problem that becomes a $6,000 ceiling
+     repair if the safety switch was never installed or was bypassed. We check
+     for that on every maintenance visit, and it's the single highest-value
+     thing we do in this market."
+
+  EQUIPMENT & BUILDINGS WE WORK ON
+    Single-family with attic air handlers — "The dominant DFW configuration.
+      Condensate management, attic-heat derating, and duct leakage in
+      unconditioned space."
+    New-build tract homes — "Frisco, Prosper and McKinney build-outs. Often
+      builder-grade single-stage equipment that's under-specified for the
+      load."
+    Multifamily & garden apartments — "Per-unit split systems and packaged
+      units. Portfolio programs and per-unit invoicing."
+    Commercial rooftop — "Retail, restaurant and office packaged RTUs across
+      the metroplex."
+
+  WHERE WE WORK IN DFW
+    Cities: Dallas · Fort Worth · Plano · Arlington · Irving · Frisco ·
+      Garland · Richardson · McKinney · Grand Prairie
+    Corridors: I-35E · I-635 LBJ · Dallas North Tollway · SH-121 · I-30
+
+  SAMPLE TESTIMONIAL  ⚠ INVENTED — replace with a real one
+    ★★★★★ "Our attic unit flooded the guest bedroom ceiling the first time.
+    After that we got on their maintenance plan, and the tech found a clogged
+    drain line on the very first visit. Hasn't happened again in four years."
+    — D. Whitfield, Plano · Maintenance plan member since 2022
+
+  5 DFW-SPECIFIC FAQs
+    Q: How fast can you reach my address in DFW?
+    Q: Why do attic air handlers cause so many problems here?
+    Q: Is a heat pump worth it in Dallas, or should I stay with gas?
+    Q: Do you handle new-construction warranty work?
+    Q: Do you serve outside the immediate metroplex?
+
+  Nearby metro links: Houston · Phoenix · Atlanta · All 10 metros →
+  Final CTA
+
+═══════════════════════════════════════════════════════════════════════════════
+5.23  /service-areas/phoenix/     (metro template, instance 2 — contrast case)
+═══════════════════════════════════════════════════════════════════════════════
+  Eyebrow: PHOENIX, AZ
+  H1:      HVAC service in Phoenix.
+  Lead:    The hardest cooling duty cycle in the country. Packaged rooftop
+           units, refrigerant loss and equipment that ages in dog years —
+           across Phoenix, Scottsdale, Mesa, Tempe, Chandler and Glendale.
+  Badge:   10 MINUTES TO 60 — WE TRIAGE BY HEAT RISK
+
+  AEO INTRO PARAGRAPH
+    "SmartgrowInfotech serves the Phoenix metropolitan area with air
+     conditioning repair, replacement and maintenance, heat pump service, water
+     heaters and indoor air quality systems. We work across Phoenix,
+     Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale and Peoria, on both
+     residential packaged units and commercial rooftop systems. Our
+     technicians are licensed in Arizona and dispatch is answered 24 hours a
+     day — with summer calls triaged by heat-exposure risk rather than
+     first-come-first-served."
+
+  WHY PHOENIX IS DIFFERENT
+    "Phoenix is the most demanding cooling market in the United States and the
+     equipment reflects it. A system that runs 2,000 hours a year in Atlanta
+     runs closer to 3,500 here, and it does it against 115°F ambient
+     temperatures that push condensers to the edge of their design envelope.
+     Practical consequence: we see 10-to-12-year replacement cycles where other
+     markets see 15-to-18, and we see refrigerant loss as a leading failure
+     mode rather than an occasional one.
+
+     The second Phoenix-specific reality is the packaged rooftop unit. Most
+     single-story Phoenix homes use a packaged unit on the roof rather than a
+     split system, which means every service call involves roof access and
+     every replacement involves either a crane or a very careful crew. It also
+     means the entire system bakes in direct sun year-round. We stock for
+     packaged units here in a way we don't in any other metro."
+
+  ⚠ HEAT-SAFETY TRIAGE — a genuine operational differentiator worth publishing
+    "During Phoenix summers we triage emergency calls by heat-exposure risk,
+     not by call order. Households with infants, elderly residents, or anyone
+     with a medical condition affected by heat move to the front of the queue,
+     and we'll say so on the phone if you're being moved back for that reason.
+     Extreme heat is a genuine medical emergency in this metro and we schedule
+     like it is."
+
+  EQUIPMENT & BUILDINGS
+    Packaged rooftop units (residential) · Split systems in two-story homes ·
+    Commercial RTUs · Ductless for additions and casitas
+
+  WHERE WE WORK
+    Cities: Phoenix · Scottsdale · Mesa · Tempe · Chandler · Gilbert ·
+      Glendale · Peoria · Surprise · Avondale
+    Corridors: I-10 · Loop 101 · Loop 202 · SR-51
+
+  SAMPLE TESTIMONIAL  ⚠ INVENTED
+    ★★★★★ "118 degrees, unit died at 4pm on a Saturday, and we have a
+    two-year-old. They moved us up the queue because of that, told us
+    straight it'd be 90 minutes, and were there in 80."
+    — R. Okonkwo, Chandler · Emergency AC repair, July 2025
+
+  5 Phoenix-specific FAQs · Nearby metros · Final CTA
+
+################################################################################
+##  §6  FORMS
+################################################################################
+
+FORM A — SERVICE REQUEST (modal + inline; the primary form)
+  Heading: "Tell us what you need."
+  Sub:     "We'll call you back the same business day. Dispatch is answered
+            24/7 if it can't wait."
+  Fields:
+    Name .................... text ..... REQUIRED
+    Phone ................... tel ...... REQUIRED
+    Email ................... email .... optional
+    Service address ......... text ..... optional
+    Metro ................... select ... REQUIRED  (10 metros + "Not listed")
+    How can we help? ........ select ... REQUIRED
+        Repair · Maintenance · Replacement or installation ·
+        Emergency service · General question
+    Notes ................... textarea . optional
+  Consent line (NEW — the reference had none, which is a compliance gap):
+    "By submitting you agree we may contact you about your request by phone,
+     text or email. Message rates may apply. See our Privacy Policy."
+  Submit: "Request Service"
+  Success: "Got it. We'll call you back today." + the phone number as a
+    fallback.
+  Anti-spam: honeypot + timestamp check. NOT a visible CAPTCHA.
+
+FORM B — NATIONAL ACCOUNTS INQUIRY (long-form, qualified)
+  Heading: "Start with a portfolio review."
+  Sub:     "No charge, no obligation. We'll walk your site list with you and
+            tell you honestly which locations we can serve well."
+  Fields:
+    Name · Work email (REQUIRED) · Phone · Company (REQUIRED) ·
+    Role/title · Number of locations (select: 1–4 / 5–19 / 20–49 / 50–199 /
+      200+) · States or metros of operation (textarea) ·
+    Primary equipment type (multi-select: Packaged RTU / Split systems /
+      PTAC / Chiller / Boiler / Mixed / Not sure) ·
+    What's driving the review? (textarea)
+  Submit: "Request Portfolio Review"
+  Routes to accounts@ — a different inbox and a different SLA than Form A.
+
+################################################################################
+##  §7  PROOF & SOCIAL PROOF   ⚠ ALL PLACEHOLDER
+################################################################################
+
+STATS
+  17 Years in service · 2009 Founded · 10 Metros served · 190+ Technicians ·
+  38 States licensed · 41,000+ Jobs completed · 4.9 Average rating ·
+  2,400+ Verified reviews · 24/7 Dispatch answered
+
+  The reference used "230+ reviews / 4.8 Google / 5.0 Yelp / 25 years /
+  three generations / family-owned". None of that transfers — a national
+  operator's proof stack is scale, coverage, licensing and consistency, not
+  longevity and family ownership. This is the correct substitution.
+
+CREDENTIALS
+  · Licensed contractor in every state of operation  [numbers = placeholders]
+  · General liability + workers' compensation, COI on request
+  · EPA Section 608 certified technicians
+  · Manufacturer-authorized service for primary lines  [VERIFY — factual claim]
+
+WHAT WE DELIBERATELY DON'T CLAIM  (inherited from the reference, kept)
+  · No arrival-time guarantee
+  · No awards or trade-association badges we don't hold
+  · No "voted best" claims
+  · No discounts, coupons, countdown timers or scarcity mechanics
+  · No individual review quotes we can't attribute to a verified reviewer
+
+TESTIMONIALS — 3 site-wide + 1 per metro page. ALL currently invented sample
+  copy and labeled as such in the source. Structure to keep:
+    ★★★★★ / 2–3 sentence quote naming a specific problem and outcome /
+    Name, City · Job type · Date
+  Do not publish until real. See §0.
+
+################################################################################
+##  §8  FAQ LIBRARY
+################################################################################
+
+Pattern: exactly 6 accordion rows per page (5 on metro pages). Questions are
+objection-shaped, answers are 40–90 words and lead with the direct answer.
+
+GLOBAL OBJECTIONS THE SITE MUST ANSWER (appearing across pages)
+  · "Are you a real company or a lead broker?"        → /  /about/
+  · "Will you upsell me?"                             → repair pages
+  · "Why won't you give me a price on the phone?"     → repair pages
+  · "Can you actually cover all my locations?"        → national accounts
+  · "How fast will you get here?"                     → every page
+  · "Are you licensed in my state?"                   → /about/ metro pages
+  · "What if you didn't install it?"                  → systems pages
+  · "Is the maintenance plan worth it?"               → /maintenance-plan/
+
+REPRESENTATIVE ANSWERS (voice reference — write the rest to match)
+
+  Q: Why won't you quote a repair price over the phone?
+  A: Because we'd be guessing, and guesses get revised upward once the tech is
+     on site. Two systems with identical symptoms routinely need different
+     repairs. What we will tell you on the phone is the diagnostic fee, whether
+     it credits toward the repair, and roughly what a repair of that type
+     typically runs. Then you get a real number in writing before any work.
+
+  Q: Will you push me toward replacement?
+  A: No. If a repair is the right call we'll say so, including on older
+     equipment. You'll get both numbers and the reasoning. The pattern to watch
+     for from any contractor is a modest repair quoted alongside a replacement
+     with no middle option — that's a sales script, not a diagnosis.
+
+  Q: Do you actually employ your technicians, or subcontract?
+  A: We employ them. Every technician on a SmartgrowInfotech job is on our
+     payroll, holds the license their state requires, and works to the same
+     documented process. We use licensed trade partners for adjacent scopes —
+     electrical service upgrades, roofing around a curb — and we tell you when
+     we do.
+
+  Q: What if my location is outside your ten metros?
+  A: We'll tell you. If you're just outside a service radius we can often still
+     help. If you're genuinely far outside it, we'll say so rather than
+     accepting the job and subcontracting it. For multi-site operators we'll
+     map which of your locations we can serve well before you sign anything.
+
+################################################################################
+##  §9  SEO & METADATA
+################################################################################
+
+TITLE PATTERNS
+  Home        SmartgrowInfotech | Nationwide HVAC Service & Repair
+  Service     AC Repair, Maintenance & Installation | SmartgrowInfotech
+  Sub-service AC Repair — Diagnosed Before We Quote | SmartgrowInfotech
+  System      Ductless Mini-Splits — Installation & Service | SmartgrowInfotech
+  Metro       HVAC Service in Phoenix, AZ | SmartgrowInfotech
+  Commercial  National HVAC Accounts — Multi-Site Programs | SmartgrowInfotech
+  Company     About — Nationwide HVAC, Local Technicians | SmartgrowInfotech
+  Separator: consistently " | " for the brand suffix, " — " for the modifier.
+  ⚠ The reference mixed "—", "·" and "|" inconsistently. We don't.
+
+META DESCRIPTION PATTERN
+  1–2 sentences, ~150–158 chars. Always contains: the service, "nationwide" or
+  the metro name, and one trust token (licensed / 24/7 dispatch / 10 metros).
+
+URL CONVENTIONS
+  Lowercase, hyphenated, trailing slash, semantic nesting, max 4 levels.
+  /services/<pillar>/<action>/ · /hvac-systems/<system>/ ·
+  /commercial/<program>/ · /service-areas/<metro-slug>/ · /blog/<slug>/
+  Metro slugs: dallas-fort-worth · houston · phoenix · los-angeles · denver ·
+  chicago · philadelphia · new-york · atlanta · miami
+
+SCHEMA.ORG  (Next.js App Router — emit as JSON-LD per route)
+  Site-wide:   Organization (NOT LocalBusiness — we're national) with
+               areaServed listing the 10 metros
+  Metro pages: LocalBusiness + HVACBusiness, one per metro, each with its own
+               @id, address and geo — this is the correct national pattern
+  Service pages: Service with provider → Organization @id
+  All pages:  BreadcrumbList + WebPage
+  FAQ pages:  FAQPage  ← THE REFERENCE OMITTED THIS DESPITE ~350 Q&A PAIRS.
+               Biggest free win available. Implement it.
+  Blog posts: BlogPosting with real author and dates
+  AggregateRating: DO NOT EMIT until review data is real and verifiable.
+
+INTERNAL LINKING
+  · Full mega-menu (~55 links) + footer (~28) on every page
+  · Coverage strip (10 metros) on every service, system and commercial page
+  · Every sub-service page cross-links its two siblings
+  · Every system page cross-links 4 sibling systems
+  · Every metro page links 3 nearby metros + the hub
+  · Category hubs link down; children link up via breadcrumb
+  · Blog posts link inline to matching service and system pages
+  Target: zero orphan pages.
+
+ROBOTS.TXT
+  Allow all. Declare sitemap. Explicitly allow GPTBot, ChatGPT-User,
+  PerplexityBot, ClaudeBot, anthropic-ai — the reference did this deliberately
+  and it's a sound AEO decision worth copying.
+
+AEO (ANSWER-ENGINE OPTIMIZATION)
+  Keep the reference's two devices, both of which are genuinely effective:
+    1. The dense quotable intro paragraph on every metro page (~110 words,
+       naming company, years, services, cities, licensing).
+    2. Direct-answer-first FAQ construction.
+
+################################################################################
+##  §10  CONTENT PATTERNS & TONE
+################################################################################
+
+VOICE — five adjectives with examples
+
+  1. DIRECT / ANTI-MARKETING
+     "We don't publish repair prices, because a price before a diagnosis is a
+      guess."
+     "A national program that quietly subcontracts your Boise location to
+      whoever answered the phone is not a national program — it's a markup."
+
+  2. TECHNICALLY SPECIFIC
+     "We put a probe in the flue and measure CO, O₂, CO₂, flue temperature and
+      combustion efficiency."
+     "A system that runs 2,000 hours a year in Atlanta runs closer to 3,500
+      here."
+
+  3. OPERATIONALLY CONFIDENT (the national voice)
+     "Same diagnostic process, same reporting format, same escalation path —
+      in Dallas, in Denver, in Miami."
+
+  4. WILLING TO NAME ITS OWN LIMITS
+     "We will tell you which of your locations we cannot serve well."
+     "There are markets we don't serve well and jobs we're not the right fit
+      for."
+
+  5. PLAIN-SPOKEN EXPLANATORY
+     "How ductless works, in plain English."
+     "Your AC cools; it was never designed to dry."
+
+HEADLINE FORMULAS
+  a) "<Service> — <differentiator>."          AC repair — diagnosed before we quote.
+  b) Triadic fragments.                       One vendor. Every market. One standard.
+  c) Direct questions.                        Repair or replace?
+  d) "Pick your <noun>."                      Pick your path. / Pick your plan.
+  e) Em-dash qualifier tails.                 "— the answer for older homes."
+
+CTA VERBS
+  Primary: Schedule Service · Call (888) 555-0142 · Request Service ·
+    Request Portfolio Review · Start Essential / Start Complete ·
+    Get an estimate
+  Navigational: Explore <X> · See plans · See how · Read article ·
+    View all systems
+
+PERSUASION DEVICES (inherited, and correct)
+  · Anti-urgency as the trust signal — refusing an arrival guarantee
+  · Named-but-unbranded competitor contrast — "referral network wearing a
+    national badge"
+  · Price transparency where honest (installs), refusal where not (repairs)
+  · Volunteered downsides — ductless head aesthetics, dehumidifier ≠
+    waterproofing, "almost none need all four"
+  · Anchoring — repair cost beside replacement cost, always
+
+WHAT WE NEVER DO
+  · No discounts, coupons, countdown timers, "only 3 slots left"
+  · No exclamation marks
+  · No arrival-time guarantees
+  · No stock-photo technician-with-clipboard-and-thumbs-up
+  · No superlatives we can't source
+  · No published repair pricing
+  · No claim about licensing, certification or dealer status without proof
+
+DELIBERATE IMPROVEMENTS OVER THE REFERENCE
+  1. Real people. The reference claimed "family-owned" across 60 pages while
+     naming zero humans and showing zero faces. We add a leadership block and
+     metro manager names. This is the single biggest credibility gap they had.
+  2. Consent language on forms. They had none.
+  3. FAQPage schema. They had ~350 Q&A pairs and no schema.
+  4. Correct national schema — Organization + per-metro LocalBusiness, rather
+     than one LocalBusiness node cloned onto all 60 pages including the privacy
+     policy.
+  5. Working links. Every CTA points where it says it points.
+  6. Internally consistent numbers. One source of truth in config; no page says
+     25 years while another says 24+.
+  7. A careers page. 190 technicians and no hiring funnel makes no sense.
+  8. An accessibility statement.
+
+################################################################################
+##  §11  NOT YET WRITTEN — SPEC FOR THE REMAINING 37 PAGES
+################################################################################
+
+Every remaining page follows one of five templates already established above.
+Once you approve the voice, generating these is mechanical.
+
+TEMPLATE B — SERVICE ACTION PAGE (13 remaining)
+  breadcrumb → hero with inline form → brand band → 6-card symptom/why/signs
+  grid → 4 numbered process steps → 3 numbered cost drivers + phone note →
+  2 sibling cards → coverage strip → 6 FAQs → final CTA
+  Applies to: heating/furnace-repair · heating/heat-pump-repair ·
+    all 4 IAQ children · all 4 water-heater children
+
+TEMPLATE C — SYSTEM PAGE (7 remaining)
+  breadcrumb → hero with inline form → brand band → "What it is" 2-para
+  explainer → 3 benefit cards → brands → 4 sizing decisions → 3 install scope
+  drivers + price band → 2 service cards → 4 cross-links → coverage → 6 FAQs
+  → final CTA
+  Applies to: heat-pumps · central-hvac-systems · zoning-systems · ptac-units ·
+    water-source-heat-pumps · rooftop-units · smart-thermostats
+
+TEMPLATE D — COMMERCIAL PAGE (6 remaining)
+  breadcrumb → hero with inline form → "What we do" → 3 "why this audience"
+  cards → equipment served → 4 engagement steps → 3 pricing factors →
+  2 related cards → 4 cross-links → coverage → 6 FAQs → final CTA
+  Applies to: property-management · multifamily · hospitality ·
+    light-commercial · rooftop-replacement · maintenance-contracts
+
+TEMPLATE E — METRO PAGE (8 remaining)
+  breadcrumb → hero with distance/context badge → map card → AEO intro
+  paragraph (~110 words) → 2-paragraph "why this metro is different" →
+  9 service chips → buildings + geography panels → 1 testimonial →
+  5 metro FAQs → 3 nearby metros → final CTA
+  Applies to: houston · miami · atlanta · los-angeles · chicago · denver ·
+    philadelphia · new-york
+
+  EACH METRO'S ANGLE IS ALREADY DECIDED (§2). Write to it:
+    Houston — dehumidification over cooling; slab foundations; hurricane prep
+    Miami — salt-air corrosion; high-rise condo boards; code tie-downs
+    Atlanta — crawlspace ductwork; pollen season; humidity in both seasons
+    Los Angeles — no ductwork; Title 24; ductless retrofit; wildfire filtration
+    Chicago — steam and hydronic boilers; two-flats; AFUE conversions
+    Denver — altitude derating; evaporative-to-refrigerated conversions;
+      winter dryness
+    Philadelphia — rowhomes; oil-to-gas; no duct space; historic districts
+    New York — PTAC and WSHP; building access; freight elevators; board approval
+
+STANDALONE PAGES (3 remaining)
+  /financing/ — Template: hero → partner card → 3-col "what it covers /
+    who qualifies / why finance" → 3 steps → 6 FAQs → final CTA
+    ⚠ You need an actual financing partner before this page can be written.
+  /reviews/ — blocked until real review data exists. See §0.
+  /careers/ — NEW. hero → why work here → open roles by metro → benefits →
+    apprenticeship/EPA-608 support → application form.
+
+LEGAL (3 remaining)
+  /privacy-policy/ — must be stronger than the reference's. Needs: CCPA/CPRA
+    (California — we serve LA), TDPSA (Texas), plus SMS consent language since
+    we take phone numbers. Have counsel review.
+  /terms/
+  /accessibility/ — NEW.
+
+BLOG (4 remaining)
+  /blog/ index + 3 cornerstone posts, retargeted national:
+    1. "Ductless vs. central AC for homes without ductwork" (LA/Philly angle)
+    2. "How multi-site operators should structure an HVAC contract"
+       (the national-accounts lead magnet)
+    3. "Why your AC cools but the house still feels clammy"
+       (Houston/Miami/Atlanta dehumidification)
+
+################################################################################
+##  §12  OPEN QUESTIONS FOR YOU
+################################################################################
+
+  1. MAINTENANCE PRICING — flat national ($189/$259) or per-metro? I've written
+     flat "from" pricing. Real HVAC labor varies 40–60% across these metros.
+  2. INSTALL BRANDS — I substituted Carrier/Trane/Lennox/Daikin for the
+     reference's regional mix. What are your actual dealer agreements? This is
+     a factual claim, not copy.
+  3. FINANCING PARTNER — the reference used NEIF. Who's yours? /financing/ is
+     blocked without this.
+  4. REAL NAP — phone, address, entity name, state license numbers.
+  5. LEADERSHIP — I want to add named people with photos. That's the reference's
+     biggest weakness and our easiest win. Who can we name?
+  6. SPANISH — Houston, Phoenix, Miami, LA and Dallas all have large Spanish-
+     speaking markets. Worth scoping an es-US locale?
+  7. THE HVAC/IT QUESTION, ONE MORE TIME — SmartgrowInfotech reads as a
+     software company and this is an HVAC site. If this is a demo build or a
+     white-label for a client, say so now and I'll structure the config so the
+     brand swaps out in one file rather than threading through 60 pages.
+
+================================================================================
+END OF contentReference.txt  (SmartgrowInfotech)
+================================================================================

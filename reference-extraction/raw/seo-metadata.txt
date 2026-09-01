@@ -1,0 +1,454 @@
+﻿PAGE: about
+  TITLE: About — Family-Owned HVAC in Hoboken Since 2001 · Tanous HVAC
+  DESC : Tanous Heating & Air Conditioning has been family-owned in Hoboken since 2001. 24+ years of HVAC service across Hudson County. NJ licensed. 230+ five-star...
+  CANON: https://www.tanousnj.com/about/
+  H1   : Family-owned in Hoboken since 2001.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+
+PAGE: blog
+  TITLE: Blog — HVAC Guidance for Hudson County · Tanous HVAC
+  DESC : HVAC blog for Hoboken, Jersey City, and Hudson County homes and buildings. Brownstone AC options, condo rooftop replacements, tankless water heaters.
+  CANON: https://www.tanousnj.com/blog/
+  H1   : HVAC guidance for Hudson County homes & buildings.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+
+PAGE: blog__air-conditioning-options-hoboken-brownstones
+  TITLE: AC Options for Hoboken Brownstones — Ductless vs. PTAC vs...
+  DESC : A practical guide to AC options for Hoboken brownstones — ductless mini-splits, high-velocity systems, PTAC. Real pricing, install constraints, and decision...
+  CANON: https://www.tanousnj.com/blog/air-conditioning-options-hoboken-brownstones/
+  H1   : AC options for Hoboken brownstones: a practical guide.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem"
+
+PAGE: blog__condo-rooftop-replacement-hoboken-property-managers
+  TITLE: Replacing a Rooftop HVAC in a Hoboken Condo — What...
+  DESC : A complete guide to commercial rooftop HVAC replacement in Hoboken condo buildings — crane work, NJ permits, HOA board approvals, realistic timelines and costs.
+  CANON: https://www.tanousnj.com/blog/condo-rooftop-replacement-hoboken-property-managers/
+  H1   : Replacing a rooftop HVAC unit in a Hoboken condo: what to know.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem"
+
+PAGE: blog__tankless-water-heaters-older-jersey-city-buildings
+  TITLE: Tankless Water Heaters in Older Jersey City Buildings —...
+  DESC : When tankless water heaters make sense in older Jersey City row homes — sizing, gas line capacity, basement constraints, brand choice, and real install costs.
+  CANON: https://www.tanousnj.com/blog/tankless-water-heaters-older-jersey-city-buildings/
+  H1   : Tankless water heaters in older Jersey City buildings.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem"
+
+PAGE: commercial
+  TITLE: Commercial HVAC — Condo Buildings, Property Management...
+  DESC : Commercial HVAC for Hudson County condo buildings, hotels, property management, and light commercial. Rooftop replacement with crane and permit...
+  CANON: https://www.tanousnj.com/commercial/
+  H1   : Commercial HVAC for Hudson County condo buildings, hotels, and offices.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","Service"
+
+PAGE: commercial__condo-buildings
+  TITLE: Condo Building HVAC Services in Hoboken & Jersey City —...
+  DESC : HVAC service for Hoboken and Jersey City condo buildings. HOA contracts, per-unit PTAC programs, common-area systems, freight elevator coordination. NJ...
+  CANON: https://www.tanousnj.com/commercial/condo-buildings/
+  H1   : HVAC service for Hoboken & Jersey City condo buildings.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: commercial__hospitality
+  TITLE: HVAC for Hotels & Restaurants in Hoboken & Hudson County —...
+  DESC : HVAC service for Hoboken and Hudson County hotels, restaurants, and hospitality businesses. PTAC hotel programs, restaurant rooftop units, kitchen...
+  CANON: https://www.tanousnj.com/commercial/hospitality/
+  H1   : HVAC for hotels, restaurants & hospitality.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: commercial__light-commercial
+  TITLE: HVAC for Offices, Retail & Light Commercial in Hoboken...
+  DESC : HVAC for offices, retail storefronts, and light commercial buildings in Hoboken, Jersey City, and Hudson County NJ. After-hours service, predictable...
+  CANON: https://www.tanousnj.com/commercial/light-commercial/
+  H1   : HVAC for offices, retail & light commercial.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: commercial__maintenance-contracts
+  TITLE: Commercial HVAC Maintenance Contracts in Hoboken & Hudson...
+  DESC : Commercial HVAC maintenance contracts across Hoboken, Jersey City, and Hudson County NJ. Quarterly visits, per-unit pricing, priority emergency response...
+  CANON: https://www.tanousnj.com/commercial/maintenance-contracts/
+  H1   : Commercial HVAC maintenance contracts.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: commercial__property-management
+  TITLE: HVAC for Property Management Companies in Hoboken & Hudson...
+  DESC : Multi-property HVAC contracts for property management companies in Hoboken, Jersey City, and Hudson County NJ. Consolidated invoicing, emergency response...
+  CANON: https://www.tanousnj.com/commercial/property-management/
+  H1   : Multi-property HVAC contracts for property managers.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: commercial__rooftop-replacement
+  TITLE: Commercial Rooftop HVAC Replacement in Hoboken & Hudson...
+  DESC : Commercial rooftop unit replacement across Hoboken, Jersey City, and Hudson County NJ. Crane lifts, permits, police-coordinated street closures. The work...
+  CANON: https://www.tanousnj.com/commercial/rooftop-replacement/
+  H1   : Commercial rooftop replacement — the work other contractors decline.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: contact
+  TITLE: Contact — Phones Answered 24/7 · Tanous HVAC
+  DESC : Contact Tanous Heating & Air Conditioning in Hoboken NJ. Phones answered 24/7. 4 14th St #501. (201) 245-5151. Same-day callback on web forms.
+  CANON: https://www.tanousnj.com/contact/
+  H1   : Get in touch.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+
+PAGE: emergency-hvac
+  TITLE: Emergency HVAC — 24/7 Phones Answered in Hoboken & Jersey...
+  DESC : Emergency HVAC service across Hudson County, NJ. Phones answered 24/7. No fake arrival-time promises — just an honest answer about when we can be there.
+  CANON: https://www.tanousnj.com/emergency-hvac/
+  H1   : Emergency HVAC across Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+
+PAGE: financing
+  TITLE: HVAC Financing — NEIF Energy-Efficiency Financing in NJ ·...
+  DESC : HVAC financing through National Energy Improvement Fund (NEIF) for Hudson County NJ residential. Heat pumps, tankless water heaters, high-efficiency...
+  CANON: https://www.tanousnj.com/financing/
+  H1   : HVAC financing without the runaround.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+
+PAGE: home
+  TITLE: Tanous HVAC | HVAC in Hoboken & Jersey City
+  DESC : Tanous Heating & Air Conditioning serves Hoboken, Jersey City, and Hudson County NJ with heating, cooling, water heater, and emergency HVAC service.
+  CANON: https://www.tanousnj.com/
+  H1   : Hoboken HVAC for homes, condos & commercial buildings.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem"
+
+PAGE: hvac-systems
+  TITLE: HVAC Systems — Ductless, Heat Pumps, PTAC, Rooftop ·...
+  DESC : Every major HVAC system for Hoboken, Jersey City, and Hudson County NJ — ductless mini-splits, heat pumps, central HVAC, PTAC, rooftop units, water-source...
+  CANON: https://www.tanousnj.com/hvac-systems/
+  H1   : Every major HVAC system for Hoboken, Jersey City & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","Service"
+
+PAGE: hvac-systems__central-hvac-systems
+  TITLE: Central HVAC Systems in Hoboken & Hudson County —...
+  DESC : Central HVAC installation across Hoboken, Jersey City, and Hudson County NJ. Split-system AC + furnace, ducted heat pumps. Manual J right-sized, NJ licensed.
+  CANON: https://www.tanousnj.com/hvac-systems/central-hvac-systems/
+  H1   : Central HVAC for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: hvac-systems__ductless-mini-splits
+  TITLE: Ductless Mini-Splits in Hoboken & Hudson County — Fujitsu...
+  DESC : Ductless mini-split installation, repair, and maintenance across Hoboken, Jersey City, and Hudson County NJ. Fujitsu specialist for brownstones, condos, and...
+  CANON: https://www.tanousnj.com/hvac-systems/ductless-mini-splits/
+  H1   : Ductless mini-splits for Hoboken brownstones, condos & row homes.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: hvac-systems__heat-pumps
+  TITLE: Heat Pumps in Hoboken & Hudson County — Cold-Climate Cool...
+  DESC : Heat pump installation across Hoboken, Jersey City, and Hudson County NJ. Cold-climate ductless and ducted heat pumps. NJ utility incentives, NEIF financing.
+  CANON: https://www.tanousnj.com/hvac-systems/heat-pumps/
+  H1   : Heat pumps — one system for cool and heat.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: hvac-systems__ptac-units
+  TITLE: PTAC Units in Hoboken & Jersey City Condos — Friedrich...
+  DESC : PTAC unit replacement and repair across Hoboken, Jersey City, and Hudson County NJ. Friedrich, Amana, GE, LG. High-rise condos and hotels. NJ licensed.
+  CANON: https://www.tanousnj.com/hvac-systems/ptac-units/
+  H1   : PTAC replacement for Hoboken & Jersey City condos.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: hvac-systems__rooftop-units
+  TITLE: Commercial Rooftop HVAC in Hoboken & Hudson County — Crane...
+  DESC : Commercial rooftop HVAC installation, replacement, and service across Hoboken, Jersey City, and Hudson County NJ. Crane lifts, permits, police-coordinated...
+  CANON: https://www.tanousnj.com/hvac-systems/rooftop-units/
+  H1   : Commercial rooftop HVAC for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: hvac-systems__water-source-heat-pumps
+  TITLE: Water-Source Heat Pumps in Hoboken & Jersey City...
+  DESC : Water-source heat pump service across Hoboken and Jersey City high-rise buildings. Per-unit replacement, building loop maintenance, condo specialty. NJ...
+  CANON: https://www.tanousnj.com/hvac-systems/water-source-heat-pumps/
+  H1   : Water-source heat pumps for mid- & high-rise condo buildings.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: hvac-systems__zoning-systems
+  TITLE: HVAC Zoning Systems in Hoboken & Hudson County —...
+  DESC : HVAC zoning systems for multi-floor Hoboken brownstones, townhomes, and Hudson County homes. Solve hot-upstairs / cold-downstairs problems. NJ licensed.
+  CANON: https://www.tanousnj.com/hvac-systems/zoning-systems/
+  H1   : Zoning for multi-floor Hoboken homes.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: maintenance-plan
+  TITLE: Maintenance Plan — 5/yr · Two visits a year · Tanous HVAC
+  DESC : HVAC maintenance plans starting at $185/yr for Hoboken, Jersey City, and Hudson County. Spring AC + fall heating tune-ups. Family-owned since 2001.
+  CANON: https://www.tanousnj.com/maintenance-plan/
+  H1   : Two visits a year. Priority service. From $185/yr.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+
+PAGE: privacy-policy
+  TITLE: Privacy Policy | Tanous Heating & Air Conditioning
+  DESC : Privacy policy for Tanous Heating & Air Conditioning in Hoboken, NJ. Learn how website form and contact information is used." />
+	<link rel="canonical" href="https://www.tanousnj.com/privacy-policy/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Privacy Policy | Tanous Heating & Air Conditioning" />
+	<meta property="og:description" content="Privacy policy for Tanous Heating & Air Conditioning in Hoboken, NJ. Learn how website form and contact information is used." />
+	<meta property="og:url" content="https://www.tanousnj.com/privacy-policy/" />
+	<meta property="og:site_name" content="Tanous Heating & Air Conditioning" />
+	<meta property="article:modified_time" content="2026-06-08T22:23:00+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="alternate" type="application/rss+xml" title="Tanous Heating & Air Conditioning » Feed" href="https://www.tanousnj.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tanous Heating & Air Conditioning » Comments Feed" href="https://www.tanousnj.com/comments/feed/" />
+<script id="tanous-ga4-events
+  CANON: https://www.tanousnj.com/privacy-policy/
+  H1   : Privacy Policy
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+
+PAGE: reviews
+  TITLE: Reviews — 230+ Five-Star Reviews on Google & Yelp · Tanous...
+  DESC : 4.8 on Google. 5.0 on Yelp. 230+ five-star reviews from Hudson County customers since 2001.
+  CANON: https://www.tanousnj.com/reviews/
+  H1   : 230+ five-star reviews across Google and Yelp.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+
+PAGE: service-areas
+  TITLE: Service Areas — HVAC across Hudson & Bergen County, NJ ·...
+  DESC : HVAC service across 10 cities in Hudson & Bergen County, NJ — Hoboken, Jersey City, Weehawken, Union City, West New York, North Bergen, Edgewater, Cliffside...
+  CANON: https://www.tanousnj.com/service-areas/
+  H1   : HVAC service across Hudson & Bergen County, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+
+PAGE: service-areas__cliffside-park
+  TITLE: HVAC in Cliffside Park NJ — Tanous HVAC
+  DESC : Cliffside Park heating, cooling, and emergency HVAC. Anderson Avenue corridor, Palisade Avenue homes. 25 years, family-owned, 230+ ★ reviews.
+  CANON: https://www.tanousnj.com/service-areas/cliffside-park/
+  H1   : HVAC services in Cliffside Park, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: service-areas__edgewater
+  TITLE: HVAC in Edgewater NJ — High-Rise PTAC & Ductless — Tanous HVAC
+  DESC : Edgewater HVAC — high-rise PTAC, ductless, central air specialists. River Road condos, City Place, Edgewater Place. 25 years, 230+ ★ reviews.
+  CANON: https://www.tanousnj.com/service-areas/edgewater/
+  H1   : HVAC services in Edgewater, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: service-areas__fort-lee
+  TITLE: HVAC in Fort Lee NJ — Tanous HVAC
+  DESC : Fort Lee HVAC contractor — high-rise condos, single-family, townhomes. Main Street, Lemoine Avenue, GW Bridge area. 25 years, 230+ ★ reviews.
+  CANON: https://www.tanousnj.com/service-areas/fort-lee/
+  H1   : HVAC services in Fort Lee, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: service-areas__guttenberg
+  TITLE: HVAC in Guttenberg NJ — Tanous HVAC
+  DESC : Guttenberg HVAC — AC, heating, water heaters, PTAC. Galaxy Towers area, Boulevard East condos, Bergenline walk-ups. Family-owned 25 yrs, 230+ ★.
+  CANON: https://www.tanousnj.com/service-areas/guttenberg/
+  H1   : HVAC services in Guttenberg, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: service-areas__hoboken
+  TITLE: HVAC in Hoboken NJ — AC, Heating, Ductless, PTAC — Tanous HVAC
+  DESC : Family-owned HVAC for Hoboken, NJ. 25 years serving brownstones, row homes, condos, and high-rises. Fujitsu ductless specialty, PTAC for high-rises. 230+ ★...
+  CANON: https://www.tanousnj.com/service-areas/hoboken/
+  H1   : HVAC services in Hoboken, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: service-areas__jersey-city
+  TITLE: HVAC in Jersey City NJ — 24/7 Service — Tanous HVAC
+  DESC : HVAC contractor for Jersey City. Downtown, Journal Square, The Heights, Greenville. Family-owned, 25 years, 230+ ★ reviews. Same-day service, 24/7 emergency.
+  CANON: https://www.tanousnj.com/service-areas/jersey-city/
+  H1   : HVAC services in Jersey City, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: service-areas__north-bergen
+  TITLE: HVAC in North Bergen NJ — Tanous HVAC
+  DESC : North Bergen HVAC — AC, heating, water heaters, IAQ. Tonnelle Avenue, Kennedy Boulevard, residential single-family and multi-family. 230+ ★ reviews.
+  CANON: https://www.tanousnj.com/service-areas/north-bergen/
+  H1   : HVAC services in North Bergen, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: service-areas__union-city
+  TITLE: HVAC in Union City NJ — Tanous HVAC
+  DESC : Family-owned HVAC for Union City multi-family walk-ups, row homes, and condos. Bergenline corridor, The Hill, 32nd Street area. 25 years, 230+ ★ reviews.
+  CANON: https://www.tanousnj.com/service-areas/union-city/
+  H1   : HVAC services in Union City, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: service-areas__weehawken
+  TITLE: HVAC in Weehawken NJ — Tanous HVAC
+  DESC : AC, heating, ductless, and PTAC service across Weehawken NJ. Boulevard East high-rises, Hudson Heights row homes, Port Imperial condos. 25 years, 230+ ★...
+  CANON: https://www.tanousnj.com/service-areas/weehawken/
+  H1   : HVAC services in Weehawken, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: service-areas__west-new-york
+  TITLE: HVAC in West New York NJ — Tanous HVAC
+  DESC : West New York heating, cooling, and ductless from Hudson County’s most-reviewed family team. Boulevard East condos, Bergenline walk-ups, Galaxy Towers area...
+  CANON: https://www.tanousnj.com/service-areas/west-new-york/
+  H1   : HVAC services in West New York, NJ.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Place"
+
+PAGE: services
+  TITLE: HVAC Services in Hoboken & Jersey City — Tanous HVAC
+  DESC : Complete HVAC services for Hoboken, Jersey City, and Hudson County NJ. Air conditioning, heating, indoor air quality, and water heater services from a...
+  CANON: https://www.tanousnj.com/services/
+  H1   : HVAC services for Hoboken, Jersey City & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","Service"
+
+PAGE: services__air-conditioning
+  TITLE: AC Repair, Maintenance & Install in Hoboken & Jersey City...
+  DESC : Air conditioning repair, maintenance, and installation across Hoboken, Jersey City, and Hudson County NJ. Ductless mini-splits, central AC, PTAC...
+  CANON: https://www.tanousnj.com/services/air-conditioning/
+  H1   : AC repair, maintenance & install for Hoboken, Jersey City & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__air-conditioning__installation-replacement
+  TITLE: AC Installation & Replacement in Hoboken & Hudson County —...
+  DESC : Central AC, ductless mini-split, and PTAC installation across Hoboken, Jersey City, and Hudson County NJ. Manual J right-sized, NEIF financing, NJ licensed.
+  CANON: https://www.tanousnj.com/services/air-conditioning/installation-replacement/
+  H1   : AC installation & replacement for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__air-conditioning__maintenance
+  TITLE: AC Maintenance & Tune-Ups in Hoboken & Hudson County —...
+  DESC : Annual AC tune-ups across Hoboken, Jersey City, and Hudson County NJ. Single visit $185, Combo plan $245. Catches issues before they become emergency repairs.
+  CANON: https://www.tanousnj.com/services/air-conditioning/maintenance/
+  H1   : AC tune-ups & maintenance plans for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__air-conditioning__repair
+  TITLE: AC Repair in Hoboken & Hudson County NJ — Tanous HVAC
+  DESC : Same-day AC repair diagnostic across Hoboken, Jersey City, and Hudson County NJ. Central AC, ductless mini-splits, PTAC. Family-owned, NJ licensed, phones...
+  CANON: https://www.tanousnj.com/services/air-conditioning/repair/
+  H1   : AC repair for Hoboken & Hudson County — diagnosed before we quote.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__heating
+  TITLE: Heating Repair, Furnace & Boiler Service in Hoboken...
+  DESC : Furnace, boiler, and heat pump repair, maintenance, and installation across Hoboken, Jersey City, and Hudson County NJ. Family-owned, NJ licensed. Phones...
+  CANON: https://www.tanousnj.com/services/heating/
+  H1   : Furnace, boiler & heat pump service for Hoboken, Jersey City & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__heating__boiler-repair
+  TITLE: Boiler Repair in Hoboken & Hudson County — Steam...
+  DESC : Boiler repair across Hoboken, Jersey City, and Hudson County NJ. Steam, hydronic, and combi boilers. Banging radiators, pressure issues, no hot water. NJ...
+  CANON: https://www.tanousnj.com/services/heating/boiler-repair/
+  H1   : Boiler repair for Hoboken & Hudson County — old buildings welcome.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__heating__furnace-repair
+  TITLE: Furnace Repair in Hoboken & Hudson County — Tanous HVAC
+  DESC : Gas furnace repair across Hoboken, Jersey City, and Hudson County NJ. Won't ignite, short cycling, yellow flame, blower issues. NJ licensed, phones answered...
+  CANON: https://www.tanousnj.com/services/heating/furnace-repair/
+  H1   : Gas furnace repair for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__heating__installation-replacement
+  TITLE: Heating Installation in Hoboken & Hudson County — Boilers...
+  DESC : Boiler, furnace, and heat pump installation across Hoboken, Jersey City, and Hudson County NJ. Manual J right-sized, NEIF financing, NJ licensed, permits...
+  CANON: https://www.tanousnj.com/services/heating/installation-replacement/
+  H1   : Boiler, furnace & heat pump installation in Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__heating__maintenance
+  TITLE: Heating Maintenance & Tune-Ups in Hoboken & Hudson County...
+  DESC : Pre-season heating tune-ups across Hoboken, Jersey City, and Hudson County NJ. Boilers, furnaces, heat pumps. Single $185, Combo plan $245. CO safety...
+  CANON: https://www.tanousnj.com/services/heating/maintenance/
+  H1   : Heating tune-ups for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__heating__repair
+  TITLE: Heating Repair in Hoboken & Hudson County — Boilers...
+  DESC : Same-day heating repair across Hoboken, Jersey City, and Hudson County NJ. Boilers, furnaces, heat pumps, hydronic, steam. NJ licensed, phones answered 24/7.
+  CANON: https://www.tanousnj.com/services/heating/repair/
+  H1   : Heating repair for Hoboken & Hudson County — diagnosed before we quote.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__indoor-air-quality
+  TITLE: Indoor Air Quality — Air Purifiers, Humidifiers...
+  DESC : Whole-home indoor air quality solutions for Hoboken, Jersey City, and Hudson County NJ. AprilAire and Honeywell air purifiers, humidifiers, dehumidifiers...
+  CANON: https://www.tanousnj.com/services/indoor-air-quality/
+  H1   : Cleaner, healthier air for Hoboken, Jersey City & Hudson County homes.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__indoor-air-quality__air-purifiers
+  TITLE: Whole-Home Air Purifiers in Hoboken & Hudson County —...
+  DESC : Whole-home air purifier installation across Hoboken, Jersey City, and Hudson County NJ. AprilAire and Honeywell media + UV air purifiers. Family-owned since...
+  CANON: https://www.tanousnj.com/services/indoor-air-quality/air-purifiers/
+  H1   : Whole-home air purifiers for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__indoor-air-quality__dehumidifiers
+  TITLE: Whole-Home Dehumidifiers in Hoboken & Hudson County —...
+  DESC : Whole-home dehumidifier installation across Hoboken, Jersey City, and Hudson County NJ. AprilAire and Honeywell for summer humidity, basement mold, and...
+  CANON: https://www.tanousnj.com/services/indoor-air-quality/dehumidifiers/
+  H1   : Whole-home dehumidifiers for muggy Hudson County summers.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__indoor-air-quality__humidifiers
+  TITLE: Whole-Home Humidifiers in Hoboken & Hudson County —...
+  DESC : Whole-home humidifier installation across Hoboken, Jersey City, and Hudson County NJ. AprilAire bypass and steam humidifiers for dry NJ winters. NJ licensed.
+  CANON: https://www.tanousnj.com/services/indoor-air-quality/humidifiers/
+  H1   : Whole-home humidifiers for dry NJ winter air.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__indoor-air-quality__ventilation
+  TITLE: Whole-Home Ventilation (HRV & ERV) in Hoboken & Hudson...
+  DESC : HRV and ERV whole-home ventilation systems across Hoboken, Jersey City, and Hudson County NJ. Fresh-air ventilation for tight modern condos and renovated...
+  CANON: https://www.tanousnj.com/services/indoor-air-quality/ventilation/
+  H1   : Fresh-air ventilation for tightly-sealed modern homes.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__water-heaters
+  TITLE: Water Heater Repair, Install & Tankless in Hoboken...
+  DESC : Tank, tankless, and combi water heater repair, install, and maintenance for Hoboken, Jersey City, and Hudson County NJ. Rheem, Navien, A.O. Smith, Bradford...
+  CANON: https://www.tanousnj.com/services/water-heaters/
+  H1   : Water heater repair, install & tankless for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__water-heaters__installation-replacement
+  TITLE: Water Heater Installation & Replacement in Hoboken...
+  DESC : Water heater installation across Hoboken, Jersey City, and Hudson County NJ. Tank, tankless, hybrid heat pump. Rheem, Navien, A.O. Smith, Bradford White. NJ...
+  CANON: https://www.tanousnj.com/services/water-heaters/installation-replacement/
+  H1   : Water heater installation & replacement in Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__water-heaters__maintenance
+  TITLE: Water Heater Maintenance & Flushing in Hoboken & Hudson...
+  DESC : Water heater maintenance across Hoboken, Jersey City, and Hudson County NJ. Tank flushing, anode rod replacement, tankless descaling. Extends life, keeps...
+  CANON: https://www.tanousnj.com/services/water-heaters/maintenance/
+  H1   : Water heater maintenance & flushing for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__water-heaters__repair
+  TITLE: Water Heater Repair in Hoboken & Hudson County — Tank...
+  DESC : Water heater repair across Hoboken, Jersey City, and Hudson County NJ. Tank, tankless, hybrid heat pump units. Rheem, Navien, A.O. Smith, Bradford White. NJ...
+  CANON: https://www.tanousnj.com/services/water-heaters/repair/
+  H1   : Water heater repair for Hoboken & Hudson County.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: services__water-heaters__tankless-water-heaters
+  TITLE: Tankless Water Heaters in Hoboken & Hudson County — Navien...
+  DESC : Tankless water heater installation and service across Hoboken, Jersey City, and Hudson County NJ. Navien condensing units, Rheem, Rinnai. Tank-to-tankless...
+  CANON: https://www.tanousnj.com/services/water-heaters/tankless-water-heaters/
+  H1   : Tankless water heaters — the long-term play for Hudson County homes.
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem","ListItem","ListItem","Service"
+
+PAGE: terms
+  TITLE: Terms | Tanous Heating & Air Conditioning
+  DESC : Terms for using the Tanous Heating & Air Conditioning website and service request forms." />
+	<link rel="canonical" href="https://www.tanousnj.com/terms/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Terms | Tanous Heating & Air Conditioning" />
+	<meta property="og:description" content="Terms for using the Tanous Heating & Air Conditioning website and service request forms." />
+	<meta property="og:url" content="https://www.tanousnj.com/terms/" />
+	<meta property="og:site_name" content="Tanous Heating & Air Conditioning" />
+	<meta property="article:modified_time" content="2026-06-08T22:22:59+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="alternate" type="application/rss+xml" title="Tanous Heating & Air Conditioning » Feed" href="https://www.tanousnj.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tanous Heating & Air Conditioning » Comments Feed" href="https://www.tanousnj.com/comments/feed/" />
+<script id="tanous-ga4-events
+  CANON: https://www.tanousnj.com/terms/
+  H1   : Terms
+  SCHEMA: ["LocalBusiness","HVACBusiness"],"PostalAddress","AggregateRating","WebPage","BreadcrumbList","ListItem","ListItem"
+

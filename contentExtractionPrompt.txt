@@ -1,0 +1,146 @@
+================================================================================
+PROMPT 1 — REFERENCE WEBSITE: CONTENT & DATA EXTRACTION (NO DESIGN)
+How to use: replace {{REFERENCE_URL}}; optionally list extra URLs under
+{{EXTRA_PAGES}}. Paste the whole block below as your message.
+================================================================================
+
+Visit {{REFERENCE_URL}} and extract EVERYTHING about its CONTENT, INFORMATION
+and STRUCTURE. Ignore design completely: no colors, fonts, spacing, layout
+styling, animation or visual notes anywhere in the output — that is a separate
+task. I want what the site SAYS, what it OFFERS, how its information is
+ORGANIZED, and how it CONVERTS.
+
+Extra pages to include: {{EXTRA_PAGES}}
+
+--------------------------------------------------------------------------------
+METHOD (follow in order; report which steps worked)
+--------------------------------------------------------------------------------
+1. Fetch the homepage. Discover every internal page from: navbar links, footer
+   links, in-page links, CTA destinations, and sitemap.xml / robots.txt if
+   reachable. Build the page list before extracting anything.
+2. Fetch every unique internal page. If there are more than 40, prioritize in
+   this order: home, services/products, pricing, about/company, case studies/
+   work, contact, FAQ, blog/resources index, careers, legal — and list the rest
+   as "not fetched".
+3. Detect JS-rendered content: if a page's server HTML is missing sections its
+   nav anchors point to (e.g. #faq exists in the nav but no FAQ text was
+   returned), (a) re-fetch with an alternate extraction method, (b) web-search
+   the site to read indexed snippets of the missing sections, (c) record
+   exactly which sections were client-rendered and only partially recovered.
+   Never fill a gap with assumptions.
+4. Check for a brand/press/media-kit page (footer links, /brand, /press,
+   /about); capture its FACTUAL content (company facts, boilerplate, naming
+   rules) — not its visual guidelines.
+5. Tag every captured item with one of: [VERBATIM] (exact text) / [SUMMARY]
+   (faithful paraphrase) / [INFERRED] (your conclusion — state the evidence).
+   Cite the source URL for every section.
+
+--------------------------------------------------------------------------------
+OUTPUT — create a downloadable file: contentReference.txt
+--------------------------------------------------------------------------------
+Structure it EXACTLY as follows:
+
+1. SITE OVERVIEW
+   Brand name · what the company does (one line) · target audiences (each
+   named with evidence) · primary conversion goal · every conversion channel
+   (booking link + provider e.g. Cal.com/Calendly, forms, email, phone,
+   WhatsApp, chat widget) · languages/regions · site type (one-pager, multi-
+   page, app-like) · total pages found vs fetched.
+
+2. PAGE INVENTORY
+   One row per page: URL · <title> · meta description · H1 · purpose · rough
+   word count · render type (server / client-side) · fetched (yes/partial/no).
+
+3. NAVIGATION MAP
+   Navbar: every link in exact order — label → destination (mark hash anchors
+   vs pages), dropdown/mega-menu contents, nav CTA label → destination,
+   logo destination. Mobile-only differences. Breadcrumb patterns.
+   Footer: every column header + every link (label → destination), legal
+   links, social platforms + URLs, newsletter presence, contact lines,
+   copyright text, badges/certifications shown.
+
+4. PAGE-BY-PAGE CONTENT (in nav order, then remaining pages)
+   For each page, list each section in order:
+   - Section name + purpose
+   - Headline [VERBATIM] and subheadline [VERBATIM]
+   - Body: faithful [SUMMARY] + word count. Verbatim excerpts of running copy
+     only when the exact wording IS the data, and kept under 15 words each.
+   - Lists, feature bullets, service names, tag chips, labels: [VERBATIM]
+   - Every number/statistic with its unit and label: [VERBATIM]
+   - CTAs: button/link label → destination
+   - Forms: every field name, placeholder, type, required?, options in
+     dropdowns, submit label, consent text, success/redirect behavior if
+     visible
+   - Media: what exists and what it depicts (photo of X / video of Y /
+     3D scene / diagram) — describe only, no asset URLs, no downloads
+   - Outbound links (destination + purpose)
+   - Repeated/duplicated content across pages (note where it recurs)
+
+5. OFFERINGS DATA (normalized across the whole site)
+   For each product/service: name · one-liner · who it is for · features/
+   scope list · deliverables · process steps with durations · timelines ·
+   pricing/tiers/plans if published (exact figures, currency, billing terms,
+   discounts, guarantees) · technologies/tools named · integrations ·
+   SLAs/support terms · what is explicitly NOT offered.
+   Also: industries served · geographies · minimum engagement · onboarding
+   steps.
+
+6. PROOF & SOCIAL PROOF
+   All stats and counters · named clients/partners/logos (names only) ·
+   testimonials: attribution as displayed (name, role, company) + [SUMMARY]
+   of what each says (no long verbatim quotes) · case studies: client,
+   problem, solution, results with numbers, services used · ratings, review
+   counts and platforms · awards, certifications, press mentions, badges ·
+   where on each page proof is placed relative to CTAs.
+
+7. PEOPLE & COMPANY
+   Founders/team: names + roles as displayed · founding year · headquarters
+   and other locations (full addresses if shown) · hours · contact channels ·
+   company size claims · careers/hiring info · culture/values statements
+   [SUMMARY] · mission/vision [SUMMARY, or VERBATIM if under 15 words].
+
+8. FAQ & OBJECTION HANDLING
+   Every FAQ question [VERBATIM] + answer [SUMMARY] + which page it sits on.
+   Any guarantees, risk-reversal offers, trial terms, refund policies.
+
+9. CONTENT ASSETS
+   Blog/resources: categories, post titles [VERBATIM], dates, authors,
+   posting frequency · lead magnets, downloads, newsletters, webinars, tools ·
+   video/podcast presence.
+
+10. SEO & METADATA
+    Title-tag pattern · meta-description pattern · OG/Twitter card presence ·
+    schema.org types detected · canonical/hreflang · URL slug conventions ·
+    internal-linking patterns · sitemap and robots findings · keywords the
+    site visibly targets (from H1/H2 phrasing).
+
+11. LEGAL & TRUST
+    Privacy, terms, cookie policy presence + [SUMMARY] of notable clauses ·
+    compliance/security claims · payment methods named · data-handling
+    promises.
+
+12. CONTENT PATTERNS & TONE
+    Tone of voice (3–5 adjectives, each with one cited example) · headline
+    formulas used · CTA verb patterns · typical section lengths · persuasion
+    devices (scarcity badges, availability notices, social-proof placement,
+    urgency) · recurring vocabulary they own · things they conspicuously
+    never say or show.
+
+13. GAPS & NOT RETRIEVABLE
+    Pages/sections that could not be fetched, were client-rendered only, or
+    were blocked — with the reason. Anything the site itself lacks that a
+    site of its type usually has.
+
+--------------------------------------------------------------------------------
+RULES
+--------------------------------------------------------------------------------
+- Never invent, round, or "complete" anything. If it isn't on the site, it
+  goes in section 13.
+- Long-form copy gets a faithful summary, not a transcript. This file is for
+  analysis and structure; their sentences are not for reuse on another site.
+- No design/style/layout/animation observations of any kind in this file.
+- Keep every claim traceable: URL + tag ([VERBATIM]/[SUMMARY]/[INFERRED]).
+- Deliver contentReference.txt as a downloadable file, then end your reply
+  with a 5-line summary of the biggest takeaways (what they sell, how they
+  convert, strongest proof, structure pattern, notable gaps).
+================================================================================

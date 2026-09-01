@@ -1,0 +1,253 @@
+﻿
+================ PAGE: blog__air-conditioning-options-hoboken-brownstones ================
+{LINK:/}Home
+ ›
+ {LINK:/blog/}Blog
+ ›
+ AC Options for Hoboken Brownstones
+Cornerstone · ~8 min read
+### AC options for Hoboken brownstones: a practical guide.
+Ductless vs. high-velocity vs. PTAC vs. window units. Which one fits which brownstone configuration — with realistic pricing, install constraints, and the questions to ask before signing a contract.
+By Tanous Heating & Air Conditioning · Updated May 2026
+If you own a Hoboken brownstone — or you’re about to buy one — eventually you face the same question: how do you put central air in a building that wasn’t designed for it? Plaster walls, no ductwork, tiny closets, original moldings worth preserving, neighbors directly above and below. The HVAC textbook answer (“run ductwork through chases”) doesn’t work in most pre-war Hoboken buildings.
+This is a problem we’ve solved hundreds of times across Hoboken Heights, Downtown, Uptown, and the brownstone belt. Here’s the practical framework we use — the options that actually work, what they cost, and how to decide.
+### The brownstone HVAC problem in plain language
+Most Hoboken brownstones were built between 1880 and 1920. They were designed for radiator heat (sometimes steam, sometimes hot-water hydronic), no AC at all, and ventilation through open windows. Adding modern central air to one of these buildings means solving three problems at once:
+- No ductwork. Standard central AC needs roughly 8–12 inches of duct space for supply trunks. Brownstone plaster walls are usually 4–6 inches deep. There’s nowhere to hide ductwork without major demo.
+- Limited closet space. An indoor air handler needs a closet about 24" × 36" with vented return. Brownstones rarely have that to spare without taking it from a bedroom.
+- Limited outdoor space. The condenser needs to live somewhere with airflow. Most brownstones have a small rear yard, a tiny balcony, or rooftop access — each with its own constraints.
+So central AC the way the textbook describes it usually isn’t practical. What works instead falls into three main categories.
+### Option 1: Ductless mini-splits (the default answer)
+Ductless mini-splits are what we install most often in Hoboken brownstones — probably 70–80% of the AC retrofits we do. {LINK:/hvac-systems/ductless-mini-splits/}Fujitsu Halcyon is our specialty; Daikin and Mitsubishi Electric are common alternatives.
+How it works: a small outdoor condenser (roughly the size of a large window AC unit) sits in your rear yard, on a balcony, or on the roof. Thin refrigerant lines — about the diameter of a garden hose — route from the condenser up to one or more indoor “heads” mounted on interior walls. Each indoor head has its own thermostat and blows conditioned air directly into the room.
+Single-zone (one outdoor + one indoor head) starts around $4,000–$7,000 installed. Multi-zone systems (one outdoor + multiple indoor heads) for a whole brownstone run $10,000–$20,000+ depending on the head count and the install complexity.
+### Why ductless works in brownstones
+- Line sets route through closets, behind moldings, or in exterior covers. No demolishing plaster walls.
+- Each room gets its own thermostat. Master bedroom at 68 while the den stays at 74 — impossible with single-thermostat central.
+- Most modern units are also heat pumps. One system handles both cooling and heating — including the brutal Hoboken February days.
+- Indoor heads are surprisingly quiet. Often quieter than a fridge. The compressor noise stays outside.
+### The trade-offs to know
+Ductless isn’t magic. The visible head on the wall — usually high on the wall, often 36" wide — is a real aesthetic compromise some owners hate. Newer indoor “cassette” styles (flush in ceiling) or floor-mount units help, but each has its own placement constraints.
+Multi-zone systems are also more expensive than people expect when they first start pricing. Five indoor heads + one larger outdoor unit + line-set routing through three floors easily hits $18,000–$22,000 once permits and electrical are included. Worth it for the comfort, but not the “cheap retrofit” the marketing sometimes suggests.
+Best fit:
+Brownstones where preserving plaster and moldings matters more than wall aesthetics. Owners who spend lots of time home (per-room thermostats really matter). Buildings with rear yards, balconies, or rooftop access for the outdoor condenser. Anyone replacing aging window units.
+### Option 2: High-velocity small-duct systems
+High-velocity small-duct systems are the “hidden” option — what you do when the plaster preservation is sacred but the look of indoor ductless heads is unacceptable. The leading brands are SpacePak and Unico.
+How it works: small flexible ducts (about 2 inches in diameter, vs. 6–10 inches for standard ducts) route through wall cavities, between floor joists, or behind crown molding. The supply registers are small 2" round outlets in the ceiling or wall — barely visible from across the room.
+An indoor air handler still lives in a mechanical closet, but the system is sized for higher air velocity and lower volume than standard central — which is what lets the small ducts work.
+### Why high-velocity works (sometimes)
+- The system is essentially invisible. 2" supply registers blend into ceilings and moldings.
+- Routes through tight spaces. Where standard ducts can’t fit, small ducts often can.
+- Even comfort across rooms. Real central system; no per-room temperature variation issues.
+### Why it’s the minority option
+High-velocity systems cost meaningfully more than ductless — typically $18,000–$35,000 installed for a whole brownstone. They also require a real mechanical closet (usually taken from a closet you currently use), and the install is more invasive than ductless because the small ducts still need to be routed through the structure.
+They’re also less efficient than modern ductless. SEER ratings of 14–16 vs. 20–30+ for ductless. Operating costs are noticeably higher.
+We install high-velocity occasionally — usually for brownstone owners doing a full renovation who want central AC with zero visible indoor equipment, and who can afford the premium. It’s the right answer maybe 5–10% of the time.
+### Option 3: PTAC units (rarely the right answer for brownstones)
+PTACs are the standard in Hoboken high-rise condos and hotels — the in-wall units mounted in metal sleeves through the exterior wall. They’re what most readers think of when they see “those window-AC-looking things” in Hoboken buildings.
+For brownstones, PTACs are usually a poor fit. They require a roughly 42" × 16" hole in an exterior wall, which is structurally and aesthetically problematic in a brownstone. They’re also noisier and less efficient than ductless. The case for them in a brownstone is roughly: “you absolutely need cooling in one room only and can’t justify a ductless install.”
+We’ll do them when it makes sense — sometimes for a single rental basement unit or an in-law suite — but it’s the wrong default. See our {LINK:/hvac-systems/ptac-units/}PTAC overview for cases where they do make sense (mostly high-rise condos and hotels).
+### Option 4: Window units (cheap, temporary, real)
+Not glamorous, but worth mentioning: window units remain the cheapest, fastest cooling solution for a brownstone. $200–$500 per unit, no install required, fully removable in winter.
+If you’re renting, selling soon, or genuinely just need cooling for a few summer months in one or two rooms, window units are a defensible choice. The downsides are well-known: noisy, inefficient, blocks the window, looks unfortunate. But the math sometimes wins.
+For owners staying long-term, the dollar-per-cooling-hour math always favors ductless eventually — usually within 3–5 years.
+### The decision framework
+Here’s how we walk a brownstone owner through the decision on an estimate visit:
+- Are you here for 5+ years? If no — window units or single-zone ductless. If yes — whole-home ductless or high-velocity worth considering.
+- How sacred is the plaster and moldings? If you’re willing to see indoor heads — ductless. If absolutely not — high-velocity small-duct.
+- Do you have rear yard / balcony / roof access for the condenser? If no — PTAC or high-velocity with creative condenser routing.
+- How many rooms need cooling? 1–2 rooms: single-zone ductless or window. 3+ rooms: multi-zone ductless or high-velocity.
+- What’s your budget? Under $7,000: single-zone ductless or window. $10,000–$20,000: multi-zone ductless. $20,000+: high-velocity worth considering.
+For most Hoboken brownstones the answer is multi-zone Fujitsu ductless. It’s why it’s 70–80% of what we install.
+### Things to check before signing any HVAC contract
+- NJ master HVAC license. Required to legally do refrigerant work in NJ. Our license is #13VH06190200.
+- Manual J load calc included. Eyeball sizing (“a 24,000 BTU should do it”) leads to oversized systems that short-cycle and dehumidify poorly.
+- Permits handled. Hoboken requires permits for HVAC work; the contractor should pull them, not leave it to you.
+- Workmanship warranty. Parts have manufacturer warranties; the labor and install should have a workmanship warranty on top — usually 1–5 years.
+- References from actual brownstone installs. Asking for 2–3 references where the contractor did a similar building in your neighborhood is reasonable. We provide them.
+### Wrapping up
+The good news: AC in a Hoboken brownstone is a solved problem. We’ve done it hundreds of times, mostly with Fujitsu ductless, occasionally with high-velocity small-duct, rarely with PTAC, and sometimes by recommending window units to someone who just doesn’t need the bigger investment.
+If you’re thinking about an AC install in a Hoboken brownstone — or you just want an honest read on what would actually work for your specific building — we do free in-home estimates with no sales pressure. Either ductless makes sense for you, or it doesn’t. We’ll tell you straight.
+{LINK:/services/air-conditioning/installation-replacement/}Learn more about AC installation or {LINK:tel:2012455151}call 201-245-5151 to schedule an estimate.
+More cornerstones
+### Other cornerstone posts.
+{LINK:/blog/condo-rooftop-replacement-hoboken-property-managers/}
+Cornerstone · ~10 min read
+### Replacing a Rooftop HVAC in a Hoboken Condo
+What property managers and condo boards need to know — crane work, NJ permits, board approval timeline, costs.
+ Read article {LINK:/blog/tankless-water-heaters-older-jersey-city-buildings/}
+Cornerstone · ~7 min read
+### Tankless Water Heaters in Older Jersey City Buildings
+Why tankless often makes sense for older row homes — sizing, gas line capacity, basement constraints, real costs.
+ Read article ### Ready for a real brownstone AC estimate?
+Free in-home consultation. Manual J load calc. No sales pressure.
+{LINK:/contact/}Schedule Service {LINK:tel:2012455151} Call 201-245-5151
+
+================ PAGE: blog__condo-rooftop-replacement-hoboken-property-managers ================
+{LINK:/}Home
+ ›
+ {LINK:/blog/}Blog
+ ›
+ Rooftop HVAC Replacement in Hoboken Condos
+Cornerstone · ~10 min read
+### Replacing a rooftop HVAC unit in a Hoboken condo: what to know.
+Crane lifts, NJ permits, police-coordinated street closures, board approvals. The full path from “our rooftop unit is failing” to “new unit is running” — with realistic timelines and costs.
+By Tanous Heating & Air Conditioning · Updated May 2026
+If you’re a property manager, HOA board member, or building owner in Hoboken, eventually one of your rooftop HVAC units will fail. And when it does, you’ll discover that rooftop unit replacement is one of the trickier construction projects in this city. Crane lifts in narrow streets, NJ permitting, police-coordinated traffic management, board approvals, freight elevator booking, tenant communication — it’s a coordination problem as much as an HVAC problem.
+We’ve replaced rooftop units across Hoboken, Jersey City, and Edgewater for 25 years. This is the practical playbook — what actually happens, in what order, and what it actually costs.
+### When does rooftop replacement become necessary?
+Commercial rooftop units (RTUs) typically last 10–20 years depending on duty cycle. Higher-runtime applications — restaurants, busy retail, buildings with kitchen exhaust — tend to be on the shorter end (10–15 years). Light-use applications — small office buildings, hospitality back-of-house — can stretch to 20+ years with good maintenance.
+Common end-of-life signs:
+- Failed compressor in a unit 15+ years old. The repair is $4,000–$8,000; the replacement is $25,000–$45,000. Past a certain age, the math heavily favors replacement.
+- Cracked heat exchanger. Unsafe to operate. Must be either replaced (large repair) or the whole unit replaced.
+- Multiple major failures in one year. Sign the unit is at end of life.
+- R-22 refrigerant. Phased out by EPA. Refilling is expensive and increasingly impossible.
+- Climbing energy bills with no usage change. Old units often run at 60–70% of original efficiency.
+Once two or more of these show up, replacement is usually the right answer. The question becomes how — which is where most contractors and building owners get stuck.
+### The unique Hoboken (and Jersey City) challenges
+Most HVAC contractors won’t take on rooftop replacement in Hoboken. Here’s what they’re avoiding:
+### Narrow streets
+Most Hoboken streets are 20–25 feet wide curb-to-curb. Crane lifts need significantly more clearance than that — with the boom extended, you’re looking at 40–60 feet of work area. This almost always means closing the street in front of the building (and sometimes the adjacent intersection) during the lift window. Which means a permit. Which means police coordination. Which means weeks of planning.
+### Building access
+Most condo buildings have one freight elevator. Booking it for a half-day rooftop project means coordinating with management for resident notice. Some buildings restrict heavy work to specific weekday windows. We work around all of it — but it takes lead time.
+### Permit complexity
+Hoboken rooftop projects typically require: mechanical permit, electrical permit, gas permit (if applicable), structural review (case-by-case for roof loading), and street-closure permit. Each has its own timeline and (sometimes) review fee. Our coordination with the Hoboken Building Department for permits is a major part of why we’re asked to do this work.
+### HOA board approvals
+Condo buildings almost universally require board approval before the work proceeds. Even if the unit is HOA-owned (rooftop common-area HVAC), the board wants to see the contractor’s insurance, license, schedule, and cost breakdown. Boards meet monthly. The approval cycle alone is 4–8 weeks in most buildings.
+### The full timeline (8–14 weeks typical)
+From initial “we need to replace this unit” to actual installation, expect the following:
+### Week 1: Initial site visit
+We tour the rooftop with the building owner or property manager. Inventory: existing unit make/model/tonnage/age, curb condition, roof access, electrical, gas (if applicable), structural concerns. Photos and notes documented. Quote written based on actual conditions, including all the unique-to-this-building factors.
+### Weeks 2–3: Quote review and board approval
+HOA board reviews the quote (often at their next monthly meeting). For more straightforward cases, an emergency vote between meetings is possible. The COI (Certificate of Insurance), W-9, and license documentation get filed with the management company. Sometimes additional bids are required by HOA bylaws — we’ll provide what’s needed.
+### Weeks 3–6: Permits and crane scheduling
+Once approved, we pull all required Hoboken permits in parallel. Mechanical permit: usually approved in 5–10 business days. Electrical and gas permits: similar timeline. Street-closure permit (if needed): often the longest, 2–4 weeks. Structural review (if needed): can be 3–6 weeks.
+Crane firm scheduled in parallel. Most Hoboken crane companies book 2–3 weeks out for non-emergency work. We have established relationships with several local crane firms.
+### Week 6 or 7: Pre-lift coordination
+Site notices posted (city requirement for street closure). Police notified for traffic management on lift day. Tenant communication: building management sends notice to residents (parking restrictions on lift day, expected duration). Old unit’s electrical and gas disconnected the day before if access permits.
+### Lift day (one day, usually 6–10 hours)
+Crane arrives early morning (typically 7am). Street closed; police on-site for traffic. Old unit lifted off the roof, lowered to street, hauled away on a flatbed. New unit lifted from a truck, set on the curb. Ducted, electrical and gas connected, started up, tested.
+Building business continues during the lift in most cases — some businesses (restaurants, retail) may need to close briefly during the actual lift sequence (maybe 30–60 minutes total). Walkthrough with building owner before the crew leaves.
+### Weeks 7–14: Inspections and final closeout
+City inspections scheduled per the permits. Final paperwork (warranty registration, manufacturer certificates) provided to the building. Any small punch-list items addressed.
+### What it actually costs
+Real numbers for Hoboken rooftop replacement projects we’ve done recently:
+- Single 5-ton RTU replacement (existing curb intact, narrow side street): $22,000–$28,000 installed, including crane and standard permits.
+- Single 7.5-ton RTU replacement (existing curb intact, slightly wider street): $28,000–$36,000.
+- 10-ton RTU replacement with new curb adapter (slight roofing rework): $38,000–$48,000.
+- 15-ton commercial replacement with police-coordinated street closure: $45,000–$58,000.
+- Multi-unit projects (3+ RTUs in one project): per-unit pricing 10–15% below single-unit rates.
+What drives variance: unit tonnage (5 to 25 tons), crane logistics (narrow vs. wide streets), curb compatibility (existing vs. new), street-closure permitting (standard vs. police escort), and whether structural review is required.
+A note on the crane line item:
+The crane itself is typically $2,500–$5,000 of the total project cost. The permit + police line item adds $1,500–$4,000. The street-closure setup and notices add another $500–$1,500. We quote these separately on the line item so you see exactly what the project logistics cost vs. the equipment itself.
+### Why most contractors decline this work
+Honest answer: the project management is harder than the HVAC. A 25-ton rooftop replacement requires the same HVAC technical skill as a 5-ton unit — but the coordination work scales nonlinearly. Permits, crane scheduling, police coordination, board approvals, tenant communication, freight elevator booking, weather contingency. Most HVAC contractors are oriented around residential work and don’t want this complexity.
+That’s where we’ve built specialty over 25 years. {LINK:/commercial/rooftop-replacement/}Our rooftop replacement service handles all of it — HVAC contractor, crane coordinator, permit puller, board communicator, all in one. The building owner gets one phone number and a project that lands on the date we promised.
+### Questions HOAs should ask before signing
+- Are crane and permits included in the quote, or are they pass-through with markup? (We include them as separate line items so the building sees exactly what each costs.)
+- Who pulls the permits — the contractor or the building owner? The contractor should. If the bid says otherwise, walk away.
+- What’s the warranty on labor and equipment? Equipment: manufacturer warranty (typically 1–10 years per component). Labor: workmanship warranty on top, usually 1–5 years. Ours is standard.
+- Have you done rooftop work on similar Hoboken/JC buildings? Reference projects from other buildings in the area is reasonable to ask. We provide them.
+- What’s the timeline contingency for permit delays? Honest answer is that street-closure permits sometimes take longer than estimated. The contractor should have a stated plan for that.
+- What happens if it rains on lift day? Crane lifts are weather-dependent. Standard policy: reschedule within a week if needed, no charge for the postponement.
+### Wrapping up
+Rooftop HVAC replacement in Hoboken is a real project — 8–14 weeks from initial site visit to final inspection, with multiple permits, crane coordination, board approvals, and street-closure logistics. The HVAC equipment portion is straightforward; the project management is what makes it complex.
+If your building has a rooftop unit nearing end of life — or one that’s already failed and you’re trying to figure out the path forward — we’d be glad to schedule a no-charge site visit and walk through the full project with the board or property manager. We’ll quote it honestly with all the logistics line-itemed so you see exactly where the dollars go.
+{LINK:/commercial/rooftop-replacement/}Learn more about our rooftop replacement service or {LINK:tel:2012455151}call 201-245-5151 to schedule a site visit.
+More cornerstones
+### Other cornerstone posts.
+{LINK:/blog/air-conditioning-options-hoboken-brownstones/}
+Cornerstone · ~8 min read
+### AC Options for Hoboken Brownstones
+Ductless vs PTAC vs central — which makes sense for which brownstone configuration. With pricing and install constraints.
+ Read article {LINK:/blog/tankless-water-heaters-older-jersey-city-buildings/}
+Cornerstone · ~7 min read
+### Tankless Water Heaters in Older Jersey City Buildings
+Why tankless often makes sense for older row homes — sizing, gas line capacity, basement constraints, real costs.
+ Read article ### Rooftop unit failing or due for replacement?
+No-charge site visit. Permits + crane + police coordination handled.
+{LINK:/contact/}Schedule Service {LINK:tel:2012455151} Call 201-245-5151
+
+================ PAGE: blog__tankless-water-heaters-older-jersey-city-buildings ================
+{LINK:/}Home
+ ›
+ {LINK:/blog/}Blog
+ ›
+ Tankless WH in Older JC Buildings
+Cornerstone · ~7 min read
+### Tankless water heaters in older Jersey City buildings.
+Why tankless often makes sense for older Jersey City row homes — sizing, gas line capacity, basement and venting constraints, and real install costs.
+By Tanous Heating & Air Conditioning · Updated May 2026
+If you own an older Jersey City row home or brownstone — The Heights, Hamilton Park, Paulus Hook, Greenville — eventually your water heater needs to be replaced. And eventually someone tells you that tankless is the upgrade you should consider.
+The advice is usually right. But the install path in an older Jersey City building is meaningfully different from a new construction install. Older buildings have specific constraints that affect whether tankless makes sense, what brand to install, and what the real cost ends up being.
+Here’s the practical version — based on hundreds of tankless installs across Jersey City’s older housing stock.
+### Why tankless makes sense (for most older homes)
+Most older Jersey City row homes have 40–50 gallon gas tank water heaters in the basement — usually 8–15 years old, sometimes much older. The tank’s on borrowed time, and the question is whether to replace in-kind or upgrade to tankless.
+Tankless wins on most criteria for older homes that you plan to keep:
+- Lifespan. Tanks: 8–12 years. Tankless: 18–25 years. Over the life of an older house, you replace one tankless instead of 2–3 tanks.
+- Endless hot water. Multi-bathroom row homes with kids constantly fight tank exhaustion. Tankless eliminates the morning “who showers first” argument entirely.
+- Lower operating cost. No standby heat loss (a tank loses heat 24/7, even when you’re not using hot water). Most homes save 20–30% on water-heating gas.
+- Reclaim basement space. A 50-gallon tank takes up significant floor space in an already-tight Jersey City basement. A tankless unit mounts on the wall about the size of a small suitcase.
+- Tax credit. Federal 25C tax credit (up to $600–$2,000) applies to qualifying condensing tankless units.
+For homeowners staying 10+ years, the math strongly favors tankless. For homes you’re selling in the next few years, the upfront premium ($2,000–$4,000 over an in-kind tank replacement) doesn’t fully recoup in the sale price — though it doesn’t hurt, either.
+### The older-building install challenges
+Three things make tankless installs in older Jersey City buildings more involved than in newer homes.
+### Gas line capacity
+Tankless water heaters burn more gas while running (briefly) than tanks do. A typical tank pulls about 30,000–40,000 BTU when its burner is firing; a typical residential tankless can pull 150,000–200,000 BTU at full output.
+Older Jersey City buildings often have 1/2" gas lines from the meter to the basement — sized when the original equipment was small. To support a tankless unit, that line frequently needs upgrading to 3/4" (or, in some larger homes, 1"). The upgrade itself is a 4–8 hour job — running new black iron pipe through the basement, sometimes through the wall stack to the meter outside.
+This is the single biggest reason tankless installs in older Jersey City buildings cost more than in newer homes. We measure existing gas pressure on the estimate visit — if it’s adequate, great. If not, we quote the gas line upgrade separately.
+### Venting
+Tank water heaters typically vent through the existing chimney — the same flue the furnace or boiler uses. Tankless water heaters — especially modern condensing tankless — need different venting.
+Condensing tankless (95%+ efficiency, what we install for most upgrades) vents through PVC pipe out a sidewall — usually through the exterior basement wall, with an intake and exhaust pipe (or a concentric pipe combining both). This typically means a 4–6 inch hole through your exterior basement wall, with weatherproofing and proper grading for condensate drainage.
+Non-condensing tankless can vent through the existing chimney like the tank did — but it’s less efficient and doesn’t qualify for the federal tax credit. We default to condensing for most older Jersey City installs.
+### Basement constraints
+Older Jersey City basements are usually tight — low ceilings, narrow walkways, lots of existing equipment. Tankless saves floor space (no large tank) but needs wall space and a small electrical circuit. Most installs work fine; occasionally we have to relocate the unit slightly from where the old tank was to accommodate proper venting routing.
+We also typically inspect the surrounding plumbing during the install — older buildings sometimes have galvanized supply pipes that are due for replacement or expansion tanks that aren’t code-compliant. We’ll flag what we find without pressuring you into extra work.
+### Sizing tankless correctly
+Tankless sizing is in GPM (gallons per minute), not gallons of storage like a tank. The question isn’t “how much hot water do we use per day” — it’s “how many fixtures might we have running at once.”
+Typical sizing for older Jersey City row homes:
+- Small row home, single bathroom: 5–7 GPM unit.
+- Typical 2-bathroom row home: 7–9 GPM.
+- 3-bathroom row home or family that runs multiple fixtures simultaneously: 9–11 GPM.
+Undersized tankless units are how customers end up disappointed — the unit can’t keep up when the dishwasher and a shower run at the same time, and they conclude tankless “doesn’t work.” Properly sized tankless installations almost never disappoint. We size to actual fixture count and peak-demand patterns, not a generic estimate.
+### Brand choice for older Jersey City installs
+For most older Jersey City row homes we install Navien condensing units. Reliable, strong local parts availability, good warranty terms, and integrate cleanly with combi setups (covering both hot water and hydronic heating in one unit) if you’re considering a future boiler replacement.
+Rheem and Rinnai are our other primary picks. All three are well-supported brands with strong service networks.
+We avoid the cheaper imported brands and the “point of use” tankless units sold at big-box stores — the parts supply is unreliable and service techs often can’t source replacement parts.
+### Combi units — one device for hot water and heating
+An option worth knowing about for Jersey City row homes: combi tankless units. A combi unit (Navien NCB is the most common we install) handles both your domestic hot water AND your hydronic heating system (radiators or radiant floors).
+For older row homes with aging hydronic boilers due for replacement, a combi unit replaces both the boiler AND the water heater in one unit, in one install. It’s a meaningful space savings (one wall-mount unit replaces two floor-mount units) and the install economics often pencil out.
+Steam-heated homes don’t benefit from combi (steam needs a dedicated steam boiler). Forced-air homes with a furnace don’t benefit either (the furnace handles heat, separately from water). But for hydronic-heated row homes — common in The Heights — combi can be the right answer.
+### What it actually costs
+Realistic numbers for Jersey City older-home tankless installs:
+- In-kind tank replacement (for comparison): $1,500–$3,000 installed.
+- Standard condensing tankless install (gas line adequate, venting straightforward): $4,000–$5,500.
+- Tankless install with gas line upgrade: $5,500–$7,500.
+- Tankless install with gas line upgrade + complex venting routing: $7,000–$9,500.
+- Combi unit (replaces water heater + boiler): $8,000–$13,000 (depending on existing hydronic system condition).
+Federal 25C tax credit (typically $600–$2,000 depending on efficiency tier) often applies to condensing tankless installs. NEIF financing available for the project on most residential installs.
+### The install day timeline
+For a standard condensing tankless install (gas line adequate, no major modifications):
+- Hour 0–1: Disconnect old tank, drain, remove.
+- Hour 1–3: Run new water lines (modify existing to wall-mount unit), set new mounting bracket, set unit on wall.
+- Hour 3–5: Run new venting (sidewall PVC for condensing), exterior wall penetration, weatherproofing.
+- Hour 5–6: Gas connection, electrical, condensate drain. Start unit, test all fixtures.
+- Hour 6–7: Clean up, walkthrough, paperwork (warranty registration, permit closeout).
+Most installs are a single day. Installs with gas line upgrade or complex routing add half a day to a full second day.
+### Wrapping up
+Tankless water heaters are usually the right answer for older Jersey City row homes you plan to keep. The lifespan, endless hot water, gas savings, and basement space recovery all add up. The install is more involved than in newer construction — gas line upgrades and condensing venting are the two most common added costs — but the math still favors tankless in most cases.
+We do free in-home estimates for tankless conversions. We’ll measure gas pressure, inspect venting routes, look at the existing plumbing, and tell you straight whether tankless makes sense for your specific Jersey City home — or whether an in-kind tank replacement is the better call.
+{LINK:/services/water-heaters/tankless-water-heaters/}Learn more about tankless water heaters, see our {LINK:/services/water-heaters/installation-replacement/}water heater installation service, or {LINK:tel:2012455151}call 201-245-5151 to schedule a free estimate.
+More cornerstones
+### Other cornerstone posts.
+{LINK:/blog/air-conditioning-options-hoboken-brownstones/}
+Cornerstone · ~8 min read
+### AC Options for Hoboken Brownstones
+Ductless vs PTAC vs central — which makes sense for which brownstone configuration. With pricing and install constraints.
+ Read article {LINK:/blog/condo-rooftop-replacement-hoboken-property-managers/}
+Cornerstone · ~10 min read
+### Replacing a Rooftop HVAC in a Hoboken Condo
+What property managers and condo boards need to know — crane work, NJ permits, board approval timeline, costs.
+ Read article ### Ready to upgrade to tankless?
+Free in-home estimate. NEIF financing available. Federal tax credit on qualifying units.
+{LINK:/contact/}Schedule Service {LINK:tel:2012455151} Call 201-245-5151

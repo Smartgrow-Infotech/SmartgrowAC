@@ -1,0 +1,82 @@
+﻿{LINK:/}Home
+ ›
+ {LINK:/blog/}Blog
+ ›
+ AC Options for Hoboken Brownstones
+Cornerstone · ~8 min read
+### AC options for Hoboken brownstones: a practical guide.
+Ductless vs. high-velocity vs. PTAC vs. window units. Which one fits which brownstone configuration — with realistic pricing, install constraints, and the questions to ask before signing a contract.
+By Tanous Heating & Air Conditioning · Updated May 2026
+If you own a Hoboken brownstone — or you’re about to buy one — eventually you face the same question: how do you put central air in a building that wasn’t designed for it? Plaster walls, no ductwork, tiny closets, original moldings worth preserving, neighbors directly above and below. The HVAC textbook answer (“run ductwork through chases”) doesn’t work in most pre-war Hoboken buildings.
+This is a problem we’ve solved hundreds of times across Hoboken Heights, Downtown, Uptown, and the brownstone belt. Here’s the practical framework we use — the options that actually work, what they cost, and how to decide.
+### The brownstone HVAC problem in plain language
+Most Hoboken brownstones were built between 1880 and 1920. They were designed for radiator heat (sometimes steam, sometimes hot-water hydronic), no AC at all, and ventilation through open windows. Adding modern central air to one of these buildings means solving three problems at once:
+- No ductwork. Standard central AC needs roughly 8–12 inches of duct space for supply trunks. Brownstone plaster walls are usually 4–6 inches deep. There’s nowhere to hide ductwork without major demo.
+- Limited closet space. An indoor air handler needs a closet about 24" × 36" with vented return. Brownstones rarely have that to spare without taking it from a bedroom.
+- Limited outdoor space. The condenser needs to live somewhere with airflow. Most brownstones have a small rear yard, a tiny balcony, or rooftop access — each with its own constraints.
+So central AC the way the textbook describes it usually isn’t practical. What works instead falls into three main categories.
+### Option 1: Ductless mini-splits (the default answer)
+Ductless mini-splits are what we install most often in Hoboken brownstones — probably 70–80% of the AC retrofits we do. {LINK:/hvac-systems/ductless-mini-splits/}Fujitsu Halcyon is our specialty; Daikin and Mitsubishi Electric are common alternatives.
+How it works: a small outdoor condenser (roughly the size of a large window AC unit) sits in your rear yard, on a balcony, or on the roof. Thin refrigerant lines — about the diameter of a garden hose — route from the condenser up to one or more indoor “heads” mounted on interior walls. Each indoor head has its own thermostat and blows conditioned air directly into the room.
+Single-zone (one outdoor + one indoor head) starts around $4,000–$7,000 installed. Multi-zone systems (one outdoor + multiple indoor heads) for a whole brownstone run $10,000–$20,000+ depending on the head count and the install complexity.
+### Why ductless works in brownstones
+- Line sets route through closets, behind moldings, or in exterior covers. No demolishing plaster walls.
+- Each room gets its own thermostat. Master bedroom at 68 while the den stays at 74 — impossible with single-thermostat central.
+- Most modern units are also heat pumps. One system handles both cooling and heating — including the brutal Hoboken February days.
+- Indoor heads are surprisingly quiet. Often quieter than a fridge. The compressor noise stays outside.
+### The trade-offs to know
+Ductless isn’t magic. The visible head on the wall — usually high on the wall, often 36" wide — is a real aesthetic compromise some owners hate. Newer indoor “cassette” styles (flush in ceiling) or floor-mount units help, but each has its own placement constraints.
+Multi-zone systems are also more expensive than people expect when they first start pricing. Five indoor heads + one larger outdoor unit + line-set routing through three floors easily hits $18,000–$22,000 once permits and electrical are included. Worth it for the comfort, but not the “cheap retrofit” the marketing sometimes suggests.
+Best fit:
+Brownstones where preserving plaster and moldings matters more than wall aesthetics. Owners who spend lots of time home (per-room thermostats really matter). Buildings with rear yards, balconies, or rooftop access for the outdoor condenser. Anyone replacing aging window units.
+### Option 2: High-velocity small-duct systems
+High-velocity small-duct systems are the “hidden” option — what you do when the plaster preservation is sacred but the look of indoor ductless heads is unacceptable. The leading brands are SpacePak and Unico.
+How it works: small flexible ducts (about 2 inches in diameter, vs. 6–10 inches for standard ducts) route through wall cavities, between floor joists, or behind crown molding. The supply registers are small 2" round outlets in the ceiling or wall — barely visible from across the room.
+An indoor air handler still lives in a mechanical closet, but the system is sized for higher air velocity and lower volume than standard central — which is what lets the small ducts work.
+### Why high-velocity works (sometimes)
+- The system is essentially invisible. 2" supply registers blend into ceilings and moldings.
+- Routes through tight spaces. Where standard ducts can’t fit, small ducts often can.
+- Even comfort across rooms. Real central system; no per-room temperature variation issues.
+### Why it’s the minority option
+High-velocity systems cost meaningfully more than ductless — typically $18,000–$35,000 installed for a whole brownstone. They also require a real mechanical closet (usually taken from a closet you currently use), and the install is more invasive than ductless because the small ducts still need to be routed through the structure.
+They’re also less efficient than modern ductless. SEER ratings of 14–16 vs. 20–30+ for ductless. Operating costs are noticeably higher.
+We install high-velocity occasionally — usually for brownstone owners doing a full renovation who want central AC with zero visible indoor equipment, and who can afford the premium. It’s the right answer maybe 5–10% of the time.
+### Option 3: PTAC units (rarely the right answer for brownstones)
+PTACs are the standard in Hoboken high-rise condos and hotels — the in-wall units mounted in metal sleeves through the exterior wall. They’re what most readers think of when they see “those window-AC-looking things” in Hoboken buildings.
+For brownstones, PTACs are usually a poor fit. They require a roughly 42" × 16" hole in an exterior wall, which is structurally and aesthetically problematic in a brownstone. They’re also noisier and less efficient than ductless. The case for them in a brownstone is roughly: “you absolutely need cooling in one room only and can’t justify a ductless install.”
+We’ll do them when it makes sense — sometimes for a single rental basement unit or an in-law suite — but it’s the wrong default. See our {LINK:/hvac-systems/ptac-units/}PTAC overview for cases where they do make sense (mostly high-rise condos and hotels).
+### Option 4: Window units (cheap, temporary, real)
+Not glamorous, but worth mentioning: window units remain the cheapest, fastest cooling solution for a brownstone. $200–$500 per unit, no install required, fully removable in winter.
+If you’re renting, selling soon, or genuinely just need cooling for a few summer months in one or two rooms, window units are a defensible choice. The downsides are well-known: noisy, inefficient, blocks the window, looks unfortunate. But the math sometimes wins.
+For owners staying long-term, the dollar-per-cooling-hour math always favors ductless eventually — usually within 3–5 years.
+### The decision framework
+Here’s how we walk a brownstone owner through the decision on an estimate visit:
+- Are you here for 5+ years? If no — window units or single-zone ductless. If yes — whole-home ductless or high-velocity worth considering.
+- How sacred is the plaster and moldings? If you’re willing to see indoor heads — ductless. If absolutely not — high-velocity small-duct.
+- Do you have rear yard / balcony / roof access for the condenser? If no — PTAC or high-velocity with creative condenser routing.
+- How many rooms need cooling? 1–2 rooms: single-zone ductless or window. 3+ rooms: multi-zone ductless or high-velocity.
+- What’s your budget? Under $7,000: single-zone ductless or window. $10,000–$20,000: multi-zone ductless. $20,000+: high-velocity worth considering.
+For most Hoboken brownstones the answer is multi-zone Fujitsu ductless. It’s why it’s 70–80% of what we install.
+### Things to check before signing any HVAC contract
+- NJ master HVAC license. Required to legally do refrigerant work in NJ. Our license is #13VH06190200.
+- Manual J load calc included. Eyeball sizing (“a 24,000 BTU should do it”) leads to oversized systems that short-cycle and dehumidify poorly.
+- Permits handled. Hoboken requires permits for HVAC work; the contractor should pull them, not leave it to you.
+- Workmanship warranty. Parts have manufacturer warranties; the labor and install should have a workmanship warranty on top — usually 1–5 years.
+- References from actual brownstone installs. Asking for 2–3 references where the contractor did a similar building in your neighborhood is reasonable. We provide them.
+### Wrapping up
+The good news: AC in a Hoboken brownstone is a solved problem. We’ve done it hundreds of times, mostly with Fujitsu ductless, occasionally with high-velocity small-duct, rarely with PTAC, and sometimes by recommending window units to someone who just doesn’t need the bigger investment.
+If you’re thinking about an AC install in a Hoboken brownstone — or you just want an honest read on what would actually work for your specific building — we do free in-home estimates with no sales pressure. Either ductless makes sense for you, or it doesn’t. We’ll tell you straight.
+{LINK:/services/air-conditioning/installation-replacement/}Learn more about AC installation or {LINK:tel:2012455151}call 201-245-5151 to schedule an estimate.
+More cornerstones
+### Other cornerstone posts.
+{LINK:/blog/condo-rooftop-replacement-hoboken-property-managers/}
+Cornerstone · ~10 min read
+### Replacing a Rooftop HVAC in a Hoboken Condo
+What property managers and condo boards need to know — crane work, NJ permits, board approval timeline, costs.
+ Read article {LINK:/blog/tankless-water-heaters-older-jersey-city-buildings/}
+Cornerstone · ~7 min read
+### Tankless Water Heaters in Older Jersey City Buildings
+Why tankless often makes sense for older row homes — sizing, gas line capacity, basement constraints, real costs.
+ Read article ### Ready for a real brownstone AC estimate?
+Free in-home consultation. Manual J load calc. No sales pressure.
+{LINK:/contact/}Schedule Service {LINK:tel:2012455151} Call 201-245-5151

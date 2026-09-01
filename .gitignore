@@ -1,0 +1,26 @@
+# ── Dependencies & build output ──────────────────────────────────────────
+sgi-hvac/node_modules/
+sgi-hvac/.next/
+sgi-hvac/out/
+sgi-hvac/.vercel/
+sgi-hvac/*.tsbuildinfo
+sgi-hvac/next-env.d.ts
+
+# ── Secrets ──────────────────────────────────────────────────────────────
+# RESEND_API_KEY and friends live here. Never commit.
+.env
+.env.*
+!.env.example
+*.pem
+
+# ── Logs ─────────────────────────────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ── OS ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk

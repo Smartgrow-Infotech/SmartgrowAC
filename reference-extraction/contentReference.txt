@@ -1,0 +1,2409 @@
+================================================================================
+contentReference.txt
+REFERENCE SITE: https://www.tanousnj.com/  (Tanous Heating & Air Conditioning)
+Extracted: 2026-09-01 · Content, information & structure only. No design notes.
+Tags: [VERBATIM] exact text · [SUMMARY] faithful paraphrase · [INFERRED] conclusion
+================================================================================
+
+METHOD — WHAT WORKED
+--------------------------------------------------------------------------------
+1. Homepage fetched successfully (server-rendered HTML, 90,801 bytes). WORKED.
+2. robots.txt fetched. WORKED. It explicitly allows GPTBot, ChatGPT-User,
+   PerplexityBot, ClaudeBot, anthropic-ai. Disallows only /wp-admin/.
+3. sitemap.xml fetched. WORKED. Declares exactly 60 URLs.
+4. ALL 60 sitemap URLs downloaded raw (HTTP 200 each, 30KB–92KB). WORKED.
+   No page required JS rendering — the site is fully server-rendered WordPress
+   (Bricks Builder). Nav, footer, FAQ accordions, pricing tabs and forms are all
+   present in the server HTML. NOTHING was client-rendered-only.
+5. Per-page <title>, meta description, canonical, H1 and schema.org @type
+   extracted for all 60 pages. WORKED.
+6. Brand/press/media-kit page: searched footer, /brand, /press, /media-kit.
+   NONE EXISTS. (Section 13.)
+7. Raw source of every page is preserved in ./raw/pages/ ; readable text in
+   ./raw/text/ and ./raw/lean/ ; per-group bundles in ./raw/bundles/.
+
+Coverage: 60 pages found · 60 pages fetched (100%) · 0 partial · 0 failed.
+
+================================================================================
+1. SITE OVERVIEW
+================================================================================
+
+BRAND NAME
+  Display name: "Tanous HVAC" [VERBATIM — <title> on home]
+  Legal/full name: "Tanous Heating & Air Conditioning" [VERBATIM — og:site_name,
+  copyright line, schema.org "name"]
+
+WHAT THE COMPANY DOES (one line)
+  Family-owned residential + commercial HVAC contractor — heating, cooling,
+  indoor air quality, water heaters — serving 10 cities in Hudson & Bergen
+  County, New Jersey, headquartered in Hoboken. [SUMMARY — home, /about/]
+
+TARGET AUDIENCES (each with evidence)
+  a) Hoboken/Jersey City brownstone & row-home owners.
+     Evidence: dedicated ductless pages, "Brownstones & row homes — Our
+     specialty" [VERBATIM, /service-areas/hoboken/]; blog post "AC options for
+     Hoboken brownstones".
+  b) Condo / high-rise unit owners.
+     Evidence: PTAC and water-source-heat-pump system pages; "Every Hoboken
+     high-rise condo and most JC waterfront buildings use PTACs" [VERBATIM,
+     /hvac-systems/ptac-units/].
+  c) HOA boards & condo associations.
+     Evidence: /commercial/condo-buildings/ ; "Do you provide a Certificate of
+     Insurance?" FAQ; "It's our bread and butter." [VERBATIM, home FAQ].
+  d) Property managers with multi-building portfolios.
+     Evidence: /commercial/property-management/ ; "If you manage 5+ Hudson
+     County properties…" [VERBATIM].
+  e) Hospitality operators (hotels, restaurants, assisted living).
+     Evidence: /commercial/hospitality/ ; "Hotels run 100+ PTACs".
+  f) Light-commercial owners (offices, retail, mixed-use).
+     Evidence: /commercial/light-commercial/.
+  g) Small landlords of 3–4 family walk-ups.
+     Evidence: /service-areas/union-city/ , /service-areas/west-new-york/.
+
+PRIMARY CONVERSION GOAL
+  Phone call to 201-245-5151. [INFERRED — evidence: the number appears in the
+  header, the mobile header as an icon button, the sticky mobile CTA bar, every
+  hero, every section-closing CTA, the footer, and a dedicated GA4 event
+  "phone_call_click"; "the fastest way is to call" [VERBATIM, home FAQ].]
+  Secondary goal: Gravity Forms "Request service" submission (GA4
+  "generate_lead" event fires on confirmation).
+
+EVERY CONVERSION CHANNEL
+  · Phone: tel:2012455151 → displayed as "201-245-5151" and "(201) 245-5151"
+  · Email: mailto:info@tanousnj.com
+  · Web form: Gravity Forms (WordPress plugin) — inline on some pages, in a
+    modal ("Request service") on others. Honeypot spam field present.
+  · Physical address (no walk-ins): 4 14th St #501, Hoboken, NJ 07030
+  · Outbound financing application: https://www.neifund.org/tanous-heating-and-
+    air-conditioning/ (NEIF — National Energy Improvement Fund)
+  · Review platforms linked out: Google search result page, Yelp business page
+  · NO booking-scheduler tool (no Cal.com / Calendly / ServiceTitan widget)
+  · NO live-chat widget · NO WhatsApp · NO newsletter signup
+
+LANGUAGES / REGIONS
+  English only. No hreflang, no language switcher. Region: Hudson County + part
+  of Bergen County, New Jersey, USA.
+
+SITE TYPE
+  Multi-page, deeply hierarchical marketing site (4 levels deep at maximum:
+  /services/water-heaters/tankless-water-heaters/). Server-rendered WordPress.
+  Programmatic-SEO structure: service × sub-service × system × city.
+
+PAGES: 60 found in sitemap · 60 fetched.
+
+================================================================================
+2. PAGE INVENTORY
+================================================================================
+Render type is "server" for ALL 60 pages. Fetched = yes for ALL 60.
+Word counts are approximate unique body content (chrome excluded).
+
+URL | TITLE | H1 | PURPOSE | ~WORDS
+--------------------------------------------------------------------------------
+/
+  T: Tanous HVAC | HVAC in Hoboken & Jersey City
+  D: Tanous Heating & Air Conditioning serves Hoboken, Jersey City, and Hudson
+     County NJ with heating, cooling, water heater, and emergency HVAC service.
+  H1: Hoboken HVAC for homes, condos & commercial buildings.
+  Purpose: Hub / trust-building / route to 4 service pillars · ~1,150 words
+
+/about/
+  T: About — Family-Owned HVAC in Hoboken Since 2001 · Tanous HVAC
+  H1: Family-owned in Hoboken since 2001.
+  Purpose: Founder story, licenses, stats · ~500 words
+
+/blog/
+  T: Blog — HVAC Guidance for Hudson County · Tanous HVAC
+  H1: HVAC guidance for Hudson County homes & buildings.
+  Purpose: Index of 3 cornerstone posts · ~350 words
+
+/blog/air-conditioning-options-hoboken-brownstones/
+  T: AC Options for Hoboken Brownstones — Ductless vs. PTAC vs…
+  H1: AC options for Hoboken brownstones: a practical guide.
+  Purpose: Cornerstone article, ~8 min read · ~1,900 words
+
+/blog/condo-rooftop-replacement-hoboken-property-managers/
+  T: Replacing a Rooftop HVAC in a Hoboken Condo — What…
+  H1: Replacing a rooftop HVAC unit in a Hoboken condo: what to know.
+  Purpose: Cornerstone article, ~10 min read · ~1,850 words
+
+/blog/tankless-water-heaters-older-jersey-city-buildings/
+  T: Tankless Water Heaters in Older Jersey City Buildings —…
+  H1: Tankless water heaters in older Jersey City buildings.
+  Purpose: Cornerstone article, ~7 min read · ~1,750 words
+
+/commercial/
+  T: Commercial HVAC — Condo Buildings, Property Management…
+  H1: Commercial HVAC for Hudson County condo buildings, hotels, and offices.
+  Purpose: Commercial hub · ~950 words
+
+/commercial/condo-buildings/       H1: HVAC service for Hoboken & Jersey City condo buildings. · ~1,100 w
+/commercial/hospitality/           H1: HVAC for hotels, restaurants & hospitality. · ~1,100 w
+/commercial/light-commercial/      H1: HVAC for offices, retail & light commercial. · ~1,050 w
+/commercial/maintenance-contracts/ H1: Commercial HVAC maintenance contracts. · ~1,100 w
+/commercial/property-management/   H1: Multi-property HVAC contracts for property managers. · ~1,080 w
+/commercial/rooftop-replacement/   H1: Commercial rooftop replacement — the work other contractors decline. · ~1,150 w
+
+/contact/
+  T: Contact — Phones Answered 24/7 · Tanous HVAC
+  H1: Get in touch.
+  Purpose: Contact details + inline form + 10-city list · ~250 words
+
+/emergency-hvac/
+  T: Emergency HVAC — 24/7 Phones Answered in Hoboken & Jersey…
+  H1: Emergency HVAC across Hudson County.
+  Purpose: Emergency triage + honesty positioning · ~600 words
+
+/financing/
+  T: HVAC Financing — NEIF Energy-Efficiency Financing in NJ · …
+  H1: HVAC financing without the runaround.
+  Purpose: NEIF partner handoff + financing FAQ · ~700 words
+
+/hvac-systems/                     H1: Every major HVAC system for Hoboken, Jersey City & Hudson County. · ~950 w
+/hvac-systems/central-hvac-systems/ H1: Central HVAC for Hoboken & Hudson County. · ~1,150 w
+/hvac-systems/ductless-mini-splits/ H1: Ductless mini-splits for Hoboken brownstones, condos & row homes. · ~1,200 w
+/hvac-systems/heat-pumps/          H1: Heat pumps — one system for cool and heat. · ~1,150 w
+/hvac-systems/ptac-units/          H1: PTAC replacement for Hoboken & Jersey City condos. · ~1,120 w
+/hvac-systems/rooftop-units/       H1: Commercial rooftop HVAC for Hoboken & Hudson County. · ~1,180 w
+/hvac-systems/water-source-heat-pumps/ H1: Water-source heat pumps for mid- & high-rise condo buildings. · ~1,130 w
+/hvac-systems/zoning-systems/      H1: Zoning for multi-floor Hoboken homes. · ~1,140 w
+
+/maintenance-plan/
+  T: Maintenance Plan — 5/yr · Two visits a year · Tanous HVAC   ← NOTE: the
+     "$18" is missing from the title tag; it renders as "5/yr". See section 13.
+  H1: Two visits a year. Priority service. From $185/yr.
+  Purpose: Plan pricing + inclusions + FAQ · ~700 words
+
+/reviews/
+  T: Reviews — 230+ Five-Star Reviews on Google & Yelp · Tanous…
+  H1: 230+ five-star reviews across Google and Yelp.
+  Purpose: Social proof aggregation · ~350 words
+
+/service-areas/                    H1: HVAC service across Hudson & Bergen County, NJ. · ~700 w
+/service-areas/hoboken/            H1: HVAC services in Hoboken, NJ. · ~1,000 w
+/service-areas/jersey-city/        H1: HVAC services in Jersey City, NJ. · ~980 w
+/service-areas/weehawken/          H1: HVAC services in Weehawken, NJ. · ~950 w
+/service-areas/union-city/         H1: HVAC services in Union City, NJ. · ~1,000 w
+/service-areas/west-new-york/      H1: HVAC services in West New York, NJ. · ~1,000 w
+/service-areas/north-bergen/       H1: HVAC services in North Bergen, NJ. · ~950 w
+/service-areas/guttenberg/         H1: HVAC services in Guttenberg, NJ. · ~900 w
+/service-areas/edgewater/          H1: HVAC services in Edgewater, NJ. · ~960 w
+/service-areas/cliffside-park/     H1: HVAC services in Cliffside Park, NJ. · ~940 w
+/service-areas/fort-lee/           H1: HVAC services in Fort Lee, NJ. · ~970 w
+
+/services/                         H1: HVAC services for Hoboken, Jersey City & Hudson County. · ~1,000 w
+/services/air-conditioning/        H1: AC repair, maintenance & install for Hoboken, Jersey City & Hudson County. · ~1,000 w
+/services/air-conditioning/repair/ H1: AC repair for Hoboken & Hudson County — diagnosed before we quote. · ~1,000 w
+/services/air-conditioning/maintenance/ H1: AC tune-ups & maintenance plans for Hoboken & Hudson County. · ~980 w
+/services/air-conditioning/installation-replacement/ H1: AC installation & replacement for Hoboken & Hudson County. · ~1,000 w
+/services/heating/                 H1: Furnace, boiler & heat pump service for Hoboken, Jersey City & Hudson County. · ~1,100 w
+/services/heating/repair/          H1: Heating repair for Hoboken & Hudson County — diagnosed before we quote. · ~1,000 w
+/services/heating/maintenance/     H1: Heating tune-ups for Hoboken & Hudson County. · ~1,000 w
+/services/heating/installation-replacement/ H1: Boiler, furnace & heat pump installation in Hoboken & Hudson County. · ~1,000 w
+/services/heating/furnace-repair/  H1: Gas furnace repair for Hoboken & Hudson County. · ~1,020 w
+/services/heating/boiler-repair/   H1: Boiler repair for Hoboken & Hudson County — old buildings welcome. · ~1,030 w
+/services/indoor-air-quality/      H1: Cleaner, healthier air for Hoboken, Jersey City & Hudson County homes. · ~1,000 w
+/services/indoor-air-quality/air-purifiers/ H1: Whole-home air purifiers for Hoboken & Hudson County. · ~1,200 w
+/services/indoor-air-quality/humidifiers/ H1: Whole-home humidifiers for dry NJ winter air. · ~1,180 w
+/services/indoor-air-quality/dehumidifiers/ H1: Whole-home dehumidifiers for muggy Hudson County summers. · ~1,160 w
+/services/indoor-air-quality/ventilation/ H1: Fresh-air ventilation for tightly-sealed modern homes. · ~1,150 w
+/services/water-heaters/           H1: Water heater repair, install & tankless for Hoboken & Hudson County. · ~1,150 w
+/services/water-heaters/repair/    H1: Water heater repair for Hoboken & Hudson County. · ~1,000 w
+/services/water-heaters/maintenance/ H1: Water heater maintenance & flushing for Hoboken & Hudson County. · ~960 w
+/services/water-heaters/installation-replacement/ H1: Water heater installation & replacement in Hoboken & Hudson County. · ~1,000 w
+/services/water-heaters/tankless-water-heaters/ H1: Tankless water heaters — the long-term play for Hudson County homes. · ~1,250 w
+
+/privacy-policy/  T: Privacy Policy | Tanous Heating & Air Conditioning · ~330 w
+/terms/           T: Terms | Tanous Heating & Air Conditioning · ~180 w
+
+================================================================================
+3. NAVIGATION MAP
+================================================================================
+
+--- LOGO ---
+Logo (top-left) → / [VERBATIM alt: "Tanous"]
+
+--- DESKTOP NAVBAR (exact order, left to right) ---
+All 5 items are mega-menu dropdowns whose parent label is ALSO a link.
+
+1. "Services" → /services/    [mega-menu, 5 columns]
+   Col "Air Conditioning": All AC Services → /services/air-conditioning/ ·
+     AC Repair → /services/air-conditioning/repair/ ·
+     Maintenance → /services/air-conditioning/maintenance/ ·
+     Install & Replace → /services/air-conditioning/installation-replacement/
+   Col "Heating": All Heating → /services/heating/ ·
+     Heating Repair → /services/heating/repair/ ·
+     Maintenance → /services/heating/maintenance/ ·
+     Install & Replace → /services/heating/installation-replacement/ ·
+     Furnace Repair → /services/heating/furnace-repair/ ·
+     Boiler Repair → /services/heating/boiler-repair/
+   Col "Indoor Air Quality": All IAQ → /services/indoor-air-quality/ ·
+     Air Purifiers · Humidifiers · Dehumidifiers · Ventilation
+     (each → /services/indoor-air-quality/<slug>/)
+   Col "Water Heaters": All Water Heaters → /services/water-heaters/ ·
+     Repair · Maintenance · Install & Replace · Tankless
+   Col 5 — FEATURED PANEL:
+     Eyebrow [VERBATIM]: "Need help now?"
+     Heading [VERBATIM]: "Phones answered 24/7."
+     Body [VERBATIM]: "Emergency HVAC across Hudson County. We'll tell you
+       what to expect."
+     CTA: "Call 201-245-5151" → tel:2012455151
+
+2. "Systems" → /hvac-systems/   [mega-menu, 4 columns]
+   Col "For Homes" (each link carries a one-line descriptor):
+     Ductless Mini-Splits — "Brownstones & row homes"
+     Heat Pumps — "Efficient heat + cool"
+     Central HVAC — "Traditional split systems"
+     Zoning Systems — "Multi-floor comfort"
+   Col "For Buildings":
+     PTAC Units — "Condos & hotels"
+     Water-Source Heat Pumps — "Mid- and high-rises"
+     Rooftop Units — "Commercial systems"
+   Col "Browse": All HVAC Systems → · All Services → · Commercial Work →
+   Col 4 — FEATURED PANEL:
+     Eyebrow: "Not sure what fits?"
+     Heading: "Compare systems for your home."
+     Body: "Tell us your home or building type and we'll recommend a system
+       that fits."
+     CTA: "Get an estimate →" → /contact/
+
+3. "Commercial" → /commercial/   [mega-menu, 3 columns]
+   Col "By Property Type":
+     Condo Buildings — "HOAs & co-op boards"
+     Property Management — "Multi-property contracts"
+     Hospitality — "Hotels & restaurants"
+     Light Commercial — "Offices & retail"
+   Col "Services":
+     Rooftop & Crane Work — "Permits + police escorts" → /commercial/rooftop-replacement/
+     Maintenance Contracts — "Custom visit frequency"
+     Emergency HVAC — "24/7 calls answered" → /emergency-hvac/
+   Col 3 — FEATURED PANEL:
+     Eyebrow: "Bread & butter"
+     Heading: "Crane lifts. Permits. Police escorts."
+     Body: "Rooftop replacements in Hoboken and Jersey City — work most
+       contractors won't take on."
+     CTA: "See how →" → /commercial/rooftop-replacement/
+
+4. "Service Areas" → /service-areas/   [mega-menu, 4 columns]
+   Col "Featured": Hoboken · Jersey City · Weehawken
+   Col "Hudson County": Union City · West New York · North Bergen · Guttenberg
+   Col "Bergen County": Edgewater · Cliffside Park · Fort Lee · All 10 Areas →
+   Col 4 — FEATURED PANEL:
+     Eyebrow: "HQ since 2001"
+     Heading: "Hoboken, NJ."
+     Body: "4 14th St #501. Local techs, real Hudson County roots — through
+       three generations of customers."
+     CTA: "Hoboken HVAC →" → /service-areas/hoboken/
+
+5. "More" → /contact/   [mega-menu, 3 columns]
+   Col "Plans & Service": Maintenance Plan · Emergency HVAC · Financing (NEIF)
+   Col "Company": About · Reviews · Blog · Contact
+   Col 3 — FEATURED PANEL:
+     Eyebrow: "Recommended"
+     Heading: "Maintenance Plan from $185/yr."
+     Body: "Single $185 · Combo $245 · Multi-system on request. Cancel any
+       time."
+     CTA: "See plans →" → /maintenance-plan/
+
+--- NAV CTAs (right of navbar) ---
+  "201-245-5151" (phone-icon text link) → tel:2012455151
+  "Schedule Service" (primary button) → /contact/
+
+--- MOBILE-ONLY DIFFERENCES ---
+  · Desktop nav + "Schedule Service" secondary button hidden below 1024px.
+  · A red square phone-icon button appears in the header → tel:2012455151.
+  · Hamburger opens a right-side drawer with the SAME 5 sections as accordions.
+    Drawer mega-menu link lists are slightly trimmed (e.g. "Systems" drops the
+    per-link descriptors; "Commercial" drops the featured panel and ends with
+    "Commercial Overview →").
+  · Drawer footer contains: label "Calls answered 24/7", the phone number as a
+    large link, a "Financing options" link → /financing/, and a full-width
+    "Schedule Service" button.
+  · A sticky bottom CTA bar appears after scrolling past the hero and hides near
+    the footer: two buttons — "Call" → tel:2012455151 and "Schedule" → /contact/.
+
+--- BREADCRUMB PATTERN ---
+  Present on every page except home, privacy and terms.
+  Pattern: Home › [Parent] › [Grandparent] › Current
+  Examples [VERBATIM]:
+    Home › Services › Air Conditioning › AC Repair
+    Home › HVAC Systems › Ductless Mini-Splits
+    Home › Service Areas › Hoboken
+    Home › Commercial › Rooftop Replacement
+  Current item is unlinked plain text. Separator: "›"
+  Mirrored in BreadcrumbList schema.org markup.
+  /privacy-policy/ and /terms/ instead begin with a "Skip to main content"
+  link → #brx-content.
+
+--- FOOTER ---
+Brand block (left):
+  Logo (white variant)
+  Tagline [VERBATIM]: "Family-owned HVAC for Hoboken, Jersey City, and Hudson
+    County since 2001."
+  Badges [VERBATIM]: "★ 4.8 Google" · "★ 5.0 Yelp" · "25 Years" · "NJ Licensed"
+  Contact line: 201-245-5151 (tel:) · info@tanousnj.com (mailto:) ·
+    4 14th St #501, Hoboken, NJ 07030
+  Sub-line [VERBATIM]: "Calls answered 24/7"
+
+CTA block (right):
+  Label [VERBATIM]: "Calls answered 24/7" (with a pulsing dot)
+  Buttons: "Schedule Service" → /contact/ · "Call 201-245-5151" → tel:2012455151
+
+Link columns (4 columns, exact order):
+  Column "Services"
+    Air Conditioning → /services/air-conditioning/
+    Heating → /services/heating/
+    Indoor Air Quality → /services/indoor-air-quality/
+    Water Heaters → /services/water-heaters/
+    Maintenance Plan → /maintenance-plan/
+    Emergency HVAC → /emergency-hvac/
+  Column "HVAC Systems"
+    Ductless Mini-Splits → /hvac-systems/ductless-mini-splits/
+    Heat Pumps → /hvac-systems/heat-pumps/
+    PTAC Units → /hvac-systems/ptac-units/
+    Rooftop & Crane Work → /commercial/rooftop-crane/     ← BROKEN LINK, see §13
+    Water-Source Heat Pumps → /hvac-systems/water-source-heat-pumps/
+    All HVAC Systems → → /hvac-systems/
+  Column "Service Areas"
+    Hoboken · Jersey City · Weehawken · Edgewater · Fort Lee
+    All 10 Cities → → /service-areas/
+  Column "Company"
+    About → /about/
+    Reviews → /reviews/
+    Financing (NEIF) → /financing/
+    Blog → /blog/
+    Commercial → /commercial/
+    Contact → /contact/
+
+Legal row [VERBATIM]:
+  "© 2026 Tanous Heating & Air Conditioning · NJ Master HVAC #13VH06190200 ·
+   NJ Contractor #19HC00429300"
+  Links: Privacy → /privacy-policy/ · Terms → /terms/ · Sitemap → /sitemap.xml
+
+SOCIAL PLATFORMS: NONE. No social icons or links anywhere in the footer or
+  site. [INFERRED from full-source scan of all 60 pages.]
+NEWSLETTER: NONE.
+CERTIFICATION BADGES IN FOOTER: text badges only (Google/Yelp ratings, "25
+  Years", "NJ Licensed") plus the two NJ licence numbers in the legal row.
+
+================================================================================
+4. PAGE-BY-PAGE CONTENT
+================================================================================
+
+--------------------------------------------------------------------------------
+4.1  HOMEPAGE  —  https://www.tanousnj.com/
+--------------------------------------------------------------------------------
+Section order (7 sections between header and footer):
+hero → services → why → pricing → upgrade → brands → faq
+
+[SECTION 1 — HERO] id="hero"  Purpose: position + route to phone/form
+  Eyebrow [VERBATIM]: "Hudson County HVAC · Since 2001"
+  H1 [VERBATIM]: "Hoboken HVAC for homes, condos & commercial buildings."
+  Sub [VERBATIM]: "Family-owned for 25 years. NJ licensed. Phones answered 24/7."
+  CTAs: "Schedule Service" → /contact/ · "Call 201-245-5151" → tel:2012455151
+  Media: photograph (right) of HVAC/Hoboken context [INFERRED from og:image alt
+    "Tanous Heating and Cooling service truck parked in front of Hoboken
+    brownstones"]
+  STAT ROW (5 stats, below hero, hidden on mobile) [ALL VERBATIM]:
+    25      — "Years family-owned"
+    4.8★    — "Google rating"
+    5.0★    — "Yelp rating"
+    230+    — "Five-star reviews"
+    24/7    — "Calls answered"
+
+[SECTION 2 — WHAT WE SERVICE] id="services"  Purpose: route to 4 pillars
+  Eyebrow [VERBATIM]: "What we service"
+  H2 [VERBATIM]: "HVAC for every part of your home — and your building."
+  4 cards, each photo + icon + title + description + arrow link [ALL VERBATIM]:
+   1. "Air Conditioning" — "Repair, maintenance, and installation across
+      Hoboken and Hudson County." → "Explore AC services" → /services/air-conditioning/
+   2. "Heating" — "Furnace, boiler, and heat-pump repair, install, and
+      service." → "Explore heating" → /services/heating/
+   3. "Indoor Air Quality" — "Humidifiers, purifiers, dehumidifiers, and
+      ventilation for tighter homes." → "Explore IAQ" → /services/indoor-air-quality/
+   4. "Water Heaters" — "Tank, tankless, and combi water heater installation
+      and service." → "Explore water heaters" → /services/water-heaters/
+
+[SECTION 3 — WHY] id="why"  Purpose: differentiation / trust
+  Eyebrow [VERBATIM]: "Why Hudson County chooses us"
+  H2 [VERBATIM, 3 lines]: "Built on family. / Backed by reviews. / Trusted by
+    Hudson County."
+  Lead [VERBATIM]: "Founded by a family that's been answering phones in Hoboken
+    since 2001. Three generations of customers later, we still pick up — and
+    still take the rooftop, crane, and permit work most contractors pass on."
+  CTA (pill, right-aligned): "Our 25-year story" → /about/
+  3 feature cards [ALL VERBATIM]:
+   1. "Family-owned since 2001" — "Founded in Hoboken. Twenty-five years of
+      answering phones, showing up, and standing behind the work — through
+      three generations of Hudson County customers."
+   2. "230+ five-star reviews" — "4.8 stars on Google. 5.0 on Yelp. Hudson
+      County's most-reviewed HVAC team — and zero of those reviews came from
+      family."
+   3. "Permits + cranes handled" — "Rooftop replacements in dense Hoboken
+      blocks need cranes, permits, and coordinated street closures. We handle
+      all three. You pay the city's fee — no markup."
+
+[SECTION 4 — MAINTENANCE PLAN] id="pricing"  Purpose: recurring-revenue offer
+  Eyebrow [VERBATIM]: "Maintenance plan"
+  H2 [VERBATIM]: "Flexible pricing."
+  Sub [VERBATIM]: "Two visits a year. Priority service. Discounted replacement
+    pricing. Cancel any time."
+  Interactive selector (3 tabs, left) + detail panel (right).
+  Tab labels [VERBATIM]:
+    "Single Plan"  — "$185/yr · 1 annual visit"
+    "Combo Plan"   — "$245/yr · Most popular"
+    "Custom"       — "Multi-system · Commercial · PTAC · Rooftop"
+  Detail — SINGLE PLAN:
+    Price [VERBATIM]: "$185/yr"
+    Desc [VERBATIM]: "One full system tune-up per year. Right for standard
+      residential systems where you just want a yearly checkup."
+    CTA: "Sign up for Single" → /contact/
+    List [ALL VERBATIM]: One full system tune-up per year · Priority scheduling
+      for repair calls · Discounted replacement pricing · Standard residential
+      systems · Cancel any time
+  Detail — COMBO PLAN:
+    Price [VERBATIM]: "$245/yr"
+    Desc [VERBATIM]: "Two visits per year — spring AC tune-up plus fall heating
+      tune-up. The right pick for most Hudson County homes."
+    CTA: "Sign up for Combo" → /contact/
+    List [ALL VERBATIM]: Spring AC + fall heating tune-ups · Priority scheduling
+      for repair calls · Discounted replacement pricing · Standard residential
+      systems · Flexible scheduling · cancel any time
+  Detail — CUSTOM PLAN:
+    Price [VERBATIM]: "Call for pricing"
+    Desc [VERBATIM]: "Multi-system, PTAC, rooftop, and commercial maintenance
+      contracts. Pricing depends on building size, system type, and visit
+      frequency."
+    CTA: "Call 201-245-5151" → tel:2012455151
+    List [ALL VERBATIM]: Multi-system maintenance contracts · PTAC service
+      contracts (condo buildings) · Rooftop unit maintenance · Commercial
+      property contracts · Custom visit frequency · annual or quarterly
+
+[SECTION 5 — COMFORT UPGRADES] id="upgrade"  Purpose: upsell / discovery
+  Eyebrow [VERBATIM]: "Comfort upgrades"
+  H2 [VERBATIM]: "Ready to upgrade your Hudson County home?"
+  Lead [VERBATIM]: "Modern HVAC upgrades that pay off — for brownstones, row
+    homes, condos, and high-rises alike. Here's what Hudson County homeowners
+    are choosing."
+  Horizontal carousel, 6 slides — NOTE: every slide CTA points to /contact/,
+  NOT to the matching system page. [VERBATIM copy:]
+   1. "Ductless Mini-Splits" — "Heating and cooling without ductwork — the right
+      fit for most Hoboken brownstones, row homes, and renovated condos."
+      → "Explore ductless" → /contact/
+   2. "Heat Pumps" — "One system for heating and cooling. Cold-climate heat
+      pumps run efficiently through Hudson County winters."
+      → "Explore heat pumps" → /contact/
+   3. "Tankless Water Heaters" — "Endless hot water without a 50-gallon tank
+      taking up basement space. Ideal for older Hoboken and Jersey City
+      buildings." → "Explore tankless" → /contact/
+   4. "Zoning Systems" — "Different temperatures for upstairs, bedrooms, and
+      main floor — without running multiple systems. The smart pick for
+      multi-story homes." → "Explore zoning" → /contact/
+   5. "AprilAire IAQ" — "Whole-home air quality and humidity control. Solves dry
+      winter air, allergens, and the dust older Hudson County buildings always
+      have." → "Explore IAQ" → /contact/
+   6. "Smart Thermostats" — "Honeywell and Ecobee installed and paired right
+      with your existing system — including older two-zone HVAC and ductless
+      setups." → "Explore smart thermostats" → /contact/
+  Footer CTA: "Get an upgrade estimate" → /contact/ + prev/next carousel arrows
+
+[SECTION 6 — BRANDS] id="brands"  Purpose: credibility via manufacturer logos
+  Eyebrow [VERBATIM]: "Brands we install & service"
+  H2 [VERBATIM]: "Every major brand. Eight we install in real volume."
+  Auto-scrolling logo marquee (pauses on hover). Logo alts present [VERBATIM]:
+    Fujitsu · York · Rheem · Honeywell · Coleman · Carrier · Trane · Lennox ·
+    Daikin · Mitsubishi Electric · LG · American Standard · Goodman · Bryant ·
+    Amana · Ruud · A.O. Smith · Bradford White · Bosch · Weil-McLain · AprilAire
+    · Ecobee
+  Body [VERBATIM]: "We install Fujitsu, Friedrich, York, Coleman, Rheem, Navien,
+    AprilAire, and Honeywell. We service every major brand including Carrier,
+    Trane, Lennox, Mitsubishi, Daikin, Bosch, LG, Bryant, American Standard,
+    Goodman, Bradford White, A.O. Smith, Rinnai, Weil-McLain, Burnham, Buderus,
+    Peerless, ClimateMaster, WaterFurnace, AAON — and more."
+
+[SECTION 7 — QUICK ANSWERS / FAQ] id="faq"  Purpose: objection handling
+  Split layout — left = intro + phone CTA card, right = 6 accordion rows.
+  Eyebrow [VERBATIM]: "Quick answers"
+  H2 [VERBATIM]: "Common questions, straight answers."
+  Lead [VERBATIM]: "If you don't see what you're looking for, the fastest way is
+    to call. Phones answered 24/7 — including emergency calls."
+  Side CTA card [VERBATIM]: "Have a different question?" / "201-245-5151" /
+    "Calls answered 24/7 · emergency HVAC available across Hudson County"
+  (6 Q&A pairs listed in full in section 8.)
+
+[GLOBAL — SERVICE REQUEST MODAL] present on most pages
+  Title [VERBATIM]: "Request service"
+  Heading [VERBATIM]: "Tell us what you need."
+  Sub [VERBATIM]: "We will call you back same business day. Phones are answered
+    24/7."
+  Fields:
+    Name        — text   — REQUIRED
+    Phone       — tel    — REQUIRED
+    Email       — email  — optional
+    Service Address — text — optional
+    "How can we help?" — select — optional. Options [VERBATIM]:
+        Repair · Maintenance · Replacement / installation · Emergency service ·
+        Question
+    Notes       — textarea — optional
+  Hidden honeypot / validation-container field for spam prevention.
+  Submit label: (Gravity Forms default button, label not exposed in server HTML)
+  Consent text: NONE.
+  Success behavior: Gravity Forms confirmation block replaces the form in place
+    (class "tanous-form-confirmation"); fires GA4 "generate_lead".
+
+--------------------------------------------------------------------------------
+4.2  /about/
+--------------------------------------------------------------------------------
+  Eyebrow: "About Tanous"
+  H1 [VERBATIM]: "Family-owned in Hoboken since 2001."
+  Lead [VERBATIM]: "Three generations of Hudson County customers. NJ licensed.
+    230+ five-star reviews. Phones answered 24/7 by real people."
+  Rating block [VERBATIM]: "★★★★★ 4.9 across 230+ reviews / 4.8 on Google ·
+    5.0 on Yelp"
+  HQ card [ALL VERBATIM]:
+    Eyebrow "Our HQ" · "4 14th St #501, Hoboken NJ 07030"
+    "Address-only office (no walk-in showroom)."
+    "NJ Master HVAC License: 13VH06190200"
+    "NJ Contractor License: 19HC00429300"
+    CTA "Call 201-245-5151"
+  H2 [VERBATIM]: "Founded in 2001. Still here."
+    Body [SUMMARY, ~70 words]: Started as a family-run HVAC shop in Hoboken in
+    2001; same family, trucks and standard for 24+ years; growth came from
+    word-of-mouth in the Hudson County brownstone/condo/commercial world rather
+    than lowest bids. Closes with three promises: a real person answers, the
+    quoted price is the price, and they show up when they say they will.
+  H2 [VERBATIM]: "What we stand for."
+    Three named values [VERBATIM headings + SUMMARY bodies]:
+      "Honest answers." — No fake "60-minute response" guarantees, no upselling;
+        includes the exact framing "If a $200 repair will get you another 5
+        years, that's what we'll recommend — not a $15,000 replacement."
+      "Hudson County roots." — They know which brownstones have asbestos
+        ductwork, which condo buildings standardize on Friedrich PTAC, and which
+        Jersey City basements need tankless for lack of tank space.
+      "Real work." — They take rooftop crane jobs, permit-required street
+        closures and condo-board negotiations that others pass on.
+  H2 [VERBATIM]: "Why crane and permit work matters."
+    [SUMMARY, ~60 words]: A rooftop HVAC replacement on a Hoboken brownstone
+    block needs a crane, city permits, sidewalk-closure approvals and police
+    escorts; most contractors won't touch it. They've done it dozens of times.
+    Customer pays the city's direct permit fees, never a markup. This is what
+    keeps condo associations and property managers returning.
+  STATS [VERBATIM]: 25 "Years family-owned" · 230+ "Five-star reviews" ·
+    10 "Cities served" · 2 "NJ licenses (HVAC + Contractor)" · 24/7 "Phones
+    answered". Eyebrow "By the numbers", H2 "The work behind the reviews."
+  Final CTA [VERBATIM]: "25 years in, still picking up the phone." /
+    "Schedule service or just call to talk through what's going on with your
+    system. We'll give you a straight answer."
+
+--------------------------------------------------------------------------------
+4.3  /contact/
+--------------------------------------------------------------------------------
+  Eyebrow "Contact" · H1 [VERBATIM]: "Get in touch."
+  Lead [VERBATIM]: "Phones answered 24/7. We'll call you back same business day
+    on email and web forms."
+  Contact blocks [ALL VERBATIM]:
+    "Call us — answered 24/7" → 201-245-5151
+    "Email" → info@tanousnj.com
+    "HQ (address-only · no walk-in)" → 4 14th St #501 / Hoboken, NJ 07030
+  Inline service form (identical field set to the modal).
+  Section: eyebrow "Where we work", H2 "Across Hudson & Bergen County.",
+    sub [VERBATIM] "10 cities. Same pricing everywhere — no travel fees."
+    followed by the 10-city link row.
+  Final CTA [VERBATIM]: "Or just call. We're here." / "24/7 phone coverage.
+    Real people, not voicemail."
+  NO map embed on this page. NO business-hours table (24/7 phone only).
+
+--------------------------------------------------------------------------------
+4.4  /reviews/
+--------------------------------------------------------------------------------
+  Eyebrow "Reviews" · H1 [VERBATIM]: "230+ five-star reviews across Google and
+    Yelp."
+  Lead [VERBATIM]: "25 years of Hudson County customers. Family-owned since
+    2001. Honest work, honest prices, honest answers when you call."
+  Aggregate block [VERBATIM]: "4.9★ / Weighted average across 230+ verified
+    reviews"
+  Outbound: "Read on Google" → google.com/search?q=Tanous+Heating+%26+Air+
+    Conditioning+Hoboken · "Read on Yelp" → yelp.com/biz/tanous-heating-and-
+    air-conditioning-hoboken
+  Section eyebrow "What customers say", H2 "A few recent reviews."
+  IMPORTANT DISCLOSURE ON-PAGE [VERBATIM]: "Real feedback from Hudson County
+    customers, with Google and Yelp excerpts ready to be verified before final
+    launch."   ← the site itself flags these as pre-launch placeholders.
+  3 testimonials (attributions VERBATIM, content SUMMARY):
+    "M.K. — Hoboken · via Google" — Fujitsu mini-split in a Hoboken brownstone;
+      honest quote, clean install, permits handled by Tanous.
+    "D.L. — Jersey City · via Yelp" — Called at 11pm with no heat; they
+      answered, triaged by phone, tech out at 7am.
+    "A.R. — Property Manager · via Google" — Manages 3 Hoboken condo buildings;
+      Tanous handles all PTAC service contracts; responsive and accurate
+      invoicing.
+  STATS: 25 Years family-owned · 4.8★ Google · 5.0★ Yelp · 230+ Five-star
+    reviews · 10 Cities served
+  Final CTA [VERBATIM]: "Want to write the next one?" / "Schedule service.
+    We'll earn the review."
+
+--------------------------------------------------------------------------------
+4.5  /emergency-hvac/
+--------------------------------------------------------------------------------
+  Eyebrow [VERBATIM]: "Phones answered 24/7"
+  H1 [VERBATIM]: "Emergency HVAC across Hudson County."
+  Lead [VERBATIM]: "Phones answered around the clock. We'll tell you straight
+    what to expect for on-site arrival based on the situation, your location,
+    and current demand — no fake '60-minute' promises."
+  CTA: "Call 201-245-5151 now"
+  H2 [VERBATIM]: "Common HVAC emergencies." (eyebrow "When to call us right away")
+  6 emergency cards [headings VERBATIM, bodies SUMMARY]:
+    "No heat in winter" — freezing temps + dead furnace/boiler risks pipe
+      freezing within hours; call immediately to avoid water damage.
+    "AC out in summer heat wave" — especially with elderly, infants or pets;
+      NJ summer indoor temps reach dangerous levels fast.
+    "Water heater leaking" — active leaking at the tank base means the tank is
+      failing; shut off water + power, then call.
+    "Gas smell near furnace/boiler" — leave immediately and call PSE&G's
+      emergency line FIRST [VERBATIM number: 800-880-7734], then call Tanous.
+    "CO detector going off" — leave, call 911, then call Tanous.
+    "Building HVAC system failure" — rooftop/central plant failures during
+      occupancy for property managers and condo boards.
+  H2 [VERBATIM]: "What to do while waiting." (eyebrow "While we're on the way")
+  3 guidance blocks [headings VERBATIM, bodies SUMMARY]:
+    "No heat in winter" — open under-sink cabinets, drip faucets, keep home
+      above 55°F, portable heaters only in occupied rooms.
+    "Water leak" — shut off supply to the unit; for water heaters kill gas or
+      breaker; move valuables.
+    "AC out in summer" — close blinds, use fans, move vulnerable people to the
+      coolest room, hydrate.
+  H2 [VERBATIM]: "No fake arrival-time guarantees. Just an honest answer."
+    [SUMMARY]: Competitors promise "60-minute response" or "same-day
+    guaranteed"; Tanous doesn't. Real people answer 24/7 and give a truthful
+    estimate based on the situation, the day's schedule and travel distance. If
+    they can't arrive until tomorrow morning they say so.
+  Final CTA [VERBATIM]: "Call now. Phones answered 24/7." / "Across Hudson
+    County. Real people, not voicemail."
+
+--------------------------------------------------------------------------------
+4.6  /financing/
+--------------------------------------------------------------------------------
+  Eyebrow "Financing" · H1 [VERBATIM]: "HVAC financing without the runaround."
+  Lead [VERBATIM]: "Use NEIF financing for qualifying heat pumps, water heaters,
+    HVAC replacements, ductless systems, and energy-efficiency upgrades."
+  Chips [VERBATIM]: "Residential HVAC" · "Soft pre-qualification" ·
+    "NJ rebate friendly"
+  NEIF card [VERBATIM]: label "NEIF access" / "Start with Tanous financing" /
+    "Open the NEIF/Tanous financing page when you are ready to review options or
+    begin pre-qualification." / button "Open NEIF financing" →
+    https://www.neifund.org/tanous-heating-and-air-conditioning/ /
+    footer chips "No obligation" · "Residential projects"
+  H2 [VERBATIM]: "National Energy Improvement Fund — financing built for
+    energy-efficiency upgrades." (eyebrow "Who NEIF is")
+  3-column breakdown [headings VERBATIM, bodies SUMMARY]:
+    01 — What NEIF covers → "Energy-efficient HVAC": heat pumps,
+      high-efficiency furnaces, tankless water heaters, ductless mini-splits,
+      whole-home IAQ; pairs with NJ Clean Energy Program rebates.
+    02 — Who qualifies → "Residential homeowners": NJ homeowners with
+      reasonable credit; NEIF handles application and terms directly; Tanous
+      only connects. Commercial customers use their own banks.
+    03 — Why financing → "Big upgrades, monthly payments": [VERBATIM figure]
+      "A $15K heat pump install becomes $250/month."
+  H2 [VERBATIM]: "3 steps to financed HVAC." (eyebrow "How it works")
+    Sub [VERBATIM]: "No pressure, no obligation. You can step away at any point."
+    Step 1 "Free in-home estimate" — visit, assess existing system, recommend,
+      quote the full project, no obligation.
+    Step 2 "NEIF pre-qualification" — soft credit check, no score impact.
+    Step 3 "Install + monthly payments" — Tanous installs, NEIF finances,
+      payments go to NEIF not Tanous.
+  6 financing FAQs (listed in section 8).
+  Final CTA [VERBATIM]: "Talk to us about financing options." / "Free in-home
+    estimate first. We'll show you the project cost + financing scenarios +
+    applicable rebates."
+
+--------------------------------------------------------------------------------
+4.7  /maintenance-plan/
+--------------------------------------------------------------------------------
+  H1 [VERBATIM]: "Two visits a year. Priority service. From $185/yr."
+  Lead [VERBATIM]: "Spring AC + fall heating tune-ups. Discounted replacement
+    pricing. Cancel any time. Family-owned since 2001. Phones answered 24/7."
+  Inline service form in hero.
+  H2 [VERBATIM]: "Three pricing options." (eyebrow "Pick your plan")
+    Sub [VERBATIM]: "Standard residential pricing below. Multi-system, PTAC,
+    rooftop, and commercial pricing on request."
+    (Same three plans and lists as the homepage pricing section; the Custom
+    plan's last bullet here is "Custom visit frequency" without the "annual or
+    quarterly" suffix.)
+  H2 [VERBATIM]: "What's included in every visit." (eyebrow "What you get")
+    Sub [VERBATIM]: "Real maintenance, not a 10-minute drive-by inspection."
+    3 cards [ALL VERBATIM]:
+      "AC tune-up (spring)" — "Refrigerant level check, coil cleaning, filter
+        replacement, electrical inspection, drain line clearing, capacitor +
+        contactor testing."
+      "Heating tune-up (fall)" — "Combustion analysis (gas systems), heat
+        exchanger inspection, ignition + flame sensor check, blower cleaning,
+        thermostat calibration."
+      "Priority + perks" — "Front-of-line repair scheduling, 15% off replacement
+        pricing, free diagnostic on repair calls, flexible visit scheduling."
+  6 plan FAQs (section 8).
+  Final CTA [VERBATIM]: "Two visits. Priority service. $185-245/yr." / "The
+    single best HVAC investment you can make — pays for itself in caught
+    problems and discounted replacements." · CTA "Sign up now" → /contact/
+
+--------------------------------------------------------------------------------
+4.8  /blog/  and the three cornerstone posts
+--------------------------------------------------------------------------------
+  BLOG INDEX
+    H1 [VERBATIM]: "HVAC guidance for Hudson County homes & buildings."
+    Lead [VERBATIM]: "Real answers to real questions from real Hoboken, Jersey
+      City, and Hudson County customers. No SEO fluff — just useful HVAC advice."
+    Eyebrow [VERBATIM]: "Coming soon" · H2 [VERBATIM]: "Three cornerstone posts
+      at launch."
+    Body [SUMMARY]: The blog is seeded with the three most-asked questions —
+      brownstone HVAC options, condo board rooftop replacements, tankless water
+      heaters in older buildings.
+    3 post cards with read-time labels [VERBATIM]: "~8 min read · cornerstone",
+      "~10 min read · cornerstone", "~7 min read · cornerstone".
+    Final CTA [VERBATIM]: "Have a specific question?" / "Call us. We'd rather
+      answer one question for free than write 10 SEO blog posts."
+    NO categories, NO tags, NO author pages, NO dates on cards, NO pagination.
+
+  POST 1 — /blog/air-conditioning-options-hoboken-brownstones/
+    Label [VERBATIM]: "Cornerstone · ~8 min read"
+    Byline [VERBATIM]: "By Tanous Heating & Air Conditioning · Updated May 2026"
+    H1 [VERBATIM]: "AC options for Hoboken brownstones: a practical guide."
+    Sub [VERBATIM]: "Ductless vs. high-velocity vs. PTAC vs. window units. Which
+      one fits which brownstone configuration — with realistic pricing, install
+      constraints, and the questions to ask before signing a contract."
+    Structure & content [SUMMARY with VERBATIM data]:
+      · "The brownstone HVAC problem in plain language" — most Hoboken
+        brownstones built 1880–1920 for radiator heat and open-window
+        ventilation. Three simultaneous constraints: no ductwork (standard AC
+        needs 8–12" of duct space; brownstone plaster walls are 4–6"), limited
+        closet space (an air handler needs ~24"×36"), limited outdoor space for
+        the condenser.
+      · Option 1 — Ductless mini-splits, "the default answer". Stated to be
+        70–80% of their brownstone AC retrofits. Fujitsu Halcyon is the
+        specialty; Daikin and Mitsubishi Electric are alternatives.
+        PRICING: single-zone $4,000–$7,000; multi-zone $10,000–$20,000+;
+        a five-head three-floor job "easily hits $18,000–$22,000".
+        Trade-offs stated openly: the visible 36"-wide wall head is a real
+        aesthetic compromise; multi-zone costs more than people expect.
+      · Option 2 — High-velocity small-duct (SpacePak, Unico). 2" flexible ducts
+        vs 6–10" standard. PRICING $18,000–$35,000 for a whole brownstone.
+        SEER 14–16 vs 20–30+ for ductless. Stated to be "the right answer maybe
+        5–10% of the time".
+      · Option 3 — PTAC. Called "rarely the right answer for brownstones" —
+        needs a ~42"×16" exterior-wall hole, noisier, less efficient.
+      · Option 4 — Window units. $200–$500 per unit, no install. Defensible if
+        renting, selling soon, or cooling 1–2 rooms. Ductless wins on
+        dollar-per-cooling-hour "usually within 3–5 years".
+      · "The decision framework" — 5 questions: staying 5+ years? how sacred is
+        the plaster? condenser access? how many rooms? budget tier
+        (<$7,000 / $10,000–$20,000 / $20,000+).
+      · "Things to check before signing any HVAC contract" — 5 items: NJ master
+        HVAC license (theirs quoted as #13VH06190200), Manual J load calc
+        included, permits handled by the contractor, workmanship warranty
+        (1–5 years) on top of parts warranty, references from actual brownstone
+        installs.
+
+  POST 2 — /blog/condo-rooftop-replacement-hoboken-property-managers/
+    Label [VERBATIM]: "Cornerstone · ~10 min read" · Updated May 2026
+    H1 [VERBATIM]: "Replacing a rooftop HVAC unit in a Hoboken condo: what to
+      know."
+    Structure & content [SUMMARY with VERBATIM data]:
+      · End-of-life signals: failed compressor on a 15+ year unit (repair
+        $4,000–$8,000 vs replacement $25,000–$45,000); cracked heat exchanger;
+        multiple major failures in one year; R-22 refrigerant; energy bills
+        climbing with no usage change (old units run at 60–70% of original
+        efficiency).
+      · "The unique Hoboken (and Jersey City) challenges" — four named:
+        narrow streets (most Hoboken streets 20–25 ft curb-to-curb vs 40–60 ft
+        of crane work area needed); building access (one freight elevator);
+        permit complexity; HOA board approvals (boards meet monthly, approval
+        cycle 4–8 weeks).
+      · "The full timeline (8–14 weeks typical)" — Week 1 site visit; Weeks 2–3
+        quote review + board approval; Weeks 3–6 permits + crane scheduling
+        (mechanical permit 5–10 business days; street-closure permit 2–4 weeks;
+        structural review 3–6 weeks; crane firms book 2–3 weeks out); Week 6–7
+        pre-lift coordination; lift day (one day, 6–10 hours, crane arrives ~7am,
+        business closure typically only 30–60 minutes); Weeks 7–14 inspections
+        and closeout.
+      · "What it actually costs" — 5 stated real project bands:
+        5-ton, existing curb, narrow side street: $22,000–$28,000
+        7.5-ton, existing curb, wider street:     $28,000–$36,000
+        10-ton with new curb adapter:             $38,000–$48,000
+        15-ton with police-coordinated closure:   $45,000–$58,000
+        3+ RTUs in one project: per-unit 10–15% below single-unit rates
+      · Line-item breakdown [VERBATIM figures]: crane itself $2,500–$5,000;
+        permit + police $1,500–$4,000; street-closure setup and notices
+        $500–$1,500.
+      · "Why most contractors decline this work" — the project management, not
+        the HVAC; coordination scales nonlinearly.
+      · "Questions HOAs should ask before signing" — 6 items including whether
+        crane/permits are included or marked up, who pulls permits, warranty
+        terms, reference projects, permit-delay contingency, and rain policy
+        (standard: reschedule within a week, no charge).
+
+  POST 3 — /blog/tankless-water-heaters-older-jersey-city-buildings/
+    Label [VERBATIM]: "Cornerstone · ~7 min read" · Updated May 2026
+    H1 [VERBATIM]: "Tankless water heaters in older Jersey City buildings."
+    Structure & content [SUMMARY with VERBATIM data]:
+      · Why tankless wins for older homes: lifespan (tanks 8–12 yr vs tankless
+        18–25 yr); endless hot water; 20–30% water-heating energy saving from
+        no standby loss; reclaimed basement space; federal 25C tax credit
+        ($600–$2,000). Upfront premium over an in-kind tank swap:
+        $2,000–$4,000. For homes being sold soon, the premium doesn't fully
+        recoup.
+      · Three older-building install challenges:
+        GAS LINE CAPACITY — a tank burner pulls 30,000–40,000 BTU; a residential
+          tankless pulls 150,000–200,000 BTU at full output. Older JC buildings
+          often have 1/2" lines needing an upgrade to 3/4" (or 1"), a 4–8 hour
+          black-iron job. Called "the single biggest reason tankless installs in
+          older Jersey City buildings cost more".
+        VENTING — condensing tankless needs PVC sidewall venting (a 4–6 inch
+          exterior wall penetration); non-condensing can reuse the chimney but
+          is less efficient and doesn't qualify for the tax credit.
+        BASEMENT CONSTRAINTS — low ceilings, narrow walkways; they also inspect
+          surrounding plumbing (galvanized supply pipe, non-compliant expansion
+          tanks) and flag findings "without pressuring you into extra work".
+      · Sizing in GPM: single-bath 5–7 · typical 2-bath 7–9 · 3-bath or
+        simultaneous fixtures 9–11.
+      · Brands: Navien condensing is the default for older JC row homes; Rheem
+        and Rinnai are the other primary picks. Explicitly avoid "cheaper
+        imported brands" and big-box "point of use" units over parts supply.
+      · Combi units (Navien NCB named) replace boiler + water heater in one for
+        hydronic-heated row homes. Explicitly NOT beneficial for steam-heated or
+        forced-air homes.
+      · Costs [VERBATIM]:
+        In-kind tank replacement (comparison):          $1,500–$3,000
+        Standard condensing tankless:                   $4,000–$5,500
+        With gas line upgrade:                          $5,500–$7,500
+        With gas line upgrade + complex venting:        $7,000–$9,500
+        Combi unit (replaces WH + boiler):              $8,000–$13,000
+      · Install-day timeline broken into 7 hourly stages; most installs are a
+        single day.
+
+--------------------------------------------------------------------------------
+4.9  SERVICE / SYSTEM / COMMERCIAL PAGE TEMPLATES  (the site's repeating engine)
+--------------------------------------------------------------------------------
+The 47 service, system, commercial and city pages are built from a small set of
+reusable section templates. Identifying them is the most reusable part of this
+extraction. [INFERRED from structural comparison of all 47 pages.]
+
+TEMPLATE A — "CATEGORY HUB" (used by /services/, /services/air-conditioning/,
+  /services/heating/, /services/indoor-air-quality/, /services/water-heaters/,
+  /hvac-systems/, /commercial/)
+  1. Breadcrumb
+  2. Hero with photo: eyebrow · H1 · lead · rating block · two CTAs
+     (Schedule Service + Call) · photo with caption
+     [VERBATIM standard caption]: "Local HVAC for real Hudson County buildings."
+     / "Brownstones, condos, rooftop systems, PTACs, and commercial spaces."
+  3. Brand logo band (marquee, light background)
+  4. "Pick your path." — 3 or 4 large action cards, each with title,
+     description, a 4-item feature list and an "Explore …" link
+  5. (services/water-heaters + hvac-systems only) an editorial "deep dive" row
+     with anchor sublinks into the child page
+  6. "Repair or replace?" two-column decision helper (see below)
+  7. "Common … problems we fix." — 6-card problem grid
+  8. Equipment / cross-link tile row
+  9. "Where we work." — 10-city link row
+  10. "Quick answers." — 6 FAQ accordions
+  11. Final CTA banner + footer
+
+TEMPLATE B — "SERVICE ACTION PAGE" (repair / maintenance / install children —
+  16 pages)
+  1. Breadcrumb
+  2. Hero WITH INLINE FORM: eyebrow · H1 · lead · rating block · Gravity form
+  3. Brand logo band
+  4. "Symptoms we diagnose" OR "Why annual maintenance" OR "When it's time to
+     replace" — 6-card grid
+  5. "Diagnose first. Quote next. Then fix." (repair) / "What we actually do on
+     a tune-up." (maintenance) / "From estimate to running system" (install) —
+     4 numbered process steps
+  6. "What affects the cost/price" — 3 numbered factors + a closing note that
+     always ends in the phone number
+  7. "Two other ways we help." — 2 sibling action cards
+  8. 10-city row
+  9. 6 FAQ accordions
+  10. Final CTA
+
+TEMPLATE C — "SYSTEM PAGE" (7 pages under /hvac-systems/)
+  1. Breadcrumb · 2. Hero with inline form · 3. Brand band
+  4. "What it is" — a 2-paragraph plain-English explainer
+  5. "Why <system> …" — 3 benefit cards
+  6. "Brands we install & service" — named brand list
+  7. "Sizing & options" — 3–4 numbered configuration decisions
+  8. "What installation involves" — 3 numbered scope drivers + a PRICING
+     SENTENCE + phone CTA
+  9. "Install, repair, or maintain — we do all three." — 2 service cards
+  10. "Considering other systems?" — 4 cross-links
+  11. 10-city row · 12. 6 FAQs · 13. Final CTA
+
+TEMPLATE D — "COMMERCIAL PAGE" (6 pages under /commercial/)
+  Same skeleton as C but sections are renamed:
+  "What we do" → "Why <audience> works with us" (3 cards) → "Equipment we
+  service" → "How we engage" (4 numbered steps) → "What affects pricing"
+  (3 numbered) → "Related services" (2 cards) → "Other commercial services"
+  (4 cross-links) → 10-city row → 6 FAQs → final CTA
+
+TEMPLATE E — "CITY PAGE" (10 pages under /service-areas/)
+  1. Breadcrumb
+  2. Hero: "<City>, NJ" eyebrow · H1 "HVAC services in <City>, NJ." · lead ·
+     rating block + a DISTANCE BADGE [VERBATIM examples: "Our HQ — in Hoboken
+     since 2001", "5 minutes from our Hoboken HQ", "10 minutes from our Hoboken
+     HQ", "10–15 minutes from our Hoboken HQ", "15 minutes from our Hoboken HQ",
+     "15–20 minutes from our Hoboken HQ"] · two CTAs
+  3. Map card: "<City> HVAC coverage" + [VERBATIM] "Phones answered 24/7. Same
+     Tanous crew, local dispatch, and clear next steps."
+  4. AEO INTRO PARAGRAPH — a single dense ~110-word paragraph headed
+     "<City> HVAC services" that always names: years of service (25), the
+     Hoboken base, the full service list, the city's named neighborhoods,
+     "230+ five-star reviews", and both licence numbers.
+  5. "Why <City> works with us" — 2 long paragraphs of genuinely
+     city-specific housing-stock analysis
+  6. "Every service we offer is available across <City>." — 9 service chips
+     (identical on all 10 pages): Air Conditioning · Heating · Water Heaters ·
+     Indoor Air Quality · Ductless Mini-Splits · PTAC Units · Emergency HVAC ·
+     Maintenance Plans · Commercial
+  7. "<City> HVAC realities" — two panels:
+       "Buildings we work on in <City>" (3–4 named building types)
+       "Where we work in <City>" (Neighborhoods · Major streets · Landmarks)
+  8. ONE city-specific testimonial with a named job and date
+  9. "Common questions from <City> homeowners." — 5 city-specific FAQs, one of
+     which is ALWAYS "How fast can Tanous reach <City>…?"
+  10. "Nearby cities we serve" — 3 neighbour links + All 10 Service Areas →
+  11. Final CTA
+
+--------------------------------------------------------------------------------
+4.10  REPEATED / DUPLICATED CONTENT ACROSS PAGES
+--------------------------------------------------------------------------------
+These exact strings recur site-wide. Recurrence locations noted.
+
+[VERBATIM] "Family-owned since 2001." — hero subheads on ~20 pages
+[VERBATIM] "Phones answered 24/7." — hero subheads, FAQ answers, footers, ~50 pages
+[VERBATIM] "★★★★★ 4.9 across 230+ reviews / 4.8 on Google · 5.0 on Yelp"
+   — every page except home, privacy, terms (57 pages)
+[VERBATIM] "Local HVAC for real Hudson County buildings. Brownstones, condos,
+   rooftop systems, PTACs, and commercial spaces." — every category-hub hero photo
+[VERBATIM] "10 cities. Local techs answering local phones." — the "Where we
+   work" section on ~40 pages
+[VERBATIM] "Not sure which side you're on? Call 201-245-5151 — we'll tell you
+   straight." — closes every "repair or replace" block (5 pages)
+[VERBATIM 4-step process block, identical wording] "Phone triage / On-site
+   diagnostic / Honest quote / Fix & verify" — all 5 repair pages
+[VERBATIM 4-step process block] "Easy scheduling / Full system tune-up / Honest
+   report / Easy renewal" — all 4 maintenance pages
+[VERBATIM 4-step process block] "In-home estimate / Options & quote / Permits &
+   install / Test & walkthrough" — all 4 install pages. NOTE: on
+   /services/water-heaters/installation-replacement/ step 01 still reads
+   "Manual J load calculation … we measure space, insulation, ductwork" which is
+   an HVAC-sizing description mis-applied to a water heater. See §13.
+[VERBATIM] "No fixed online prices — we diagnose, then quote." — 4 repair pages
+[VERBATIM] "We won't quote sight-unseen" / "We won't quote a number
+   sight-unseen — that's how you get charged double." — install pages
+[VERBATIM] "We'll show you the math." — high-utility-bill problem cards, 3 pages
+[VERBATIM] "Explore Repair" / "Explore Maintenance" / "Explore Install &
+   Replace" — sibling-card link labels across all service pages
+[VERBATIM] "no fake '60-minute guarantees'" (and variants) — home FAQ,
+   /emergency-hvac/, /services/, AC repair, heating repair, /service-areas/
+The 9-chip service row on all 10 city pages is byte-identical.
+The 6-item modal form is byte-identical on every page that has it.
+
+================================================================================
+5. OFFERINGS DATA (normalized across the whole site)
+================================================================================
+
+--- SERVICE LINE 1: AIR CONDITIONING ---
+One-liner [VERBATIM]: "Repair, maintenance, and installation across Hoboken and
+  Hudson County."
+For: homeowners, condo owners, high-rise residents, commercial.
+Sub-services: AC Repair · AC Maintenance · AC Installation & Replacement
+Scope [VERBATIM lists]:
+  Repair: "System diagnostics + honest quote" · "All major brands serviced" ·
+    "Refrigerant · capacitor · compressor · control board" · "24/7 emergency
+    repair available"
+  Maintenance: "Full system tune-up" · "Filter, coil & drain cleaning" ·
+    "Refrigerant level check" · "Maintenance plans from $185/yr"
+  Install: "Free in-home estimate" · "Right-sizing for your space" ·
+    "Ductless mini-splits (Fujitsu specialty)" · "Central AC, PTAC, rooftop units"
+Symptoms handled [VERBATIM]: AC won't turn on · Blowing warm air · Strange
+  noises · Leaking water · Short cycling · High utility bills · Tripping breaker
+Process (repair, 4 steps): Phone triage → On-site diagnostic → Honest quote →
+  Fix & verify
+Process (install, 4 steps): In-home estimate (Manual J) → Options & quote →
+  Permits & install → Test & walkthrough
+TIMELINES [VERBATIM]:
+  Ductless mini-split install: 1–2 days
+  Central AC replacement (existing ductwork): 1 day
+  New central AC with new ductwork: 2–4 days
+  PTAC unit swaps: a few hours per unit
+  AC tune-up: "About 60–90 minutes per system"
+PRICING [VERBATIM]:
+  Ductless single-zone: $4,000–$7,000 installed
+  Ductless multi-zone: $10,000–$20,000+
+  Central AC replacement (existing ductwork): $6,000–$12,000
+  Full new central system with new ductwork: $15,000–$25,000+
+  Maintenance: Single $185/yr · Combo $245/yr
+  Repair: NO published price — "No fixed online prices"
+  A diagnostic/service-call fee exists and is "typically credited toward the
+  job" if the repair is approved; the amount is given on the phone, never
+  published.
+Tune-up inclusions [VERBATIM]: "Refrigerant level check, coil cleaning
+  (evaporator + condenser), drain line clear, electrical connection tightening,
+  capacitor & contactor test, thermostat calibration, blower motor & filter
+  check, airflow measurement, and a written findings report."
+Repair-or-replace criteria [VERBATIM]:
+  Repair if: under 10 years old · repair cost under 30% of a new system ·
+    recent annual maintenance · single component failure
+  Replace if: 12+ years old · repair cost 50%+ of replacement · R-22
+    refrigerant (EPA phase-out 2020) · energy bills rising at steady usage
+Warranty [SUMMARY]: parts carry manufacturer warranty (typically 1–5 years for
+  AC parts); most repairs carry an additional workmanship warranty; specifics
+  stated on the invoice.
+Efficiency claims [VERBATIM]: right-sizing "saves you 15-30% on operating cost";
+  a tune-up "usually restores measurable efficiency"; well-maintained AC "commonly
+  lasts 15–18 years. Neglected systems often fail by year 10."
+
+--- SERVICE LINE 2: HEATING ---
+One-liner [VERBATIM]: "Furnace, boiler, and heat-pump repair, install, and
+  service."
+Sub-services: Heating Repair · Heating Maintenance · Heating Install & Replace ·
+  Furnace Repair (deep dive) · Boiler Repair (deep dive)
+System types served [VERBATIM]: gas, electric, oil, heat pump; steam boilers,
+  hydronic boilers, combi boilers, forced-air furnaces, cast-iron boilers.
+Symptoms [VERBATIM]: Furnace won't ignite · Boiler losing pressure · No heat or
+  blowing cold · Banging or clanging noises · Uneven heat between floors · High
+  utility bills · Strange smells · Short cycling · Pilot/ignition won't light ·
+  Yellow flame or soot · Blower won't stop · Cold spots · Leak at the base ·
+  No hot water (combi units)
+Repair-or-replace criteria [VERBATIM]:
+  Repair if: under 12 years (furnace) or 20 (boiler) · repair cost under 30% of
+    replacement · annual maintenance kept up · single component
+  Replace if: 15+ years (furnace) or 25+ (boiler) · repair cost 50%+ ·
+    AFUE under 80% (modern systems run 90-98%) · repeated breakdowns over 2 winters
+LIFESPANS [VERBATIM]:
+  Furnaces: 15–20 years (condensing 90%+ AFUE: 15–20)
+  Cast-iron hydronic boilers: 25–35 years; "routinely run 30–40 years with
+    maintenance" in Hoboken brownstones; some original ones 50+
+  Steam boilers (atmospheric): 20–30 years
+  Modern condensing boilers: 15–20 years
+  Heat pumps: 12–18 years
+PRICING [VERBATIM]:
+  Furnace replacement: $4,500–$9,000 (a "new high-efficiency furnace is $7,000")
+  Maintenance: Single $185 · Combo $245
+  Repair: no published price
+Efficiency data [VERBATIM]: "Pre-1995 equipment is often 60–75% AFUE. Modern
+  condensing equipment is 90–96%." · "An 80% furnace wastes 20% up the flue. A
+  95% condensing furnace wastes only 5%." · "Soot, scale, and dirty burners drag
+  combustion efficiency down by 5–15% over a season."
+Heating tune-up inclusions [VERBATIM]:
+  Furnaces: "combustion analysis, burner cleaning, blower service, heat
+    exchanger inspection, gas pressure check, filter swap"
+  Boilers: "same combustion check, plus low-water cutoff test, water-side
+    cleaning (or flush on hydronic), expansion tank, and steam-skim if
+    applicable"
+Combustion analysis defined [VERBATIM]: "We put a calibrated probe in the flue
+  and measure CO, O2, CO2, flue temperature, and combustion efficiency."
+Named conversions offered: oil-to-gas · oil-to-heat-pump · steam-to-hydronic ·
+  radiators-to-forced-air. Gas line work coordinated with PSE&G.
+Filter guidance [VERBATIM]: "Disposable 1" filters: every 1–3 months during
+  heating/cooling season. Thicker 4"–5" pleated filters: every 6–12 months."
+Emergency threshold [VERBATIM]: "Below ~25°F outside, with pipes at risk of
+  freezing, or vulnerable people (infants, elderly, medical needs) in the home —
+  that's an emergency call."
+
+--- SERVICE LINE 3: INDOOR AIR QUALITY ---
+One-liner [VERBATIM]: "Humidifiers, purifiers, dehumidifiers, and ventilation
+  for tighter homes."
+Four sub-products, each with its own page:
+
+  AIR PURIFIERS
+    What it is [SUMMARY]: a media cabinet holding a thick MERV 11–16 filter
+      installed on the return-air ductwork before the air handler; optional UV-C
+      light in the supply plenum.
+    Options: MERV 11 (general, low pressure drop) · MERV 13 ("the sweet spot")
+      · MERV 16 (near-HEPA, requires blower verification). Cabinets 4" or 5".
+    PRICING [VERBATIM]: "Whole-home media purifier (MERV 13, 4" cabinet):
+      typically $700–$1,400 installed. Add UV-C: $300–$600. Annual filter cost:
+      ~$60–$120/year"
+    Timeline: "Most installs in half a day"
+    Filter change: 4" cabinet every 6–12 months; 5" cabinet every 12 months.
+    UV-C bulbs: every 1–2 years.
+    Named brands: Honeywell, Carrier, Trane, Bryant (AprilAire named in prose as
+      "the industry standard for whole-home media filtration")
+    Local hook [VERBATIM]: "the diesel haze from PATH and Lincoln Tunnel traffic"
+
+  HUMIDIFIERS
+    Two types: bypass (water trickles over a pad) and steam (boils water, injects
+      steam, runs independent of the furnace).
+    PRICING [VERBATIM, two slightly different figures appear]:
+      In "Sizing & options": "Bypass humidifiers: … $400–$800 installed" /
+      "Steam humidifiers: $1,200–$2,000 installed"
+      In the pricing note: "Bypass humidifier: typically $500–$900 installed.
+      Steam humidifier: $1,500–$2,500 installed. Annual maintenance (pad or
+      descale): ~$50–$150."   ← the two figures disagree; see §13.
+    Sizing: bypass adequate up to ~2,500 sqft; 2,500–4,000 sqft large bypass or
+      steam; 4,000+ or multi-floor open layout → steam.
+    Target humidity [VERBATIM]: "35–45% relative humidity is the comfort zone".
+      NJ winter indoor humidity falls to 15–20%.
+    Named controls: AprilAire 8810, Ecobee.
+    Claimed benefit [VERBATIM]: "Most homeowners can drop the thermostat 1–2°F
+      after installing a humidifier and feel just as comfortable."
+    Water hardness [VERBATIM]: "Hudson County water is moderately hard".
+
+  DEHUMIDIFIERS
+    Capacity in pints/day: 70 PPD small homes/basements · 90–100 PPD average ·
+      120+ PPD large. Rule of thumb [VERBATIM]: "0.04–0.05 pints per day per
+      sqft. A 2,500 sqft home needs ~100–125 PPD."
+    PRICING [VERBATIM]: "Standalone basement dehumidifier: typically
+      $1,500–$2,500 installed. Ducted whole-home dehumidifier: $2,500–$4,000
+      installed." Condensate pump if needed: $150–$300.
+    Target [VERBATIM]: "45–55% relative humidity in summer."
+    Operating cost [VERBATIM]: "~600–800 watts when running… Annual operating
+      cost: maybe $80–$200"
+    Explicit NON-offer [VERBATIM]: a dehumidifier will NOT fix standing water /
+      foundation leaks — "you need a waterproofing solution first."
+
+  VENTILATION (HRV / ERV)
+    Sized by ASHRAE 62.2. Typical residential 80–160 CFM.
+    ERV recommended over HRV for NJ climate.
+    PRICING [VERBATIM]: "Integrated HRV/ERV install: typically $2,500–$5,000.
+      Dedicated-duct install: $4,500–$8,500 depending on home size."
+    Timeline: "Most installs in 1–2 days"
+    Heat recovery claim [VERBATIM]: "captures 70–90% of the heat from outgoing
+      air"
+    Operating cost [VERBATIM]: "~50–100 watts continuously… Annual operating
+      cost: $50–$120"
+    Code note [VERBATIM]: "tightness below 3 ACH50, the code references ASHRAE
+      62.2 for ventilation."
+
+--- SERVICE LINE 4: WATER HEATERS ---
+One-liner [VERBATIM]: "Tank, tankless, and combi water heater installation and
+  service."
+Sub-services: Repair · Maintenance · Install & Replace · Tankless (deep dive)
+LIFESPANS [VERBATIM]: Tank (gas) 8–12 yr · Tank (electric) 10–15 yr ·
+  Tankless 18–25 yr · Hybrid heat pump 10–15 yr · Combi boilers 15–20 yr
+SIZING [VERBATIM]:
+  Tank: "40-gallon for 1-2 people, 50-gal for 3-4, 75-gal for 5+"
+  (elsewhere: "40–50 gallons (gas) or 50–80 gallons (electric)")
+  Tankless GPM: single-bath 5–7 · 2-bath 7–9 · 3+ bath 9–11+
+PRICING [VERBATIM]:
+  Tank install: $1,500–$3,000 installed
+  Tankless in-kind replacement: $4,000–$5,500 installed
+  First-time tank→tankless conversion: $5,500–$8,500 installed
+  Tankless generally: $4,000–$7,000 installed
+  Hybrid heat-pump WH: $3,500–$5,000 installed
+  Anode rod replacement: "under $200"
+INSTALL TIMELINES [VERBATIM]: In-kind tank swap 2–4 hours · new tank with code
+  upgrades half a day · tank-to-tankless conversion 1 day · tankless
+  replacement half a day
+Maintenance: annual tank flush · anode rod inspection at year 3–4 · tankless
+  descaling annually (every 6 months in hard-water buildings), takes about an
+  hour.
+Hard water [VERBATIM]: "about 8–12 grains per gallon depending on neighborhood"
+Named brands installed: Rheem · Navien · A.O. Smith · Bradford White · Bosch ·
+  Rinnai. Navien is the tankless specialty; "Rheem ProTerra" named for
+  heat-pump WH.
+Explicit NON-recommendation [VERBATIM]: "We avoid the cheaper imported brands
+  and the 'point of use' tankless units sold at big-box stores."
+Tax credit [VERBATIM]: "Federal 25C tax credit (typically $600–$2,000 depending
+  on efficiency tier)"
+
+--- EQUIPMENT / SYSTEM CATALOGUE (7 system pages) ---
+
+DUCTLESS MINI-SPLITS  — the flagship specialty
+  Claim [VERBATIM]: "$818K+ in Fujitsu installs over the years."
+  Pricing: single-zone $4,000–$7,000 · multi-zone $10,000–$20,000+
+  Timelines: single 1–2 days · multi-zone 2–3 days (Day 1 outdoor + line sets,
+    Day 2 heads + electrical + commissioning, Day 3 cleanup/walkthrough)
+  BTU per head [VERBATIM]: "9k BTU for a small bedroom, 12k for a living room,
+    up to 24k for a larger great room."
+  Head styles: wall-mount · ceiling cassette · floor-mount · ducted-cassette
+  SEER claim [VERBATIM]: "SEER ratings up to 30+ on Fujitsu Halcyon & Daikin
+    Aurora."
+  Brands: Fujitsu (primary — "Fujitsu Halcyon for most residential installs"),
+    Daikin (Aurora), Mitsubishi Electric (Hyper-Heat), LG ("for tighter budgets")
+  Permits: "Most Hoboken/JC installs require an electrical permit."
+
+HEAT PUMPS
+  Cold-climate claim [VERBATIM]: "work at full capacity down to about 5°F"
+  Pricing: ductless heat pump $5,000–$15,000 before incentives · ducted with
+    existing ductwork $10,000–$18,000 · panel upgrade if needed $1,500–$3,000
+  Incentives named [VERBATIM]: "PSE&G heat pump rebates ($500–$3,000 depending
+    on system tier). Federal 25C tax credit (up to $2,000 for qualifying heat
+    pumps). Inflation Reduction Act point-of-sale rebates for income-qualifying
+    households."
+  Backup heat: electric resistance strip or retained gas furnace (hybrid);
+    "Backup runs maybe 5–10 days a year on coldest nights."
+  Lifespan: ductless 15–20 yr · ducted central 12–18 yr
+  Brands: Fujitsu Halcyon XLTH · Daikin Aurora · Mitsubishi Hyper-Heat · LG
+
+CENTRAL HVAC
+  Pricing [VERBATIM]: "Central AC replacement (existing ductwork): typically
+    $6,000–$12,000. Furnace replacement: $4,500–$9,000. Full new system with new
+    ductwork: $15,000–$25,000+."
+  Lifespan: central AC 12–15 yr (variable-speed up to 20) · high-efficiency
+    furnaces 15–20 yr · variable-speed gas furnaces 20+ yr
+  Variable-speed premium [VERBATIM]: "Costs about 20% more upfront"
+  Brands: Coleman · York · Carrier · Trane · Lennox · Bryant · American
+    Standard · Goodman
+  Stance [VERBATIM]: "We don't play dealer-program games"
+
+ZONING SYSTEMS
+  Pricing [VERBATIM]: "Most 2–3 zone retrofits run $2,500–$5,500 installed.
+    Adding to a new system install is usually $1,000–$2,500 cheaper than
+    retrofitting later."
+  Timeline: "Most installs in 1–2 days"
+  Zone count guidance: 2-zone (up/down) or 3-zone (basement/main/upper);
+    "4+ zones get complex and start running into airflow limits"
+  Components: motorized dampers · bypass damper · control panel · per-zone
+    thermostats
+  Brands: Honeywell · Ecobee · Carrier · Trane. Note [VERBATIM]: "Nest is more
+    limited — works with some, requires workarounds with others."
+  Maintenance impact [VERBATIM]: "Adds maybe 10 minutes to a tune-up visit. Our
+    Combo Plan covers zoning systems — same price."
+
+PTAC UNITS
+  Pricing [VERBATIM]: "Single PTAC replacement (sleeve intact): typically
+    $1,400–$2,400 installed. New sleeve work adds $400–$1,000."
+    (elsewhere: "A PTAC unit costs $800–$1,800.")
+  Timeline: "Most PTAC replacements are 1–2 hour swaps when the sleeve is intact"
+  BTU sizing: 7,000 small bedrooms · 9,000–12,000 living rooms/master suites ·
+    15,000+ larger combined spaces
+  Voltage: 208V vs 230V — determined by the building, verified before ordering
+  Sleeve [VERBATIM]: "Most PTACs use a standard 42" wide x 16" tall sleeve"
+  Lifespan: residential 7–10 years · hotel/high-use 5–7 years
+  Brands: Friedrich (default/market leader) · Amana · GE (GE Zoneline) · LG ·
+    Goodman
+
+WATER-SOURCE HEAT PUMPS
+  Pricing [VERBATIM]: "Single-unit WSHP replacement: typically $3,500–$6,500
+    installed."
+  Timeline: half-day per unit
+  Loop temperature [VERBATIM]: "typically 60–90°F year-round"
+  Lifespan: 15–20 years (10–12 in heavy/sub-let use)
+  Responsibility split [VERBATIM]: "The HOA / building management is responsible
+    for the building loop (cooling tower, boiler, pumps, water treatment). You
+    are responsible for your in-unit WSHP."
+  Brands: Carrier · Trane · Goodman · York (ClimateMaster and WaterFurnace named
+    on /commercial/ and home)
+
+ROOFTOP UNITS (commercial)
+  Pricing [VERBATIM]: "Single RTU replacement (5–10 ton): typically
+    $20,000–$45,000 installed, depending on tonnage and crane costs."
+  Sizing rule [VERBATIM]: "roughly 1 ton per 400–500 sqft" with a Manual N
+    (commercial) load calculation
+  Lifespan: 10–20 years; restaurant RTUs 8–12; office/retail 15–20
+  Curb reuse rate [VERBATIM]: "About 60% of replacements use the existing curb."
+  Timeline: single-unit swap with existing curb = one day
+  Brands: Carrier · Trane · Lennox · York · Coleman · Bryant · AAON ·
+    Daikin Applied
+
+--- COMMERCIAL OFFERINGS ---
+Audiences: Condo Buildings & Co-ops · Property Management · Hospitality ·
+  Light Commercial
+Specialised services: Rooftop & Crane Work · Maintenance Contracts ·
+  Emergency HVAC
+
+  CONDO BUILDINGS
+    [VERBATIM] "Per-unit pricing below retail. PTAC swaps in batches of 4–20 at
+    predictable per-unit rates."
+    Documentation held on file: Certificate of Insurance, W-9, contractor
+    licence documentation. Additional insureds added as required.
+    Engagement: no-charge building walkthrough → per-unit + common-area quote →
+    scheduled batch execution → property-manager reporting
+    Billing: resident-billed vs HOA-billed work separated; separate invoices,
+    separate work orders, or consolidated — "whatever your accounting needs".
+    Response [VERBATIM]: "Most non-emergency calls get scheduled within 24–48
+    hours; true emergencies (no heat in winter, water leak) get same-day
+    response."
+    Contract terms: no long-term commitment required; T&M also available.
+
+  PROPERTY MANAGEMENT
+    Breakeven stated [VERBATIM]: "the breakeven is around 4–5 properties"
+    Sweet spot [VERBATIM]: "usually 8+ properties with consistent equipment types"
+    Savings claim [VERBATIM]: "Portfolios over 5 properties typically save
+      15–30% vs. ad-hoc vendor calls."
+    Structure: one master agreement + property-by-property addendums; properties
+      can be added or removed mid-contract.
+    Reporting: quarterly per-property visit reports, work-order summaries,
+      parts/labour breakdown, recommended capex.
+    Also serves: small multi-family 4–20 units, single-family rentals.
+
+  HOSPITALITY
+    Hotel PTAC replacement cycle [VERBATIM]: "15–25% of PTACs replaced per year
+      on a 6–8-year cycle", scheduled during low-occupancy weeks.
+    Hotel PTAC runtime [VERBATIM]: "50–70 hours/week in active rooms"; replaced
+      at 7–10 years.
+    Restaurant work window [VERBATIM]: "overnight (1am–6am typically)"
+    Named specialty: kitchen exhaust hood + makeup-air balancing; banquet/event
+      space load-swing controls.
+    After-hours premium applies and is quoted up front.
+
+  LIGHT COMMERCIAL
+    Range [VERBATIM]: "offices from 1,000 sqft up to 30,000 sqft"
+    Also: server-room / IDF dedicated cooling · medical and dental offices ·
+      mixed-use buildings (retail below, residential above)
+    Pricing model: diagnostic visit fees and per-hour labour disclosed up front.
+
+  ROOFTOP REPLACEMENT
+    Pricing [VERBATIM]: "Single 5–7 ton RTU replacement: typically
+      $20,000–$45,000 installed (including crane + permits)."
+    Permit package [VERBATIM]: "Mechanical permit (always), electrical permit
+      (always for new equipment), gas permit (if applicable), structural review
+      (case-by-case), street-closure permit (frequent in Hoboken)."
+    Lead time [VERBATIM]: "typically 2–4 weeks" for permits + crane scheduling
+    Lift window [VERBATIM]: "Usually a 3–6 hour window of street activity"
+    Phases: site visit & assessment → permits & crane scheduling → pre-lift
+      coordination → lift day execution
+    Multi-RTU: 1 RTU per day per crane visit; multi-day crane rental discounts.
+    Pricing transparency claim [VERBATIM]: "You pay the city's direct fees — we
+      don't mark them up."
+
+  MAINTENANCE CONTRACTS (commercial)
+    FOUR TIERS [ALL VERBATIM headings]:
+      01 "Basic: scheduled visits" — quarterly or semi-annual; filter changes,
+         belt checks, refrigerant pressure, control verification, written
+         report. Parts/labour billed separately at contract rates.
+      02 "Standard: visits + priority" — plus priority dispatch; same-day
+         response business hours, same-night after-hours; locked-in per-hour
+         repair rates.
+      03 "Full: visits + priority + parts" — plus a parts pool for common
+         consumables (filters, belts, capacitors).
+      04 "Custom: portfolio & specialty" — multi-property, hospitality
+         off-hours, mixed property types.
+    Tier pricing deltas [VERBATIM]: "Basic visits: lowest annual cost. Standard
+      with priority response: ~30% premium. Full with parts pool: ~60% premium."
+    Visit cadence by type [VERBATIM]: "Office/retail: typically semi-annual
+      (spring + fall). Hotel and restaurant: quarterly. Condo building common
+      areas: quarterly. PTAC arrays in hotels: rolling schedule."
+    Cancellation [VERBATIM]: "Yes — 60 days notice typically… Pro-rated refunds
+      on the unused portion of pre-paid contracts."
+    Equipment installed by others is accepted "as long as it's in serviceable
+      condition."
+
+--- RESIDENTIAL MAINTENANCE PLAN (the flagship recurring offer) ---
+  Single Plan  — $185/yr — 1 annual visit
+  Combo Plan   — $245/yr — 2 visits (spring AC + fall heating) — "Most popular"
+  Custom       — Call for pricing
+  Member perks [VERBATIM]: "Front-of-line repair scheduling, 15% off replacement
+    pricing, free diagnostic on repair calls, flexible visit scheduling."
+    (Also stated as "15% off any repair work" in the plan FAQ — see §13.)
+  Multi-system pricing [VERBATIM]: "usually $245 + ~$75 per additional system"
+  Condo PTAC contracts [VERBATIM]: "Typical condo PTAC contracts run $40-80 per
+    unit per year."
+  Scheduling windows [VERBATIM]: "Spring AC tune-up: March-May. Fall heating
+    tune-up: September-November." (Elsewhere: AC "April–May", heating
+    "September–October".)
+  Cancellation [VERBATIM]: "no contract, no cancellation fee. We bill annually;
+    cancel any time and we won't charge for the next year."
+  Combo saving stated [VERBATIM]: "Combo ($245) saves you $125/year vs. two
+    singles ($185 + $185)."
+
+--- INDUSTRIES SERVED ---
+  Residential (single-family, brownstone, row home, condo, co-op, walk-up,
+  townhome, high-rise) · HOAs / condo associations · property management ·
+  hotels · restaurants · bars/lounges · banquet & event venues · assisted
+  living · offices · retail · mixed-use · light industrial · medical/dental
+  offices · rental buildings
+
+--- GEOGRAPHIES (10 cities) ---
+  Hudson County: Hoboken (HQ) · Jersey City · Weehawken · Union City ·
+    West New York · North Bergen · Guttenberg
+  Bergen County: Edgewater · Cliffside Park · Fort Lee
+  Stated travel-time from the Hoboken shop [VERBATIM]:
+    Hoboken HQ · Guttenberg ~5 min · Jersey City 5–15 min · Weehawken 5–10 min ·
+    Union City 5–10 min · West New York ~10 min · North Bergen 10–15 min ·
+    Edgewater 10–15 min · Cliffside Park 15–20 min · Fort Lee 15–25 min
+  Stated 24/7 emergency on-site arrival windows [VERBATIM]:
+    Hoboken ~60 min · Weehawken ~60 min · Union City ~60 min ·
+    Guttenberg 45–60 min (weekend 60–75) · West New York 60–75 min ·
+    North Bergen ~75 min · Edgewater 75–90 min · Cliffside Park 75–90 min ·
+    Fort Lee ~90 min
+  Pricing policy [VERBATIM]: "Same pricing everywhere — no travel fees."
+  Explicitly OUT of area [VERBATIM]: "Why don't you serve Bayonne, Secaucus, or
+    Kearny? We could, but we focus on the 10 cities where we have the deepest
+    local knowledge and fastest response times. Quality over coverage."
+
+--- MINIMUM ENGAGEMENT ---
+  None stated for residential. Portfolio contracts have a stated economic
+  breakeven at 4–5 properties. No minimum job size published.
+
+--- ONBOARDING STEPS ---
+  Residential: call or form → phone triage → in-home estimate (free, Manual J
+  on installs) → written quote with 2–3 options → permits → install → test &
+  walkthrough → post-first-season follow-up.
+  Commercial: no-charge walkthrough / site visit / portfolio review →
+  per-unit + common-area quote → COI + W-9 + licence filed with management →
+  scheduled batch execution → written per-visit reporting.
+
+--- WHAT IS EXPLICITLY *NOT* OFFERED ---
+  [VERBATIM] "Address-only office (no walk-in showroom)." — no retail counter
+  [VERBATIM] "We don't make arrival-time promises we can't keep." / "No fake
+    '60-minute response' guarantees." — no response-time SLA for residential
+  [VERBATIM] "No fixed online prices" for repairs — no online price list, no
+    instant quote tool
+  [VERBATIM] Commercial financing: "No — commercial customers typically work
+    with their own banks or PACE financing. NEIF is residential-focused."
+  [VERBATIM] Dehumidifiers do not solve water intrusion: "you need a
+    waterproofing solution first."
+  [VERBATIM] Combi units are NOT recommended for steam-heated or forced-air
+    homes.
+  [VERBATIM] Cheap imported and big-box point-of-use tankless units: "We avoid"
+  No plumbing, electrical, roofing or waterproofing as standalone trades (a
+    roofing partner is brought in when curb work is needed; an electrician is
+    coordinated for panel upgrades). [INFERRED]
+  Service area is capped at 10 cities by choice.
+
+================================================================================
+6. PROOF & SOCIAL PROOF
+================================================================================
+
+STATS AND COUNTERS (every number the site displays)
+  25          — "Years family-owned"  (also "24+ years" on /about/ and
+                 /service-areas/hoboken/ — see §13)
+  2001        — founding year
+  4.8★        — "Google rating"
+  5.0★        — "Yelp rating"
+  4.9         — "Weighted average across 230+ verified reviews"
+  230+        — "Five-star reviews"
+  10          — "Cities served"
+  2           — "NJ licenses (HVAC + Contractor)"
+  24/7        — "Phones answered" / "Calls answered"
+  3           — "three generations of Hudson County customers"
+  $818K+      — "in Fujitsu installs over the years"
+  8           — brands installed "in real volume"
+  70–80%      — share of Hoboken brownstone AC retrofits done as ductless
+  60%         — share of RTU replacements that reuse the existing curb
+  15–30%      — portfolio-contract savings vs ad-hoc vendor calls
+  15%         — member discount on replacement pricing
+
+NAMED CLIENTS / PARTNERS
+  NO named client companies or client logos anywhere. The only logos shown are
+  manufacturer brand logos. [INFERRED from full-source scan.]
+  Named partner: NEIF (National Energy Improvement Fund) — financing.
+  Named utility: PSE&G (rebates, gas line coordination, emergency gas line).
+  Named programs: NJ Clean Energy Program · federal 25C tax credit · Inflation
+    Reduction Act point-of-sale rebates.
+
+MANUFACTURER BRANDS DISPLAYED (logos, names only)
+  Fujitsu · York · Rheem · Honeywell · Coleman · Carrier · Trane · Lennox ·
+  Daikin · Mitsubishi Electric · LG · American Standard · Goodman · Bryant ·
+  Amana · Ruud · A.O. Smith · Bradford White · Bosch · Weil-McLain · AprilAire ·
+  Ecobee
+  Additionally named in prose but not shown as logos: Friedrich · Navien ·
+  Rinnai · Burnham · Buderus · Peerless · Crown · ClimateMaster · WaterFurnace ·
+  AAON · GE Zoneline · Daikin Applied · SpacePak · Unico · Nest
+
+TESTIMONIALS (attribution exactly as displayed; content summarized)
+  /reviews/ — 3, flagged on-page as pending verification:
+    "M.K. — Hoboken · via Google" — Fujitsu mini-split brownstone install.
+    "D.L. — Jersey City · via Yelp" — 11pm no-heat call, tech at 7am.
+    "A.R. — Property Manager · via Google" — 3 condo buildings, PTAC contracts.
+  City pages — one each, with job type and date:
+    "Maria L., Hoboken Heights · Multi-zone Fujitsu ductless · Sep 2025" —
+      eight contractors said central air couldn't fit; Tanous found a working
+      Fujitsu configuration and cleaned up thoroughly.
+    "James K., The Heights · Navien combi boiler install · Nov 2025" — inherited
+      a 50-year-old boiler in a 1910 row home; options explained without
+      pushing the priciest; combi cut the gas bill by 30%.
+    "David R., Boulevard East · Friedrich PTAC replacement · Aug 2025" — three
+      companies wouldn't quote the cliff-side access; Tanous did it in 3 hours.
+    "Marco T., Bergenline corridor · Multi-property contract · Ongoing" — owns
+      three 4-family walk-ups; one contract covers PTAC swaps and shared boiler
+      service with predictable monthly billing.
+    "HOA Board, Park Avenue condo building · PTAC replacement program ·
+      Ongoing" — 86-unit building interviewed four companies; Tanous gave the
+      most realistic timeline and was the only one not charging for site visits.
+    "Jennifer S., Greendale · Emergency furnace replacement · Jan 2026" —
+      furnace died on a 12°F night; phone answered at 11pm, tech by 1am,
+      temporary heat, new furnace in two days, no after-hours premium charged.
+    "Anna P., Galaxy Towers · 22-year customer · Most recent PTAC replacement
+      2025" — three PTAC replacements over 22 years on the building's standard
+      Friedrich spec.
+    "Property Manager, River Road condo · 200-unit PTAC program · Ongoing" —
+      3-year rolling replacement schedule; two years in, ahead of schedule with
+      flat per-unit cost.
+    "Robert & Linda M., Anderson Avenue · 12-year customer · Most recent: AC
+      replacement 2026" — oil furnace to high-efficiency gas in 2018, AC swap
+      this year, same techs each time.
+    "Sarah K., Hudson Lights · In-unit WSHP replacement · Oct 2025" — three
+      contractors couldn't coordinate with the HOA; Tanous already had the
+      property-manager relationship, saving 3 weeks of paperwork.
+  Guttenberg city page carries no separate testimonial beyond Anna P.'s.
+
+CASE STUDIES
+  NONE as a formal page type. The closest equivalents are (a) the city-page
+  testimonials above, which carry client type + problem + solution + sometimes a
+  result, and (b) the cost bands in the rooftop blog post, which are described
+  as "Real numbers for Hoboken rooftop replacement projects we've done recently".
+  No dedicated /work/, /projects/ or /case-studies/ section exists.
+
+RATINGS, REVIEW COUNTS, PLATFORMS
+  Google 4.8 · Yelp 5.0 · combined weighted 4.9 across 230+ reviews.
+  Encoded in schema.org AggregateRating on all 60 pages.
+  Only two platforms used. No BBB, Angi, HomeAdvisor, Nextdoor, Houzz or
+  Facebook rating shown.
+
+AWARDS / CERTIFICATIONS / PRESS / BADGES
+  Licences (the only formal credentials shown):
+    NJ Master HVAC License #13VH06190200
+    NJ Contractor License #19HC00429300
+  Text badges in footer: "★ 4.8 Google" · "★ 5.0 Yelp" · "25 Years" ·
+    "NJ Licensed"
+  Hero micro-badge [VERBATIM]: "Licensed NJ master HVAC • phones answered 24/7"
+    and "NJ licensed • 25 years • phones answered 24/7"
+  NO awards. NO press mentions. NO trade-association memberships (no NATE,
+  ACCA, BBB). NO manufacturer dealer badges (e.g. no "Carrier Factory
+  Authorized Dealer"). [INFERRED from full-source scan.]
+
+WHERE PROOF SITS RELATIVE TO CTAs
+  · Homepage: the 5-stat row sits immediately BELOW the hero CTAs and above the
+    fold-break — proof follows the ask.
+  · Every inner page: the rating block sits BETWEEN the lead paragraph and the
+    hero CTA/form — proof precedes the ask.
+  · The brand logo marquee sits immediately after the hero on all category and
+    system pages — a second trust beat before any content.
+  · City pages: the single testimonial sits directly BEFORE the FAQ block and
+    two sections before the final CTA.
+  · The footer repeats ratings as badges adjacent to the two footer CTAs.
+  · Licence numbers appear only at the very bottom (legal row) and on /about/ —
+    never adjacent to a CTA.
+
+================================================================================
+7. PEOPLE & COMPANY
+================================================================================
+
+FOUNDERS / TEAM
+  NO individual names, photos, titles or bios anywhere on the site. The company
+  is referred to only as "a family" and "the same family". No leadership page,
+  no team page, no technician profiles. [INFERRED from full-source scan of all
+  60 pages — a notable gap, see §13.]
+
+FOUNDING YEAR
+  2001 [VERBATIM, stated on 40+ pages]
+
+HEADQUARTERS
+  4 14th St #501, Hoboken, NJ 07030 [VERBATIM]
+  Described as [VERBATIM]: "Address-only office (no walk-in showroom)" /
+  "HQ (address-only · no walk-in)"
+  Referred to in prose as "our shop on 14th Street" and "our 14th Street shop".
+  NO other locations. No second office or warehouse mentioned.
+
+HOURS
+  No business-hours table published. The only hours statement is [VERBATIM]:
+  "Phones answered 24/7" / "Calls answered 24/7". Same-business-day callback is
+  promised for email and web forms.
+
+CONTACT CHANNELS
+  Phone 201-245-5151 (also written "(201) 245-5151") · email info@tanousnj.com ·
+  web form · postal address.
+
+COMPANY SIZE CLAIMS
+  No headcount, revenue or fleet-size figure. The only size-adjacent claims are
+  "family-owned", "same family, same trucks", "the same techs across all service
+  areas", "Not a franchise", and "the tech who shows up has been with us for
+  years". [VERBATIM]
+
+CAREERS / HIRING
+  NONE. No careers page, no job listings, no "we're hiring" mention anywhere.
+
+CULTURE / VALUES STATEMENTS
+  Three named values on /about/ under "What we stand for." [SUMMARY]:
+    Honest answers — no fake response guarantees, no upselling, recommend the
+      cheaper repair when it's the right call.
+    Hudson County roots — deep building-stock knowledge specific to the area.
+    Real work — take the crane, permit and condo-board jobs others decline.
+  Recurring cultural claim [VERBATIM, under 15 words]: "When you call us, you
+  reach a real person." · "the price is the price."
+
+MISSION / VISION
+  No formal mission or vision statement. The closest is the /about/ closing
+  headline [VERBATIM]: "25 years in, still picking up the phone."
+
+================================================================================
+8. FAQ & OBJECTION HANDLING
+================================================================================
+Every FAQ on the site. Questions [VERBATIM]; answers [SUMMARY].
+Structure is uniform: 6 accordion rows per page (5 on city pages).
+
+--- HOMEPAGE (/) ---
+Q: "Do you really answer phones 24/7?"
+   A: Yes; calls to (201) 245-5151 answered around the clock; emergency service
+      available county-wide; on-site availability depends on schedule, location
+      and demand, and they will always say what to expect.
+Q: "What brands do you install?"
+   A: Eight primary install brands (Fujitsu, Friedrich, York, Coleman, Rheem,
+      Navien, AprilAire, Honeywell); service every major brand.
+Q: "Do you handle permits and crane work?"
+   A: Yes — crane, permits and police escorts for street closures on Hoboken and
+      JC rooftop replacements; permit fees passed through at city cost, no
+      upcharge.
+Q: "Do you offer financing?"
+   A: Yes, residential financing via NEIF for heat pumps, water heaters and
+      efficiency upgrades. Commercial customers use their own banks.
+Q: "Do you work with condo boards and property managers?"
+   A: "It's our bread and butter." They maintain several Hudson County condo
+      buildings and work directly with HOAs, associations and property managers,
+      from PTAC servicing to rooftop replacements.
+Q: "Where is your service area?"
+   A: The 10 named cities; HQ at 4 14th St #501, Hoboken.
+
+--- /services/ ---
+Q: "What HVAC services do you offer?" · Q: "Do you handle commercial
+   properties?" · Q: "Are you licensed and insured in New Jersey?" (answer gives
+   both licence numbers and "Fully insured") · Q: "What brands do you install?" ·
+   Q: "Do you offer emergency service?" · Q: "How fast can you respond?"
+   (answer: depends on the day; they give an honest answer rather than a promise)
+
+--- /services/air-conditioning/ ---
+Q: "How often should I service my AC?" (annually, spring, before cooling season)
+Q: "How do I know if I need a new AC system?" (12+ years, repair 50%+ of
+   replacement, R-22, climbing bills)
+Q: "What size AC do I need for my home?" (Manual J on every install; right-
+   sizing saves 15-30% operating cost)
+Q: "Do you install ductless AC for brownstones without ductwork?" (yes, a
+   strongest specialty; single-zone $4,000-$7,000, multi-zone $10,000-$20,000+)
+Q: "How long does an AC install take?" (ductless 1-2 days; central replacement
+   1 day; new ductwork 2-4 days)
+Q: "Do you offer emergency AC repair?" (yes, 24/7 phones, no fake 60-minute
+   guarantees)
+
+--- /services/air-conditioning/repair/ ---
+Q: "Do you charge for the diagnostic visit?" (yes, a service-call fee, typically
+   credited toward the job if the repair is approved; the number is given on the
+   phone before scheduling)
+Q: "How quickly can you get out to me?" · Q: "What brands of AC do you repair?"
+Q: "Will you push me to replace instead of repair?" (no; explicitly names the
+   competitor red flag of "a $400 repair quoted as a $9,000 replacement")
+Q: "My building has roof access issues. Is that a problem?" (they work Hudson
+   County high-rises weekly; coordinate freight elevators and after-hours access)
+Q: "Do you offer a warranty on repairs?" (parts 1–5 years by part and brand,
+   plus a workmanship warranty, specified on the invoice)
+
+--- /services/air-conditioning/maintenance/ ---
+Q: "What's actually included in a tune-up?" · Q: "Single visit vs. Combo Plan —
+   which is right?" · Q: "When should I schedule?" (April–May) · Q: "My building
+   has 4 units. Can you do them all at once?" · Q: "Can I skip a year?"
+   (warranty risk — "a $1,200 compressor claim could get denied") ·
+   Q: "Does maintenance cover ductless mini-splits?"
+
+--- /services/air-conditioning/installation-replacement/ ---
+Q: "How long does an install take?" · Q: "What's Manual J and why does it
+   matter?" · Q: "Do I need permits in Hoboken or Jersey City?" (yes; they pull
+   them) · Q: "Is financing available?" (NEIF, residential) · Q: "Which brand do
+   you recommend?" (Fujitsu ductless, Friedrich PTAC, York/Carrier/Trane central)
+   · Q: "Can you install ductless in a brownstone without breaking up walls?"
+
+--- /services/heating/ ---
+Q: "How often should I service my heating system?" · Q: "What's the difference
+   between a furnace and a boiler?" · Q: "Should I repair or replace my old
+   furnace or boiler?" · Q: "Do you service oil heat?" (yes, plus oil-to-gas and
+   oil-to-heat-pump conversions) · Q: "How long do furnaces and boilers last?" ·
+   Q: "Do you do gas conversions?" (yes; PSE&G coordination and permits handled)
+
+--- /services/heating/repair/ ---
+Q: "When is 'no heat' a true emergency?" (below ~25°F with pipe-freeze risk or
+   vulnerable occupants) · Q: "Boiler vs. furnace vs. heat pump — what's the
+   difference?" · Q: "Do you service old steam radiators?" · Q: "Heat pumps in
+   winter — do they work?" (modern cold-climate units to ~5°F) ·
+   Q: "Is my 25-year-old boiler worth repairing?" · Q: "Warranty?"
+
+--- /services/heating/maintenance/ ---
+Q: "When should I schedule?" (September–October) · Q: "Boiler vs. furnace
+   tune-ups — what's different?" · Q: "Carbon monoxide — how big a risk is this
+   really?" (cites CDC reporting hundreds of CO incidents each winter from
+   heating equipment) · Q: "What's combustion analysis?" · Q: "Combo Plan vs.
+   single visits?" · Q: "Steam boilers — do you service them?"
+
+--- /services/heating/installation-replacement/ ---
+Q: "How long should a new heating system last?" · Q: "Boiler vs. furnace — how
+   do I decide?" · Q: "Heat pump vs. gas furnace?" (hybrid setups discussed) ·
+   Q: "Permits and inspections?" · Q: "Is financing available?" · Q: "Which brand
+   do you recommend?" (Weil-McLain and Navien boilers; Coleman and York
+   furnaces; Fujitsu cold-climate heat pumps)
+
+--- /services/heating/furnace-repair/ ---
+Q: "Yellow flame — should I be worried?" · Q: "How long should a furnace last?"
+Q: "Why does my furnace keep short cycling?" (dirty filter is the most common
+   cause) · Q: "How often should I change the filter?" · Q: "80% vs. 95% AFUE —
+   what's the difference?" · Q: "When is it time to replace?"
+
+--- /services/heating/boiler-repair/ ---
+Q: "Steam vs. hydronic — what's the difference?" · Q: "Why do my radiators
+   bang?" (three named causes; "Almost never the boiler itself") · Q: "What's a
+   pressure-relief valve?" (with the safety instruction "Don't cap it — ever.") ·
+   Q: "How long do boilers last?" · Q: "Old brownstone with steam — can you keep
+   it running?" · Q: "Annual boiler flush — needed?"
+
+--- /services/indoor-air-quality/ ---
+Q: "What's the difference between an air purifier and a humidifier?" ·
+Q: "Do I need an air purifier if I have a good HVAC filter?" (MERV 8-11 catches
+   30-60%; whole-home HEPA/UV-C catches 99%+) · Q: "What is an ERV and why does
+   my condo need one?" · Q: "How often do I change humidifier pads or air
+   purifier filters?" · Q: "Will a whole-home dehumidifier raise my electric
+   bill?" ($5-15/month in humid months) · Q: "AprilAire or Honeywell — which do
+   you recommend?"
+
+--- /services/indoor-air-quality/air-purifiers/ ---
+Q: "Is a whole-home purifier really better than a portable HEPA?" · Q: "What
+   MERV rating should I get?" · Q: "How often do I change the filter?" ·
+Q: "Does UV-C actually do anything?" · Q: "Can I upgrade my existing 1" filter
+   to MERV 13 instead of installing a media cabinet?" (warns about pressure drop
+   and coil icing) · Q: "Do I need an air purifier with my HVAC?" (honest answer:
+   "Need is a strong word — the system runs fine without one.")
+
+--- /services/indoor-air-quality/humidifiers/ ---
+Q: "What humidity level should I target?" · Q: "Bypass vs. steam — which should
+   I get?" · Q: "How often does the humidifier pad need replacing?" · Q: "Do
+   humidifiers grow mold?" · Q: "Will a humidifier damage my windows?" ·
+Q: "Does humidified air really save on heating bills?"
+
+--- /services/indoor-air-quality/dehumidifiers/ ---
+Q: "Doesn't my AC dehumidify?" · Q: "What humidity level should I target?" ·
+Q: "Whole-home vs. portable — which?" · Q: "How big a unit do I need?" ·
+Q: "Will a dehumidifier raise my electric bill a lot?" · Q: "My basement has
+   standing-water issues. Will a dehumidifier fix it?" (explicit "No")
+
+--- /services/indoor-air-quality/ventilation/ ---
+Q: "Do I really need mechanical ventilation?" · Q: "HRV or ERV?" · Q: "Will an
+   HRV make my house cold in winter?" · Q: "Doesn't opening a window do the same
+   thing?" · Q: "Code requirement — do I need ventilation?" · Q: "How much does
+   it cost to run?"
+
+--- /services/water-heaters/ ---
+Q: "How long do water heaters last?" · Q: "Tank vs tankless — which is right for
+   me?" · Q: "Can a tankless water heater work in a Hoboken brownstone?" ·
+Q: "How often should I drain my water heater?" · Q: "Should I switch from
+   electric to gas water heater?" · Q: "What size water heater do I need?"
+
+--- /services/water-heaters/repair/ ---
+Q: "How long do water heaters last?" · Q: "Tank vs. tankless — which should I
+   have?" · Q: "What's an anode rod and why does it matter?" · Q: "Tankless error
+   codes — what do they mean?" · Q: "When should I replace vs. repair?" ·
+Q: "Gas vs. electric — what should my next unit be?"
+
+--- /services/water-heaters/maintenance/ ---
+Q: "How often should I flush my tank?" · Q: "What's an anode rod and how often
+   do I check it?" · Q: "How often should I descale a tankless?" · Q: "Multi-unit
+   buildings?" · Q: "Hard water in Hudson County — how bad is it?" · Q: "Can you
+   combine WH service with HVAC tune-ups?"
+
+--- /services/water-heaters/installation-replacement/ ---
+Q: "Tank vs. tankless — how do I decide?" · Q: "Do I need a gas line upgrade for
+   tankless?" · Q: "How long does install take?" · Q: "Sizing — how do I know
+   what I need?" · Q: "Hybrid heat-pump water heater — is it worth it?" ·
+Q: "Which brand do you recommend?"
+
+--- /services/water-heaters/tankless-water-heaters/ ---
+Q: "Tank vs. tankless — which should I get?" · Q: "Will tankless really never
+   run out of hot water?" · Q: "Do I need a gas line upgrade?" · Q: "What's the
+   difference between condensing and non-condensing?" (condensing "usually pays
+   back the upfront difference in 5–7 years") · Q: "What's a combi unit?" ·
+Q: "How often does a tankless need descaling?"
+
+--- /hvac-systems/ ---
+Q: "How do I know which HVAC system is right for my home?" · Q: "Do you install
+   systems you didn't originally sell?" · Q: "What's the difference between a
+   heat pump and a ductless mini-split?" · Q: "Why is PTAC so common in Hoboken
+   condos?" · Q: "Can I get NJ rebates on heat pump installs?" · Q: "Do you
+   handle commercial HVAC systems?"
+
+--- /hvac-systems/ductless-mini-splits/ ---
+Q: "Why ductless instead of central AC?" · Q: "How long does a multi-zone
+   install take?" · Q: "Can the line sets be hidden?" · Q: "Are most ductless
+   units also heat pumps?" · Q: "Cooling-only or cooling + heating?" · Q: "Which
+   brand do you recommend?"
+
+--- /hvac-systems/heat-pumps/ ---
+Q: "Do heat pumps really work in NJ winters?" · Q: "Do I need backup heat?" ·
+Q: "What NJ incentives are available?" · Q: "Heat pump vs. gas furnace — which
+   is cheaper to run?" · Q: "Can I use my existing ductwork?" · Q: "How long do
+   heat pumps last?"
+
+--- /hvac-systems/central-hvac-systems/ ---
+Q: "When does central HVAC make more sense than ductless?" · Q: "Replace just
+   AC, just furnace, or both?" · Q: "What's Manual J and why does it matter?" ·
+Q: "Will my existing ductwork work?" · Q: "Variable-speed — worth the upgrade?"
+   · Q: "Lifespan of a new system?"
+
+--- /hvac-systems/zoning-systems/ ---
+Q: "When does zoning solve the problem vs. when do I need a bigger system?" ·
+Q: "Zoning vs. ductless multi-zone — which is cheaper?" · Q: "Can I add zoning
+   to my existing system?" · Q: "Do smart thermostats (Ecobee, Nest) work with
+   zoning?" · Q: "What's a bypass damper and do I need one?" · Q: "How is
+   maintenance different with zoning?"
+
+--- /hvac-systems/ptac-units/ ---
+Q: "How long do PTACs last?" · Q: "Replace vs. repair?" · Q: "Do I need HOA
+   approval?" · Q: "Multi-unit buildings — do you do whole-building contracts?"
+   · Q: "Heat pump PTAC — worth the upgrade?" · Q: "Does brand matter?"
+
+--- /hvac-systems/water-source-heat-pumps/ ---
+Q: "How do WSHPs differ from PTACs?" · Q: "Who maintains the building loop — me
+   or the HOA?" · Q: "How long do WSHPs last?" · Q: "Per-unit replacement
+   timeframe?" · Q: "Most common WSHP failures?" · Q: "How does the building loop
+   affect my energy bill?"
+
+--- /hvac-systems/rooftop-units/ ---
+Q: "How long do commercial RTUs last?" · Q: "How does crane-lift coordination
+   work?" · Q: "What permits are required?" · Q: "Maintenance contracts — what's
+   included?" · Q: "My existing roof curb — will the new RTU fit?" · Q: "Which
+   brand for commercial?"
+
+--- /commercial/ ---
+Q: "Do you work with condo associations and co-op boards?" · Q: "What kind of
+   permits and crane work do you handle?" · Q: "How do commercial maintenance
+   contracts work?" · Q: "Can you respond to building HVAC emergencies after
+   hours?" · Q: "What commercial HVAC brands do you install?" · Q: "Do you do
+   hotel or assisted living facility work?"
+
+--- /commercial/condo-buildings/ ---
+Q: "Do you provide a Certificate of Insurance?" · Q: "How do you handle
+   resident-billed vs. HOA-billed work?" · Q: "Can you respond to resident
+   emergency calls 24/7?" · Q: "Do we have to commit to a long-term contract?"
+   (no) · Q: "What happens if you find equipment that needs replacement
+   mid-contract?" · Q: "Can you work after-hours to minimize resident
+   disruption?"
+
+--- /commercial/property-management/ ---
+Q: "How many properties before a portfolio contract makes sense?" · Q: "Can you
+   handle a mix of condo + rental + commercial?" · Q: "How does invoicing work
+   across multiple properties?" · Q: "Do you do residential rental properties
+   too?" · Q: "What if a building has special needs (senior living, medical)?" ·
+Q: "How do you handle parts and capex recommendations?"
+
+--- /commercial/hospitality/ ---
+Q: "How often should hotel PTACs be replaced?" · Q: "Can you do restaurant work
+   overnight?" · Q: "What about kitchen makeup-air?" · Q: "Hotel PTAC replacement
+   programs — what does that look like?" · Q: "Do you do banquet halls and event
+   spaces?" · Q: "Emergency response for hotels?"
+
+--- /commercial/light-commercial/ ---
+Q: "Do you do single-tenant office buildings?" · Q: "What about server-room or
+   IDF cooling?" · Q: "Medical or dental offices?" · Q: "How fast can you respond
+   to a no-cool emergency in summer?" · Q: "Can you handle a building with mixed
+   uses (retail downstairs, residential upstairs)?" · Q: "Do I need a long-term
+   contract for repair work?"
+
+--- /commercial/rooftop-replacement/ ---
+Q: "How long does a typical rooftop replacement take?" · Q: "What permits are
+   required?" · Q: "Do I need a police escort for the crane?" · Q: "How much
+   disruption to my business?" · Q: "Can you handle multi-RTU projects?" ·
+Q: "Curb compatibility — what if mine doesn't match?"
+
+--- /commercial/maintenance-contracts/ ---
+Q: "How often are visits?" · Q: "What's covered vs. extra?" · Q: "How fast can
+   you respond to emergencies?" · Q: "Multi-property contracts — how do they
+   work?" · Q: "Can I cancel mid-contract?" (60 days notice, pro-rated refund) ·
+Q: "How do you handle equipment we didn't install?"
+
+--- /maintenance-plan/ ---
+Q: "What if my system breaks down between visits?" · Q: "Can I cancel anytime?"
+   · Q: "What about multi-system homes (e.g., AC + boiler + 2 zones)?" ·
+Q: "Do you do PTAC service contracts for condo buildings?" · Q: "When do you
+   schedule the visits?" · Q: "What if I'm already due for a tune-up when I sign
+   up?"
+
+--- /financing/ ---
+Q: "Why NEIF specifically?" · Q: "What credit score do I need?" ("The best terms
+   go to 680+ scores, but they have options for lower scores too.") ·
+Q: "What are typical interest rates?" ("generally 6-15% APR") · Q: "How long are
+   loan terms?" ("Typically 5-15 years") · Q: "Is there a fee for using NEIF
+   financing?" ("No fee from us. NEIF may have small origination fees") ·
+Q: "Does commercial financing work the same way?" (no)
+
+--- /service-areas/ ---
+Q: "Where is your headquarters?" · Q: "Do you charge a travel fee to certain
+   cities?" (no) · Q: "Why don't you serve Bayonne, Secaucus, or Kearny?" ·
+Q: "Do you work outside Hudson and Bergen County?" · Q: "How do you handle
+   emergencies in cities further from Hoboken?" · Q: "Is the same team working in
+   all cities?" ("Not a franchise.")
+
+--- CITY PAGES (5 each, all following the same 5-slot pattern) ---
+  Slot 1: "Do you service <the city's dominant building type>?"
+  Slot 2: "How fast can Tanous reach <City> from Hoboken?"  ← on every city page
+  Slot 3: a system-specific question for that city (ductless / PTAC / steam /
+          central / WSHP)
+  Slot 4: a process question (permits, HOA approval, landlord-tenant approval,
+          oil-to-gas conversion, multi-property contracts)
+  Slot 5: a second building-type or emergency question
+  Notable city-specific questions [VERBATIM]:
+    Hoboken: "Do you handle Hoboken city permits?" · "Do you service Hoboken's
+      high-rises along Sinatra Drive?"
+    Jersey City: "Can you handle steam boilers in old Heights buildings?" ·
+      "Do you service the Newport and Paulus Hook condo buildings?"
+    Weehawken: "Do you service the Boulevard East high-rises in Weehawken?" ·
+      "Do you do work at Port Imperial?"
+    Union City: "Can you handle landlord-tenant approvals for HVAC work?" ·
+      "Do you do shared-boiler service in old multi-family buildings?"
+    West New York: "Do you handle PTAC programs for HOA boards?"
+    North Bergen: "Do you do work on Tonnelle Avenue commercial properties?"
+    Guttenberg: "Do you have relationships with the Galaxy Towers area HOAs?" ·
+      "Do you handle PTAC emergency repair on weekends and holidays?"
+    Edgewater: "Do you do water-source heat pump work in Edgewater?"
+    Cliffside Park: "Do you handle oil-to-gas conversions in older Cliffside
+      Park homes?"
+    Fort Lee: "Do you have relationships with Fort Lee condo HOAs?" ·
+      "Do you handle heat pump conversions in Fort Lee?"
+
+--- GUARANTEES, RISK-REVERSAL, TRIALS, REFUNDS ---
+  · Free in-home estimate on all installs — repeated ~20 times [VERBATIM:
+    "Free in-home estimate", "no obligation"].
+  · No-charge commercial site visit / building walkthrough / portfolio review —
+    repeated on all 6 commercial pages. Called out competitively in one
+    testimonial as "the only one that didn't require us to pay for 'site
+    visits' before they'd quote."
+  · Workmanship warranty on top of the manufacturer parts warranty, typically
+    1–5 years, documented on the invoice.
+  · Diagnostic fee credited toward the repair if approved.
+  · Maintenance plan: cancel any time, no contract, no cancellation fee, and no
+    charge for the following year.
+  · Commercial contract: 60 days notice, pro-rated refund on prepaid portion.
+  · Permits passed through at city cost with no markup — stated 6+ times.
+  · Crane rain policy [VERBATIM]: "reschedule within a week if needed, no charge
+    for the postponement."
+  · Nothing outside contract scope is done without written approval.
+  · Deliberate ANTI-guarantee [VERBATIM]: "No fake arrival-time guarantees.
+    Just an honest answer." — the absence of a response-time promise is itself
+    positioned as the trust signal.
+  · NO money-back guarantee. NO price-match. NO satisfaction guarantee. NO free
+    trial. NO published labour-rate card.
+
+================================================================================
+9. CONTENT ASSETS
+================================================================================
+
+BLOG / RESOURCES
+  3 posts, all published together, all labelled "Cornerstone", all bylined
+  "By Tanous Heating & Air Conditioning" (no individual author), all dated
+  "Updated May 2026".
+  Post titles [VERBATIM]:
+    "AC options for Hoboken brownstones: a practical guide."   (~8 min read)
+    "Replacing a rooftop HVAC unit in a Hoboken condo: what to know."  (~10 min)
+    "Tankless water heaters in older Jersey City buildings."   (~7 min read)
+  NO categories. NO tags. NO archive. NO pagination. NO comments UI (though
+  WordPress comment feeds exist in <head>). NO related-post algorithm — each
+  post ends with a hardcoded "Other cornerstone posts" block linking the other
+  two.
+  Posting frequency: not established — the index still says "Coming soon" and
+  "Three cornerstone posts at launch". [INFERRED: the blog has not been updated
+  since launch.]
+  An RSS feed exists at /feed/ (declared in <head>) but is not linked in the UI.
+
+LEAD MAGNETS / DOWNLOADS / NEWSLETTERS / WEBINARS / TOOLS
+  NONE of any kind. No downloadable guide, checklist, PDF, buyer's guide,
+  cost calculator, sizing tool, quiz, or email capture beyond the service form.
+  The site's stated position on this [VERBATIM]: "Call us. We'd rather answer
+  one question for free than write 10 SEO blog posts."
+
+VIDEO / PODCAST
+  NONE. No embedded video, no YouTube channel, no podcast. All media is still
+  photography plus logo images.
+
+MEDIA / IMAGERY INVENTORY (what exists, described — no asset URLs reused)
+  · Company logo in two variants (dark and all-white for the footer).
+  · One social-share thumbnail depicting [VERBATIM alt]: "Tanous Heating and
+    Cooling service truck parked in front of Hoboken brownstones".
+  · 22 manufacturer logo images used in the marquee.
+  · Category hero photographs [VERBATIM alts]: "HVAC technician servicing
+    outdoor air conditioning equipment" · "Technician repairing an outdoor air
+    conditioning condenser" · "Clean residential furnace and mechanical room
+    equipment" · "Whole-home indoor air quality equipment installed in
+    ductwork" · "Residential water heater and mechanical room piping" ·
+    "Ductless mini-split system installed in a modern living room" ·
+    "Commercial rooftop HVAC equipment on a flat roof".
+  · A library of ~25 stock HVAC photographs referenced by descriptive filename
+    (ac-maintenance-gauges, ac-repair-tech-outdoor, aprilaire-filter-merv-16,
+    boiler-burner-flame-service, commercial-rooftop-rtus, ductless-living-room,
+    furnace-mechanical-room-clean, heat-pump-condensers-yard,
+    ptac-hotel-room-freshaire, tankless-water-heater-wall, thermostat-control,
+    water-heater-service-tech, and others).
+  · Five city photographs: hoboken · jersey · weehawken · union · edgewater.
+    NOTE: only 5 of the 10 cities have a dedicated photo. [INFERRED]
+  · City pages embed a map iframe of the town.
+  · No illustrations, no 3D, no diagrams, no infographics anywhere.
+
+================================================================================
+10. SEO & METADATA
+================================================================================
+
+TITLE-TAG PATTERN
+  Dominant pattern: "<Descriptive phrase incl. city> — <modifier> · Tanous HVAC"
+  Variants observed:
+    Home:        "Tanous HVAC | HVAC in Hoboken & Jersey City"
+    Service:     "AC Repair in Hoboken & Hudson County NJ — Tanous HVAC"
+    Sub-service: "AC Maintenance & Tune-Ups in Hoboken & Hudson County —…"
+    System:      "Ductless Mini-Splits in Hoboken & Hudson County — Fujitsu…"
+    City:        "HVAC in <City> NJ — Tanous HVAC"
+                 (Hoboken, Edgewater and Jersey City add a keyword modifier:
+                  "HVAC in Hoboken NJ — AC, Heating, Ductless, PTAC — Tanous HVAC")
+    Company:     "About — Family-Owned HVAC in Hoboken Since 2001 · Tanous HVAC"
+    Legal:       "Privacy Policy | Tanous Heating & Air Conditioning"
+  Separators are inconsistent: "—", "·" and "|" all appear.
+  Brand suffix is "Tanous HVAC" everywhere except the two legal pages, which use
+  the full legal name.
+
+META-DESCRIPTION PATTERN
+  1–2 sentences. Almost always contains: the service, the phrase "Hoboken,
+  Jersey City, and Hudson County NJ", and at least one trust token ("NJ
+  licensed", "Family-owned since 2001", "230+ ★ reviews", "phones answered
+  24/7"). City pages compress this and use "230+ ★ reviews" with the star glyph.
+  Length is tuned to ~155–160 characters (most are truncated at that point).
+
+OG / TWITTER CARDS
+  Present on every page. og:type=website (article on the two legal pages),
+  og:title, og:description, og:url, og:site_name="Tanous Heating & Air
+  Conditioning", og:image (1200×630) with descriptive og:image:alt.
+  twitter:card=summary_large_image, twitter:title, twitter:description,
+  twitter:image. The two legal pages additionally carry Yoast's
+  twitter:label1 "Est. reading time" / twitter:data1 "1 minute".
+
+SCHEMA.ORG TYPES DETECTED (JSON-LD, @graph)
+  On EVERY page:  LocalBusiness + HVACBusiness (dual type, @id
+    ".../#business"), PostalAddress, AggregateRating, WebPage, BreadcrumbList,
+    ListItem
+  Additionally on service/system/commercial pages:  Service
+  Additionally on all 10 city pages:  Place
+  Business node includes: name, url, telephone "+12012455151", priceRange "$$",
+  streetAddress "4 14th St #501", addressLocality "Hoboken".
+  NOT present: FAQPage (despite 6 FAQs on nearly every page), Product, Offer,
+  Review (individual), Organization, Person, Article/BlogPosting on the blog
+  posts. See §13 — this is a significant missed opportunity given the FAQ volume.
+
+CANONICAL / HREFLANG
+  Self-referencing canonical on all 60 pages. No hreflang. No pagination rel
+  tags. robots meta: "index, follow, max-snippet:-1, max-image-preview:large,
+  max-video-preview:-1".
+
+URL SLUG CONVENTIONS
+  All lowercase, hyphenated, trailing slash, fully nested and semantic:
+    /services/<pillar>/<action>/
+    /services/<pillar>/<specific-system>/       (furnace-repair, boiler-repair,
+                                                 tankless-water-heaters)
+    /hvac-systems/<system>/
+    /commercial/<audience-or-service>/
+    /service-areas/<city>/
+    /blog/<descriptive-keyword-phrase>/
+  No dates, no IDs, no query strings anywhere. Depth reaches 4 levels.
+
+INTERNAL-LINKING PATTERNS
+  Extremely dense and deliberate:
+  · Every page carries the full 5-mega-menu nav (~60 links) plus a 22-link
+    footer.
+  · "Where we work" 10-city link row appears on ~40 pages.
+  · Every service-action page cross-links its two siblings ("Two other ways we
+    help").
+  · Every system page cross-links 4 sibling systems.
+  · Every commercial page cross-links 3–4 sibling commercial pages.
+  · Every city page links 3 neighbouring cities plus the hub.
+  · Category hubs link down to children; children link up via breadcrumb and
+    "Explore …" tiles.
+  · Anchor-deep links exist into child pages (e.g.
+    /hvac-systems/ductless-mini-splits/#brownstones,
+    /services/water-heaters/tankless-water-heaters/#sizing,
+    /commercial/rooftop-replacement/#permits).
+  · Blog posts link into the matching service and system pages inline.
+  · The result is a near-complete internal mesh with no orphan pages.
+
+SITEMAP AND ROBOTS FINDINGS
+  /sitemap.xml — single flat sitemap, 60 URLs, no index file, no image or news
+    sitemaps.
+  /robots.txt — disallows only /wp-admin/ (allows admin-ajax.php); declares the
+    sitemap; and explicitly ALLOWS the AI crawlers GPTBot, ChatGPT-User,
+    PerplexityBot, ClaudeBot and anthropic-ai. This is a deliberate
+    AI-search-visibility choice.
+
+KEYWORDS THE SITE VISIBLY TARGETS (from H1/H2 phrasing)
+  Geographic modifiers used relentlessly: "Hoboken", "Jersey City", "Hudson
+  County", "Hudson & Bergen County", plus each of the 10 city names.
+  Service head terms: HVAC · AC repair · AC installation · AC maintenance ·
+  heating repair · furnace repair · boiler repair · heating installation ·
+  water heater repair · water heater installation · tankless water heaters ·
+  indoor air quality · air purifiers · humidifiers · dehumidifiers ·
+  ventilation / HRV / ERV · ductless mini-splits · heat pumps · central HVAC ·
+  zoning systems · PTAC units · water-source heat pumps · rooftop units ·
+  commercial HVAC · rooftop replacement · maintenance contracts ·
+  emergency HVAC · HVAC financing
+  Qualifier terms owned in headings: "brownstones", "row homes", "condos",
+  "high-rises", "condo buildings", "property managers", "crane", "permits",
+  "police escorts", "Manual J", "AFUE", "cold-climate", "Fujitsu", "Friedrich",
+  "Navien", "AprilAire", "NEIF".
+  ANSWER-ENGINE OPTIMISATION is explicit: the CSS itself names classes
+  "aeo-intro" and "aeo-structured", and every city page opens with a dense
+  fact-packed paragraph clearly written to be quoted by an AI answer engine.
+
+================================================================================
+11. LEGAL & TRUST
+================================================================================
+
+PRIVACY POLICY — /privacy-policy/  (~330 words, 7 sections)
+  Sections [VERBATIM headings]: "Who We Are" · "Information We Collect" ·
+  "How We Use Information" · "Sharing Information" · "Cookies, Analytics, and
+  Embedded Services" · "How Long We Keep Information" · "Contact"
+  Notable clauses [SUMMARY]:
+  · Data collected via form, call or email: name, phone, email, service address,
+    service request details, notes.
+  · Technical data collected: browser type, pages visited, device information,
+    IP address, form submission metadata, cookies, security logs.
+  · Uses: respond to service requests, schedule, provide estimates,
+    communicate, maintain records, protect the website, improve marketing and
+    website experience.
+  · [VERBATIM, notable] "We do not sell personal information."
+  · Sharing is limited to service providers who operate the site, process forms,
+    send email, host data, secure the site, analyse traffic or provide support.
+  · Retention: "as long as needed for service, business records, customer
+    communication, security, and legal or operational requirements" — no fixed
+    period stated.
+  · Access/deletion requests handled by emailing info@tanousnj.com or calling.
+  · NO GDPR, CCPA, opt-out, DSAR or "Do Not Sell" section. No cookie-consent
+    banner exists on the site.
+
+TERMS — /terms/  (~180 words, 5 sections)
+  Sections [VERBATIM headings]: (intro) · "Service Requests" · "Website
+  Content" · "Third-Party Links" · "Contact"
+  Notable clauses [SUMMARY]:
+  · [VERBATIM] "Submitting a form or calling us does not guarantee availability,
+    pricing, financing approval, or same-day service until confirmed by Tanous
+    Heating & Air Conditioning."
+  · Website content is general information; recommendations, estimates, rebates,
+    financing and installation requirements all depend on the property,
+    equipment, code requirements and inspection.
+  · Third-party services (financing providers, manufacturers, maps, review
+    platforms) are governed by their own terms.
+  · NO arbitration clause, NO limitation-of-liability clause, NO governing-law
+    clause, NO warranty disclaimer beyond the above.
+
+COOKIE POLICY
+  No standalone cookie policy page and no cookie banner. Cookies are mentioned
+  only inside the privacy policy.
+
+COMPLIANCE / SECURITY CLAIMS
+  "NJ licensed" (both numbers) · "Fully insured" · Certificate of Insurance
+  available with additional insureds · W-9 on file · EPA R-22 phase-out
+  referenced · ASHRAE 62.2 referenced for ventilation sizing · Manual J and
+  Manual N load calculations referenced · NJ energy code / ACH50 referenced ·
+  HIPAA expectations acknowledged for medical/dental clients.
+  NO SOC 2, ISO, PCI or similar. No accessibility statement.
+
+PAYMENT METHODS
+  NONE named anywhere. No payment page, no card logos, no online payment portal,
+  no deposit policy. The only money mechanism described is NEIF financing.
+
+DATA-HANDLING PROMISES
+  "We do not sell personal information." Analytics via Google Analytics 4
+  (G-3LMBDX9YM4) with custom events: phone_call_click, email_click,
+  financing_click, popup_form_open, mobile_menu_open, service_cta_click,
+  generate_lead. Form spam handled by a hidden honeypot field.
+
+================================================================================
+12. CONTENT PATTERNS & TONE
+================================================================================
+
+TONE OF VOICE — five adjectives, each with a cited example
+
+1. BLUNT / ANTI-MARKETING
+   "No fake '60-minute response' guarantees." (/about/)
+   "No clipboard checklist theater." (/services/air-conditioning/maintenance/)
+   "No fake 'repairs recommended' lists." (repeated on all maintenance pages)
+
+2. NUMERICALLY SPECIFIC
+   "Single-zone systems run $4,000-$7,000 installed; multi-zone $10,000-$20,000+."
+   (/services/air-conditioning/) — the site publishes price bands on virtually
+   every system and install page, which is unusual for the trade.
+
+3. HYPER-LOCAL / INSIDER
+   "We know which condo buildings standardize on Friedrich PTAC." (/about/)
+   "Old-Hoboken steam systems often need pipe access, low-water cutoff testing,
+   and skim work that hydronic doesn't." (/services/heating/repair/)
+
+4. PLAIN-SPOKEN / EXPLANATORY
+   "How ductless works — in plain English." (/hvac-systems/ductless-mini-splits/)
+   "Mini-splits ARE a type of heat pump" (/hvac-systems/)
+
+5. SELF-DEPRECATING ABOUT MARKETING
+   "We'd rather answer one question for free than write 10 SEO blog posts."
+   (/blog/) — while operating a 60-page programmatic-SEO site.
+
+HEADLINE FORMULAS USED
+  a) "<Service> for <City> & <County>." — the dominant H1 formula
+  b) "<Service> for <City> — <differentiator>." e.g. "AC repair for Hoboken &
+     Hudson County — diagnosed before we quote."
+  c) Triadic staccato fragments: "Crane lifts. Permits. Police escorts." ·
+     "Diagnose first. Quote next. Then fix." · "Built on family. Backed by
+     reviews. Trusted by Hudson County."
+  d) Direct question H2s: "Repair or replace?" · "Ready to upgrade your Hudson
+     County home?" · "What's your AC doing — or not doing?"
+  e) "Pick your path." / "Pick your plan." / "Pick your solution." — a reusable
+     routing headline
+  f) Em-dash qualifier tails: "— old buildings welcome." · "— the work other
+     contractors decline." · "— the long-term play for Hudson County homes."
+
+CTA VERB PATTERNS
+  Primary conversion verbs: "Schedule Service" · "Call 201-245-5151" ·
+    "Sign up now" · "Get an estimate" · "Get a free estimate" · "Get an upgrade
+    estimate" · "Get a commercial quote" · "Schedule an assessment"
+  Navigational verbs: "Explore <X>" (by far the most common) · "See plans" ·
+    "See how" · "Read article" · "Learn more about" · "View all systems" ·
+    "Open NEIF financing"
+  Closing-line pattern: nearly every section-end CTA pairs one action button
+    with the phone number as the alternative.
+
+TYPICAL SECTION LENGTHS
+  Hero lead: 20–35 words. Section lead: 15–30 words. Card description: 20–35
+  words. Numbered process step: 25–40 words. FAQ answer: 40–90 words. The
+  city-page AEO intro paragraph: ~110 words. Blog paragraphs: 40–80 words.
+  Nearly every content page lands in a 950–1,250 word band — evidence of a
+  deliberate template target.
+
+PERSUASION DEVICES
+  · Anti-urgency as the differentiator — refusing to promise arrival times is
+    used as the trust signal, inverting the category norm.
+  · Competitor contrast, named but unbranded: "Other contractors promise
+    '60-minute response'…" · "a $400 repair quoted as a $9,000 replacement.
+    We don't do that." · "Most contractors won't touch it."
+  · Difficulty-as-moat: crane, permits and police escorts are framed repeatedly
+    as work others decline — "bread and butter" is used 6+ times.
+  · Price transparency as proof of honesty — publishing bands while explicitly
+    refusing to publish repair prices ("No fixed online prices — that's a sign
+    of contractors who upsell").
+  · Longevity and continuity: "since 2001", "25 years", "three generations",
+    "same techs", "Not a franchise", 12- and 22-year customer testimonials.
+  · Volunteered downside — trade-offs are stated against their own interest
+    (ductless wall heads are "a real aesthetic compromise some owners hate";
+    "Need is a strong word"; a dehumidifier won't fix a wet basement).
+  · Anchoring: repair cost vs replacement cost stated side by side everywhere.
+  · Availability signalling rather than scarcity: "Phones answered 24/7" and a
+    pulsing live-dot in the footer; there are NO countdown timers, NO "only X
+    slots left", NO discount deadlines anywhere.
+  · Reciprocity: free estimate, no-charge walkthrough, free phone advice.
+
+RECURRING VOCABULARY THEY OWN
+  "bread and butter" · "brownstone" / "row home" · "phones answered 24/7" ·
+  "we'll tell you straight" · "honest quote" / "honest answers" / "honest
+  numbers" · "crane, permits, police escorts" · "no markup" / "the city's direct
+  cost" · "Manual J" · "right-sizing" / "right-sized" · "cold-climate" ·
+  "per-unit pricing" · "family-owned" · "three generations" · "diagnose first,
+  quote next" · "no fake …" · "cancel any time" · "we'll show you both numbers"
+
+THINGS THEY CONSPICUOUSLY NEVER SAY OR SHOW
+  · No discounts, coupons, seasonal sales, "$XX off" offers or promo codes.
+  · No urgency or scarcity mechanics of any kind.
+  · No response-time guarantee — explicitly and repeatedly refused.
+  · No individual human names, faces or team photos — despite "family-owned"
+    being the central claim.
+  · No social media presence of any kind.
+  · No awards, trade-association logos or manufacturer dealer badges.
+  · No stock-photo smiling-technician-with-clipboard hero; imagery is equipment
+    and mechanical rooms.
+  · No exclamation marks (essentially zero across 60 pages).
+  · No superlatives about themselves beyond the review-backed "Hudson County's
+    most-reviewed HVAC team".
+  · No published repair or labour pricing — only install and equipment bands.
+  · No online booking or instant-quote tool.
+  · No mention of competitors by name.
+  · No emergency-premium pricing disclosed (one testimonial notes they did not
+    charge one).
+
+================================================================================
+13. GAPS & NOT RETRIEVABLE
+================================================================================
+
+--- NOTHING WAS UNRETRIEVABLE ---
+All 60 sitemap URLs returned HTTP 200 with complete server-rendered HTML.
+No page was client-rendered-only. No section was blocked, gated or partial.
+No JS rendering, alternate extraction or search-snippet recovery was needed.
+
+--- PAGES/FEATURES THE SITE ITSELF LACKS (that a site of this type usually has) ---
+  · NO team / people page — no founder name, no technician names, no photos.
+    This is the largest gap given that "family-owned" is the core positioning.
+  · NO careers or hiring page.
+  · NO brand / press / media-kit page (searched /brand, /brand-kit, /press,
+    /media-kit, /style-guide and every footer link).
+  · NO case studies or project gallery / before-and-after photos.
+  · NO social media accounts or links of any kind.
+  · NO online booking or scheduling tool.
+  · NO live chat or SMS channel.
+  · NO customer portal, invoice payment page or payment methods named.
+  · NO newsletter or any email capture beyond the service form.
+  · NO downloadable resources, guides, checklists or calculators.
+  · NO video content.
+  · NO cookie-consent banner (despite a privacy policy describing cookie use).
+  · NO accessibility statement.
+  · NO business-hours listing (only "phones answered 24/7").
+  · NO Google Business Profile link, and no map embed on /contact/ (city pages
+    have maps; the contact page does not).
+  · NO service-area map graphic — only text lists.
+  · NO published labour rate, service-call fee amount, or diagnostic fee amount.
+  · NO warranty page — warranty terms are scattered across FAQ answers.
+  · NO FAQPage schema despite ~350 individual FAQ pairs across the site; no
+    Article/BlogPosting schema on the three blog posts. Substantial missed
+    rich-result opportunity.
+  · Blog has only 3 posts, all dated the same month, with the index still
+    labelled "Coming soon".
+
+--- DEFECTS AND INCONSISTENCIES FOUND (verify before reusing any of this) ---
+  1. BROKEN FOOTER LINK. Footer column "HVAC Systems" links "Rooftop & Crane
+     Work" → /commercial/rooftop-crane/ , which is NOT in the sitemap. The real
+     page is /commercial/rooftop-replacement/ (which is what the nav mega-menu
+     correctly uses).
+  2. TRUNCATED TITLE TAG. /maintenance-plan/ <title> reads
+     "Maintenance Plan — 5/yr · Two visits a year · Tanous HVAC" — the "$18" of
+     "$185/yr" is missing, almost certainly an escaping bug.
+  3. HOMEPAGE UPGRADE CAROUSEL LINKS ARE ALL WRONG. All six "Comfort upgrades"
+     slides ("Explore ductless", "Explore heat pumps", "Explore tankless",
+     "Explore zoning", "Explore IAQ", "Explore smart thermostats") point to
+     /contact/ rather than to their matching system pages, even though those
+     pages exist. Significant lost internal-linking and UX value.
+  4. CONTRADICTORY HUMIDIFIER PRICING on /services/indoor-air-quality/
+     humidifiers/. The "Sizing & options" block says bypass $400–$800 and steam
+     $1,200–$2,000; the pricing note further down says bypass $500–$900 and
+     steam $1,500–$2,500.
+  5. CONTRADICTORY PTAC PRICING. /hvac-systems/ptac-units/ says a PTAC unit
+     costs $800–$1,800 in one section and a replacement is $1,400–$2,400
+     installed in another, then the FAQ says "new unit is $1,500–$2,000".
+     Reconcilable but not stated consistently.
+  6. WRONG PROCESS COPY REUSED. /services/water-heaters/installation-
+     replacement/ step 01 reads "Manual J load calculation… we measure space,
+     insulation, ductwork, and existing fuel/venting before sizing anything" —
+     Manual J is an HVAC load calc, not a water-heater sizing method. The block
+     was clearly copied from the AC/heating install template without editing.
+  7. "25 YEARS" vs "24+ YEARS". The site says "25 years" or "Family-owned for
+     25 years" in most places but "Same family, same trucks, same standard for
+     24+ years" on /about/ and "Family-owned in Hoboken for 24+ years" on
+     /service-areas/. Founded 2001, © 2026 — both are defensible but they are
+     inconsistent within the same site.
+  8. MEMBER DISCOUNT STATED TWO WAYS. /maintenance-plan/ says "15% off
+     replacement pricing" in the perks card but "15% off any repair work" in the
+     FAQ. These are different promises.
+  9. MAINTENANCE SCHEDULING WINDOWS DIFFER. /maintenance-plan/ says spring AC
+     "March-May" and fall heating "September-November"; the AC maintenance page
+     says "April–May" and the heating maintenance page says
+     "September–October".
+ 10. TESTIMONIALS ARE FLAGGED AS UNVERIFIED. /reviews/ states on-page: "with
+     Google and Yelp excerpts ready to be verified before final launch." The
+     three reviews-page testimonials should be treated as placeholder copy, not
+     confirmed customer quotes. The 10 city-page testimonials carry no such
+     disclaimer but follow the same pattern and should be treated with the same
+     caution.
+ 11. A "PLACEHOLDER" NOTE IS STILL LIVE ON /service-areas/. The hub page
+     contains the text "Service-area pages use the map-led pattern. City pages
+     will swap in their own town map, response copy, call button, and popup
+     request form." — an internal build note left visible to users.
+ 12. ONLY 5 OF 10 CITIES HAVE A DEDICATED PHOTO (hoboken, jersey, weehawken,
+     union, edgewater). The other five city pages fall back to the generic
+     background image.
+ 13. AGGREGATERATING SCHEMA ON ALL 60 PAGES. The same AggregateRating node is
+     emitted on every page including the privacy policy and terms. This is
+     against Google's structured-data guidance (self-serving reviews without
+     individual Review markup) and risks a manual action or ignored markup.
+ 14. THE BLOG POSTS ARE DATED "Updated May 2026" while the copyright reads
+     "© 2026" and one testimonial is dated "Jan 2026" and another "2026" — the
+     content set appears to have been written and launched together in 2026,
+     not accumulated over time.
+
+--- ITEMS I DELIBERATELY DID NOT CAPTURE ---
+  Per the brief, no design, layout, colour, typography, spacing or animation
+  observation appears anywhere in this file. Those are in designReference.txt.
+  Long-form blog copy has been summarized, not transcribed; verbatim excerpts
+  are limited to headlines, labels, list items, figures and short data-bearing
+  phrases.
+
+================================================================================
+END OF contentReference.txt
+================================================================================

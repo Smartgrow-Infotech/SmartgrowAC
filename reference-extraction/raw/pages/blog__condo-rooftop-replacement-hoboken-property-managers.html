@@ -1,0 +1,887 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replacing a Rooftop HVAC in a Hoboken Condo — What...</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.tanousnj.com/wp-content/uploads/tanous-static/design-system.css">
+<style>
+.blog-content h2 { font-family: var(--font-display); font-size: clamp(1.625rem, 3vw, 2rem); font-weight: 600; line-height: 1.2; color: var(--text-strong); margin: 48px 0 16px; letter-spacing: -.02em; }
+.blog-content h3 { font-family: var(--font-display); font-size: 1.375rem; font-weight: 600; color: var(--text-strong); margin: 32px 0 12px; }
+.blog-content p { margin-bottom: 20px; }
+.blog-content ul, .blog-content ol { margin: 0 0 24px 24px; }
+.blog-content ul { list-style: disc; }
+.blog-content ol { list-style: decimal; }
+.blog-content li { margin-bottom: 10px; }
+.blog-content blockquote { border-left: 3px solid var(--red); padding: 8px 24px; margin: 32px 0; font-family: var(--font-display); font-size: 1.375rem; font-weight: 500; color: var(--text-strong); line-height: 1.4; font-style: italic; }
+.blog-content a { color: var(--red); text-decoration: underline; }
+.blog-content a:hover { color: var(--red-hover); }
+.blog-content strong { color: var(--text-strong); }
+.blog-content .callout { background: var(--bg-warm); border-radius: var(--r-md); padding: 24px 28px; margin: 32px 0; }
+.blog-content .callout p:last-child { margin-bottom: 0; }
+.blog-content .callout strong { display: block; font-family: var(--font-display); font-size: 1.125rem; margin-bottom: 8px; color: var(--text-strong); }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LMBDX9YM4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3LMBDX9YM4');
+</script>
+<script id="tanous-ga4-events">
+(function(){
+  var sent = {};
+  function cleanText(value){
+    return (value || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+  }
+  function eventKey(name, params){
+    return name + ':' + (params.form_id || '') + ':' + (params.link_url || '') + ':' + (params.cta_text || '') + ':' + window.location.pathname;
+  }
+  function track(name, params){
+    if (typeof window.gtag !== 'function') {
+      return;
+    }
+    params = params || {};
+    params.page_location = window.location.href;
+    params.page_path = window.location.pathname;
+    window.gtag('event', name, params);
+  }
+  function trackOnce(name, params){
+    var key = eventKey(name, params || {});
+    if (sent[key]) {
+      return;
+    }
+    sent[key] = true;
+    track(name, params);
+  }
+  function detectLeadConfirmation(){
+    document.querySelectorAll('.tanous-form-confirmation, [id^="gform_confirmation_wrapper_"]').forEach(function(node){
+      var formId = node.getAttribute('data-tanous-form-id') || '';
+      if (!formId && node.id) {
+        formId = node.id.replace('gform_confirmation_wrapper_', '');
+      }
+      trackOnce('generate_lead', {
+        form_id: formId,
+        form_name: formId ? 'Tanous Gravity Form ' + formId : 'Tanous Gravity Form'
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', detectLeadConfirmation);
+  document.addEventListener('gform_confirmation_loaded', function(event){
+    var formId = event.detail && event.detail.formId ? String(event.detail.formId) : '';
+    trackOnce('generate_lead', {
+      form_id: formId,
+      form_name: formId ? 'Tanous Gravity Form ' + formId : 'Tanous Gravity Form'
+    });
+  });
+  if (window.jQuery) {
+    window.jQuery(document).on('gform_confirmation_loaded', function(event, formId){
+      trackOnce('generate_lead', {
+        form_id: String(formId || ''),
+        form_name: formId ? 'Tanous Gravity Form ' + formId : 'Tanous Gravity Form'
+      });
+    });
+  }
+  document.addEventListener('click', function(event){
+    var target = event.target.closest('a, button');
+    if (!target) {
+      return;
+    }
+    var href = target.href || target.getAttribute('href') || '';
+    var label = cleanText(target.textContent || target.getAttribute('aria-label') || '');
+    var lowerLabel = label.toLowerCase();
+    var baseParams = {
+      link_url: href,
+      link_text: label
+    };
+
+    if (href.indexOf('tel:') === 0) {
+      track('phone_call_click', baseParams);
+    }
+    if (href.indexOf('mailto:') === 0) {
+      track('email_click', baseParams);
+    }
+    if (/neifund\.org\/tanous-heating-and-air-conditioning/i.test(href)) {
+      track('financing_click', baseParams);
+    }
+    if (target.matches('[data-tanous-open-modal]')) {
+      track('popup_form_open', {
+        modal_id: target.getAttribute('data-tanous-open-modal') || '',
+        cta_text: label
+      });
+    }
+    var controls = (target.getAttribute('aria-controls') || '').toLowerCase();
+    if (
+      controls.indexOf('mobile') !== -1 ||
+      target.matches('.mobile-menu-toggle, .site-header__menu-toggle, [data-mobile-menu-toggle]') ||
+      lowerLabel === 'menu'
+    ) {
+      track('mobile_menu_open', {
+        cta_text: label
+      });
+    }
+    if (
+      /schedule|request|estimate|quote|service|financing|maintenance/i.test(label) &&
+      !href.match(/^tel:|^mailto:/i)
+    ) {
+      track('service_cta_click', {
+        link_url: href,
+        cta_text: label
+      });
+    }
+  });
+})();
+</script>
+<style id="tanous-gf-honeypot-css">.gform_validation_container,.gfield--type-honeypot{position:absolute!important;left:-9999px!important;top:auto!important;width:1px!important;height:1px!important;margin:0!important;padding:0!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important;}</style>
+<meta name="description" content="A complete guide to commercial rooftop HVAC replacement in Hoboken condo buildings — crane work, NJ permits, HOA board approvals, realistic timelines and costs.">
+<link rel="canonical" href="https://www.tanousnj.com/blog/condo-rooftop-replacement-hoboken-property-managers/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Replacing a Rooftop HVAC in a Hoboken Condo — What...">
+<meta property="og:description" content="A complete guide to commercial rooftop HVAC replacement in Hoboken condo buildings — crane work, NJ permits, HOA board approvals, realistic timelines and costs.">
+<meta property="og:url" content="https://www.tanousnj.com/blog/condo-rooftop-replacement-hoboken-property-managers/">
+<meta property="og:site_name" content="Tanous Heating & Air Conditioning">
+<meta property="og:image" content="https://www.tanousnj.com/wp-content/uploads/tanous-static/assets/photos/tanous-social-thumbnail.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tanous Heating and Cooling service truck parked in front of Hoboken brownstones">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Replacing a Rooftop HVAC in a Hoboken Condo — What...">
+<meta name="twitter:description" content="A complete guide to commercial rooftop HVAC replacement in Hoboken condo buildings — crane work, NJ permits, HOA board approvals, realistic timelines and costs.">
+<meta name="twitter:image" content="https://www.tanousnj.com/wp-content/uploads/tanous-static/assets/photos/tanous-social-thumbnail.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["LocalBusiness","HVACBusiness"],"@id":"https://www.tanousnj.com/#business","name":"Tanous Heating & Air Conditioning","url":"https://www.tanousnj.com/","telephone":"+12012455151","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"4 14th St #501","addressLocality":"Hoboken","addressRegion":"NJ","postalCode":"07030","addressCountry":"US"},"areaServed":["Hoboken NJ","Jersey City NJ","Hudson County NJ","North Bergen NJ","Weehawken NJ","Union City NJ"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"230"}},{"@type":"WebPage","@id":"https://www.tanousnj.com/blog/condo-rooftop-replacement-hoboken-property-managers/#webpage","url":"https://www.tanousnj.com/blog/condo-rooftop-replacement-hoboken-property-managers/","name":"Replacing a Rooftop HVAC in a Hoboken Condo — What Property Managers Need to Know","description":"A complete guide to commercial rooftop HVAC replacement in Hoboken condo buildings — crane work, NJ permits, HOA board approvals, realistic timelines and costs.","isPartOf":{"@id":"https://www.tanousnj.com/#website"},"about":{"@id":"https://www.tanousnj.com/#business"}},{"@type":"BreadcrumbList","@id":"https://www.tanousnj.com/blog/condo-rooftop-replacement-hoboken-property-managers/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tanousnj.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.tanousnj.com/blog/"},{"@type":"ListItem","position":3,"name":"Replacing a Rooftop HVAC in a Hoboken Condo — What Property Managers Need to Know","item":"https://www.tanousnj.com/blog/condo-rooftop-replacement-hoboken-property-managers/"}]}]}</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<!-- HEADER -->
+<header class="site-header" id="header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__logo">
+      <img src="https://www.tanousnj.com/wp-content/uploads/tanous-static/assets/logos/63139539482ba70bce6f05a7_Logo-Tanous-HVAC%20(1).png" alt="Tanous Heating &amp; Air Conditioning">
+    </a>
+    <nav class="site-header__nav" aria-label="Primary">
+
+      <!-- SERVICES -->
+      <div class="nav-item">
+        <a href="/services/" class="nav-item__trigger">
+          Services
+          <svg class="nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="megamenu megamenu--services">
+          <div class="megamenu__inner">
+            <div class="megamenu__col">
+              <h4>Air Conditioning</h4>
+              <ul>
+                <li><a href="/services/air-conditioning/">All AC Services</a></li>
+                <li><a href="/services/air-conditioning/repair/">AC Repair</a></li>
+                <li><a href="/services/air-conditioning/maintenance/">Maintenance</a></li>
+                <li><a href="/services/air-conditioning/installation-replacement/">Install &amp; Replace</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__col">
+              <h4>Heating</h4>
+              <ul>
+                <li><a href="/services/heating/">All Heating</a></li>
+                <li><a href="/services/heating/repair/">Heating Repair</a></li>
+                <li><a href="/services/heating/maintenance/">Maintenance</a></li>
+                <li><a href="/services/heating/installation-replacement/">Install &amp; Replace</a></li>
+                <li><a href="/services/heating/furnace-repair/">Furnace Repair</a></li>
+                <li><a href="/services/heating/boiler-repair/">Boiler Repair</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__col">
+              <h4>Indoor Air Quality</h4>
+              <ul>
+                <li><a href="/services/indoor-air-quality/">All IAQ</a></li>
+                <li><a href="/services/indoor-air-quality/air-purifiers/">Air Purifiers</a></li>
+                <li><a href="/services/indoor-air-quality/humidifiers/">Humidifiers</a></li>
+                <li><a href="/services/indoor-air-quality/dehumidifiers/">Dehumidifiers</a></li>
+                <li><a href="/services/indoor-air-quality/ventilation/">Ventilation</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__col">
+              <h4>Water Heaters</h4>
+              <ul>
+                <li><a href="/services/water-heaters/">All Water Heaters</a></li>
+                <li><a href="/services/water-heaters/repair/">Repair</a></li>
+                <li><a href="/services/water-heaters/maintenance/">Maintenance</a></li>
+                <li><a href="/services/water-heaters/installation-replacement/">Install &amp; Replace</a></li>
+                <li><a href="/services/water-heaters/tankless-water-heaters/">Tankless</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__featured">
+              <span class="megamenu__featured-eyebrow">Need help now?</span>
+              <h5>Phones answered 24/7.</h5>
+              <p>Emergency HVAC across Hudson County. We&rsquo;ll tell you what to expect.</p>
+              <a class="btn btn--primary" href="tel:2012455151">
+                <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call 201-245-5151
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYSTEMS -->
+      <div class="nav-item">
+        <a href="/hvac-systems/" class="nav-item__trigger">
+          Systems
+          <svg class="nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="megamenu megamenu--systems">
+          <div class="megamenu__inner">
+            <div class="megamenu__col">
+              <h4>For Homes</h4>
+              <ul>
+                <li><a href="/hvac-systems/ductless-mini-splits/">Ductless Mini-Splits<small>Brownstones &amp; row homes</small></a></li>
+                <li><a href="/hvac-systems/heat-pumps/">Heat Pumps<small>Efficient heat + cool</small></a></li>
+                <li><a href="/hvac-systems/central-hvac-systems/">Central HVAC<small>Traditional split systems</small></a></li>
+                <li><a href="/hvac-systems/zoning-systems/">Zoning Systems<small>Multi-floor comfort</small></a></li>
+              </ul>
+            </div>
+            <div class="megamenu__col">
+              <h4>For Buildings</h4>
+              <ul>
+                <li><a href="/hvac-systems/ptac-units/">PTAC Units<small>Condos &amp; hotels</small></a></li>
+                <li><a href="/hvac-systems/water-source-heat-pumps/">Water-Source Heat Pumps<small>Mid- and high-rises</small></a></li>
+                <li><a href="/hvac-systems/rooftop-units/">Rooftop Units<small>Commercial systems</small></a></li>
+              </ul>
+            </div>
+            <div class="megamenu__col">
+              <h4>Browse</h4>
+              <ul>
+                <li><a href="/hvac-systems/">All HVAC Systems →</a></li>
+                <li><a href="/services/">All Services →</a></li>
+                <li><a href="/commercial/">Commercial Work →</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__featured">
+              <span class="megamenu__featured-eyebrow">Not sure what fits?</span>
+              <h5>Compare systems for your home.</h5>
+              <p>Tell us your home or building type and we&rsquo;ll recommend a system that fits.</p>
+              <a data-tanous-open-modal="tanous-conversion-request" aria-haspopup="dialog" onclick="return window.tanousOpenRequestModal ? window.tanousOpenRequestModal(event, 'tanous-conversion-request') : true;" class="btn btn--secondary" href="/contact/">Get an estimate →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMERCIAL -->
+      <div class="nav-item">
+        <a href="/commercial/" class="nav-item__trigger">
+          Commercial
+          <svg class="nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="megamenu megamenu--commercial">
+          <div class="megamenu__inner">
+            <div class="megamenu__col">
+              <h4>By Property Type</h4>
+              <ul>
+                <li><a href="/commercial/condo-buildings/">Condo Buildings<small>HOAs &amp; co-op boards</small></a></li>
+                <li><a href="/commercial/property-management/">Property Management<small>Multi-property contracts</small></a></li>
+                <li><a href="/commercial/hospitality/">Hospitality<small>Hotels &amp; restaurants</small></a></li>
+                <li><a href="/commercial/light-commercial/">Light Commercial<small>Offices &amp; retail</small></a></li>
+              </ul>
+            </div>
+            <div class="megamenu__col">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="/commercial/rooftop-replacement/">Rooftop &amp; Crane Work<small>Permits + police escorts</small></a></li>
+                <li><a href="/commercial/maintenance-contracts/">Maintenance Contracts<small>Custom visit frequency</small></a></li>
+                <li><a href="/emergency-hvac/">Emergency HVAC<small>24/7 calls answered</small></a></li>
+              </ul>
+            </div>
+            <div class="megamenu__featured">
+              <span class="megamenu__featured-eyebrow">Bread &amp; butter</span>
+              <h5>Crane lifts. Permits. Police escorts.</h5>
+              <p>Rooftop replacements in Hoboken and Jersey City — work most contractors won&rsquo;t take on.</p>
+              <a class="btn btn--secondary" href="/commercial/rooftop-replacement/">See how →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE AREAS -->
+      <div class="nav-item">
+        <a href="/service-areas/" class="nav-item__trigger">
+          Service Areas
+          <svg class="nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="megamenu megamenu--areas">
+          <div class="megamenu__inner">
+            <div class="megamenu__col">
+              <h4>Featured</h4>
+              <ul>
+                <li><a href="/service-areas/hoboken/">Hoboken</a></li>
+                <li><a href="/service-areas/jersey-city/">Jersey City</a></li>
+                <li><a href="/service-areas/weehawken/">Weehawken</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__col">
+              <h4>Hudson County</h4>
+              <ul>
+                <li><a href="/service-areas/union-city/">Union City</a></li>
+                <li><a href="/service-areas/west-new-york/">West New York</a></li>
+                <li><a href="/service-areas/north-bergen/">North Bergen</a></li>
+                <li><a href="/service-areas/guttenberg/">Guttenberg</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__col">
+              <h4>Bergen County</h4>
+              <ul>
+                <li><a href="/service-areas/edgewater/">Edgewater</a></li>
+                <li><a href="/service-areas/cliffside-park/">Cliffside Park</a></li>
+                <li><a href="/service-areas/fort-lee/">Fort Lee</a></li>
+                <li><a href="/service-areas/" style="margin-top:8px;">All 10 Areas →</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__featured">
+              <span class="megamenu__featured-eyebrow">HQ since 2001</span>
+              <h5>Hoboken, NJ.</h5>
+              <p>4 14th St #501. Local techs, real Hudson County roots — through three generations of customers.</p>
+              <a class="btn btn--secondary" href="/service-areas/hoboken/">Hoboken HVAC →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MORE -->
+      <div class="nav-item">
+        <a href="/about/" class="nav-item__trigger">
+          More
+          <svg class="nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="megamenu megamenu--more">
+          <div class="megamenu__inner">
+            <div class="megamenu__col">
+              <h4>Plans &amp; Service</h4>
+              <ul>
+                <li><a href="/maintenance-plan/">Maintenance Plan</a></li>
+                <li><a href="/emergency-hvac/">Emergency HVAC</a></li>
+                <li><a href="/financing/">Financing (NEIF)</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/reviews/">Reviews</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/contact/">Contact</a></li>
+              </ul>
+            </div>
+            <div class="megamenu__featured">
+              <span class="megamenu__featured-eyebrow">Recommended</span>
+              <h5>Maintenance Plan from $185/yr.</h5>
+              <p>Single $185 · Combo $245 · Multi-system on request. Cancel any time.</p>
+              <a class="btn btn--secondary" href="/maintenance-plan/">See plans →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+    <div class="site-header__cta">
+      <a href="tel:2012455151" class="btn btn--secondary">
+        <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        201-245-5151
+      </a>
+      <a data-tanous-open-modal="tanous-conversion-request" aria-haspopup="dialog" onclick="return window.tanousOpenRequestModal ? window.tanousOpenRequestModal(event, 'tanous-conversion-request') : true;" href="/contact/" class="btn btn--primary">
+        Schedule Service
+        <svg class="icon icon--sm arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:2012455151" class="header-call-mobile" aria-label="Call 201-245-5151">
+        <svg class="icon icon--lg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon icon--lg" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer__backdrop" data-drawer-backdrop></div>
+<aside class="mobile-drawer" data-drawer aria-label="Mobile navigation">
+  <div class="mobile-drawer__head">
+    <a href="/" class="mobile-drawer__logo">
+      <img src="https://www.tanousnj.com/wp-content/uploads/tanous-static/assets/logos/63139539482ba70bce6f05a7_Logo-Tanous-HVAC%20(1).png" alt="Tanous">
+    </a>
+    <button class="mobile-drawer__close" data-drawer-close aria-label="Close menu">
+      <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Primary mobile">
+
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-item__trigger" aria-expanded="false">
+        <span>Services</span>
+        <svg class="mobile-nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-item__panel">
+        <h5>Air Conditioning</h5>
+        <ul>
+          <li><a href="/services/air-conditioning/">All AC Services</a></li>
+          <li><a href="/services/air-conditioning/repair/">AC Repair</a></li>
+          <li><a href="/services/air-conditioning/maintenance/">AC Maintenance</a></li>
+          <li><a href="/services/air-conditioning/installation-replacement/">Install &amp; Replace</a></li>
+        </ul>
+        <h5>Heating</h5>
+        <ul>
+          <li><a href="/services/heating/">All Heating</a></li>
+          <li><a href="/services/heating/repair/">Heating Repair</a></li>
+          <li><a href="/services/heating/maintenance/">Heating Maintenance</a></li>
+          <li><a href="/services/heating/installation-replacement/">Install &amp; Replace</a></li>
+          <li><a href="/services/heating/furnace-repair/">Furnace Repair</a></li>
+          <li><a href="/services/heating/boiler-repair/">Boiler Repair</a></li>
+        </ul>
+        <h5>Indoor Air Quality</h5>
+        <ul>
+          <li><a href="/services/indoor-air-quality/">All IAQ</a></li>
+          <li><a href="/services/indoor-air-quality/air-purifiers/">Air Purifiers</a></li>
+          <li><a href="/services/indoor-air-quality/humidifiers/">Humidifiers</a></li>
+          <li><a href="/services/indoor-air-quality/dehumidifiers/">Dehumidifiers</a></li>
+          <li><a href="/services/indoor-air-quality/ventilation/">Ventilation</a></li>
+        </ul>
+        <h5>Water Heaters</h5>
+        <ul>
+          <li><a href="/services/water-heaters/">All Water Heaters</a></li>
+          <li><a href="/services/water-heaters/repair/">Repair</a></li>
+          <li><a href="/services/water-heaters/maintenance/">Maintenance</a></li>
+          <li><a href="/services/water-heaters/installation-replacement/">Install &amp; Replace</a></li>
+          <li><a href="/services/water-heaters/tankless-water-heaters/">Tankless</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-item__trigger" aria-expanded="false">
+        <span>HVAC Systems</span>
+        <svg class="mobile-nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-item__panel">
+        <h5>For Homes</h5>
+        <ul>
+          <li><a href="/hvac-systems/ductless-mini-splits/">Ductless Mini-Splits</a></li>
+          <li><a href="/hvac-systems/heat-pumps/">Heat Pumps</a></li>
+          <li><a href="/hvac-systems/central-hvac-systems/">Central HVAC</a></li>
+          <li><a href="/hvac-systems/zoning-systems/">Zoning Systems</a></li>
+        </ul>
+        <h5>For Buildings</h5>
+        <ul>
+          <li><a href="/hvac-systems/ptac-units/">PTAC Units</a></li>
+          <li><a href="/hvac-systems/water-source-heat-pumps/">Water-Source Heat Pumps</a></li>
+          <li><a href="/hvac-systems/rooftop-units/">Rooftop Units</a></li>
+          <li><a href="/hvac-systems/">All HVAC Systems →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-item__trigger" aria-expanded="false">
+        <span>Commercial</span>
+        <svg class="mobile-nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-item__panel">
+        <h5>By Property Type</h5>
+        <ul>
+          <li><a href="/commercial/condo-buildings/">Condo Buildings</a></li>
+          <li><a href="/commercial/property-management/">Property Management</a></li>
+          <li><a href="/commercial/hospitality/">Hospitality</a></li>
+          <li><a href="/commercial/light-commercial/">Light Commercial</a></li>
+        </ul>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="/commercial/rooftop-replacement/">Rooftop &amp; Crane Work</a></li>
+          <li><a href="/commercial/maintenance-contracts/">Maintenance Contracts</a></li>
+          <li><a href="/commercial/">Commercial Overview →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-item__trigger" aria-expanded="false">
+        <span>Service Areas</span>
+        <svg class="mobile-nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-item__panel">
+        <h5>Hudson County</h5>
+        <ul>
+          <li><a href="/service-areas/hoboken/">Hoboken</a></li>
+          <li><a href="/service-areas/jersey-city/">Jersey City</a></li>
+          <li><a href="/service-areas/weehawken/">Weehawken</a></li>
+          <li><a href="/service-areas/union-city/">Union City</a></li>
+          <li><a href="/service-areas/west-new-york/">West New York</a></li>
+          <li><a href="/service-areas/north-bergen/">North Bergen</a></li>
+          <li><a href="/service-areas/guttenberg/">Guttenberg</a></li>
+        </ul>
+        <h5>Bergen County</h5>
+        <ul>
+          <li><a href="/service-areas/edgewater/">Edgewater</a></li>
+          <li><a href="/service-areas/cliffside-park/">Cliffside Park</a></li>
+          <li><a href="/service-areas/fort-lee/">Fort Lee</a></li>
+          <li><a href="/service-areas/">All 10 Areas →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-item__trigger" aria-expanded="false">
+        <span>More</span>
+        <svg class="mobile-nav-item__chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-item__panel">
+        <h5>Plans &amp; Service</h5>
+        <ul>
+          <li><a href="/maintenance-plan/">Maintenance Plan</a></li>
+          <li><a href="/emergency-hvac/">Emergency HVAC</a></li>
+          <li><a href="/financing/">Financing (NEIF)</a></li>
+        </ul>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+
+  <div class="mobile-drawer__cta">
+    <div class="mobile-drawer__phone">
+      <span class="label">Calls answered 24/7</span>
+      <a href="tel:2012455151">201-245-5151</a>
+    </div>
+    <a class="btn btn--secondary mobile-drawer__quick-financing" href="/financing/">Financing options</a>
+    <a data-tanous-open-modal="tanous-conversion-request" aria-haspopup="dialog" onclick="return window.tanousOpenRequestModal ? window.tanousOpenRequestModal(event, 'tanous-conversion-request') : true;" class="btn btn--primary" href="/contact/">
+      Schedule Service
+      <svg class="icon icon--sm arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</aside>
+<!-- BLOG POST HERO -->
+<section class="hero-e" style="--hero-bg: url('https://www.tanousnj.com/wp-content/uploads/tanous-static/assets/photos/background.png');">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb__sep">&rsaquo;</span>
+      <a href="/blog/">Blog</a>
+      <span class="breadcrumb__sep">&rsaquo;</span>
+      <span class="breadcrumb__current">Rooftop HVAC Replacement in Hoboken Condos</span>
+    </nav>
+    <div style="max-width: 880px; padding-top: 40px;">
+      <span class="eyebrow hero-e__eyebrow">Cornerstone &middot; ~10 min read</span>
+      <h1 style="font-size: clamp(2.25rem, 5vw, 3.25rem); margin-bottom: 24px;">Replacing a rooftop HVAC unit in a Hoboken condo: what to know.</h1>
+      <p class="lead" style="max-width: 720px;">Crane lifts, NJ permits, police-coordinated street closures, board approvals. The full path from &ldquo;our rooftop unit is failing&rdquo; to &ldquo;new unit is running&rdquo; &mdash; with realistic timelines and costs.</p>
+      <p style="margin-top: 24px; font-size: 13.5px; color: var(--text-muted);">By Tanous Heating &amp; Air Conditioning &middot; Updated May 2026</p>
+    </div>
+  </div>
+</section>
+<!-- ARTICLE BODY -->
+<article class="bg-base section">
+  <div class="container" style="max-width: 760px;">
+    <div class="blog-content" style="font-size: 17px; line-height: 1.75; color: var(--text-base);">
+
+<p>If you&rsquo;re a property manager, HOA board member, or building owner in Hoboken, eventually one of your rooftop HVAC units will fail. And when it does, you&rsquo;ll discover that rooftop unit replacement is one of the trickier construction projects in this city. Crane lifts in narrow streets, NJ permitting, police-coordinated traffic management, board approvals, freight elevator booking, tenant communication &mdash; it&rsquo;s a coordination problem as much as an HVAC problem.</p>
+
+<p>We&rsquo;ve replaced rooftop units across Hoboken, Jersey City, and Edgewater for 25 years. This is the practical playbook &mdash; what actually happens, in what order, and what it actually costs.</p>
+
+<h2>When does rooftop replacement become necessary?</h2>
+
+<p>Commercial rooftop units (RTUs) typically last 10&ndash;20 years depending on duty cycle. Higher-runtime applications &mdash; restaurants, busy retail, buildings with kitchen exhaust &mdash; tend to be on the shorter end (10&ndash;15 years). Light-use applications &mdash; small office buildings, hospitality back-of-house &mdash; can stretch to 20+ years with good maintenance.</p>
+
+<p>Common end-of-life signs:</p>
+
+<ul>
+  <li><strong>Failed compressor</strong> in a unit 15+ years old. The repair is $4,000&ndash;$8,000; the replacement is $25,000&ndash;$45,000. Past a certain age, the math heavily favors replacement.</li>
+  <li><strong>Cracked heat exchanger.</strong> Unsafe to operate. Must be either replaced (large repair) or the whole unit replaced.</li>
+  <li><strong>Multiple major failures in one year.</strong> Sign the unit is at end of life.</li>
+  <li><strong>R-22 refrigerant.</strong> Phased out by EPA. Refilling is expensive and increasingly impossible.</li>
+  <li><strong>Climbing energy bills with no usage change.</strong> Old units often run at 60&ndash;70% of original efficiency.</li>
+</ul>
+
+<p>Once two or more of these show up, replacement is usually the right answer. The question becomes <em>how</em> &mdash; which is where most contractors and building owners get stuck.</p>
+
+<h2>The unique Hoboken (and Jersey City) challenges</h2>
+
+<p>Most HVAC contractors won&rsquo;t take on rooftop replacement in Hoboken. Here&rsquo;s what they&rsquo;re avoiding:</p>
+
+<h3>Narrow streets</h3>
+
+<p>Most Hoboken streets are 20&ndash;25 feet wide curb-to-curb. Crane lifts need significantly more clearance than that &mdash; with the boom extended, you&rsquo;re looking at 40&ndash;60 feet of work area. This almost always means closing the street in front of the building (and sometimes the adjacent intersection) during the lift window. Which means a permit. Which means police coordination. Which means weeks of planning.</p>
+
+<h3>Building access</h3>
+
+<p>Most condo buildings have one freight elevator. Booking it for a half-day rooftop project means coordinating with management for resident notice. Some buildings restrict heavy work to specific weekday windows. We work around all of it &mdash; but it takes lead time.</p>
+
+<h3>Permit complexity</h3>
+
+<p>Hoboken rooftop projects typically require: mechanical permit, electrical permit, gas permit (if applicable), structural review (case-by-case for roof loading), and street-closure permit. Each has its own timeline and (sometimes) review fee. Our coordination with the Hoboken Building Department for permits is a major part of why we&rsquo;re asked to do this work.</p>
+
+<h3>HOA board approvals</h3>
+
+<p>Condo buildings almost universally require board approval before the work proceeds. Even if the unit is HOA-owned (rooftop common-area HVAC), the board wants to see the contractor&rsquo;s insurance, license, schedule, and cost breakdown. Boards meet monthly. The approval cycle alone is 4&ndash;8 weeks in most buildings.</p>
+
+<h2>The full timeline (8&ndash;14 weeks typical)</h2>
+
+<p>From initial &ldquo;we need to replace this unit&rdquo; to actual installation, expect the following:</p>
+
+<h3>Week 1: Initial site visit</h3>
+
+<p>We tour the rooftop with the building owner or property manager. Inventory: existing unit make/model/tonnage/age, curb condition, roof access, electrical, gas (if applicable), structural concerns. Photos and notes documented. Quote written based on actual conditions, including all the unique-to-this-building factors.</p>
+
+<h3>Weeks 2&ndash;3: Quote review and board approval</h3>
+
+<p>HOA board reviews the quote (often at their next monthly meeting). For more straightforward cases, an emergency vote between meetings is possible. The COI (Certificate of Insurance), W-9, and license documentation get filed with the management company. Sometimes additional bids are required by HOA bylaws &mdash; we&rsquo;ll provide what&rsquo;s needed.</p>
+
+<h3>Weeks 3&ndash;6: Permits and crane scheduling</h3>
+
+<p>Once approved, we pull all required Hoboken permits in parallel. Mechanical permit: usually approved in 5&ndash;10 business days. Electrical and gas permits: similar timeline. Street-closure permit (if needed): often the longest, 2&ndash;4 weeks. Structural review (if needed): can be 3&ndash;6 weeks.</p>
+
+<p>Crane firm scheduled in parallel. Most Hoboken crane companies book 2&ndash;3 weeks out for non-emergency work. We have established relationships with several local crane firms.</p>
+
+<h3>Week 6 or 7: Pre-lift coordination</h3>
+
+<p>Site notices posted (city requirement for street closure). Police notified for traffic management on lift day. Tenant communication: building management sends notice to residents (parking restrictions on lift day, expected duration). Old unit&rsquo;s electrical and gas disconnected the day before if access permits.</p>
+
+<h3>Lift day (one day, usually 6&ndash;10 hours)</h3>
+
+<p>Crane arrives early morning (typically 7am). Street closed; police on-site for traffic. Old unit lifted off the roof, lowered to street, hauled away on a flatbed. New unit lifted from a truck, set on the curb. Ducted, electrical and gas connected, started up, tested.</p>
+
+<p>Building business continues during the lift in most cases &mdash; some businesses (restaurants, retail) may need to close briefly during the actual lift sequence (maybe 30&ndash;60 minutes total). Walkthrough with building owner before the crew leaves.</p>
+
+<h3>Weeks 7&ndash;14: Inspections and final closeout</h3>
+
+<p>City inspections scheduled per the permits. Final paperwork (warranty registration, manufacturer certificates) provided to the building. Any small punch-list items addressed.</p>
+
+<h2>What it actually costs</h2>
+
+<p>Real numbers for Hoboken rooftop replacement projects we&rsquo;ve done recently:</p>
+
+<ul>
+  <li><strong>Single 5-ton RTU replacement</strong> (existing curb intact, narrow side street): $22,000&ndash;$28,000 installed, including crane and standard permits.</li>
+  <li><strong>Single 7.5-ton RTU replacement</strong> (existing curb intact, slightly wider street): $28,000&ndash;$36,000.</li>
+  <li><strong>10-ton RTU replacement with new curb adapter</strong> (slight roofing rework): $38,000&ndash;$48,000.</li>
+  <li><strong>15-ton commercial replacement with police-coordinated street closure</strong>: $45,000&ndash;$58,000.</li>
+  <li><strong>Multi-unit projects</strong> (3+ RTUs in one project): per-unit pricing 10&ndash;15% below single-unit rates.</li>
+</ul>
+
+<p>What drives variance: unit tonnage (5 to 25 tons), crane logistics (narrow vs. wide streets), curb compatibility (existing vs. new), street-closure permitting (standard vs. police escort), and whether structural review is required.</p>
+
+<div class="callout">
+  <strong>A note on the crane line item:</strong>
+  <p>The crane itself is typically $2,500&ndash;$5,000 of the total project cost. The permit + police line item adds $1,500&ndash;$4,000. The street-closure setup and notices add another $500&ndash;$1,500. We quote these separately on the line item so you see exactly what the project logistics cost vs. the equipment itself.</p>
+</div>
+
+<h2>Why most contractors decline this work</h2>
+
+<p>Honest answer: the project management is harder than the HVAC. A 25-ton rooftop replacement requires the same HVAC technical skill as a 5-ton unit &mdash; but the coordination work scales nonlinearly. Permits, crane scheduling, police coordination, board approvals, tenant communication, freight elevator booking, weather contingency. Most HVAC contractors are oriented around residential work and don&rsquo;t want this complexity.</p>
+
+<p>That&rsquo;s where we&rsquo;ve built specialty over 25 years. <a href="/commercial/rooftop-replacement/">Our rooftop replacement service</a> handles all of it &mdash; HVAC contractor, crane coordinator, permit puller, board communicator, all in one. The building owner gets one phone number and a project that lands on the date we promised.</p>
+
+<h2>Questions HOAs should ask before signing</h2>
+
+<ul>
+  <li><strong>Are crane and permits included in the quote</strong>, or are they pass-through with markup? (We include them as separate line items so the building sees exactly what each costs.)</li>
+  <li><strong>Who pulls the permits &mdash; the contractor or the building owner?</strong> The contractor should. If the bid says otherwise, walk away.</li>
+  <li><strong>What&rsquo;s the warranty on labor and equipment?</strong> Equipment: manufacturer warranty (typically 1&ndash;10 years per component). Labor: workmanship warranty on top, usually 1&ndash;5 years. Ours is standard.</li>
+  <li><strong>Have you done rooftop work on similar Hoboken/JC buildings?</strong> Reference projects from other buildings in the area is reasonable to ask. We provide them.</li>
+  <li><strong>What&rsquo;s the timeline contingency for permit delays?</strong> Honest answer is that street-closure permits sometimes take longer than estimated. The contractor should have a stated plan for that.</li>
+  <li><strong>What happens if it rains on lift day?</strong> Crane lifts are weather-dependent. Standard policy: reschedule within a week if needed, no charge for the postponement.</li>
+</ul>
+
+<h2>Wrapping up</h2>
+
+<p>Rooftop HVAC replacement in Hoboken is a real project &mdash; 8&ndash;14 weeks from initial site visit to final inspection, with multiple permits, crane coordination, board approvals, and street-closure logistics. The HVAC equipment portion is straightforward; the project management is what makes it complex.</p>
+
+<p>If your building has a rooftop unit nearing end of life &mdash; or one that&rsquo;s already failed and you&rsquo;re trying to figure out the path forward &mdash; we&rsquo;d be glad to schedule a no-charge site visit and walk through the full project with the board or property manager. We&rsquo;ll quote it honestly with all the logistics line-itemed so you see exactly where the dollars go.</p>
+
+<p><a href="/commercial/rooftop-replacement/">Learn more about our rooftop replacement service</a> or <a href="tel:2012455151">call 201-245-5151</a> to schedule a site visit.</p>
+
+    </div>
+  </div>
+</article>
+<!-- RELATED CORNERSTONE POSTS -->
+<section class="bg-warm section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow section-header__eyebrow">More cornerstones</span>
+      <h2>Other cornerstone posts.</h2>
+    </div>
+    <div class="action-cards__grid action-cards__grid--2">
+      <a class="action-card-lg" href="/blog/air-conditioning-options-hoboken-brownstones/">
+        <div class="action-card-lg__photo" style="background-image: url('https://www.tanousnj.com/wp-content/uploads/tanous-static/assets/photos/hoboken.png');"></div>
+        <div class="action-card-lg__body">
+          <span class="eyebrow" style="font-size: 11px; margin-bottom: 8px;">Cornerstone &middot; ~8 min read</span>
+          <h3>AC Options for Hoboken Brownstones</h3>
+          <p class="desc">Ductless vs PTAC vs central &mdash; which makes sense for which brownstone configuration. With pricing and install constraints.</p>
+          <span class="action-card-lg__cta">Read article <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <a class="action-card-lg" href="/blog/tankless-water-heaters-older-jersey-city-buildings/">
+        <div class="action-card-lg__photo" style="background-image: url('https://www.tanousnj.com/wp-content/uploads/tanous-static/assets/photos/jersey.png');"></div>
+        <div class="action-card-lg__body">
+          <span class="eyebrow" style="font-size: 11px; margin-bottom: 8px;">Cornerstone &middot; ~7 min read</span>
+          <h3>Tankless Water Heaters in Older Jersey City Buildings</h3>
+          <p class="desc">Why tankless often makes sense for older row homes &mdash; sizing, gas line capacity, basement constraints, real costs.</p>
+          <span class="action-card-lg__cta">Read article <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Rooftop unit failing or due for replacement?</h2>
+    <p class="lead">No-charge site visit. Permits + crane + police coordination handled.</p>
+    <div class="btn-row">
+      <a data-tanous-open-modal="tanous-conversion-request" aria-haspopup="dialog" onclick="return window.tanousOpenRequestModal ? window.tanousOpenRequestModal(event, 'tanous-conversion-request') : true;" class="btn btn--primary" href="/contact/">Schedule Service <svg class="icon icon--sm arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <a class="btn btn--secondary" href="tel:2012455151"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call 201-245-5151</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- FOOTER REDESIGNED -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="https://www.tanousnj.com/wp-content/uploads/tanous-static/assets/logos/logo-1-all-white.png" alt="Tanous Heating &amp; Air Conditioning">
+        <p class="tagline">Family-owned HVAC for Hoboken, Jersey City, and Hudson County since 2001.</p>
+        <div class="badges">
+          <span class="badge">★ 4.8 Google</span>
+          <span class="badge">★ 5.0 Yelp</span>
+          <span class="badge">25 Years</span>
+          <span class="badge">NJ Licensed</span>
+        </div>
+        <p class="footer__brand-meta">
+          <a href="tel:2012455151">201-245-5151</a><span class="sep">·</span><a href="mailto:info@tanousnj.com">info@tanousnj.com</a><span class="sep">·</span>4 14th St #501, Hoboken, NJ 07030
+        </p>
+      </div>
+      <div class="footer__cta">
+        <span class="footer__cta-label">Calls answered 24/7</span>
+        <div class="footer__cta-buttons">
+          <a data-tanous-open-modal="tanous-conversion-request" aria-haspopup="dialog" onclick="return window.tanousOpenRequestModal ? window.tanousOpenRequestModal(event, 'tanous-conversion-request') : true;" class="btn btn--primary" href="/contact/">
+            Schedule Service
+            <svg class="icon icon--sm arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn--on-dark-secondary" href="tel:2012455151">
+            <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call 201-245-5151
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__links">
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/air-conditioning/">Air Conditioning</a></li>
+          <li><a href="/services/heating/">Heating</a></li>
+          <li><a href="/services/indoor-air-quality/">Indoor Air Quality</a></li>
+          <li><a href="/services/water-heaters/">Water Heaters</a></li>
+          <li><a href="/maintenance-plan/">Maintenance Plan</a></li>
+          <li><a href="/emergency-hvac/">Emergency HVAC</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>HVAC Systems</h4>
+        <ul>
+          <li><a href="/hvac-systems/ductless-mini-splits/">Ductless Mini-Splits</a></li>
+          <li><a href="/hvac-systems/heat-pumps/">Heat Pumps</a></li>
+          <li><a href="/hvac-systems/ptac-units/">PTAC Units</a></li>
+          <li><a href="/hvac-systems/rooftop-units/">Rooftop &amp; Crane Work</a></li>
+          <li><a href="/hvac-systems/heat-pumps/">Water-Source Heat Pumps</a></li>
+          <li><a href="/hvac-systems/">All HVAC Systems →</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="/service-areas/hoboken/">Hoboken</a></li>
+          <li><a href="/service-areas/jersey-city/">Jersey City</a></li>
+          <li><a href="/service-areas/weehawken/">Weehawken</a></li>
+          <li><a href="/service-areas/edgewater/">Edgewater</a></li>
+          <li><a href="/service-areas/fort-lee/">Fort Lee</a></li>
+          <li><a href="/service-areas/">All 10 Cities →</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li><a href="/financing/">Financing (NEIF)</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/commercial/">Commercial</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div>© 2026 Tanous Heating &amp; Air Conditioning · NJ Master HVAC #13VH06190200 · NJ Contractor #19HC00429300</div>
+      <div><a href="/contact/">Privacy</a> · <a href="/contact/">Terms</a> · <a href="/sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA BAR -->
+<!-- STICKY MOBILE CTA BAR -->
+<div class="mobile-cta-bar" data-cta-bar>
+  <a class="btn btn--secondary" href="tel:2012455151">
+    <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a class="btn btn--primary" href="/contact/">
+    Schedule
+    <svg class="icon icon--sm arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+</div>
+<script src="https://www.tanousnj.com/wp-content/uploads/tanous-static/app.js"></script>
+<dialog class="hero-choice-modal" id="tanous-conversion-request"><div class="hero-choice-modal__head"><button class="hero-choice-modal__close" type="button" data-tanous-modal-close aria-label="Close request form">&times;</button><span class="eyebrow">Request estimate</span><h3>Tell us what you want priced.</h3><p>We will call you back same business day. Phones are answered 24/7.</p></div><div class="hero-choice-modal__body"><div class="hero-form hero-form--gravity">
+                <div class='gf_browser_chrome gform_wrapper gform-theme gform-theme--foundation gform-theme--framework gform-theme--orbital' data-form-theme='orbital' data-form-index='0' id='gform_wrapper_2' ><style>#gform_wrapper_2[data-form-index="0"].gform-theme,[data-parent-form="2_0"]{--gf-color-primary: #204ce5;--gf-color-primary-rgb: 32, 76, 229;--gf-color-primary-contrast: #fff;--gf-color-primary-contrast-rgb: 255, 255, 255;--gf-color-primary-darker: #001AB3;--gf-color-primary-lighter: #527EFF;--gf-color-secondary: #fff;--gf-color-secondary-rgb: 255, 255, 255;--gf-color-secondary-contrast: #112337;--gf-color-secondary-contrast-rgb: 17, 35, 55;--gf-color-secondary-darker: #F5F5F5;--gf-color-secondary-lighter: #FFFFFF;--gf-color-out-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-out-ctrl-light-rgb: 17, 35, 55;--gf-color-out-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-out-ctrl-light-lighter: #F5F5F5;--gf-color-out-ctrl-dark: #585e6a;--gf-color-out-ctrl-dark-rgb: 88, 94, 106;--gf-color-out-ctrl-dark-darker: #112337;--gf-color-out-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-color-in-ctrl: #fff;--gf-color-in-ctrl-rgb: 255, 255, 255;--gf-color-in-ctrl-contrast: #112337;--gf-color-in-ctrl-contrast-rgb: 17, 35, 55;--gf-color-in-ctrl-darker: #F5F5F5;--gf-color-in-ctrl-lighter: #FFFFFF;--gf-color-in-ctrl-primary: #204ce5;--gf-color-in-ctrl-primary-rgb: 32, 76, 229;--gf-color-in-ctrl-primary-contrast: #fff;--gf-color-in-ctrl-primary-contrast-rgb: 255, 255, 255;--gf-color-in-ctrl-primary-darker: #001AB3;--gf-color-in-ctrl-primary-lighter: #527EFF;--gf-color-in-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-in-ctrl-light-rgb: 17, 35, 55;--gf-color-in-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-in-ctrl-light-lighter: #F5F5F5;--gf-color-in-ctrl-dark: #585e6a;--gf-color-in-ctrl-dark-rgb: 88, 94, 106;--gf-color-in-ctrl-dark-darker: #112337;--gf-color-in-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-radius: 3px;--gf-font-size-secondary: 14px;--gf-font-size-tertiary: 13px;--gf-icon-ctrl-number: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 0C4.26522 5.96046e-08 4.51957 0.105357 4.70711 0.292893L7.70711 3.29289C8.09763 3.68342 8.09763 4.31658 7.70711 4.70711C7.31658 5.09763 6.68342 5.09763 6.29289 4.70711L4 2.41421L1.70711 4.70711C1.31658 5.09763 0.683417 5.09763 0.292893 4.70711C-0.0976311 4.31658 -0.097631 3.68342 0.292893 3.29289L3.29289 0.292893C3.48043 0.105357 3.73478 0 4 0ZM0.292893 9.29289C0.683417 8.90237 1.31658 8.90237 1.70711 9.29289L4 11.5858L6.29289 9.29289C6.68342 8.90237 7.31658 8.90237 7.70711 9.29289C8.09763 9.68342 8.09763 10.3166 7.70711 10.7071L4.70711 13.7071C4.31658 14.0976 3.68342 14.0976 3.29289 13.7071L0.292893 10.7071C-0.0976311 10.3166 -0.0976311 9.68342 0.292893 9.29289Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-select: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 0.292893C0.683417 -0.097631 1.31658 -0.097631 1.70711 0.292893L5 3.58579L8.29289 0.292893C8.68342 -0.0976311 9.31658 -0.0976311 9.70711 0.292893C10.0976 0.683417 10.0976 1.31658 9.70711 1.70711L5.70711 5.70711C5.31658 6.09763 4.68342 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-search: url("data:image/svg+xml,%3Csvg width='640' height='640' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M256 128c-70.692 0-128 57.308-128 128 0 70.691 57.308 128 128 128 70.691 0 128-57.309 128-128 0-70.692-57.309-128-128-128zM64 256c0-106.039 85.961-192 192-192s192 85.961 192 192c0 41.466-13.146 79.863-35.498 111.248l154.125 154.125c12.496 12.496 12.496 32.758 0 45.254s-32.758 12.496-45.254 0L367.248 412.502C335.862 434.854 297.467 448 256 448c-106.039 0-192-85.962-192-192z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-label-space-y-secondary: var(--gf-label-space-y-md-secondary);--gf-ctrl-border-color: #686e77;--gf-ctrl-size: var(--gf-ctrl-size-md);--gf-ctrl-label-color-primary: #112337;--gf-ctrl-label-color-secondary: #112337;--gf-ctrl-choice-size: var(--gf-ctrl-choice-size-md);--gf-ctrl-checkbox-check-size: var(--gf-ctrl-checkbox-check-size-md);--gf-ctrl-radio-check-size: var(--gf-ctrl-radio-check-size-md);--gf-ctrl-btn-font-size: var(--gf-ctrl-btn-font-size-md);--gf-ctrl-btn-padding-x: var(--gf-ctrl-btn-padding-x-md);--gf-ctrl-btn-size: var(--gf-ctrl-btn-size-md);--gf-ctrl-btn-border-color-secondary: #686e77;--gf-ctrl-file-btn-bg-color-hover: #EBEBEB;--gf-field-img-choice-size: var(--gf-field-img-choice-size-md);--gf-field-img-choice-card-space: var(--gf-field-img-choice-card-space-md);--gf-field-img-choice-check-ind-size: var(--gf-field-img-choice-check-ind-size-md);--gf-field-img-choice-check-ind-icon-size: var(--gf-field-img-choice-check-ind-icon-size-md);--gf-field-pg-steps-number-color: rgba(17, 35, 55, 0.8);}</style><form method='post' enctype='multipart/form-data'  id='gform_2'  action='/blog/condo-rooftop-replacement-hoboken-property-managers/' data-formid='2' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_2' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_2_1" class="gfield gfield--type-text gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_1'>Name<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_2_1' type='text' value='' class=''     aria-required="true" aria-invalid="false"   /></div></div><div id="field_2_2" class="gfield gfield--type-phone gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_2'>Phone<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_phone'><input name='input_2' id='input_2_2' type='tel' value='' class=''   aria-required="true" aria-invalid="false"   /></div></div><div id="field_2_3" class="gfield gfield--type-email field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_3'>Email</label><div class='ginput_container ginput_container_email'>
+                            <input name='input_3' id='input_2_3' type='email' value='' class=''     aria-invalid="false"  />
+                        </div></div><div id="field_2_4" class="gfield gfield--type-text field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_4'>Service Address</label><div class='ginput_container ginput_container_text'><input name='input_4' id='input_2_4' type='text' value='' class=''      aria-invalid="false"   /></div></div><div id="field_2_5" class="gfield gfield--type-select field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_5'>How can we help?</label><div class='ginput_container ginput_container_select'><select name='input_5' id='input_2_5' class='gfield_select'     aria-invalid="false" ><option value='Repair' >Repair</option><option value='Maintenance' >Maintenance</option><option value='Replacement / installation' >Replacement / installation</option><option value='Emergency service' >Emergency service</option><option value='Question' >Question</option></select></div></div><div id="field_2_6" class="gfield gfield--type-textarea field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_2_6'>Notes</label><div class='ginput_container ginput_container_textarea'><textarea name='input_6' id='input_2_6' class='textarea '      aria-invalid="false"   rows='10' cols='50'></textarea></div></div><div id="field_2_7" class="gfield gfield--type-hidden gform_hidden field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div class='ginput_container ginput_container_text'><input name='input_7' id='input_2_7' type='hidden' class='gform_hidden'  aria-invalid="false" value='Replacing a Rooftop HVAC in a Hoboken Condo — What Property Managers Need to Know' /></div></div><div id="field_2_8" class="gfield gfield--type-hidden gform_hidden field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div class='ginput_container ginput_container_text'><input name='input_8' id='input_2_8' type='hidden' class='gform_hidden'  aria-invalid="false" value='https://www.tanousnj.com/blog/condo-rooftop-replacement-hoboken-property-managers/' /></div></div></div></div>
+        <div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_2' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Send Request'  /> 
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_2' value='postback' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_2' id='gform_theme_2' value='orbital' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_2' id='gform_style_settings_2' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_2' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='2' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='USD' value='kaEF6YgRQzYcFT8fcwR5yyZpPlKCLA3SM2BzoFisnoeaUPgK9btoeEfzUibt9CsKroxY+C+paeIDfPnChWfK8VDboeXTX5raYwZemESL5Xktews=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_2' value='WyJbXSIsImMwZjFkY2Q3MmM1MmMyZDdkMGQ2NjY4NDQ0OWIxZWE4Il0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_2' id='gform_target_page_number_2' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_2' id='gform_source_page_number_2' value='1' />
+            <input type='hidden' name='gform_field_values' value='tanous_page_title=Replacing+a+Rooftop+HVAC+in+a+Hoboken+Condo+%E2%80%94+What+Property+Managers+Need+to+Know&amp;tanous_page_url=https%3A%2F%2Fwww.tanousnj.com%2Fblog%2Fcondo-rooftop-replacement-hoboken-property-managers%2F' />
+            
+        </div>
+                        <p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_2" name="ak_js" value="82"/><script>
+document.getElementById( "ak_js_2" ).setAttribute( "value", ( new Date() ).getTime() );
+</script>
+</p></form>
+                        </div><script>
+gform.initializeOnLoaded( function() {gformInitSpinner( 2, 'https://www.tanousnj.com/wp-content/plugins/gravityforms/images/spinner.svg', false );jQuery('#gform_ajax_frame_2').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_2');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_2').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_2').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_2').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_2').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */  }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_2').val();gformInitSpinner( 2, 'https://www.tanousnj.com/wp-content/plugins/gravityforms/images/spinner.svg', false );jQuery(document).trigger('gform_page_loaded', [2, current_page]);window['gf_submitting_2'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_2').replaceWith(confirmation_content);jQuery(document).trigger('gform_confirmation_loaded', [2]);window['gf_submitting_2'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_2').text());}else{jQuery('#gform_2').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "2", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_2" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_2";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_2" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 2, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+</div></div></dialog><script>(function(){window.gform=window.gform||{};window.gform.submission=window.gform.submission||{};if(typeof window.gform.submission.handleButtonClick!=="function"){window.gform.submission.handleButtonClick=function(button){if(button&&button.form){button.form.dataset.tanousSubmitClicked="1";}};}function tanousOpenModal(modal){if(!modal||!modal.showModal||modal.open){return;}modal.showModal();}function tanousFocusConfirmation(node){if(!node){return;}node.setAttribute("tabindex","-1");setTimeout(function(){try{node.focus({preventScroll:true});}catch(error){node.focus();}node.scrollIntoView({block:"center",behavior:"smooth"});},80);}function tanousRevealConfirmation(root){var node=root.querySelector(".tanous-form-confirmation,[id^=\"gform_confirmation_wrapper_\"],.gform_validation_errors,.validation_error,.gfield_validation_message");if(!node){return false;}var modal=node.closest("dialog");if(modal){tanousOpenModal(modal);}tanousFocusConfirmation(node);return true;}window.tanousOpenRequestModal=function(event,id){var modal=document.getElementById(id);if(!modal||!modal.showModal){return true;}if(event){event.preventDefault();}tanousOpenModal(modal);return false;};document.addEventListener("click",function(event){var button=event.target.closest("[data-tanous-modal-close]");if(!button){return;}var modal=button.closest("dialog");if(modal){modal.close();}});document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("dialog.hero-choice-modal").forEach(function(modal){tanousRevealConfirmation(modal);});});document.addEventListener("gform_confirmation_loaded",function(event){var formId=event.detail&&event.detail.formId?String(event.detail.formId):"";var wrapper=formId?document.getElementById("gform_confirmation_wrapper_"+formId):null;if(wrapper){tanousRevealConfirmation(wrapper.parentNode||document);}});if(window.jQuery){window.jQuery(document).on("gform_confirmation_loaded",function(event,formId){var wrapper=document.getElementById("gform_confirmation_wrapper_"+formId);if(wrapper){tanousRevealConfirmation(wrapper.parentNode||document);}});}})();</script>
+</body>
+</html>

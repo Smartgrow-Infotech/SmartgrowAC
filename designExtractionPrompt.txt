@@ -1,0 +1,177 @@
+================================================================================
+PROMPT 2 — REFERENCE WEBSITE: DESIGN, MOTION & BUILD EXTRACTION (NO CONTENT)
+How to use: replace {{REFERENCE_URL}}; optionally set {{BRAND_PAGE_URL}} if
+you already know one. Paste the whole block below as your message.
+================================================================================
+
+Visit {{REFERENCE_URL}} and analyze the ENTIRE site's visual design, layout,
+motion, and technical build. Ignore what the text says — I only want how it
+LOOKS, how it MOVES, and how it is BUILT. Also check for a brand page: try
+{{BRAND_PAGE_URL}} if given, and otherwise look for /brand, /brand-kit,
+/press, /media-kit, /style-guide, and any brand/press link in the footer.
+If one exists, its published colors and typography are authoritative.
+
+--------------------------------------------------------------------------------
+METHOD (follow in order; report what worked and what didn't)
+--------------------------------------------------------------------------------
+1. Fetch the homepage plus 3–5 key inner pages (services, about, a case
+   study/work page, contact). From each page's <head> and body collect:
+   every <link rel="stylesheet"> URL, inline <style> blocks, font loading
+   (Google Fonts / Fontshare / Adobe Fonts links, @font-face, next/font
+   markers, size-adjust metas), theme-color meta, favicon links, and every
+   <script src>. From script names identify the stack: framework (Next, Nuxt,
+   Astro, Webflow, Framer, WordPress), animation libs (GSAP + ScrollTrigger,
+   Framer Motion, Motion One, Anime.js), scroll libs (Lenis, Locomotive,
+   Smooth Scrollbar), 3D (Three.js, Spline runtime, R3F), Lottie/Rive,
+   sliders (Swiper, Splide, Embla), page transitions (Barba, View
+   Transitions), and any cursor/preloader scripts.
+2. Fetch EVERY stylesheet you found. Extract exact values for: :root CSS
+   custom properties, Tailwind utility signatures/config hints, @font-face
+   declarations, @keyframes names + what they animate, media-query
+   breakpoints, container max-widths, spacing scale, border-radius scale,
+   every box-shadow, every gradient, transition durations + easing curves,
+   z-index layers, backdrop-filter usage.
+3. If the site is client-rendered (Next/Nuxt/Framer) and the plain fetch
+   returns only a shell, note exactly which sections exist client-side, use
+   whatever IS retrievable (raw HTML head, structural DOM, brand page,
+   rendered screenshots if available, indexed search snippets), and mark the
+   rest as not verifiable. Do not guess silently.
+4. If a stylesheet URL cannot be discovered (hashed bundles referenced only
+   in a stripped <head>), say so explicitly, name what you tried, and switch
+   to [EST] values for anything CSS-only.
+5. Tag EVERY value: [VERIFIED] = read from CSS or the brand page ·
+   [OBSERVED] = seen in DOM structure/markup/screenshot · [EST] = estimated
+   to match the observed design (say why). Never present an estimate as a
+   measurement.
+
+--------------------------------------------------------------------------------
+OUTPUT — create a downloadable file: designReference.txt
+--------------------------------------------------------------------------------
+Fill each section with real values observed from the site. Structure EXACTLY:
+
+0. BUILD & STACK
+   Framework · rendering (SSR/SSG/CSR, which sections hydrate client-side) ·
+   CSS approach (Tailwind / CSS modules / styled-components / vanilla) ·
+   animation, scroll, 3D, slider, transition libraries detected · font host ·
+   image pipeline (formats, optimizer, srcset widths, quality) · preloader
+   present? · analytics/chat/booking widgets (names only).
+
+1. COLOR PALETTE
+   Exact hex for: primary, secondary, accent(s), page background(s), surface/
+   card, text primary, text muted, borders/dividers, success/warning/error if
+   present, link/hover colors. Dark mode? How each color is used (roles).
+   Tints/opacity variants actually used (e.g. accent at 10% for chips).
+   Distinguish [VERIFIED] brand-page/CSS values from [OBSERVED]/[EST].
+
+2. TYPOGRAPHY
+   Families for heading / body / display / mono · weights loaded · exact
+   sizes for H1, H2, H3, H4, body, small, buttons, nav links, eyebrow labels
+   (px/rem and any clamp() responsive formulas) · line-heights · letter-
+   spacing · text-transform usage · font loading method and fallbacks ·
+   where each family is used.
+
+3. SPACING & LAYOUT
+   Container max-width · side padding per breakpoint · section vertical
+   padding (desktop/mobile) · grid systems (column counts, gaps) · spacing
+   scale (base unit, steps) · breakpoints · alignment patterns (centered vs
+   left) · full-bleed vs contained sections · homepage section order with
+   approximate heights.
+
+4. BUTTONS & CTA STYLES
+   Every variant (primary, secondary, ghost/outline, text link, icon-only):
+   background, text color, padding, height, border-radius, border, font
+   size/weight, icon usage and placement, hover/active/focus states, transition
+   timing. Composite CTAs (avatar stacks, "+ you" chips, badges inside
+   buttons). Pills/badges (availability, "new", eyebrow tags).
+
+5. CARDS & COMPONENTS
+   Cards: padding, radius, border, shadow, background, hover behavior, image
+   treatment · chips/tags · avatars (size, ring, overlap) · stat counters ·
+   testimonial/quote blocks · chat-style or messenger-style blocks ·
+   accordions (FAQ) · tabs · forms & inputs (height, radius, border, focus
+   ring, placeholder style, icons, error states, select/dropdown style) ·
+   tables · marquees/carousels/sliders · modals/drawers · tooltips ·
+   dividers · icon style (line/filled/duotone, size, library) · imagery
+   style (photo vs illustration vs 3D, aspect ratios, corner radii,
+   overlays, masks).
+
+6. SHADOWS & BORDERS
+   Every shadow token with exact values and where it is used (card, hover,
+   nav, dropdown, button) · border widths/colors/opacities · full radius
+   scale (pill → card → input → media) · divider styles.
+
+7. BACKGROUNDS / GRADIENTS / SHADERS
+   Page and section backgrounds · gradients with exact stops/angles ·
+   noise/grain overlays · blurred blobs/mesh · oversized watermark or logo
+   layers · patterns/grids/dots · WebGL/shader canvases (what they render) ·
+   video backgrounds · image overlays and blend modes.
+
+8. ANIMATIONS & SCROLL EFFECTS
+   Preloader (what it shows, duration, exit animation) · page transitions ·
+   hero entrance sequence · text effects (split-text, word rotators/
+   tickers, typewriter, gradient text) · scroll reveals (properties,
+   thresholds, durations, easing, stagger) · parallax · pinning/scrubbing ·
+   smooth scroll (library + lerp/duration settings) · marquees (speed,
+   direction, pause-on-hover) · hover micro-interactions (scale, lift,
+   underline, magnetic) · custom cursor · counters/number animations ·
+   3D/Spline scenes (where placed, what the scene is, interactive or
+   ambient, mobile fallback, load strategy) · Lottie/Rive · reduced-motion
+   handling · overall motion "feel" (durations and easing family).
+
+9. NAVIGATION STYLE
+   Position (fixed/sticky/static) · height · background (solid/translucent/
+   blur) · border/shadow · logo size · link font size/weight/spacing ·
+   active/hover states · CTA in nav and its style · dropdown/mega-menu
+   layout · mobile menu (hamburger type, panel/overlay, animation,
+   contents) · scroll behavior (hide on scroll, shrink, pill/floating
+   variant, background change) · breadcrumbs · skip links.
+
+10. HERO LAYOUT
+    Text diagram of element order · alignment · height (vh) · eyebrow/badge ·
+    headline scale and max-width · subhead width · CTA group composition ·
+    social-proof elements (avatars, ratings, logos) · media placement (image/
+    video/3D/mockup) · floating/decorative elements and how they move ·
+    background treatment · mobile reflow order.
+
+11. FOOTER LAYOUT
+    Structure diagram (columns, order, contents by type) · logo/watermark
+    treatment · newsletter/input style · social icon style · legal row ·
+    background and top divider · spacing · mobile stacking order.
+
+12. SECTION-BY-SECTION HOMEPAGE MAP
+    For every section in order: layout pattern (e.g. 2-col split, 3-col grid,
+    marquee, centered stack), components used, motion applied, background —
+    written as a build checklist.
+
+13. RESPONSIVE BEHAVIOR
+    What changes at each breakpoint: nav, grids, type scale, spacing,
+    hidden/reordered elements, touch-specific behavior.
+
+14. ACCESSIBILITY & PERFORMANCE NOTES
+    Contrast observations, focus-visible styles, prefers-reduced-motion
+    support, lazy loading, image formats, font-display, skeletons/placeholders.
+
+15. REPLICATION QUICK-START
+    A ready-to-paste CSS variables block (colors, font families, type scale,
+    radii, shadows, spacing scale, easings, durations, breakpoints) · list of
+    libraries to install with what each one is used for · key measurements
+    (nav height, container width, section padding, hero height).
+
+16. UNVERIFIABLE / NOT RETRIEVABLE
+    Everything you could not confirm and why (stripped head, unreachable
+    CSS, client-only sections), so nothing in the file is silently guessed.
+
+--------------------------------------------------------------------------------
+RULES
+--------------------------------------------------------------------------------
+- Do NOT copy any text content, logos, images, illustrations, icon sets, or
+  brand assets — extract only the visual style and structure. Do not
+  reproduce identifiable artwork, characters, or mascots in any form.
+- Real values only. Exact hex/px/rem/ms where verified; clearly labeled
+  [EST] equivalents where not. No invented precision.
+- No content, copy, messaging, or information-architecture notes in this
+  file (that is a separate task).
+- Deliver designReference.txt as a downloadable file, then end your reply
+  with a 3-line summary: what was verified, what was estimated, and what
+  blocked deeper extraction.
+================================================================================

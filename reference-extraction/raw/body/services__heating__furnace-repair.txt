@@ -1,0 +1,130 @@
+﻿{LINK:/contact/}
+ Schedule Service {LINK:/}Home
+ ›
+ {LINK:/services/}Services
+ ›
+ {LINK:/services/heating/}Heating
+ ›
+ Furnace Repair
+Furnace Repair
+### Gas furnace repair for Hoboken & Hudson County.
+Forced-air gas furnaces — 80%, 90%, 96% AFUE. Same-day diagnostic, NJ licensed, honest quote before any work. Family-owned since 2001.
+★★★★★
+4.9 across 230+ reviews
+ 4.8 on Google · 5.0 on Yelp
+Name(Required)
+[INPUT]
+Phone(Required)
+[INPUT]
+Email
+[INPUT]
+Service Address
+[INPUT]
+How can we help?
+Repair
+Maintenance
+Replacement / installation
+Emergency service
+Question
+Notes
+[INPUT]
+[INPUT]
+[INPUT] 
+ [INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+[INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+Δ[INPUT]
+[IMG alt: Fujitsu]
+[IMG alt: York]
+[IMG alt: Rheem]
+[IMG alt: Honeywell]
+[IMG alt: Coleman]
+[IMG alt: Carrier]
+[IMG alt: Trane]
+[IMG alt: Lennox]
+[IMG alt: Daikin]
+[IMG alt: Mitsubishi Electric]
+[IMG alt: LG]
+[IMG alt: American Standard]
+[IMG alt: Goodman]
+[IMG alt: Bryant]
+[IMG alt: Amana]
+[IMG alt: Ruud]
+[IMG alt: A.O. Smith]
+[IMG alt: Bradford White]
+[IMG alt: Bosch]
+[IMG alt: Ecobee]
+Symptoms we diagnose
+### Common furnace failure patterns.
+Forced-air furnaces have a relatively small set of common failure modes. Most diagnose in 20–40 minutes once we’re on-site. ### Won’t ignite
+Hot surface igniter, flame sensor, gas valve, or control board. Standard diagnostic order, standard parts. Usually a same-day fix. ### Yellow flame or soot
+Should be a sharp blue flame. Yellow flame — or soot on the burner — means incomplete combustion. Sometimes a burner cleaning, sometimes a heat exchanger issue. Always worth diagnosing. ### Short cycling
+Furnace fires for a minute, shuts off, fires again. Usually a dirty filter overheating the limit switch, undersized return, or a failed limit/pressure switch. ### Blower won’t stop
+Blower runs even after the burner shuts off. Usually a stuck fan-limit switch or a failed control board relay. Easy to test, easy to swap. ### Cold spots in the house
+Could be the furnace itself, but more often a duct leak, a closed damper, or a thermostat in the wrong spot. We’ll trace it back to the cause. ### Strange smell
+Burning dust is normal at first fire each fall. Persistent burning-plastic or sulfur smells aren’t — could indicate a melting wire or a cracked heat exchanger. Always investigate.
+How a repair visit works
+### Diagnose first. Quote next. Then fix.
+Same diagnostic discipline across all forced-air gas furnaces — 80% to 96% AFUE.
+01
+### Phone triage
+We ask what the system’s doing, what brand and age, and whether it’s a true emergency — before we send a truck. Saves you a trip fee on simple fixes.
+02
+### On-site diagnostic
+Full system check — not just the loudest symptom. We isolate the actual cause so the repair fixes the real problem.
+03
+### Honest quote
+Parts, labor, and your options in writing before any work starts. If repair vs. replace is close, we’ll show you both numbers.
+04
+### Fix & verify
+We repair, test the full cycle, and explain what we did. Clean up. Most jobs get a workmanship warranty on top of the parts warranty.
+What affects the cost
+Furnace repair pricing is usually predictable. Three factors do most of the work.
+01
+### Furnace type
+Single-stage furnaces are simplest. Two-stage and modulating furnaces have more sensors and a more involved diagnostic. Modern condensing furnaces add the venting and condensate side.
+02
+### Parts availability
+Newer furnaces use stocked parts — usually same-day. Pre-2000 furnaces sometimes need parts sourced specially — we’ll tell you on the phone what to expect.
+03
+### Venting & gas line work
+If the diagnostic uncovers a venting or gas-line issue (cracked flue, weak pressure, blocked intake), that’s additional licensed work. We quote it separately so you see the breakdown.
+No fixed online prices — we diagnose, then quote. {LINK:tel:2012455151}Call 201-245-5151 to schedule. After-hours emergency calls available during cold snaps.
+Other heating services
+### Not a repair? Two other ways we help.
+If your furnace is heading toward end-of-life, or if you just want to keep this one running — here’s where to go next.
+{LINK:/services/heating/maintenance/} ### Furnace Maintenance
+Pre-season tune-ups catch the dirty-filter, weak-igniter, and combustion issues that turn into January breakdowns.
+- Single $185 · Combo $245
+- Combustion analysis
+- CO safety check
+- Keeps your warranty valid
+Explore Maintenance {LINK:/services/heating/installation-replacement/} ### Furnace Replacement
+15+ years old, climbing repair costs, or cracked heat exchanger? Time for a new condensing furnace.
+- 96% AFUE condensing furnaces
+- Manual J right-sizing
+- Permits & venting handled
+- NEIF financing
+Explore Install & Replace Where we work
+### Furnace repair across Hudson & Bergen County.
+10 cities. Local techs answering local phones.
+{LINK:/service-areas/hoboken/}Hoboken {LINK:/service-areas/jersey-city/}Jersey City {LINK:/service-areas/weehawken/}Weehawken {LINK:/service-areas/union-city/}Union City {LINK:/service-areas/west-new-york/}West New York {LINK:/service-areas/north-bergen/}North Bergen {LINK:/service-areas/edgewater/}Edgewater {LINK:/service-areas/cliffside-park/}Cliffside Park {LINK:/service-areas/fort-lee/}Fort Lee {LINK:/service-areas/guttenberg/}Guttenberg Quick answers
+### Common questions about furnace repair.
+Yellow flame — should I be worried? Yes, but don’t panic. A persistent yellow flame means incomplete combustion — which can produce carbon monoxide. Sometimes it’s just dirty burners (cleanable). Sometimes it’s a cracked heat exchanger (not safe to run). Either way, get it diagnosed. Make sure your CO detectors are working.
+How long should a furnace last? Modern condensing furnaces (90% AFUE+): 15–20 years. Older 80% AFUE furnaces installed in the 1990s/2000s: many still running at 25+ years. Maintenance habits and gas quality matter as much as age.
+Why does my furnace keep short cycling? Most common: dirty filter (blocks airflow, overheats the limit switch, system shuts down to protect itself). Other causes: undersized return ducts, failed limit switch, or oversized furnace. We rule them out in order.
+How often should I change the filter? Disposable 1" filters: every 1–3 months during heating/cooling season. Thicker 4"–5" pleated filters: every 6–12 months. If you have pets or allergies, change more often. A dirty filter is the single most common cause of furnace problems we see.
+80% vs. 95% AFUE — what’s the difference? AFUE is annual fuel-utilization efficiency — the percentage of fuel converted to usable heat. An 80% furnace wastes 20% up the flue. A 95% condensing furnace wastes only 5% and condenses water out of the exhaust. The annual gas savings often justify the upgrade if you’re replacing anyway.
+When is it time to replace? Common signals: 15+ years old, cracked heat exchanger, repair cost climbing toward 50% of replacement, multiple breakdowns in one season, soot/yellow flame that won’t clear after cleaning. We’ll show you both numbers.
+### Furnace down? Let’s diagnose it.
+Phones answered 24/7. Same-day diagnostic visits across Hudson County.
+{LINK:/contact/}Schedule Service {LINK:tel:2012455151} Call 201-245-5151
+[IMG alt: Tanous Heating & Air Conditioning]

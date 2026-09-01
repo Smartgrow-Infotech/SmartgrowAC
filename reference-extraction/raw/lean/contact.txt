@@ -1,0 +1,20 @@
+﻿{LINK:/}Home
+ ›
+ Contact
+Contact
+### Get in touch.
+Phones answered 24/7. We’ll call you back same business day on email and web forms.
+Call us — answered 24/7
+ {LINK:tel:2012455151}201-245-5151
+Email
+ {LINK:mailto:info@tanousnj.com}info@tanousnj.com
+HQ (address-only · no walk-in)
+4 14th St #501
+Hoboken, NJ 07030
+[[SERVICE FORM — standard block]]
+Where we work
+### Across Hudson & Bergen County.
+10 cities. Same pricing everywhere — no travel fees.
+[[10-CITY LINK ROW]] ### Or just call. We’re here.
+24/7 phone coverage. Real people, not voicemail.
+{LINK:tel:2012455151} Call 201-245-5151

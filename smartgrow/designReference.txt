@@ -1,0 +1,1142 @@
+================================================================================
+designReference.txt  —  SMARTGROWINFOTECH
+Brand system + build spec. Derived from the tanousnj.com design extraction,
+re-skinned onto the published SmartgrowInfotech brand, on a modern TS stack.
+Written 2026-09-01
+================================================================================
+
+SOURCES AND CONFIDENCE
+--------------------------------------------------------------------------------
+[BRAND]  Published at smartgrowinfotech.com/brand — authoritative.
+[LIVE]   Read from the live stylesheet /_next/static/css/91f788522a63491e.css —
+         authoritative, this is what the brand actually ships.
+[REF]    Structural pattern inherited from the tanousnj.com extraction.
+[NEW]    My decision, filling a gap neither source covers. Flagged every time.
+
+The brand page gave colors, type and three signature devices. It did NOT publish
+a spacing scale, radius scale, shadow scale, breakpoints or component specs. For
+those I carry the reference site's system forward (it was measured and it works)
+and re-skin it. Every such value is marked [REF] or [NEW] so you can see exactly
+what came from your brand and what I decided.
+
+################################################################################
+##  §0  BUILD & STACK
+################################################################################
+
+WHAT SMARTGROWINFOTECH.COM ALREADY RUNS  [LIVE — verified from the live site]
+  · Next.js, App Router (/_next/static/chunks/app/layout-*.js, app/brand/page-*)
+  · React Server Components (main-app chunk present)
+  · shadcn/ui token contract — the live :root carries the exact shadcn variable
+    set: --background --foreground --card --popover --primary --secondary
+    --muted --accent --destructive --border --input --ring --radius
+  · Tailwind CSS
+  · next/font self-hosting Inter and JetBrains Mono (both have generated
+    "* Fallback" @font-face entries — the next/font signature)
+  · Satoshi referenced as `Satoshi, var(--font-body), sans-serif`, served from
+    Fontshare
+
+CONCLUSION: your stack request is not a migration. It is "use the house stack."
+Matching it exactly means shared tokens, shared components and one design
+language across smartgrowinfotech.com and this site.
+
+THE STACK TO BUILD ON
+  Framework .......... Next.js 15 (App Router) + TypeScript (strict)
+  Rendering .......... SSG by default. `export const dynamic = 'force-static'`
+                       on all 60 marketing routes. Server Actions for forms.
+  Styling ............ Tailwind CSS v4 (CSS-first `@theme`, no JS config)
+  Components ......... shadcn/ui (Radix primitives, copied in, fully owned)
+  Fonts .............. next/font/google → Inter, JetBrains Mono
+                       next/font/local  → Satoshi (self-host from Fontshare)
+  Icons .............. lucide-react  [NEW — matches the reference's 2px
+                       round-cap line style exactly; it's the same lineage]
+  Motion ............. motion (the framer-motion successor), used sparingly
+  Carousel ........... embla-carousel-react via shadcn's Carousel
+  Forms .............. react-hook-form + zod + @hookform/resolvers
+  Form handling ...... Next Server Actions + resend (or your ESP)
+  Analytics .......... GA4 via @next/third-parties/google
+  Images ............. next/image with AVIF+WebP  [fixes a real reference flaw]
+  SEO ................ Next metadata API + app/sitemap.ts + app/robots.ts
+  Schema ............. hand-rolled JSON-LD components, typed with schema-dts
+  Deploy ............. Vercel
+
+WHY EACH NON-OBVIOUS CHOICE
+  shadcn/ui over MUI/Chakra — you already ship its token contract. It's also
+    copy-in rather than a dependency, so the accordion, carousel, dialog, sheet,
+    select and form primitives become yours to restyle without fighting a
+    library's opinions. Radix underneath gives keyboard nav, focus trapping and
+    ARIA wiring for free — which is precisely where the reference site failed.
+  Tailwind v4 — `@theme` lets brand tokens live as real CSS custom properties
+    AND generate utilities from one declaration. No duplicated config.
+  motion over GSAP — the reference site used zero animation libraries and was
+    better for it. We need three small things (dotted-grid fade-in, availability
+    pulse, carousel). `motion` covers it in a few KB; GSAP would be overkill.
+  lucide-react — the reference's icon geometry (24×24 viewBox, 2px stroke,
+    round caps/joins, and a checkmark using `polyline points='20 6 9 17 4 12'`)
+    IS Feather. lucide is the maintained Feather fork.
+
+WHAT WE DELIBERATELY DO NOT ADD
+  No Lenis/Locomotive (native `scroll-behavior: smooth` is enough)
+  No GSAP/ScrollTrigger · No Three.js/Spline · No Lottie · No preloader
+  No custom cursor · No page-transition library
+  Rationale: the reference proved a 60-page HVAC site converts fine with 74
+  lines of JS. Restraint here is a feature, and it protects Core Web Vitals.
+
+################################################################################
+##  §1  COLOR
+################################################################################
+
+─── 1.1  THE BRAND PALETTE  [BRAND — authoritative] ───
+
+  TOKEN            HEX       ROLE (as published)
+  ──────────────────────────────────────────────────────────────────────────
+  SmartGrow Teal   #1690B8   Logo primary, brand recognition
+  SmartGrow Orange #F18A21   Accents, highlights, eyebrow dots
+  Deep Navy        #0B1B2B   Wordmark and mono logo
+  Action Blue      #0067F3   Headings, links, interactive emphasis
+  Ink              #212121   Body headings, primary buttons (light)
+  Pure Black       #000000   Dark mode background
+  White            #FFFFFF   Light mode background, cards
+  Slate            #50576B   Body copy on light surfaces
+  Cloud            #F6F7F9   [LIVE — appears in the stylesheet as the light
+                             neutral surface; not named on the brand page.
+                             I've named it "Cloud" for the token set.]
+
+  PUBLISHED COLOR RATIO  [BRAND]
+    "roughly 80% neutral surfaces, 15% Action Blue emphasis, 5% teal and orange"
+
+  This ratio is the most important line on the brand page and it directly
+  governs the re-skin. The reference site was ~25% saturated accent (red
+  everywhere). We must be far more restrained: neutrals carry the page, Action
+  Blue carries interaction, and teal + orange are used like punctuation.
+
+─── 1.2  THE LIVE shadcn TOKEN SET  [LIVE — copy verbatim] ───
+
+  :root{
+    --background:0 0% 100%;        /* #FFFFFF */
+    --foreground:0 0% 13%;         /* #212121  Ink */
+    --card:0 0% 100%;
+    --card-foreground:0 0% 13%;
+    --popover:0 0% 100%;
+    --popover-foreground:0 0% 13%;
+    --primary:0 0% 15%;            /* near-Ink — buttons on light */
+    --primary-foreground:0 0% 98%;
+    --secondary:0 0% 97%;
+    --secondary-foreground:0 0% 15%;
+    --muted:0 0% 97%;
+    --muted-foreground:225 12% 37%;/* #50576B  Slate */
+    --accent:30 88% 54%;           /* #F18A21  Orange */
+    --accent-foreground:0 0% 100%;
+    --destructive:0 72% 51%;
+    --destructive-foreground:0 0% 100%;
+    --border:0 0% 92%;
+    --input:0 0% 92%;
+    --ring:216 100% 48%;           /* #0067F3  Action Blue */
+    --radius:0.625rem;             /* 10px */
+    --brand-blue:216 100% 48%;
+  }
+
+  NOTE THE DESIGN DECISION ENCODED HERE: `--primary` is Ink, not Action Blue.
+  Primary buttons are near-black; Action Blue is reserved for links, focus
+  rings and interactive emphasis. That is a deliberate, restrained choice and
+  we honor it — it's also why the 80/15/5 ratio holds.
+
+─── 1.3  TOKENS TO ADD  [NEW — the brand set has no dark-surface or
+     semantic-state tokens; these fill the gap] ───
+
+  --brand-teal:      196 79% 40%;   /* #1690B8 */
+  --brand-orange:    30 88% 54%;    /* #F18A21 — same as --accent */
+  --brand-navy:      209 60% 11%;   /* #0B1B2B */
+  --surface-cloud:   220 18% 97%;   /* #F6F7F9 */
+  --success:         152 63% 32%;   /* #1E8A54 — for the availability dot and
+                                       form confirmations. NOT on the brand
+                                       page; chosen to sit beside the palette
+                                       without clashing with teal. */
+  --warning:         38 92% 50%;
+  --border-on-dark:  0 0% 100% / 0.14;
+
+─── 1.4  TRANSLATION MAP: REFERENCE → SMARTGROWINFOTECH ───
+
+  This is the whole re-skin in one table. Every structural pattern from the
+  extraction, mapped onto your brand.
+
+  REFERENCE ROLE            THEIR VALUE   OURS                     NOTE
+  ──────────────────────────────────────────────────────────────────────────
+  Page background           #FAF8F4 warm  #FFFFFF                  cooler, cleaner
+  Alternating section       #F4EFE6 sand  #F6F7F9 Cloud            warm → cool
+  Card / raised surface     #FFFFFF       #FFFFFF                  same
+  Dark section + footer     #0E1A3C navy  #0B1B2B Deep Navy        near-identical
+  Deepest dark              —             #000000                  dark-mode base
+  PRIMARY ACCENT            #E5302B red   #0067F3 Action Blue      the big swap
+  Accent hover              #C82822       #0052C4  [NEW]           −12% lightness
+  Decorative accent         —             #F18A21 Orange           eyebrow nodes
+  Brand-recognition mark    —             #1690B8 Teal             logo star only
+  Heading text              #0F1729       #212121 Ink
+  Body text                 #2A3147       #212121 Ink
+  Muted text                #525B73       #50576B Slate            almost identical
+  Border hairline           #E6E2D8 warm  #EBEBEB (0 0% 92%)       warm → neutral
+  Border strong             #C8C0AE warm  #D4D6DB  [NEW]           warm → neutral
+  Success                   #1B7C4F       #1E8A54
+  Error                     (reused red!) #D32F2F --destructive    FIXED, see §14
+
+  THE ONE CRITICAL DIFFERENCE — the reference used ONE saturated accent (red)
+  for everything: buttons, eyebrow rules, hover states, icons, stat stars,
+  error messages. We have THREE brand colors with distinct jobs and a published
+  ratio that says use them sparingly. So:
+
+    Action Blue  →  interaction only. Links, focus rings, active states,
+                    the arrow puck, chart emphasis. Never decorative.
+    Orange       →  decoration only. Eyebrow node, circuit trace, small
+                    highlights. NEVER text on white (see §14 contrast).
+    Teal         →  brand recognition only. The logo star. Optionally one
+                    large display accent per page. Not a UI color.
+    Ink          →  primary buttons and headings.
+
+─── 1.5  CONTRAST — COMPUTED, NOT ASSUMED  [NEW] ───
+
+  Ratios calculated from the verified hex values using the WCAG relative-
+  luminance formula.
+
+  PASS — use freely
+    #212121 Ink on #FFFFFF ................ 16.1 : 1   AAA
+    #212121 Ink on #F6F7F9 Cloud .......... 15.2 : 1   AAA
+    #50576B Slate on #FFFFFF .............. 7.2 : 1    AAA
+    #50576B Slate on #F6F7F9 .............. 6.8 : 1    AA  (AAA large)
+    #FFFFFF on #0B1B2B Deep Navy .......... 17.4 : 1   AAA
+    #FFFFFF on #000000 .................... 21.0 : 1   AAA
+    #FFFFFF on #0067F3 Action Blue ........ 4.96 : 1   AA  ✔ normal text
+    #0067F3 on #FFFFFF .................... 4.96 : 1   AA  ✔ normal text
+
+  ★ THIS IS A REAL WIN OVER THE REFERENCE. Their white-on-red primary button
+    measured ~4.1:1 and FAILED AA for normal text at 15px/600. Our
+    white-on-Action-Blue clears 4.5:1. The brand's own color choice fixes an
+    accessibility defect we inherited from the structure.
+
+  CAUTION — large text only (≥24px, or ≥18.66px bold)
+    #1690B8 Teal on #FFFFFF ............... 3.67 : 1   AA large only
+      → Teal is fine for the logo and for oversized display accents.
+        It is NOT a body or UI text color. Do not use it for links.
+
+  FAIL — never use as text on light
+    #F18A21 Orange on #FFFFFF ............. 2.50 : 1   ✘ FAILS everything
+      → Orange is DECORATIVE ONLY. The eyebrow node, the circuit trace, a
+        badge fill with dark text on it. Never a word of copy on white.
+        (#F18A21 background with #212121 text = 6.45:1, which passes — so an
+        orange chip with Ink text is fine. An orange word on white is not.)
+
+  This constraint is consistent with the brand page's own guidance, which lists
+  Orange's role as "Accents, highlights, eyebrow dots" — decoration, not text.
+  The math confirms the brand team's instinct. Encode it as a lint rule.
+
+─── 1.6  DARK MODE  [NEW] ───
+
+  The brand page names Pure Black as "Dark mode background", so dark mode is
+  clearly intended. The reference site had none — it alternated light and dark
+  SECTIONS within one theme instead.
+
+  RECOMMENDATION: ship light-only at launch, but author every token with a
+  `.dark` counterpart from day one so enabling it later is a config change, not
+  a refactor. Section-level dark bands (`bg-navy`) give us 80% of the visual
+  drama with none of the QA cost.
+
+  .dark {
+    --background: 0 0% 0%;            /* Pure Black */
+    --foreground: 0 0% 98%;
+    --card: 209 60% 11%;              /* Deep Navy raises off black */
+    --muted: 209 40% 14%;
+    --muted-foreground: 220 12% 70%;
+    --border: 0 0% 100% / 0.12;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    /* --ring and --accent stay identical — both clear AA on black */
+  }
+
+################################################################################
+##  §2  TYPOGRAPHY
+################################################################################
+
+─── 2.1  FAMILIES  [BRAND] ───
+
+  Satoshi          500, 700, 900   Headlines. Served via Fontshare.
+  Inter            400, 500, 600   Body. Letter-spacing −0.5px.
+  JetBrains Mono   400, 500        Stats and labels. Uppercase, wide tracking.
+
+  This is a THREE-FAMILY system where the reference had two, and the third
+  family is the interesting one. JetBrains Mono for eyebrows, stat labels and
+  metadata gives the brand a technical, instrument-panel character that the
+  reference's plain uppercase Inter did not have. It maps beautifully onto an
+  HVAC engineering-forward voice — measurements, model numbers, service codes.
+
+  --font-display: 'Satoshi', 'Inter', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+─── 2.2  PUBLISHED SIZES  [BRAND] ───
+
+  Hero .............. Satoshi Bold · 50px / 34px mobile · letter-spacing −2.5px
+  Section heading ... Satoshi Bold · 36px / 26px mobile
+  Body .............. Inter Regular · 15px · letter-spacing −0.5px · leading snug
+  Label ............. JetBrains Mono · 11–13px · uppercase
+
+  IMPORTANT OBSERVATION: these sizes are noticeably SMALLER and TIGHTER than
+  the reference site's. Theirs ran hero H1 at clamp(36→56px) and section H2 at
+  clamp(30→44px), with a serif at line-height 1.1. Yours is 50px hero / 36px
+  section with −2.5px tracking — a denser, more editorial, more technical feel.
+
+  We follow YOUR brand, not the reference. That means the whole page rhythm
+  tightens. Do not simply drop the reference's clamps in.
+
+─── 2.3  THE FULL SCALE  [BRAND sizes, extended with [NEW] intermediate steps] ───
+
+  ROLE                FAMILY / WEIGHT      DESKTOP    MOBILE   TRACKING
+  ─────────────────────────────────────────────────────────────────────────
+  Hero H1             Satoshi 700          50px       34px     −2.5px
+  Hero H1 (XL page)   Satoshi 900          64px       38px     −3px     [NEW]
+  Section H2          Satoshi 700          36px       26px     −1.5px   [NEW]
+  Sub-section H3      Satoshi 700          24px       20px     −0.8px   [NEW]
+  Card title H4       Satoshi 500          20px       18px     −0.5px   [NEW]
+  Small title H5      Satoshi 500          17px       16px     −0.3px   [NEW]
+  Lead paragraph      Inter 400            18px       16px     −0.5px   [NEW]
+  Body                Inter 400            15px       15px     −0.5px
+  Body small          Inter 400            14px       14px     −0.4px   [NEW]
+  Caption             Inter 400            13px       13px     −0.3px   [NEW]
+  Eyebrow / label     JetBrains Mono 500   12px       11px     +0.12em
+  Stat label          JetBrains Mono 400   11px       11px     +0.14em
+  Stat figure         Satoshi 700          44px       32px     −2px     [NEW]
+  Button              Inter 600            15px       14px     −0.3px   [NEW]
+  Nav link            Inter 500            15px       —        −0.3px   [NEW]
+  Blockquote          Satoshi 500          24px       20px     −1px     [NEW]
+
+  NOTE ON TRACKING: the brand specifies letter-spacing in PIXELS, not em. At
+  50px a −2.5px tracking is −0.05em; at 36px, −1.5px is −0.042em. I've kept
+  px values where the brand published them and converted to em only where I'm
+  extending the scale, so the brand's exact look is preserved at its stated
+  sizes and scales sensibly elsewhere.
+
+  LINE HEIGHTS  [NEW — brand says only "leading snug" for body]
+    Display (50–64px) .... 1.02
+    H2 (36px) ............ 1.08
+    H3 (24px) ............ 1.15
+    Card title (20px) .... 1.2
+    Lead (18px) .......... 1.55
+    Body (15px) .......... 1.6
+    Small (13–14px) ...... 1.5
+    Mono labels .......... 1.2
+    Buttons .............. 1
+
+─── 2.4  WHERE EACH FAMILY IS USED ───
+
+  SATOSHI    every h1–h5 · stat figures · plan prices · pull quotes ·
+             the phone number when displayed large (footer, drawer, FAQ card) ·
+             card titles · process step numbers
+  INTER      all body copy · leads · card descriptions · buttons · nav links ·
+             form labels and inputs · footer links · breadcrumbs · FAQ answers
+  JETBRAINS  eyebrows · stat labels · badges and chips · table headers ·
+    MONO     metadata (dates, read times, model numbers, license numbers) ·
+             the availability badge label · section numbering (01, 02, 03)
+
+  THE MONO RULE: JetBrains Mono is for things that are DATA. If it's a number,
+  a code, a label or a state, it's mono. If it's a sentence, it's Inter. If
+  it's a statement, it's Satoshi. This gives the site an unusually clear
+  typographic logic and directly serves the technical-credibility positioning.
+
+─── 2.5  LOADING  [NEW — implementation] ───
+
+  // app/fonts.ts
+  import { Inter, JetBrains_Mono } from 'next/font/google'
+  import localFont from 'next/font/local'
+
+  export const inter = Inter({
+    subsets: ['latin'], variable: '--font-body', display: 'swap',
+  })
+  export const jetbrains = JetBrains_Mono({
+    subsets: ['latin'], weight: ['400','500'],
+    variable: '--font-mono', display: 'swap',
+  })
+  export const satoshi = localFont({
+    variable: '--font-display', display: 'swap',
+    src: [
+      { path: './Satoshi-Medium.woff2', weight: '500', style: 'normal' },
+      { path: './Satoshi-Bold.woff2',   weight: '700', style: 'normal' },
+      { path: './Satoshi-Black.woff2',  weight: '900', style: 'normal' },
+    ],
+  })
+
+  ⚠ SATOSHI LICENSING — Fontshare fonts are free for commercial use, but
+    SELF-HOSTING requires downloading the webfont package from Fontshare and
+    confirming the license terms permit it. Verify before shipping. If
+    self-hosting is not permitted, use their CDN <link> and accept the extra
+    round trip. Do not skip this check.
+
+  ⚠ SATOSHI FALLBACK METRICS — Satoshi and Inter have different metrics, so a
+    swap will shift layout. Either (a) accept a small CLS on Satoshi headings,
+    or (b) define a metric-adjusted fallback with `size-adjust`. Recommend (b)
+    for the hero H1 specifically, since it's above the fold.
+
+################################################################################
+##  §3  SPACING & LAYOUT
+################################################################################
+[REF — the brand page publishes no layout system, so we carry the reference's
+ measured system forward. It was well-built and it works.]
+
+  CONTAINER
+    --container: 1200px          [REF]
+    --container-pad: clamp(20px, 4vw, 56px)
+    Effective text column at ≥1400px: 1088px
+
+  SECTION PADDING
+    --section-py:    clamp(56px, 8vw, 96px)     default
+    --section-py-lg: clamp(64px, 9vw, 120px)    hero-adjacent, pricing, carousel
+    --section-py-sm: clamp(40px, 6vw, 72px)     bands, intros
+
+  SPACING SCALE  [NEW — the reference had NO scale, only literal values. We
+  formalise it. Tailwind's default 4px ladder covers it; these are the steps
+  actually used.]
+    4 · 8 · 12 · 16 · 20 · 24 · 28 · 32 · 40 · 48 · 56 · 64 · 80 · 96 · 120
+
+  GRID SYSTEMS  [REF]
+    Stat row ............ 5 cols, gap 32  →  2 cols @768
+    Service cards ....... 4 cols, gap 20  →  2 @1023  →  1 @540
+    Feature triptych .... 3 cols, gap 20  →  1 @900
+    Problem grid ........ 3 cols, gap 16  →  2 @900  →  1 @540
+    Process steps ....... 4 cols, gap 16  →  2 @900  →  1 @520
+    Action cards ........ 3 cols, gap 20  →  1 @900
+    Footer links ........ 4 cols, gap 32  →  2 @900  →  1 @540
+    Pricing split ....... 1fr 1fr, gap 56 →  1 @1023
+    FAQ split ........... 5fr 7fr, gap 64 →  1 @900
+    Hero split .......... 1.1fr 1fr, gap 56 → 1 @1023
+    Compact tiles ....... 4 cols, gap 12  →  2 @900  →  1 @540
+
+  BREAKPOINTS  [REF — reduced from 11 to 6]
+    The reference used ELEVEN breakpoints (520/540/560/620/640/720/768/900/
+    960/1023/1024). Only one was structural. That's unmaintainable. We use
+    Tailwind's defaults plus one custom:
+
+      sm   640px
+      md   768px
+      lg   1024px   ← THE STRUCTURAL BREAK (nav collapses)
+      xl   1280px
+      2xl  1400px   [NEW — container ceiling]
+
+    Everything the reference did at 520/540/560 collapses into `sm`.
+    Everything at 900/960 collapses into `md`/`lg`.
+
+  ALIGNMENT  [REF]
+    Predominantly left-aligned. Centered only for: final CTA bands, the
+    repair-vs-replace intro, the carousel header, and form microcopy.
+
+################################################################################
+##  §4  SIGNATURE BRAND ELEMENTS
+################################################################################
+[BRAND — these three devices are what make the site look like SmartgrowInfotech
+ rather than a re-skinned HVAC template. They replace the reference's own
+ signature devices one-for-one.]
+
+─── 4.1  THE CIRCUIT EYEBROW  ★ replaces the reference's 3px red underline ───
+
+  BRAND SPEC: "Orange node with fading trace and mono label"
+
+  The reference repeated ONE device across 11 selectors: a 12px uppercase label
+  above a 3px solid red rule. It was their most-repeated visual signature.
+  Ours is the circuit eyebrow, and it does the same structural job with the
+  brand's own language.
+
+  ANATOMY
+    ●━━━━━━━━──────  NATIONWIDE HVAC · SINCE 2009
+    │      │      │  │
+    │      │      │  └─ JetBrains Mono 500, 12px, uppercase, +0.12em, Slate
+    │      │      └──── trace fades to transparent
+    │      └─────────── 1px trace, Orange → transparent, 40px
+    └────────────────── 6px filled circle, #F18A21, with a soft glow ring
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-weight: 500; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: hsl(var(--muted-foreground));
+  }
+  .eyebrow::before {
+    content: ""; width: 46px; height: 6px; flex-shrink: 0;
+    background:
+      radial-gradient(circle 3px at 3px 50%, #F18A21 0 3px, transparent 3px),
+      linear-gradient(90deg,
+        rgba(241,138,33,.85) 0 6px,
+        rgba(241,138,33,.35) 40%,
+        rgba(241,138,33,0) 100%);
+    background-repeat: no-repeat;
+  }
+  /* on dark surfaces */
+  .eyebrow--on-dark { color: rgba(255,255,255,.72); }
+
+  Note the orange sits at 6px as pure DECORATION — never as text. This is
+  exactly what the contrast math in §1.5 requires.
+
+─── 4.2  THE DOTTED GRID  ★ replaces the reference's cream photo veil ───
+
+  BRAND SPEC: "Blue-tinted radial fade behind heroes"
+
+  The reference's hero treatment was a low-opacity photo under a four-stop
+  cream gradient at 112°. Warm, editorial, photographic. Yours is a technical
+  dot grid with a radial falloff. Cooler, more precise, more "infotech".
+
+  .dot-grid {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(
+      circle 1px at 1px 1px, rgba(0,103,243,.16) 1px, transparent 0);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 0%, #000 0%, transparent 72%);
+            mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 0%, #000 0%, transparent 72%);
+  }
+
+  · 24px grid, 1px dots, Action Blue at 16%
+  · Radial mask so it's densest at the top and vanishes before the fold
+  · Sits behind hero text, above the background, below content (z-index 0)
+  · On dark sections: rgba(255,255,255,.10) instead of blue
+  · Hidden under `prefers-reduced-motion`? No — it's static, it stays.
+
+  WHEN PHOTOS ARE USED (service and metro heroes), layer:
+    photo at opacity .30, `filter: saturate(.9) contrast(1.03)`
+    → a white/Cloud gradient veil at 110°, four stops (.96 / .88 / .62 / .48)
+    → the dot grid on top at reduced opacity
+    → content at z-index 2
+  This is the reference's veil technique, recolored from cream to cool neutral.
+
+─── 4.3  THE AVAILABILITY BADGE  ★ replaces the reference's red pulsing dot ───
+
+  BRAND SPEC: "Pulsing green dot with scarcity messaging"
+
+  The reference had a pulsing RED dot with the label "Calls answered 24/7" in
+  the footer CTA block. Yours is green. Same idea, better semantics — green
+  reads as "available", red reads as "alert".
+
+  .availability {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(255,255,255,.72);
+  }
+  .availability::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%;
+    background: hsl(var(--success));
+    box-shadow: 0 0 0 4px hsl(var(--success) / .22);
+    animation: availabilityPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes availabilityPulse {
+    0%,100% { box-shadow: 0 0 0 4px hsl(var(--success) / .22); }
+    50%     { box-shadow: 0 0 0 9px hsl(var(--success) / .04); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .availability::before { animation: none; }
+  }
+
+  ⚠ ON "SCARCITY MESSAGING": the brand page pairs this badge with scarcity
+    copy. Our content strategy explicitly rejects scarcity mechanics (see
+    contentReference §10 — no countdown timers, no "3 slots left"). So we use
+    the badge for AVAILABILITY, not scarcity: "DISPATCH ANSWERED 24/7". Same
+    component, honest message. Flagging because it's a deliberate divergence
+    from the brand page's stated use.
+
+─── 4.4  LOGO  [BRAND] ───
+
+  ASSETS DOWNLOADED (11 files, in ../reference-extraction/brand/assets/)
+    SmartgrowInfotech_darkblue.png / -horizontal.png    teal star + WHITE
+                                                        wordmark → DARK surfaces
+    SmartgrowInfotech_lightblue.png / -horizontal.png
+    SmartgrowInfotech_orange.png / -horizontal.png
+    SmartgrowInfotech_plain.png / -horizontal.png
+    logo/logo-dark.png · logo/logo-light.png · logo/mark.png
+
+  THE MARK: a five-pointed star drawn as an open teal line, with three filled
+  circular nodes on the strokes — a circuit-board reading of a star — and the
+  letters "SGI" in orange set at an angle inside the upper-left counter.
+  It's a genuinely distinctive mark and the circuit-node motif is exactly what
+  §4.1's eyebrow echoes.
+
+  CONSTRAINTS  [BRAND]
+    · Minimum: 24px tall for the mark, 32px for the horizontal lockup
+    · Clear space: equal to the star's inner node diameter on all sides
+    · Don't recolor · Don't distort
+
+  APPLICATION
+    Header (light) ..... horizontal lockup, navy wordmark, 36px tall
+    Footer (dark navy) . horizontal lockup, white wordmark, 44px tall
+    Mobile drawer ...... horizontal lockup, 32px tall
+    Favicon / app icon . mark only
+    OG image ........... mark + wordmark on Deep Navy
+
+  ⚠ PROBLEM — THE ASSETS ARE 500–720KB PNGs AT 13276×4679px.
+    That is a print-resolution raster, not a web asset. Shipping any of them
+    as a 36px header logo is indefensible on Core Web Vitals.
+    REQUIRED BEFORE BUILD: get SVG versions. If SVG isn't available, I'll
+    generate optimized PNG/WebP at 1x/2x/3x (roughly 72/144/216px tall) which
+    will land around 4–12KB each. Either way the current files cannot ship.
+    THIS IS A BLOCKER I NEED FROM YOU — do SVGs exist?
+
+################################################################################
+##  §5  BUTTONS & CTAs
+################################################################################
+[Structure REF · colors BRAND · implemented as shadcn Button variants]
+
+  BASE
+    inline-flex · items-center · justify-center · gap-2
+    height 44px (min) · padding 0 22px · radius 10px (--radius)
+    Inter 600 15px · line-height 1 · whitespace-nowrap
+    transition 200ms cubic-bezier(.4,0,.2,1)
+    focus-visible: 2px Action Blue outline, 2px offset   ← FIXES A REF DEFECT
+
+  VARIANTS
+
+    default (primary)     bg Ink #212121 · text white
+                          hover: bg #000 · translateY(-1px)
+                          shadow on hover: 0 4px 14px rgba(0,0,0,.18)
+      → Matches the live `--primary: 0 0% 15%`. The primary button is NOT blue.
+
+    brand                 bg Action Blue #0067F3 · text white       [NEW]
+                          hover: bg #0052C4 · translateY(-1px)
+                          shadow: 0 4px 14px rgba(0,103,243,.28)
+      → Use for the single highest-intent CTA per page (hero "Schedule
+        Service", final CTA). Not for every button — the 80/15/5 ratio.
+
+    outline (secondary)   transparent · text Ink · border 1.5px #D4D6DB
+                          hover: border Ink · bg #F6F7F9
+
+    ghost                 transparent · text Ink
+                          hover: bg #F6F7F9
+
+    onDark                transparent · text white · border 1.5px rgba(255,255,255,.5)
+                          hover: bg white · text Deep Navy
+
+    link                  text Action Blue · underline-offset 3px
+                          hover: underline
+
+  THE PILL CTA  ★ carried over from the reference — its best interaction ───
+    A pill with a circular arrow puck inset on the right that rotates −45° on
+    hover. The reference used red + navy puck; we use Action Blue + Deep Navy.
+
+    .btn-pill {
+      display: inline-flex; align-items: center; gap: 16px;
+      background: hsl(var(--ring)); color: #fff;
+      border-radius: 9999px; padding: 6px 6px 6px 28px;
+      font: 600 15px var(--font-body);
+      transition: background 200ms var(--ease), transform 200ms var(--ease),
+                  box-shadow 200ms var(--ease);
+    }
+    .btn-pill:hover { background:#0052C4; transform: translateY(-1px);
+                      box-shadow: 0 4px 16px rgba(0,103,243,.30); }
+    .btn-pill__puck {
+      width:44px; height:44px; border-radius:50%;
+      background: hsl(var(--brand-navy)); color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0; transition: transform 200ms var(--ease);
+    }
+    .btn-pill:hover .btn-pill__puck { transform: rotate(-45deg); }
+
+  ICON BUTTONS (all 44×44 minimum)
+    Header phone (mobile) ... 44×44 · radius 10px · bg Action Blue · white icon
+    Hamburger ............... 44×44 · radius 10px · Ink icon · hover bg Cloud
+    Carousel prev/next ...... 48×48 · circle · 1.5px #D4D6DB border · white bg
+                              hover: bg Ink, white icon, Ink border
+    FAQ accordion chevron ... 32×32 · circle · 1.5px border
+                              open: rotate 180°, border + icon → Action Blue
+    Dialog close ............ 36×36 · circle · rgba white border on dark heads
+
+  BADGES / CHIPS  (all JetBrains Mono, uppercase)
+    Neutral chip .... 11px · padding 6px 10px · radius 9999px ·
+                      border 1px #EBEBEB · bg white · Slate text
+    Solid chip ...... 11px · padding 6px 10px · radius 9999px ·
+                      bg #F6F7F9 · Ink text
+    Accent chip ..... 11px · padding 6px 10px · radius 9999px ·
+                      bg #F18A21 · Ink text   ← 6.45:1, passes AA
+    On-dark chip .... 11px · border 1px rgba(255,255,255,.14) ·
+                      text rgba(255,255,255,.85)
+    "MOST POPULAR" .. bg Action Blue · white text · 11px mono
+
+################################################################################
+##  §6  COMPONENTS  (shadcn mapping)
+################################################################################
+
+  WHAT MAPS DIRECTLY TO A shadcn PRIMITIVE
+    FAQ accordion ........... Accordion       (Radix — gives ARIA + keyboard)
+    Pricing plan tabs ....... Tabs            (fixes a REF gap — theirs had no
+                                               handler in the shipped JS)
+    Service request modal ... Dialog
+    Mobile nav drawer ....... Sheet (side="right")
+    Mega-menu ............... NavigationMenu
+    Form select ............. Select
+    Forms ................... Form + react-hook-form + zod
+    Carousels ............... Carousel (embla)
+    Metro tiles ............. Card
+    Toast on submit ......... Sonner
+    Breadcrumb .............. Breadcrumb
+    Tooltip (rare) .......... Tooltip
+
+  ⚠ WHY THIS MATTERS: the reference's shipped app.js (74 lines) contained NO
+    handler for its FAQ accordion, pricing tabs, carousel arrows or modal.
+    Those interactions were styled but the JS wasn't in the file I could read.
+    Building on Radix means every one of those is correct, accessible and
+    keyboard-navigable by default. This is the single biggest engineering
+    argument for the shadcn choice.
+
+  CUSTOM COMPONENTS TO BUILD  [NEW]
+    <Eyebrow>             circuit eyebrow (§4.1) · props: children, onDark
+    <DotGrid>             the hero backdrop (§4.2)
+    <AvailabilityBadge>   pulsing green dot + mono label (§4.3)
+    <StatRow>             5-up stat grid · Satoshi figures, mono labels
+    <ServiceCard>         photo + icon badge + title + desc + arrow link
+    <ProcessSteps>        4 numbered steps · mono "01" · Satoshi title
+    <ProblemGrid>         6-up icon + title + description cards
+    <RepairOrReplace>     two-column decision block, one column featured dark
+    <PriceBand>           the "$X – $Y installed" strip
+    <CoverageStrip>       10 metro links, used on ~40 pages
+    <MetroCard>           city + state + climate hook
+    <PlanSelector>        Tabs + detail panel (pricing section)
+    <FaqAccordion>        Accordion + FAQPage JSON-LD emitted together
+    <JsonLd>              typed schema-dts wrapper
+    <ServiceForm>         Form A (§ content 6)
+    <NationalAccountForm> Form B
+
+  CARD SPEC  [REF structure, BRAND colors]
+    background white · border 1px #EBEBEB · radius 14px · overflow hidden
+    hover: translateY(-2px) + shadow-card
+    photo area: aspect-4/3 · bg Cloud placeholder · bottom navy scrim
+      linear-gradient(rgba(11,27,43,0) 50%, rgba(11,27,43,.42))
+    icon badge: absolute top-4 left-4 · 44×44 · radius 10px ·
+      bg rgba(255,255,255,.96) · Action Blue icon · shadow-sm
+    body: padding 24px · title Satoshi 20px · desc Inter 14px Slate
+    arrow link: margin-top auto · Inter 600 14px Action Blue ·
+      icon translateX(4px) on card hover
+
+  FORM INPUTS  [BRAND-adjacent, one system only — the reference had THREE]
+    height 44px · padding 12px 14px · radius 10px
+    border 1px hsl(var(--input))  #EBEBEB
+    background white · text Ink · Inter 16px  ← 16px prevents iOS zoom
+    placeholder: Slate at 70%
+    focus-visible: border Action Blue + ring 3px rgba(0,103,243,.14)
+    error: border --destructive + 3px rgba(211,47,47,.12) + icon + message
+    label: JetBrains Mono 11px uppercase +0.1em Slate, 6px above
+    ⚠ FIXES TWO REF DEFECTS: they shipped three inconsistent input systems,
+      one of which was 14px (causing iOS zoom-on-focus), and their error state
+      was color-only with no icon and no border change.
+
+################################################################################
+##  §7  RADIUS, SHADOWS, BORDERS
+################################################################################
+
+  RADIUS  [derived from --radius: 0.625rem = 10px]
+    --radius-sm:   6px    inputs' inner elements, small chips
+    --radius:      10px   BASE — buttons, inputs, icon badges
+    --radius-md:   14px   cards, panels, form containers
+    --radius-lg:   20px   large media, hero image cards, plan detail panels
+    --radius-full: 9999px pills, badges, circular buttons, dots
+    Circles: 50% for pucks, arrows, accordion chevrons, status dots
+
+  SHADOWS  [REF scale, recolored from their #0F1729 tint to Deep Navy]
+    --shadow-sm    0 1px 2px rgba(11,27,43,.06)
+                   header when scrolled · icon badges
+    --shadow-md    0 8px 24px rgba(11,27,43,.09)
+                   mega-menu panel · dropdowns
+    --shadow-card  0 2px 6px rgba(11,27,43,.05),
+                   0 12px 32px rgba(11,27,43,.07)
+                   card hover · hero photo · form container
+    --shadow-lg    0 24px 60px rgba(11,27,43,.14)
+                   hero image card · featured panels
+    --shadow-modal 0 24px 80px rgba(11,27,43,.28)
+                   Dialog
+    --shadow-brand 0 4px 16px rgba(0,103,243,.30)
+                   Action Blue button hover glow
+    Elevation logic: 1–2px blur for chips, 12–32px for cards, 60–80px for
+    modals and hero panels. Never more than five shadow tokens in play.
+
+  BORDERS
+    1px    #EBEBEB   default hairline (cards, dividers, header bottom)
+    1.5px  #D4D6DB   inputs, circular buttons, FAQ rules
+    2px    Ink       outline button
+    Dark surfaces: rgba(255,255,255,.12)
+
+  ⚠ WE DROP the reference's warm border palette (#E6E2D8 / #C8C0AE) entirely.
+    Warm borders under a cool blue accent look muddy. Neutral grays only.
+
+################################################################################
+##  §8  MOTION
+################################################################################
+[REF philosophy — deliberately low-motion — kept, because it was correct]
+
+  TOKENS
+    --ease:     cubic-bezier(.4, 0, .2, 1)
+    --duration: 200ms      (REF used 220ms; 200 aligns to Tailwind's default)
+    --duration-panel: 300ms   (accordion, sheet)
+    --duration-drawer: 360ms  (mobile drawer)
+
+  THE COMPLETE MOTION SET — five things, nothing more
+    1. Hover lift ............ translateY(-1px) buttons · (-2px) cards
+    2. Arrow nudge ........... translateX(3–4px) on link/card hover
+    3. Pill puck rotate ...... rotate(-45deg) on .btn-pill hover
+    4. Availability pulse .... 2.4s infinite (§4.3)
+    5. Accordion / sheet ..... Radix's built-in height and slide transitions
+
+  ADDED FOR BRAND  [NEW — two only]
+    6. Dot-grid fade-in ...... hero backdrop opacity 0→1 over 600ms on mount
+    7. Marquee ............... brand logos, 60s linear infinite, pause on hover
+
+  EXPLICITLY NOT DOING
+    No scroll reveals · No parallax · No pinning · No counters ·
+    No split-text · No page transitions · No preloader · No custom cursor
+
+  ★ REDUCED MOTION — MANDATORY  (the reference had NONE; this is our fix)
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    Plus: the marquee and the availability pulse get explicit `animation: none`
+    so they stop rather than snap to a single frame.
+
+################################################################################
+##  §9  NAVIGATION
+################################################################################
+
+  HEADER
+    sticky top-0 · z-50 · height 76px  (REF used 80px; tightens with the
+      smaller type scale)
+    background rgba(255,255,255,.92) + backdrop-blur-md
+    border-bottom 1px #EBEBEB
+    scrolled state (>8px): + shadow-sm, 200ms transition
+    logo 36px · nav gap 28px · CTA cluster right
+
+  NAV LINKS
+    Inter 500 15px · Ink
+    hover: color Action Blue + a 2px Action Blue underline scaling in from
+    the left (scaleX 0→1, transform-origin left, 200ms)
+    ← the reference's cleanest interaction, recolored
+
+  MEGA-MENU  (Radix NavigationMenu)
+    full-bleed panel anchored under the header · white · shadow-md
+    padding 36px 0 40px · content re-contained to 1200px
+    column headers: JetBrains Mono 11px uppercase +0.14em Slate
+    links: Inter 500 14.5px Ink · hover Action Blue
+    featured panel: bg Cloud · radius 14px · padding 24px ·
+      circuit eyebrow + Satoshi 18px title + Inter 13.5px body + pill CTA
+    open on hover AND focus-within · fade + translateY(-8px→0) over 200ms
+
+  MOBILE (< lg / 1024px)
+    header collapses to: logo · Action Blue phone icon button · hamburger
+    Sheet drawer from the right, width min(420px, 100%), 360ms
+    5 accordion sections · body scroll locked · Escape closes
+    drawer footer: availability badge + phone as Satoshi 24px + full-width CTA
+    sticky bottom bar after hero scroll: [Call] [Schedule], 48px tall
+
+  ★ ACTIVE STATE  [NEW — the reference had NONE, a real navigation defect]
+    Current section gets `aria-current="page"` and a persistent 2px Action Blue
+    underline. Users should always know where they are.
+
+  ★ SKIP LINK  [NEW — the reference only had one on two auto-generated pages]
+    Visually hidden until focused, then a fixed Action Blue chip at top-left
+    linking to #main.
+
+  BREADCRUMBS
+    Inter 13px Slate · separator "›" at 50% opacity · current in Ink 500
+    Emitted with BreadcrumbList JSON-LD from the same data.
+
+################################################################################
+##  §10  HERO PATTERNS
+################################################################################
+
+  HERO A — HOME (split)
+  ┌─────────────────────── container 1200 ────────────────────────────┐
+  │  · · · dot grid, radial fade from top · · ·                       │
+  │  ┌───── 1.1fr ─────┐   gap 56   ┌────── 1fr ──────┐              │
+  │  │ ●━━─ EYEBROW    │            │                  │              │
+  │  │ H1 Satoshi 700  │            │  PHOTO 4:3       │              │
+  │  │    50px / −2.5px│            │  radius 20px     │              │
+  │  │ lead 18px       │            │  shadow-lg       │              │
+  │  │ [Schedule][Call]│            │  navy scrim      │              │
+  │  └─────────────────┘            └──────────────────┘              │
+  │  ──── hairline #EBEBEB ────                                       │
+  │  17      10      4.9★    2,400+   24/7    ← Satoshi 44px figures  │
+  │  YEARS   METROS  RATING  REVIEWS  DISPATCH  ← Mono 11px labels    │
+  └───────────────────────────────────────────────────────────────────┘
+    Padding: clamp(48px,6vw,72px) top / clamp(40px,5vw,64px) bottom
+    Mobile: single column, photo reorders ABOVE text at 16:10,
+            H1 → 34px, stat row → 2 cols (NOT hidden — the reference hid it
+            entirely on mobile, which throws away its best proof) [NEW]
+
+  HERO B — SERVICE / SYSTEM (with inline form)
+    2-col 1.1fr/.9fr · left: eyebrow, H1 36–44px, lead, rating strip, CTA row
+    right: <ServiceForm> in a white card, radius 14px, shadow-card
+    background: Cloud + dot grid; optional photo layer at 30% under a
+    four-stop white veil at 110°
+
+  HERO C — METRO
+    Same as B, but the right column is a map card (min-height clamp(420px,
+    46vw, 600px), radius 14px, desaturated iframe filter saturate(.9)) with a
+    glass caption panel: rgba(11,27,43,.76) + backdrop-blur-sm
+
+  HERO D — COMPACT (about, contact, legal)
+    Text-only, max-width 880px, bg Cloud, eyebrow + H1 + lead. No media.
+
+################################################################################
+##  §11  FOOTER
+################################################################################
+
+  background Deep Navy #0B1B2B · padding 56px 0 32px
+
+  ┌─ footer__top  grid minmax(0,1fr) / minmax(420px,auto) · gap 56 ─────┐
+  │  LEFT                              RIGHT (align-end)                │
+  │  logo (white wordmark) 44px        ● DISPATCH ANSWERED 24/7         │
+  │  tagline Satoshi 500 17px            [Schedule Service]             │
+  │  mono badge row (4 chips)            [Call (888) 555-0142]          │
+  │  contact line Inter 13px .70                                        │
+  └──────────────── border-bottom rgba(255,255,255,.12) ────────────────┘
+  ┌─ footer__links  4 cols · gap 32 · py 40 ────────────────────────────┐
+  │  SERVICES      SYSTEMS      COMMERCIAL      COMPANY                 │
+  │  headers: JetBrains Mono 11px uppercase +0.14em white               │
+  │  links: Inter 14px rgba(255,255,255,.78) → white on hover           │
+  └──────────────── border-bottom rgba(255,255,255,.12) ────────────────┘
+  ┌─ coverage strip · py 24 ────────────────────────────────────────────┐
+  │  mono 11px label "COVERAGE" + 10 metro links, wrapped               │
+  └─────────────────────────────────────────────────────────────────────┘
+  ┌─ legal row · pt 24 · Inter 12px rgba(255,255,255,.6) ───────────────┐
+  │  © 2026 SmartgrowInfotech …    Privacy · Terms · Accessibility ·    │
+  │                                 Sitemap                             │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  Mobile: top → 1 col · links → 2 cols · badges hidden below sm ·
+  bottom padding 96px to clear the sticky CTA bar
+  No social icons (no verified accounts — see contentReference §4)
+
+################################################################################
+##  §12  HOMEPAGE SECTION MAP  (build checklist)
+################################################################################
+
+  □ 1  Header ................ sticky 76px, blur, mega-menu
+  □ 2  Hero .................. split + dot grid + 5-stat row       bg white
+  □ 3  What we service ....... 4 × ServiceCard                     bg Cloud
+  □ 4  Why ................... asymmetric header + 3 × Feature     bg white
+  □ 5  Coverage .............. 10 × MetroCard                      bg Cloud
+  □ 6  Maintenance plan ...... Tabs + detail panel, blue glow      bg DeepNavy
+  □ 7  Comfort upgrades ...... Embla carousel, 6 slides            bg white
+  □ 8  Brands ................ marquee, white cells                bg DeepNavy
+  □ 9  FAQ ................... 5fr/7fr split + Accordion           bg white
+  □ 10 Final CTA ............. centered band                       bg Cloud
+  □ 11 Footer ................ 4-col + coverage strip              bg DeepNavy
+
+  BACKGROUND RHYTHM
+    white → Cloud → white → Cloud → NAVY → white → NAVY → white → Cloud → NAVY
+    Three navy anchors (pricing, brands, footer), exactly as the reference did.
+    On navy sections, use the Action Blue radial glow at top-right:
+      radial-gradient(circle, rgba(0,103,243,.20) 0,
+                      rgba(0,103,243,.05) 35%, transparent 65%)
+    ← this replaces the reference's red glow, same geometry.
+
+################################################################################
+##  §13  RESPONSIVE
+################################################################################
+
+  ≥1024 (lg)   full mega-menu · all grids at full column count ·
+               container caps at 1200 + 56px padding from 1400
+  <1024        NAV COLLAPSES: desktop nav hidden, hamburger + phone icon shown,
+               sticky bottom CTA bar appears, all 2-col heroes → 1 col,
+               4-col card grids → 2 col
+  <768 (md)    stat row → 2 cols (kept, not hidden) · 3-col grids → 1 ·
+               process → 2 · H1 → 34px · section padding → 56px
+  <640 (sm)    all grids → 1 col · buttons full-width in hero ·
+               footer links → 2 cols · footer badges hidden ·
+               carousel slides → 84% width
+
+  TOUCH
+    44px minimum targets everywhere
+    16px form inputs (no iOS zoom)
+    scroll-snap-type: x mandatory on carousels
+    overscroll-behavior-x: contain (prevents back-swipe hijack)
+    body scroll lock while the drawer is open
+
+################################################################################
+##  §14  ACCESSIBILITY & PERFORMANCE
+################################################################################
+
+  ★ EVERY ITEM HERE IS A DEFECT WE INHERITED FROM THE REFERENCE AND ARE FIXING.
+
+  A11Y — THE FIX LIST
+    1. focus-visible on everything.  The reference had ZERO focus rules except
+       two that REMOVED the outline. Ours: 2px Action Blue outline, 2px offset,
+       on every interactive element. Radix handles most of it; we style it.
+    2. prefers-reduced-motion.  They had none; their 60s marquee and 2.4s pulse
+       ran regardless. Ours is in §8 and is mandatory.
+    3. Skip link to #main on every page.
+    4. Semantic list roles.  They applied `ul{list-style:none}` globally with
+       no `role="list"`, which suppresses list semantics in VoiceOver.
+    5. Error states not by color alone.  Icon + border change + text, and
+       `aria-describedby` wiring the message to the field.
+    6. Visible error summary.  They set `.gform_validation_errors{display:none}`,
+       hiding the aggregated error region from screen readers entirely.
+    7. aria-current on the active nav item.
+    8. Real accordion semantics.  Radix gives aria-expanded / aria-controls /
+       proper heading buttons. Theirs was a display toggle.
+    9. Contrast.  See §1.5 — white-on-Action-Blue clears AA where their
+       white-on-red did not. Orange is locked to decorative use by rule.
+    10. Alt text on every image; decorative layers marked aria-hidden.
+    11. Published accessibility statement at /accessibility.
+
+  PERFORMANCE TARGETS
+    LCP < 2.0s · INP < 200ms · CLS < 0.05 · Lighthouse ≥ 95 all four
+
+  PERF — THE FIX LIST
+    1. next/image everywhere.  The reference delivered ALL hero photography as
+       CSS background-image, which cannot be lazy-loaded, srcset'd or
+       priority-hinted. We use <Image> with fill + sizes, AVIF/WebP, and
+       `priority` on the hero only.
+    2. Logo assets.  Currently 500–720KB print-res PNGs (§4.4). Must be SVG or
+       optimized multi-density raster. BLOCKER.
+    3. Static generation.  All 60 routes SSG. No runtime data fetching on
+       marketing pages.
+    4. Font strategy.  next/font self-hosts Inter and JetBrains with automatic
+       preload and fallback-metric generation. Satoshi via next/font/local with
+       a `size-adjust` fallback to prevent CLS on the hero H1.
+    5. Bundle discipline.  Server Components by default. `"use client"` only on:
+       mobile drawer, mega-menu, accordion, tabs, carousel, forms, sticky bar.
+       Everything else ships zero JS.
+    6. No render-blocking third parties.  GA4 via @next/third-parties, which
+       loads it correctly deferred.
+    7. Skeletons.  aspect-ratio boxes with a Cloud background on every media
+       container — the reference did this well and we keep it.
+
+################################################################################
+##  §15  IMPLEMENTATION
+################################################################################
+
+─── 15.1  PROJECT STRUCTURE ───
+
+  smartgrow-hvac/
+  ├─ app/
+  │  ├─ layout.tsx                 fonts, <JsonLd org>, header, footer
+  │  ├─ page.tsx                   home
+  │  ├─ globals.css                @theme tokens, base, signature elements
+  │  ├─ sitemap.ts · robots.ts · opengraph-image.tsx
+  │  ├─ services/[...]/page.tsx
+  │  ├─ hvac-systems/[system]/page.tsx
+  │  ├─ commercial/[program]/page.tsx
+  │  ├─ service-areas/[metro]/page.tsx     ← generateStaticParams over 10 metros
+  │  └─ (legal)/privacy-policy · terms · accessibility
+  ├─ components/
+  │  ├─ ui/                        shadcn primitives (owned, restyled)
+  │  ├─ brand/                     Eyebrow · DotGrid · AvailabilityBadge · Logo
+  │  ├─ sections/                  Hero · StatRow · ServiceGrid · WhyBlock ·
+  │  │                             PlanSelector · UpgradeCarousel · BrandMarquee
+  │  │                             FaqSplit · FinalCta · CoverageStrip
+  │  ├─ forms/                     ServiceForm · NationalAccountForm
+  │  └─ seo/                       JsonLd · Breadcrumbs
+  ├─ content/
+  │  ├─ services.ts · systems.ts · commercial.ts
+  │  ├─ metros.ts                  ← the 10 metros, fully typed
+  │  └─ faqs.ts
+  ├─ config/
+  │  └─ site.ts                    ★ ALL PLACEHOLDER DATA LIVES HERE
+  └─ lib/  utils.ts · schema.ts
+
+─── 15.2  THE CONFIG FILE  ★ every placeholder in one place ───
+
+  // config/site.ts
+  export const site = {
+    name: 'SmartgrowInfotech',
+    legalName: 'SmartgrowInfotech LLC',          // TODO verify
+    tagline: 'Nationwide HVAC. Local technicians.',
+    url: 'https://hvac.smartgrowinfotech.com',   // TODO confirm domain
+    founded: 2009,                                // TODO verify
+    phone:        '(888) 555-0142',               // TODO REPLACE — fictional
+    phoneHref:    'tel:+18885550142',
+    email:        'service@smartgrowinfotech.com',
+    accountsEmail:'accounts@smartgrowinfotech.com',
+    address: {                                    // TODO REPLACE
+      street: '4514 Cole Avenue, Suite 600',
+      city: 'Dallas', region: 'TX', postal: '75205', country: 'US',
+    },
+    stats: {                                      // TODO REPLACE ALL
+      years: 17, metros: 10, technicians: '190+',
+      statesLicensed: 38, jobs: '41,000+',
+      rating: 4.9, reviewCount: 2400,
+    },
+    // ⚠ Do NOT emit AggregateRating JSON-LD until rating/reviewCount are real
+    emitAggregateRating: false,
+  } as const
+
+  Changing the company, phone, address or stats = editing ONE file. This is
+  the direct answer to "white-label later" if that's where this goes.
+
+─── 15.3  TAILWIND v4 THEME ───
+
+  /* app/globals.css */
+  @import "tailwindcss";
+
+  @theme {
+    --color-ink:        #212121;
+    --color-slate:      #50576B;
+    --color-cloud:      #F6F7F9;
+    --color-navy:       #0B1B2B;
+    --color-teal:       #1690B8;
+    --color-orange:     #F18A21;
+    --color-action:     #0067F3;
+    --color-action-600: #0052C4;
+
+    --font-display: var(--font-display), 'Inter', system-ui, sans-serif;
+    --font-body:    var(--font-body), system-ui, sans-serif;
+    --font-mono:    var(--font-mono), ui-monospace, monospace;
+
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --ease-brand: cubic-bezier(.4, 0, .2, 1);
+  }
+
+  :root { /* the shadcn HSL block from §1.2, verbatim */ }
+  .dark { /* the block from §1.6 */ }
+
+─── 15.4  BUILD ORDER ───
+
+  Phase 1 — Foundation
+    scaffold · fonts · tokens · shadcn init · Logo/Eyebrow/DotGrid/
+    AvailabilityBadge · Header + mega-menu + drawer · Footer · config/site.ts
+  Phase 2 — Home
+    all 9 homepage sections · both forms · Server Actions · GA4 events
+  Phase 3 — Templates
+    the 5 page templates as typed, data-driven components
+  Phase 4 — Content
+    wire the 23 written pages; generate the remaining 37 from content/*.ts
+  Phase 5 — SEO & polish
+    JSON-LD per route · sitemap · robots · OG images · a11y audit ·
+    Lighthouse pass · reduced-motion QA
+
+################################################################################
+##  §16  OPEN ITEMS  —  I NEED THESE FROM YOU
+################################################################################
+
+  BLOCKERS
+  1. ★ LOGO SVGs.  The published assets are 13276×4679px PNGs at 500–720KB.
+     They cannot ship. Do vector originals exist? If not, I'll generate
+     optimized raster at 1x/2x/3x, but SVG is strongly preferred.
+  2. ★ SATOSHI LICENSE.  Confirm Fontshare's terms allow self-hosting for this
+     project. If not, we use their CDN and accept the extra request.
+  3. ★ DOMAIN.  Where does this live? hvac.smartgrowinfotech.com? A separate
+     domain? This affects canonical URLs and the schema @id strategy.
+
+  DESIGN DECISIONS I'D LIKE CONFIRMED
+  4. Primary button = Ink (per your live `--primary: 0 0% 15%`) with Action
+     Blue reserved for one hero CTA per page — or should Action Blue be the
+     default primary? Your brand page says the 80/15/5 ratio; I've followed it.
+  5. Dark mode at launch, or tokens-only-now? I've specced tokens-only.
+  6. The brand page pairs the availability badge with "scarcity messaging."
+     Our content strategy rejects scarcity mechanics. I've used it for
+     availability instead. Confirm that's the right call.
+
+  CONTENT-SIDE (repeated from contentReference §12)
+  7. Real NAP, real stats, real license numbers.
+  8. Actual dealer agreements (which brands do you really install?).
+  9. Financing partner.
+  10. Named leadership — the single biggest credibility gap in the reference.
+
+================================================================================
+END OF designReference.txt  (SmartgrowInfotech)
+================================================================================

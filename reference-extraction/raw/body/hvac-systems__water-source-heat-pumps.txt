@@ -1,0 +1,140 @@
+﻿{LINK:/contact/}
+ Schedule Service {LINK:/}Home
+ ›
+ {LINK:/hvac-systems/}HVAC Systems
+ ›
+ Water-Source Heat Pumps
+Water-Source Heat Pumps
+### Water-source heat pumps for mid- & high-rise condo buildings.
+Building-loop systems used in most modern Hoboken/JC high-rises. Per-unit replacement, in-unit repair, and contracted building-wide maintenance.
+★★★★★
+4.9 across 230+ reviews
+ 4.8 on Google · 5.0 on Yelp
+Name(Required)
+[INPUT]
+Phone(Required)
+[INPUT]
+Email
+[INPUT]
+Service Address
+[INPUT]
+How can we help?
+Repair
+Maintenance
+Replacement / installation
+Emergency service
+Question
+Notes
+[INPUT]
+[INPUT]
+[INPUT] 
+ [INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+[INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+ [INPUT]
+Δ[INPUT]
+[IMG alt: Fujitsu]
+[IMG alt: York]
+[IMG alt: Rheem]
+[IMG alt: Honeywell]
+[IMG alt: Coleman]
+[IMG alt: Carrier]
+[IMG alt: Trane]
+[IMG alt: Lennox]
+[IMG alt: Daikin]
+[IMG alt: Mitsubishi Electric]
+[IMG alt: LG]
+[IMG alt: American Standard]
+[IMG alt: Goodman]
+[IMG alt: Bryant]
+[IMG alt: Amana]
+[IMG alt: Ruud]
+[IMG alt: Bosch]
+[IMG alt: Ecobee]
+What it is
+### How water-source heat pumps work.
+Each condo unit has its own small heat pump (about the size of a hot water heater) inside the unit — usually in a closet or mechanical chase. Instead of using outdoor air for the heat exchange (like ductless or central heat pumps), it uses water from a building-wide loop that runs at moderate temperature (typically 60–90°F year-round).
+The building maintains the loop temperature with a cooling tower (rooftop) and a boiler (for cold-weather supplemental heat). Each unit owner controls their own thermostat, runs their own compressor, and is responsible for their own in-unit equipment. The HOA is responsible for the building loop. Why WSHP for new high-rises
+### Built for modern Hudson County condo construction.
+Most Hoboken/JC condo towers built since the 1990s use WSHP systems. The design solves problems other systems can’t in a high-rise. ### Self-contained per unit
+Each unit owner’s system is independent. No shared compressor failure, no shared filtration. One bad unit doesn’t affect the rest of the building. ### Quiet, efficient operation
+Water-source heat pumps are dramatically quieter than air-source equipment (no outdoor unit, no fan in extreme weather). Efficiency is consistent year-round because the loop temperature is moderate. ### Easy per-unit replacement
+A failed WSHP gets replaced in-unit in a half-day. No exterior work, no refrigerant line runs through the building, no roof access needed. Just isolate the unit’s water valves, swap, restart.
+Brands we install
+### WSHP brands we install & service.
+Water-source heat pump manufacturers serve mostly the building-design specifier market — we work with all major brands in Hoboken/JC towers.
+[IMG alt: Carrier]
+ Carrier
+[IMG alt: Trane]
+ Trane
+[IMG alt: Goodman]
+ Goodman
+[IMG alt: York]
+ York
+Sizing & options
+### Picking the right WSHP.
+Most replacements match the original spec exactly — the building loop and per-unit valves are sized for it. A few exceptions.
+01
+### Match original BTU rating
+Building loop is designed for specific BTU loads per unit. Oversizing causes loop temperature swings; undersizing means inadequate comfort. We replace in-kind unless the original was wrong from the start.
+02
+### Stage / capacity options
+Single-stage WSHP is standard. Two-stage is available for slightly better dehumidification and quieter operation — same physical footprint, modest cost upgrade. Worth it if you spend lots of time home.
+03
+### Filter style
+Disposable 1" filters (most common) vs. media-filter cabinets (larger filter, longer change interval). Media cabinets need slightly more closet space but save filter-change hassle.
+04
+### Brand & building spec
+Many Hudson County buildings have standardized on a specific WSHP brand and capacity. We respect the spec for HOA approval but can sometimes upgrade tier within the spec.
+What installation involves
+WSHP replacement is one of the cleanest HVAC swaps in any high-rise. A few details matter.
+01
+### Loop water isolation
+We isolate the unit’s water valves so the building loop keeps running for everyone else. Old isolation valves sometimes leak — if so, we coordinate with the building’s engineer for shutdown timing.
+02
+### Electrical & condensate
+Each unit has its own breaker and condensate drain. Both get verified during the swap. Sometimes condensate pumps need replacement at the same time.
+03
+### HOA approval & access
+Most buildings require HOA approval for unit replacement and freight elevator booking. We coordinate with property management for both.
+Single-unit WSHP replacement: typically $3,500–$6,500 installed. For multi-unit work and building-loop maintenance, {LINK:tel:2012455151}call 201-245-5151 for a per-property quote.
+Service options
+### Install, repair, or maintain — we do all three.
+WSHP service is a big part of what we do for Hoboken/JC condo buildings — both per-unit and building-loop level.
+{LINK:/services/air-conditioning/installation-replacement/} ### WSHP Replacement
+Per-unit replacement with HOA coordination. Brand-spec matching. Half-day install on most jobs.
+- In-kind replacement
+- All major brands
+- HOA approval coordinated
+- Building access handled
+Explore Install {LINK:/services/air-conditioning/repair/} ### WSHP Repair
+Compressor, fan motor, reversing valve, refrigerant leaks, control board. Same-day diagnostic on most calls.
+- Same-day diagnostic
+- All major brands
+- Honest repair-or-replace numbers
+- 24/7 emergency
+Explore Repair Other HVAC systems
+### Considering other systems?
+Each system fits a different building style. Compare your options.
+{LINK:/hvac-systems/ptac-units/}PTAC Units {LINK:/hvac-systems/heat-pumps/}Air-Source Heat Pumps {LINK:/commercial/condo-buildings/}Condo Building Services {LINK:/commercial/property-management/}Property Management Where we work
+### WSHP service across Hudson & Bergen County.
+10 cities. Local techs answering local phones.
+{LINK:/service-areas/hoboken/}Hoboken {LINK:/service-areas/jersey-city/}Jersey City {LINK:/service-areas/weehawken/}Weehawken {LINK:/service-areas/union-city/}Union City {LINK:/service-areas/west-new-york/}West New York {LINK:/service-areas/north-bergen/}North Bergen {LINK:/service-areas/edgewater/}Edgewater {LINK:/service-areas/cliffside-park/}Cliffside Park {LINK:/service-areas/fort-lee/}Fort Lee {LINK:/service-areas/guttenberg/}Guttenberg Quick answers
+### Common questions about water-source heat pumps.
+How do WSHPs differ from PTACs? PTACs are self-contained units with their own outdoor heat exchange (through the wall). WSHPs use the building’s water loop for heat exchange — quieter, more efficient, no outdoor wall penetration. PTACs are common in older Hoboken high-rises and hotels; WSHPs are common in newer condo towers.
+Who maintains the building loop — me or the HOA? The HOA / building management is responsible for the building loop (cooling tower, boiler, pumps, water treatment). You are responsible for your in-unit WSHP. Some buildings include in-unit WSHP maintenance in HOA fees; most don’t. Check your CC&Rs.
+How long do WSHPs last? Typically 15–20 years for a residential WSHP in normal use. Heavily used units (vacation rentals, sub-let, etc.) sometimes need replacement at 10–12 years. Annual maintenance significantly extends life.
+Per-unit replacement timeframe? Most single-unit swaps are a half-day — isolate water valves, remove old unit, install new, re-fill condensate trap, restart. We schedule with the building for freight elevator and (if needed) loop access.
+Most common WSHP failures? Compressor failure (just like any heat pump), reversing valve issues (the part that switches between heating and cooling modes), condensate pump failure, and refrigerant leaks. Each diagnoses in about 30–45 minutes.
+How does the building loop affect my energy bill? Building loop costs (cooling tower fans, boiler gas, pump electricity) are usually paid through HOA fees. Your in-unit WSHP runs on your own electric meter. So you pay for the compressor and fan, the HOA pays for the loop. This split varies by building — check your governing docs.
+### Need WSHP service?
+Per-unit and building-wide service across Hudson County high-rises.
+{LINK:/contact/}Schedule Service {LINK:tel:2012455151} Call 201-245-5151
+[IMG alt: Tanous Heating & Air Conditioning]

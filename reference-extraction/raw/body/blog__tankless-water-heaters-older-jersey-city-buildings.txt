@@ -1,0 +1,84 @@
+﻿{LINK:/contact/}
+ Schedule Service {LINK:/}Home
+ ›
+ {LINK:/blog/}Blog
+ ›
+ Tankless WH in Older JC Buildings
+Cornerstone · ~7 min read
+### Tankless water heaters in older Jersey City buildings.
+Why tankless often makes sense for older Jersey City row homes — sizing, gas line capacity, basement and venting constraints, and real install costs.
+By Tanous Heating & Air Conditioning · Updated May 2026
+If you own an older Jersey City row home or brownstone — The Heights, Hamilton Park, Paulus Hook, Greenville — eventually your water heater needs to be replaced. And eventually someone tells you that tankless is the upgrade you should consider.
+The advice is usually right. But the install path in an older Jersey City building is meaningfully different from a new construction install. Older buildings have specific constraints that affect whether tankless makes sense, what brand to install, and what the real cost ends up being.
+Here’s the practical version — based on hundreds of tankless installs across Jersey City’s older housing stock.
+### Why tankless makes sense (for most older homes)
+Most older Jersey City row homes have 40–50 gallon gas tank water heaters in the basement — usually 8–15 years old, sometimes much older. The tank’s on borrowed time, and the question is whether to replace in-kind or upgrade to tankless.
+Tankless wins on most criteria for older homes that you plan to keep:
+- Lifespan. Tanks: 8–12 years. Tankless: 18–25 years. Over the life of an older house, you replace one tankless instead of 2–3 tanks.
+- Endless hot water. Multi-bathroom row homes with kids constantly fight tank exhaustion. Tankless eliminates the morning “who showers first” argument entirely.
+- Lower operating cost. No standby heat loss (a tank loses heat 24/7, even when you’re not using hot water). Most homes save 20–30% on water-heating gas.
+- Reclaim basement space. A 50-gallon tank takes up significant floor space in an already-tight Jersey City basement. A tankless unit mounts on the wall about the size of a small suitcase.
+- Tax credit. Federal 25C tax credit (up to $600–$2,000) applies to qualifying condensing tankless units.
+For homeowners staying 10+ years, the math strongly favors tankless. For homes you’re selling in the next few years, the upfront premium ($2,000–$4,000 over an in-kind tank replacement) doesn’t fully recoup in the sale price — though it doesn’t hurt, either.
+### The older-building install challenges
+Three things make tankless installs in older Jersey City buildings more involved than in newer homes.
+### Gas line capacity
+Tankless water heaters burn more gas while running (briefly) than tanks do. A typical tank pulls about 30,000–40,000 BTU when its burner is firing; a typical residential tankless can pull 150,000–200,000 BTU at full output.
+Older Jersey City buildings often have 1/2" gas lines from the meter to the basement — sized when the original equipment was small. To support a tankless unit, that line frequently needs upgrading to 3/4" (or, in some larger homes, 1"). The upgrade itself is a 4–8 hour job — running new black iron pipe through the basement, sometimes through the wall stack to the meter outside.
+This is the single biggest reason tankless installs in older Jersey City buildings cost more than in newer homes. We measure existing gas pressure on the estimate visit — if it’s adequate, great. If not, we quote the gas line upgrade separately.
+### Venting
+Tank water heaters typically vent through the existing chimney — the same flue the furnace or boiler uses. Tankless water heaters — especially modern condensing tankless — need different venting.
+Condensing tankless (95%+ efficiency, what we install for most upgrades) vents through PVC pipe out a sidewall — usually through the exterior basement wall, with an intake and exhaust pipe (or a concentric pipe combining both). This typically means a 4–6 inch hole through your exterior basement wall, with weatherproofing and proper grading for condensate drainage.
+Non-condensing tankless can vent through the existing chimney like the tank did — but it’s less efficient and doesn’t qualify for the federal tax credit. We default to condensing for most older Jersey City installs.
+### Basement constraints
+Older Jersey City basements are usually tight — low ceilings, narrow walkways, lots of existing equipment. Tankless saves floor space (no large tank) but needs wall space and a small electrical circuit. Most installs work fine; occasionally we have to relocate the unit slightly from where the old tank was to accommodate proper venting routing.
+We also typically inspect the surrounding plumbing during the install — older buildings sometimes have galvanized supply pipes that are due for replacement or expansion tanks that aren’t code-compliant. We’ll flag what we find without pressuring you into extra work.
+### Sizing tankless correctly
+Tankless sizing is in GPM (gallons per minute), not gallons of storage like a tank. The question isn’t “how much hot water do we use per day” — it’s “how many fixtures might we have running at once.”
+Typical sizing for older Jersey City row homes:
+- Small row home, single bathroom: 5–7 GPM unit.
+- Typical 2-bathroom row home: 7–9 GPM.
+- 3-bathroom row home or family that runs multiple fixtures simultaneously: 9–11 GPM.
+Undersized tankless units are how customers end up disappointed — the unit can’t keep up when the dishwasher and a shower run at the same time, and they conclude tankless “doesn’t work.” Properly sized tankless installations almost never disappoint. We size to actual fixture count and peak-demand patterns, not a generic estimate.
+### Brand choice for older Jersey City installs
+For most older Jersey City row homes we install Navien condensing units. Reliable, strong local parts availability, good warranty terms, and integrate cleanly with combi setups (covering both hot water and hydronic heating in one unit) if you’re considering a future boiler replacement.
+Rheem and Rinnai are our other primary picks. All three are well-supported brands with strong service networks.
+We avoid the cheaper imported brands and the “point of use” tankless units sold at big-box stores — the parts supply is unreliable and service techs often can’t source replacement parts.
+### Combi units — one device for hot water and heating
+An option worth knowing about for Jersey City row homes: combi tankless units. A combi unit (Navien NCB is the most common we install) handles both your domestic hot water AND your hydronic heating system (radiators or radiant floors).
+For older row homes with aging hydronic boilers due for replacement, a combi unit replaces both the boiler AND the water heater in one unit, in one install. It’s a meaningful space savings (one wall-mount unit replaces two floor-mount units) and the install economics often pencil out.
+Steam-heated homes don’t benefit from combi (steam needs a dedicated steam boiler). Forced-air homes with a furnace don’t benefit either (the furnace handles heat, separately from water). But for hydronic-heated row homes — common in The Heights — combi can be the right answer.
+### What it actually costs
+Realistic numbers for Jersey City older-home tankless installs:
+- In-kind tank replacement (for comparison): $1,500–$3,000 installed.
+- Standard condensing tankless install (gas line adequate, venting straightforward): $4,000–$5,500.
+- Tankless install with gas line upgrade: $5,500–$7,500.
+- Tankless install with gas line upgrade + complex venting routing: $7,000–$9,500.
+- Combi unit (replaces water heater + boiler): $8,000–$13,000 (depending on existing hydronic system condition).
+Federal 25C tax credit (typically $600–$2,000 depending on efficiency tier) often applies to condensing tankless installs. NEIF financing available for the project on most residential installs.
+### The install day timeline
+For a standard condensing tankless install (gas line adequate, no major modifications):
+- Hour 0–1: Disconnect old tank, drain, remove.
+- Hour 1–3: Run new water lines (modify existing to wall-mount unit), set new mounting bracket, set unit on wall.
+- Hour 3–5: Run new venting (sidewall PVC for condensing), exterior wall penetration, weatherproofing.
+- Hour 5–6: Gas connection, electrical, condensate drain. Start unit, test all fixtures.
+- Hour 6–7: Clean up, walkthrough, paperwork (warranty registration, permit closeout).
+Most installs are a single day. Installs with gas line upgrade or complex routing add half a day to a full second day.
+### Wrapping up
+Tankless water heaters are usually the right answer for older Jersey City row homes you plan to keep. The lifespan, endless hot water, gas savings, and basement space recovery all add up. The install is more involved than in newer construction — gas line upgrades and condensing venting are the two most common added costs — but the math still favors tankless in most cases.
+We do free in-home estimates for tankless conversions. We’ll measure gas pressure, inspect venting routes, look at the existing plumbing, and tell you straight whether tankless makes sense for your specific Jersey City home — or whether an in-kind tank replacement is the better call.
+{LINK:/services/water-heaters/tankless-water-heaters/}Learn more about tankless water heaters, see our {LINK:/services/water-heaters/installation-replacement/}water heater installation service, or {LINK:tel:2012455151}call 201-245-5151 to schedule a free estimate.
+More cornerstones
+### Other cornerstone posts.
+{LINK:/blog/air-conditioning-options-hoboken-brownstones/}
+Cornerstone · ~8 min read
+### AC Options for Hoboken Brownstones
+Ductless vs PTAC vs central — which makes sense for which brownstone configuration. With pricing and install constraints.
+ Read article {LINK:/blog/condo-rooftop-replacement-hoboken-property-managers/}
+Cornerstone · ~10 min read
+### Replacing a Rooftop HVAC in a Hoboken Condo
+What property managers and condo boards need to know — crane work, NJ permits, board approval timeline, costs.
+ Read article ### Ready to upgrade to tankless?
+Free in-home estimate. NEIF financing available. Federal tax credit on qualifying units.
+{LINK:/contact/}Schedule Service {LINK:tel:2012455151} Call 201-245-5151
+[IMG alt: Tanous Heating & Air Conditioning]

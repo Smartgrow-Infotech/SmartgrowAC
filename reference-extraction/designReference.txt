@@ -1,0 +1,2342 @@
+================================================================================
+designReference.txt
+REFERENCE SITE: https://www.tanousnj.com/  (Tanous Heating & Air Conditioning)
+Extracted: 2026-09-01 · Visual design, motion & build only. No copy/messaging.
+Tags: [VERIFIED] read from CSS/brand page · [OBSERVED] seen in DOM/markup ·
+      [EST] estimated to match observed design (reason given)
+================================================================================
+
+METHOD — WHAT WORKED / WHAT DIDN'T
+--------------------------------------------------------------------------------
+WORKED:
+1. Homepage + all 60 sitemap pages fetched as raw HTML (server-rendered
+   WordPress/Bricks). Full <head> intact — nothing stripped.
+2. Exactly ONE first-party stylesheet exists and it was fetched in full:
+   /wp-content/uploads/tanous-static/design-system.css — 96,980 bytes,
+   1,108 lines, hand-authored, unminified, with comments. This makes almost
+   every value in this document [VERIFIED] rather than estimated.
+3. The single first-party script was fetched in full:
+   /wp-content/uploads/tanous-static/app.js — 2,719 bytes, 74 lines.
+4. Google Fonts stylesheet URL read from <head> (families + weights + display).
+5. Section structure, class names and DOM order extracted from raw HTML.
+6. Brand/press/media-kit page: searched /brand, /brand-kit, /press, /media-kit,
+   /style-guide and every footer link. NONE EXISTS — so the CSS token block is
+   the authoritative source and is treated as such.
+
+DIDN'T APPLY / NOT NEEDED:
+· No hashed bundles, no CSS-in-JS, no build-tool obfuscation — nothing was
+  undiscoverable.
+· No client-side rendering, so no "shell only" problem.
+· Rendered screenshots were not available in this environment, so anything that
+  depends on seeing pixels (exact contrast ratios as rendered, real image
+  crops, actual marquee visual density) is marked [EST] or listed in §16.
+
+================================================================================
+0. BUILD & STACK
+================================================================================
+
+FRAMEWORK
+  WordPress. [VERIFIED — /wp-content/ paths, /wp-admin/ in robots.txt,
+  wp comment/RSS feed links in <head>]
+  Page builder: BRICKS BUILDER. [VERIFIED — the CSS contains a section commented
+  "/* Bricks conversion compatibility */" targeting .brxe-section,
+  .brxe-container, .brxe-block, .brxe-html, .brxe-heading, .brxe-text-basic,
+  .brxe-shortcode; the legal pages contain a skip link to #brx-content]
+  SEO plugin: Yoast SEO. [VERIFIED — "<!-- / Yoast SEO plugin. -->" comment on
+  /privacy-policy/ and /terms/]
+  Forms plugin: Gravity Forms. [VERIFIED — gform_* JS bootstrap in <head>,
+  .gform_wrapper / .gfield / .gform_button classes styled in the CSS]
+
+RENDERING
+  100% server-side rendered. Every section — nav, mega-menus, mobile drawer,
+  FAQ accordions, pricing tab panels, carousels, forms — is present in the
+  initial HTML. [VERIFIED — full-text search of all 60 raw HTML files]
+  NOTHING hydrates client-side. There is no framework runtime at all.
+  JS is used only for three progressive-enhancement behaviours (see §8).
+
+CSS APPROACH
+  Vanilla hand-written CSS in a single flat file, using CSS custom properties
+  for tokens. [VERIFIED]
+  · NO Tailwind, NO CSS modules, NO styled-components, NO SCSS artifacts.
+  · NO reset library — a 6-line hand-rolled reset at the top.
+  · Naming convention is BEM-ish: `.block__element` and `.block--modifier`
+    (e.g. `.hero-e__image-card`, `.rvr__col--featured`, `.btn--primary`).
+  · State classes use an `is-` prefix (`.is-open`, `.is-active`, `.is-show`)
+    plus one legacy `.open` and `.scrolled`.
+  · Uses modern CSS: `:has()` selectors (4 instances), `aspect-ratio`,
+    `backdrop-filter`, `scroll-snap-type`, `clamp()` throughout,
+    `border-block`, CSS `mask-image`, native `<dialog>` with `::backdrop`.
+  · One second inline <style> block per page: a 1-rule honeypot-hiding snippet
+    with id="tanous-gf-honeypot-css". [VERIFIED]
+
+ANIMATION / SCROLL / 3D / SLIDER / TRANSITION LIBRARIES
+  NONE. Zero third-party animation, scroll, 3D or slider libraries.
+  [VERIFIED — the only <script src> tags on any page are Google gtag and the
+  site's own app.js]
+  · No GSAP / ScrollTrigger · No Framer Motion / Motion One / Anime.js
+  · No Lenis / Locomotive / Smooth Scrollbar (smooth scroll is native
+    `html { scroll-behavior: smooth; }`)
+  · No Three.js / Spline / R3F · No Lottie / Rive
+  · No Swiper / Splide / Embla (carousels are native CSS scroll-snap)
+  · No Barba / View Transitions API · No jQuery loaded by the theme (Gravity
+    Forms may pull its own; the site's own code feature-detects `window.jQuery`)
+  · No custom cursor script · No preloader
+
+FONT HOST
+  Google Fonts, with preconnect. [VERIFIED]
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;
+      9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700
+      &display=swap
+  No @font-face declarations of their own. No next/font, no size-adjust metas.
+  font-display: swap (via the Google `&display=swap` parameter). [VERIFIED]
+
+IMAGE PIPELINE
+  Mixed and unoptimised-looking. [OBSERVED from src attributes]
+  · Formats in use simultaneously: .webp, .png, .jpg, .svg — no single pipeline.
+    Brand logos alone span all four (Fujitsu-Logo.svg, brand-carrier.webp,
+    bryant-logo-rgb.jpg, aos_logo_cmyk.png).
+  · Hero and section photography is delivered as CSS `background-image` on
+    pseudo-elements, NOT as <img> — so those images cannot be lazy-loaded,
+    srcset'd or served responsively. [VERIFIED — ~30 `.hero-e--photo-*` rules]
+  · One WordPress-generated size suffix seen ("Updated-image-1024x131.png"),
+    indicating WP media sizes exist but srcset is not consistently used.
+  · No AVIF. No quality/optimizer query strings. No CDN image service.
+  · og:image is 1200×630. [VERIFIED]
+
+PRELOADER
+  None. [VERIFIED]
+
+ANALYTICS / CHAT / BOOKING WIDGETS
+  · Google Analytics 4 — gtag.js, measurement ID G-3LMBDX9YM4, loaded `async`.
+  · A hand-written GA4 event layer (inline <script id="tanous-ga4-events">)
+    firing: phone_call_click, email_click, financing_click, popup_form_open,
+    mobile_menu_open, service_cta_click, generate_lead.
+  · Gravity Forms (form rendering + submission).
+  · Google Maps iframe embeds on city pages.
+  · NO chat widget. NO booking/scheduling widget. NO heatmap/session-recording
+    tool. NO consent-management platform. NO Facebook/LinkedIn/TikTok pixel.
+  [ALL VERIFIED]
+
+================================================================================
+1. COLOR PALETTE
+================================================================================
+Every value below is [VERIFIED] — read directly from the `:root` token block in
+design-system.css (lines 4–23). There is no brand page; this block IS the source
+of truth. No CSS variables appear anywhere in the page HTML, so nothing is
+overridden per-page.
+
+--- THE COMPLETE TOKEN BLOCK ---
+  --bg-base:        #FFFFFF    pure white
+  --bg-soft:        #FAF8F4    warm off-white  (the <body> background)
+  --bg-warm:        #F4EFE6    warm sand / cream
+  --bg-deeper:      #0E1A3C    near-black navy (dark sections + footer)
+  --navy:           #1B2C5E    mid navy
+  --navy-deep:      #142347    deep navy
+  --red:            #E5302B    signature red
+  --red-hover:      #C82822    darker red
+  --red-soft:       #FBE8E6    pale red tint (declared; see note below)
+  --text-strong:    #0F1729    near-black, slightly blue
+  --text-base:      #2A3147    body grey-navy
+  --text-muted:     #525B73    muted grey-blue
+  --text-on-dark:   #FAF8F4    (same value as --bg-soft, used as light-on-dark)
+  --border:         #E6E2D8    warm light border
+  --border-strong:  #C8C0AE    warm mid border
+  --border-on-dark: rgba(250,248,244,.14)
+  --success:        #1B7C4F    green
+
+--- ROLES: HOW EACH COLOUR IS ACTUALLY USED ---
+  #FAF8F4 --bg-soft   body default; mobile drawer accordion panels; drawer CTA
+                      footer. Also serves as `--text-on-dark`.
+  #FFFFFF --bg-base   `.bg-base` sections; cards; header (at 96% alpha);
+                      mega-menu panel; mobile drawer; sticky mobile CTA bar;
+                      hero form; marquee logo cells.
+  #F4EFE6 --bg-warm   `.bg-warm` alternating sections; `.page-hero` background;
+                      `.hero-e` background; `.final-cta` band; mega-menu
+                      featured panel; FAQ side CTA card; `.rvr__col` base;
+                      `.problems` section; `.process` section; compact-tile and
+                      problem-card icon chips; Gravity Forms input fills.
+  #0E1A3C --bg-deeper `.bg-deeper` sections; the pricing section; the footer;
+                      `.upgrade-slide__band`; `.promo-banner`;
+                      `.rvr__col--featured`; hero image/map card backing;
+                      `.hero-form--prototype`.
+  #142347 --navy-deep icon colour on light surfaces; secondary-button border and
+                      text; `.eyebrow` text colour; `.hoboken-reality__lead`
+                      panel background; `.btn-pill__arrow` circle fill;
+                      `.aeo-structured__col` 2px top rule.
+  #1B2C5E --navy      link hover colour; nav-item trigger hover; FAQ question
+                      hover; INPUT FOCUS border. Used sparingly.
+  #E5302B --red       THE accent. Every primary button; every eyebrow underline
+                      (3px); the nav underline slide-in; the 4px top bar on
+                      upgrade-slide bands; the footer live-dot; stat stars;
+                      review stars; process step numbers; local-snapshot stat
+                      figures; the active plan-option arrow circle; FAQ open-
+                      state icon; hover colour on mega-menu and tile links;
+                      `hoboken-reality__icon` glyph colour; `.neif-card` 5px
+                      left border; hero reviews-card 4px left border.
+  #C82822 --red-hover hover state of every red surface.
+  #FBE8E6 --red-soft  DECLARED BUT NEVER REFERENCED anywhere in the stylesheet.
+                      [VERIFIED — zero usages] Dead token.
+  #0F1729 --text-strong  all h1–h4; card titles; nav links; strong labels.
+  #2A3147 --text-base    body copy; FAQ answers; list items; input text.
+  #525B73 --text-muted   descriptions; captions; breadcrumbs; small print;
+                         mega-menu column headers; footer bottom row.
+  #E6E2D8 --border       hairline borders on cards, header bottom, dividers.
+  #C8C0AE --border-strong  input borders; FAQ row rules; editorial sublink
+                         rules; circular nav-arrow buttons; chips.
+  #1B7C4F --success      the checkmark bullet discs in `.rvr__col` and
+                         `.action-card-lg__list`. Also drives the form success
+                         panel at 10% and 24% alpha, with a hardcoded #137247
+                         for the success eyebrow text.
+
+--- HARDCODED COLOURS USED OUTSIDE THE TOKEN SYSTEM ---
+  #137247   `.tanous-form-confirmation__eyebrow` text  [VERIFIED]
+  white     used literally (not via token) in ~40 declarations
+  rgba(238,46,43,…)  appears in 6 places (hero reviews card gradient + glow,
+            neif-card gradient, star-pill shadow). NOTE: this is #EE2E2B, which
+            is NOT the same as `--red` #E5302B. A second, slightly brighter red
+            has crept in. [VERIFIED — a real inconsistency]
+  rgba(13,26,48,…)   used for ~12 shadows and overlays. #0D1A30 is close to but
+            NOT identical to `--bg-deeper` #0E1A3C. A second dark value.
+  rgba(20,35,71,…)   image overlays and hairlines. #142347 = `--navy-deep`, so
+            these ARE token-consistent, just written literally.
+  rgba(15,23,41,…)   the shadow family. #0F1729 = `--text-strong`, consistent.
+
+--- TINTS AND OPACITY VARIANTS ACTUALLY USED ---
+  On dark surfaces (all [VERIFIED]):
+    rgba(250,248,244,.92)  plan/list item text
+    rgba(250,248,244,.85)  footer tagline, footer badge text, eyebrow on dark
+    rgba(250,248,244,.80)  hero-form label text (as rgba(255,255,255,.8))
+    rgba(250,248,244,.78)  footer column links, upgrade-slide body, promo body
+    rgba(250,248,244,.72)  hero-form prototype sub
+    rgba(250,248,244,.70)  pricing subtitle, footer brand meta
+    rgba(250,248,244,.65)  footer CTA label
+    rgba(250,248,244,.60)  plan sub text, footer bottom row
+    rgba(250,248,244,.30)  active plan-option border
+    rgba(250,248,244,.25)  plan-option arrow border
+    rgba(250,248,244,.18)  marquee cell border; check-disc fill on dark
+    rgba(250,248,244,.14)  --border-on-dark
+    rgba(250,248,244,.12)  plan list divider
+    rgba(250,248,244,.10)  plan-option border; plan-detail icon chip
+    rgba(250,248,244,.08)  active plan-option fill
+    rgba(250,248,244,.07)  plan-option hover fill
+    rgba(250,248,244,.04)  plan-option and plan-detail resting fill
+  Red tints:
+    rgba(229,48,43,.25)  --shadow-cta glow
+    rgba(229,48,43,.22)  footer pulse dot ring (start/end)
+    rgba(229,48,43,.18)  the large radial glow behind pricing / promo /
+                         featured repair-vs-replace column
+    rgba(229,48,43,.04)  footer pulse dot ring (mid-animation)
+  Navy tints on light:
+    rgba(20,35,71,.40)  bottom gradient on card photos
+    rgba(20,35,71,.18)  hero photo bottom gradient; hero-e reviews top rule
+    rgba(20,35,71,.16)  neif-card border
+    rgba(20,35,71,.14)  hero reviews card border; finance chip border
+    rgba(20,35,71,.12)  hero stats top rule
+    rgba(27,44,94,.12)  the INPUT FOCUS RING (3px)
+  White on dark imagery:
+    rgba(255,255,255,.96) card icon badges; map info card
+    rgba(255,255,255,.94) hero-choice map card
+    rgba(255,255,255,.76) figcaption sub text
+    rgba(255,255,255,.24) / .18 / .16 / .14 / .12 borders and glass fills
+
+--- DARK MODE ---
+  NONE. There is no `prefers-color-scheme` query, no `[data-theme]` attribute
+  and no theme toggle anywhere in the CSS or JS. [VERIFIED]
+  The site instead alternates LIGHT and DARK SECTIONS within one theme via the
+  `.bg-base` / `.bg-soft` / `.bg-warm` / `.bg-deeper` utility classes.
+
+--- LINK / HOVER COLOURS ---
+  Default: `a { color: inherit; text-decoration: none; }` — links inherit their
+  container colour and are never underlined by default. [VERIFIED]
+  Hover targets: mega-menu links → --red · footer links → white ·
+  breadcrumb → --navy · FAQ question → --navy · compact-tile arrow → --red ·
+  editorial sublink → --red · `.rvr__note a` is the ONE underlined link
+  (--red, `text-underline-offset: 2px`).
+
+--- SEMANTIC STATES ---
+  success: #1B7C4F (checkmarks, form confirmation)
+  error:   NO dedicated error token. Gravity Forms validation messages are
+           coloured with `--red` (#E5302B), i.e. the brand accent doubles as the
+           error colour. `.gform_validation_errors` is hidden entirely.
+           [VERIFIED — a real accessibility/UX concern, see §14]
+  warning: NONE declared or used.
+
+================================================================================
+2. TYPOGRAPHY
+================================================================================
+All [VERIFIED] from CSS unless noted.
+
+--- FAMILIES ---
+  --font-display: 'Fraunces', Georgia, serif
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif
+  No mono family. No fourth family.
+
+  FRAUNCES is a variable serif loaded with its optical-size axis:
+    Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700
+    → opsz range 9–144, weights 400 / 500 / 600 / 700.
+  INTER loaded at weights 400 / 500 / 600 / 700.
+  Both with `display=swap`.
+
+--- WHERE EACH FAMILY IS USED ---
+  FRAUNCES (display serif):
+    all h1–h4 globally · every section H2 · card titles (`.svc-card__body h3`,
+    `.feature h3`, `.problem-card h3`, `.action-card-lg__body h3`,
+    `.hoboken-reality__card h3`) · stat numbers (`.stat__num`) ·
+    plan names and prices · process step numbers and titles ·
+    FAQ question rows · footer brand tagline · review-card quote body ·
+    local-snapshot stat figures · hero image figcaption headline ·
+    map card headline · neif-card headline · form-confirmation heading ·
+    the mobile-drawer phone number · the FAQ side-CTA phone number.
+  INTER (body sans):
+    body copy · leads · descriptions · all buttons · all nav links ·
+    all eyebrows and uppercase labels · mega-menu column headers ·
+    form labels and inputs · footer column headers and links · breadcrumbs ·
+    badges and chips · `.aeo-structured__num` · and — deliberately — it is
+    force-applied to `.megamenu__col h4` and `.footer__col h4` to override the
+    global h4 serif rule.
+
+--- EXACT SIZES ---
+  GLOBAL HEADINGS (shared rule):
+    h1,h2,h3,h4 { font-family: Fraunces; color:#0F1729; letter-spacing:-.02em;
+                  line-height:1.1; font-weight:600; }
+  UTILITY TYPE SCALE:
+    .h1        clamp(2.25rem, 5vw, 3.5rem)      = 36px → 56px
+    .h2        clamp(2rem, 4vw, 2.5rem)         = 32px → 40px
+    .lead      1.125rem (18px) / line-height 1.65
+    .muted     inherits size, colour #525B73
+    .eyebrow   .75rem (12px) / weight 600 / letter-spacing .14em / UPPERCASE
+               / colour #142347 (.on-dark variant: rgba(250,248,244,.85))
+
+  PAGE-LEVEL H1 VARIANTS (each hero type has its own):
+    .page-hero h1          clamp(2.25rem, 5vw, 3.75rem)   36 → 60px
+    .hero-e h1             clamp(2.25rem, 4.5vw, 3.5rem)  36 → 56px
+    .hero-e--parent-image h1  clamp(42px, 3.55vw, 52px)
+    .hero-choice h1        clamp(48px, 7vw, 82px)  line-height .98 (the largest
+                           type on the site)
+    .finance-hero h1       clamp(38px, 4.2vw, 56px)  line-height 1.02
+    Bricks override:  .hero-e h1.brxe-heading  clamp(40px, 4.5vw, 56px)
+                      !important, letter-spacing forced to 0
+
+  SECTION H2 VARIANTS:
+    .why-h2                clamp(2.25rem, 5.5vw, 4.25rem)  36 → 68px,
+                           line-height 1.02, letter-spacing -.025em
+    .pricing-h2            clamp(2.25rem, 5vw, 3.75rem)    36 → 60px, lh 1.05
+    .upgrade-h2            clamp(2rem, 4.5vw, 3.25rem)     32 → 52px, lh 1.1
+    .rvr__head h2          clamp(2.25rem, 4.5vw, 3.5rem)   36 → 56px
+    .section-header h2     clamp(1.875rem, 4vw, 2.75rem)   30 → 44px
+    .action-cards__head h2 clamp(1.875rem, 4vw, 2.75rem)   30 → 44px
+    .problems__head h2     clamp(1.875rem, 4vw, 2.75rem)   30 → 44px
+    .editorial-row__content h2  clamp(1.875rem, 4vw, 2.75rem), lh 1.05
+    .final-cta h2          clamp(2rem, 4vw, 2.75rem)       32 → 44px
+    .promo-banner h2       clamp(1.75rem, 3.5vw, 2.5rem)   28 → 40px, ls -.02em
+    .local-snapshot__intro h2  clamp(34px, 4.5vw, 58px), lh 1.02, ls 0
+    .review-carousel__head h2  clamp(36px, 4.7vw, 62px), lh 1.02, ls 0
+    .hoboken-reality__lead h2  clamp(34px, 4vw, 56px), lh 1.02, ls 0
+    .process__head h2      clamp(2rem, 4vw, 2.5rem)
+
+  H3 / CARD TITLES:
+    .svc-card__body h3          1.5rem (24px)
+    .feature h3                 1.5rem (24px)
+    .action-card-lg__body h3    1.5rem / weight 600 / lh 1.2
+    .rvr__col h3                1.5rem / weight 600 / lh 1.2
+    .plan-detail__name          1.5rem / weight 500 / lh 1.2
+    .upgrade-slide__band h3     1.5rem / weight 500 / lh 1.2
+    .hero-form h3               1.5rem / weight 500 / lh 1.2
+    .problem-card h3            1.125rem (18px) / weight 600 / lh 1.2
+    .aeo-structured__col h3     1.25rem (20px) / weight 500 / lh 1.2
+    .process-step__title        1.1875rem (19px) / weight 600 / ls -.01em
+    .hoboken-reality__card h3   clamp(22px, 1.65vw, 28px) / lh 1.08 / ls 0
+    .megamenu__featured h5      1.125rem (18px) / weight 500 / lh 1.3
+    .hero-choice-modal__head h3 30px / lh 1.08
+    .hero-form--prototype h3    34px / lh 1.05
+
+  H4 / SMALL UPPERCASE LABELS (all Inter, all uppercase, ls .14em):
+    .megamenu__col h4           11px / weight 600 / #525B73
+    .megamenu__featured-eyebrow 11px / weight 600 / --red
+    .footer__col h4             12px / weight 600 / white
+    .footer__cta-label          11px / weight 600 / rgba(250,248,244,.65)
+    .mobile-nav-item__panel h5  11px / weight 600 / #525B73
+    .mobile-drawer__phone .label 11px / weight 600 / #525B73
+    .hero-form__eyebrow         11px / weight 600 / --red / ls .14em
+    .footer__brand .badge       11px / weight 600 / ls .08em
+    .hero-form__field label     12px / weight 600 / ls .08em
+    .aeo-structured__eyebrow    12px / weight 600 / ls .14em / #142347
+    .rvr__head .eyebrow         12px / weight 600 / ls .14em / #142347
+    .aeo-structured__num        13px / weight 600 / ls .14em / --red
+    .finance-hero__points span  13px / weight 700 / ls .06em / UPPERCASE
+    .neif-card__label           12px / weight 800 / ls .16em / --red
+    .neif-card__footer          12px / weight 800 / ls .1em
+    .hoboken-reality__icon      12px / weight 800 / ls .06em
+
+  BODY / SMALL:
+    body                        Inter, line-height 1.55, antialiased
+    .lead                       18px / lh 1.65
+    .section-header .lead       1.0625rem (17px) / lh 1.65
+    .why-lead                   1.0625rem / lh 1.65
+    .upgrade-lead               1.0625rem / lh 1.65
+    .aeo-intro p                1.0625rem / lh 1.75 (the loosest on the site)
+    .aeo-structured__lead       Fraunces, clamp(1.5rem, 3vw, 2rem), lh 1.2
+    .editorial-row__content .desc  1.0625rem / lh 1.65
+    .svc-card__body .desc       14px / lh 1.55
+    .feature .desc              15px / lh 1.65
+    .problem-card p             14px / lh 1.55
+    .action-card-lg__body .desc 14.5px / lh 1.6
+    .action-card-lg__list li    14px / lh 1.5
+    .rvr__col ul li             15px / lh 1.5
+    .process-step__body         14.5px / lh 1.6
+    .aeo-structured__col p      14.5px / lh 1.65
+    .faq-row__a                 15.5px / lh 1.7
+    .plan-detail__desc          15.5px / lh 1.6
+    .plan-detail__list li       15px / lh 1.5
+    .upgrade-slide__band p      14.5px / lh 1.6
+    .megamenu__col li a         14.5px / weight 500
+    .megamenu__col li a small   12.5px / weight 400 / lh 1.4
+    .megamenu__featured p       13.5px / lh 1.55
+    .breadcrumb                 13px
+    .footer__col a              14px
+    .footer__brand-meta         13px / lh 1.65
+    .footer__bottom             12px / lh 1.6
+    .hero-form__sub             13px
+    .hero-form__trust           12px
+    .rvr__note                  14px
+
+  BUTTONS AND NAV:
+    .btn                        15px / weight 600 / line-height 1 / min-height 44px
+    .btn-pill                   15px / weight 600
+    .nav-item__trigger          15px / weight 500
+    .mobile-nav-item__trigger   16px / weight 600
+    .mobile-nav-item__panel a   14.5px / weight 500
+    .svc-card__arrow            14px / weight 600
+    .action-card-lg__cta        14px / weight 600
+    .gform_button               14px / weight 700
+    .footer__cta-buttons .btn   15px, min-height 54px
+
+  NUMERIC / DISPLAY:
+    .stat__num       Fraunces 500, clamp(2.25rem, 4vw, 3rem) = 36 → 48px,
+                     line-height 1, letter-spacing -.025em
+    .plan-detail__price  Fraunces 500, clamp(2.5rem, 5vw, 3rem) = 40 → 48px,
+                     ls -.025em, lh 1. `small` suffix: Inter 500, 16px, muted.
+                     `.is-text` variant drops to clamp(1.75rem, 3.5vw, 2.25rem)
+    .process-step__num   Fraunces 500, 2.5rem (40px), lh 1, ls -.025em, --red
+    .local-snapshot__stat strong  Fraunces, clamp(30px, 3vw, 44px), lh 1, --red
+    .hoboken-reality__stats strong  Fraunces, 26px, lh 1, white
+    .review-card p   Fraunces, clamp(22px, 1.7vw, 30px), lh 1.28 — the pull
+                     quote is set at heading scale
+    .faq-row__q      Fraunces 500, clamp(22px, 18px + .65vw, 28px), lh 1.22
+                     — note the unusual mid-value `18px + .65vw` formula
+    .hero-e__image-card figcaption strong  Fraunces, clamp(24px, 2vw, 34px)
+
+--- LINE-HEIGHTS SUMMARY ---
+  Display/headings: .98 (hero-choice h1) · 1.02 · 1.04 · 1.05 · 1.08 · 1.1
+    (global default) · 1.15 · 1.2 · 1.22 · 1.28 · 1.3
+  Body: 1.35 · 1.4 · 1.45 · 1.5 · 1.55 (body default) · 1.6 · 1.62 · 1.65 ·
+    1.7 · 1.75 (aeo-intro, the loosest)
+  Buttons: 1 (flat), with min-height doing the vertical work.
+
+--- LETTER-SPACING ---
+  Headings default: -.02em
+  Tightened display: -.025em (why-h2, pricing-h2, upgrade-h2, section-header h2,
+    editorial h2, final-cta h2, stat__num, plan price, process num)
+  Slightly tightened: -.01em (process-step__title)
+  Reset to 0: hero-choice h1, finance-hero h1, local-snapshot h2,
+    review-carousel h2, hoboken-reality h2/h3, hero-e--parent-image h1 — the
+    newer "editorial" sections deliberately drop negative tracking.
+  Uppercase labels: .06em · .08em · .09em · .1em · .14em (the standard) · .16em
+  Star glyph runs: `.hero-e__stars` letter-spacing 2px (1px in the pill
+    variant); `.review-card__stars` letter-spacing 3px.
+
+--- TEXT-TRANSFORM ---
+  `text-transform: uppercase` used on 15 selectors — all of them eyebrows,
+  column headers, badges, chips and small labels. Never on headings or body.
+
+--- FONT LOADING METHOD & FALLBACKS ---
+  Google Fonts <link> with preconnect to both googleapis and gstatic,
+  `display=swap`. Fallback stacks are real and sensible:
+    Fraunces → Georgia, serif  (a good metric-adjacent serif fallback)
+    Inter → system-ui, -apple-system, sans-serif
+  `-webkit-font-smoothing: antialiased` on body.
+  No `size-adjust`, no `@font-face` overrides, no local() fallbacks, no
+  self-hosting. Fonts are render-blocking-ish (a plain stylesheet link, not
+  preloaded). [VERIFIED]
+
+================================================================================
+3. SPACING & LAYOUT
+================================================================================
+
+CONTAINER
+  --container: 1200px
+  --container-pad: clamp(20px, 4vw, 56px)
+  .container { max-width: 1200px; margin: 0 auto; padding-left/right:
+    var(--container-pad); }
+  So the content column is 1200px wide INCLUDING padding — max text width is
+  1200 − 112 = 1088px at desktop. [VERIFIED]
+  Mobile footer override: `.footer .container { width: min(100% - 32px, 1200px) }`
+
+SIDE PADDING PER BREAKPOINT (from the clamp)
+  ≤500px viewport:   20px (clamp floor)
+  500 → 1400px:      4vw  (20px → 56px, fluid)
+  ≥1400px:           56px (clamp ceiling)
+
+SECTION VERTICAL PADDING
+  --section-py: clamp(56px, 8vw, 96px)  → 56px mobile, 96px desktop
+  `.section { padding-top: var(--section-py); padding-bottom: var(--section-py); }`
+  Section-specific overrides [ALL VERIFIED]:
+    .pricing-section    clamp(64px, 9vw, 120px)   ← the tallest
+    .upgrade-section    clamp(64px, 9vw, 120px)
+    .final-cta          clamp(56px, 8vw, 96px)
+    .aeo-structured     clamp(56px, 7vw, 88px)
+    .rvr                clamp(56px, 7vw, 88px)
+    .action-cards       clamp(56px, 7vw, 88px)
+    .problems           clamp(56px, 7vw, 88px)
+    .process            clamp(56px, 7vw, 88px)
+    .local-snapshot     clamp(52px, 7vw, 86px)
+    .aeo-intro          clamp(48px, 6vw, 72px)
+    .hero-e             clamp(40px, 5vw, 64px) top / clamp(48px, 7vw, 88px) bot
+    .page-hero          clamp(32px, 5vw, 56px) top / clamp(48px, 7vw, 80px) bot
+    .hero--split        clamp(40px, 5vw, 64px) top / clamp(36px, 4vw, 56px) bot
+    .hero-choice        clamp(28px, 4vw, 44px) top / clamp(60px, 8vw, 92px) bot
+    .hero-choice__after clamp(34px, 5vw, 56px)
+    .finance-hero       clamp(30px, 4vw, 52px) top / clamp(34px, 4.5vw, 60px) bot
+    .brand-band         clamp(18px, 2.5vw, 28px)   ← the shortest band
+    .footer             48px top / 30px bottom (28px / 88px on mobile — the
+                        88px bottom clears the sticky mobile CTA bar)
+  There are also four `:has()`-driven rhythm corrections that tighten spacing
+  when two specific sections are adjacent — e.g.
+  `.bg-warm.section:has(.faq-simple) + .final-cta { padding-top:
+  clamp(38px,4vw,56px) }`. [VERIFIED — an unusually careful touch]
+
+GRID SYSTEMS (column counts and gaps, all [VERIFIED])
+  .stat-grid              5 cols · gap 32px      → 2 cols · gap 24px @768
+  .card-grid-4            4 cols · gap 20px      → 2 @1023 → 1 @540
+  .features               3 cols · gap 20px      → 1 @900
+  .compact-grid           4 cols · gap 12px      → 2 @900 → 1 @540
+  .action-cards__grid     3 cols · gap 20px      → 1 @900
+  .action-cards__grid--4  4 cols                 → 2 @1023 → 1 @540
+  .action-cards__grid--2  2 cols                 → 1 @720
+  .problems__grid         3 cols · gap 16px      → 2 @900 → 1 @540
+  .process__grid          4 cols · gap 16px      → 2 @900 → 1 @520
+  .aeo-structured__grid   3 cols · gap clamp(28px,4vw,48px) → 1 @900
+  .footer__links          4 cols · gap 32px      → 2 @900 → 1 @540
+                          (→ 2 cols · gap 18px/20px @640, overriding the @540)
+  .pricing-grid           2 cols (1fr 1fr) · gap 56px → 1 @1023
+  .faq-split              5fr / 7fr · gap 64px   → 1 @900
+  .editorial-row          2 cols · gap clamp(32px,5vw,56px) → 1 @900
+  .hero--split .hero__inner   1.1fr / 1fr · gap 56px → 1 @1023
+  .hero-e__inner          1.1fr / .9fr · gap clamp(32px,5vw,56px) → 1 @1023
+  .hero-e--parent-image   minmax(0,1.08fr) / minmax(380px,.92fr)
+  .hero-choice__grid      minmax(0,1.02fr) / minmax(360px,.98fr) → 1 @960
+  .hero-choice--form      minmax(0,1fr) / minmax(360px,480px)
+  .hero-choice--map       minmax(0,.95fr) / minmax(420px,1.05fr)
+  .finance-hero__grid     minmax(0,1.08fr) / minmax(340px,.74fr) → 1 @1023
+  .local-snapshot__grid   minmax(0,1fr) / minmax(320px,440px) → 1 @960
+  .hoboken-reality__grid  minmax(320px,.84fr) / minmax(0,1.16fr) → 1 @960
+  .hoboken-reality__cards 2 cols · gap 14px → 1 @960
+  .footer__top            minmax(0,1fr) / minmax(420px,auto) · gap
+                          clamp(28px,5vw,64px) → 1 @900
+  .why-header             1fr / auto · gap 48px → 1 @900
+  .megamenu--services     5 equal cols · gap 36px
+  .megamenu--systems      1fr 1fr 1fr 1.3fr
+  .megamenu--commercial   1fr 1fr 1.4fr
+  .megamenu--areas        1fr 1fr 1fr 1.3fr
+  .megamenu--more         1fr 1fr 1.3fr, capped at max-width 880px
+  .hero-form__grid        2 cols · gap 12px → 1 @620
+  .hero-form--gravity .gform_fields  2 cols · gap 12px → 1 @640
+  .hero-choice__after-grid  3 cols · gap 1px (hairline-divider technique:
+                          gap 1px over a `background: var(--border)`) → 1 @960
+  .local-snapshot__panel  3 cols, dividers via border-right → 1 @960
+  .hoboken-reality__stats 3 cols · gap 10px → 1 @960
+
+SPACING SCALE
+  There is NO declared spacing scale token set — spacing values are literal.
+  The de-facto scale in use is a 2px/4px-based ladder [VERIFIED by frequency]:
+    2 · 4 · 5 · 6 · 8 · 10 · 12 · 14 · 16 · 18 · 20 · 22 · 24 · 26 · 28 · 30 ·
+    32 · 36 · 38 · 40 · 44 · 48 · 54 · 56 · 58 · 64 · 68 · 76 · 80 · 88 · 96 ·
+    120
+  Most common gaps: 12px (tight), 16px, 20px (card grids), 32px, 56px (major
+  two-column splits), 64px (faq-split).
+  Fluid spacing is expressed with clamp() rather than steps — clamp() appears
+  ~70 times.
+
+BREAKPOINTS (every media query in the file, [VERIFIED])
+  max-width: 520px   .process__grid → 1 col
+  max-width: 540px   card-grid-4, compact-grid, problems, action-cards--4,
+                     footer__links, upgrade-slide width → 1 col / 82%
+  max-width: 560px   hero-e CTA row full-width, reviews card stacks,
+                     finance-hero type down, neif-card padding down
+  max-width: 620px   hero-form__grid → 1 col
+  max-width: 640px   hero-form--gravity → 1 col; MOBILE FOOTER COMPACTION
+  max-width: 720px   action-cards__grid--2 → 1 col
+  max-width: 768px   stat-grid → 2 cols; HERO MOBILE TWEAKS; promo-banner → 1
+  max-width: 900px   features, why-header, faq-split, editorial-row,
+                     aeo-structured, action-cards, problems, process,
+                     compact-grid, footer__top, footer__links, rvr__grid,
+                     Bricks hero → 1 or 2 cols
+  max-width: 960px   hero-choice, local-snapshot, review-carousel,
+                     hoboken-reality → 1 col
+  max-width: 1023px  THE PRIMARY DESKTOP/MOBILE BOUNDARY — nav hidden,
+                     hamburger shown, mobile CTA bar shown, header call button
+                     shown, all 2-col heroes → 1 col, card-grid-4 → 2 cols
+  min-width: 1024px  mobile drawer + backdrop display:none
+  ELEVEN distinct breakpoints, only one of which (1023/1024px) is structural.
+  There is no >1400px breakpoint — the layout simply stops growing at the
+  1200px container + 56px padding ceiling.
+
+ALIGNMENT PATTERNS
+  Predominantly LEFT-ALIGNED. Only four things are centered [VERIFIED]:
+    .final-cta (whole band, including the button row)
+    .rvr__head (repair-vs-replace intro) and .rvr__note
+    .upgrade-header (carousel intro, max-width 720px, margin auto)
+    .hero-form__trust / .hero-form__microcopy small print
+  `.center { text-align: center }` exists as a one-line utility.
+  The `.why-header` uses an asymmetric `1fr auto` with `align-items: end` so the
+  headline block and a right-side pill CTA sit on a shared baseline — the most
+  distinctive alignment move on the site.
+
+FULL-BLEED VS CONTAINED
+  Everything is CONTAINED at 1200px except:
+    · the marquee track (full-bleed, overflow hidden, edge-masked)
+    · the mega-menu panel (full-bleed background, inner content re-contained)
+    · `.upgrade-carousel`, which uses the padding trick
+      `padding-left: max(var(--container-pad), calc((100vw - 1200px)/2 +
+      var(--container-pad)))` so the first slide aligns to the container edge
+      while the strip scrolls to the viewport edge. [VERIFIED — a nice detail]
+    · the sticky mobile CTA bar and the mobile drawer (fixed, viewport-width)
+
+HOMEPAGE SECTION ORDER WITH APPROXIMATE HEIGHTS
+  [Order VERIFIED from DOM; heights EST from padding + content, at 1440px]
+   1. <header id="header"> .site-header               80px fixed
+   2. <section id="hero" class="hero hero--split">    ~640px  (bg-warm inline)
+   3. <section id="services" class="section bg-base"> ~700px
+   4. <section id="why" class="section bg-warm">      ~800px
+   5. <section id="pricing" class="pricing-section bg-deeper"> ~900px
+   6. <section id="upgrade" class="upgrade-section bg-base">   ~820px
+   7. <section id="brands" class="marquee-section">   ~240px
+   8. <section id="faq" class="section bg-base">      ~760px
+   9. <footer id="footer" class="footer">             ~560px
+  Background rhythm: warm → white → warm → NAVY → white → NAVY → white → NAVY.
+  The dark bands (pricing, brands, footer) are the visual anchors.
+
+================================================================================
+4. BUTTONS & CTA STYLES
+================================================================================
+All [VERIFIED].
+
+--- BASE (.btn) ---
+  display: inline-flex; align-items:center; justify-content:center; gap: 8px;
+  padding: 14px 22px;
+  border-radius: var(--r) = 10px;
+  font: Inter 600 15px / line-height 1;
+  min-height: 44px;           ← meets the 44px touch target
+  white-space: nowrap;
+  transition: all 220ms cubic-bezier(.4,0,.2,1);
+
+--- VARIANT: .btn--primary ---
+  background #E5302B · color white · no border
+  hover: background #C82822 · transform translateY(-1px)
+         · box-shadow 0 4px 14px rgba(229,48,43,.25)
+
+--- VARIANT: .btn--secondary ---
+  background transparent · color #142347 · border 2px solid #142347
+  padding 12px 20px (reduced to compensate for the 2px border → same 44px box)
+  hover: background #142347 · color #FAF8F4
+
+--- VARIANT: .btn--ghost ---
+  background transparent · color #142347 · padding 14px 18px · no border
+  hover: background #F4EFE6
+
+--- VARIANT: .btn--on-dark-secondary ---
+  background transparent · color #FAF8F4 · border 2px solid rgba(250,248,244,.6)
+  padding 12px 20px
+  hover: background #FAF8F4 · color #142347 · border-color #FAF8F4
+
+--- VARIANT: .btn-pill (the signature CTA) ---
+  A red pill with a dark circular arrow puck inset on the right.
+  display inline-flex · gap 16px · background #E5302B · color white
+  border-radius 999px
+  padding: 6px 6px 6px 28px    ← asymmetric: 28px of text lead-in, 6px around
+                                 the puck so the circle sits flush
+  font Inter 600 15px
+  .btn-pill__arrow: 44×44px · border-radius 50% · background #0E1A3C ·
+                    color white · flex centered
+  hover: background #C82822 · translateY(-1px) · shadow-cta
+         AND `.btn-pill__arrow { transform: rotate(-45deg) }` — the arrow puck
+         rotates 45° counter-clockwise on hover. This is the site's most
+         characteristic micro-interaction.
+  Used: `.why-header` right CTA, `.plan-detail` CTA, `.megamenu__featured` CTA
+  (as `width: fit-content`).
+
+--- VARIANT: Gravity Forms submit (.gform_button) ---
+  width 100% · min-height 46px · border 0 · border-radius 999px (PILL — note
+  this differs from `.btn`'s 10px) · background #E5302B · color white ·
+  Inter 700 14px
+  hover: #C82822 · translateY(-1px) · shadow-cta
+
+--- ICON-ONLY BUTTONS ---
+  .header-call-mobile   44×44 · border-radius 6px · background #E5302B ·
+                        white icon · hover #C82822 · shown only ≤1023px
+  .hamburger            44×44 · border-radius 6px · color #142347 ·
+                        no background · shown only ≤1023px
+  .mobile-drawer__close 44×44 · border-radius 6px · color #142347 ·
+                        hover background #F4EFE6
+  .upgrade-nav          48×48 · border-radius 50% · border 1.5px #C8C0AE ·
+                        background white · color #142347 ·
+                        hover: background #142347, color white, border #142347
+  .review-carousel__arrow 42×42 · border-radius 50% · border 1px #C8C0AE ·
+                        background white · box-shadow 0 8px 20px
+                        rgba(13,26,48,.06) · font-size 18px (a glyph, not an
+                        SVG) · hover: translateY(-2px), border and colour → red
+  .plan-option__arrow   36×36 · border-radius 50% · border 1px
+                        rgba(250,248,244,.25) · colour rgba(250,248,244,.5) ·
+                        ACTIVE: background + border --red, colour white
+  .faq-row__icon        32×32 · border-radius 50% · border 1.5px #C8C0AE ·
+                        OPEN: rotate(45deg), border-color and colour → red
+                        (a "+" becomes an "×")
+  .hero-choice-modal__close 36×36 · border-radius 50% · border 1px
+                        rgba(255,255,255,.24) · background rgba(255,255,255,.12)
+                        · white · font-size 24px
+
+--- TEXT / ARROW LINKS ---
+  .svc-card__arrow · .action-card-lg__cta · .upgrade-slide__arrow
+    inline-flex · gap 6px · Inter 600 14px · colour #142347 (white on the
+    dark upgrade band) · margin-top auto + padding-top 8px so they pin to the
+    card bottom · the inner `.icon` transitions transform, and on card hover
+    slides `translateX(4px)`.
+  `.btn .arrow` slides `translateX(3px)` on button hover.
+  `.editorial-row__sublinks a:hover .icon` slides `translateX(3px)`.
+  `.compact-tile:hover .compact-tile__arrow` → colour red + translateX(3px).
+
+--- FOCUS STATES ---
+  NO `:focus-visible` rule exists anywhere in the stylesheet. [VERIFIED]
+  Buttons therefore fall back to the UA default focus ring. Form inputs DO have
+  a custom focus treatment (see §5). This is a real accessibility gap (§14).
+
+--- PILLS / BADGES / CHIPS ---
+  .footer__brand .badge
+    Inter 600 11px · uppercase · ls .08em · padding 5px 10px ·
+    border 1px rgba(250,248,244,.14) · border-radius 999px ·
+    colour rgba(250,248,244,.85)
+  .finance-hero__points span
+    inline-flex · min-height 34px · padding 8px 12px ·
+    border 1px rgba(20,35,71,.14) · border-radius 999px ·
+    background rgba(255,255,255,.62) · Inter 700 13px uppercase ls .06em
+  .neif-card__footer span
+    padding 7px 9px · border-radius 999px · background #F4EFE6 ·
+    Inter 800 12px uppercase ls .1em · colour #525B73
+  .local-snapshot__chips span
+    inline-flex · min-height 36px · padding 8px 13px ·
+    border 1px #C8C0AE · border-radius 999px · background white ·
+    Inter 600 13.5px · colour #0F1729
+  .hero-choice__mini (glass chip over a photo)
+    padding 10px 12px · border 1px rgba(255,255,255,.24) · border-radius 6px ·
+    background rgba(255,255,255,.12) · backdrop-filter blur(12px) ·
+    12px · rgba(255,255,255,.86) · white-space nowrap
+  .hero-e__stars (the review star pill)
+    inline-flex · min-height 40px (42px in the parent-image variant) ·
+    padding 0 11px (0 12px) · border-radius 999px · background #E5302B ·
+    white · 14px (15px) · letter-spacing 1px ·
+    box-shadow 0 12px 28px rgba(238,46,43,.2)
+
+--- EYEBROW "UNDERLINE" TREATMENT (a signature) ---
+  Eight separate selectors all repeat the same pattern [VERIFIED]:
+    display: inline-block; padding-bottom: 8px;
+    border-bottom: 3px solid var(--red); margin-bottom: 20–28px;
+  Applied to: .why-eyebrow · .pricing-eyebrow · .upgrade-eyebrow ·
+  .page-hero__eyebrow · .section-header__eyebrow · .hero-e__eyebrow ·
+  .finance-hero__eyebrow · .aeo-structured__eyebrow · .rvr__head .eyebrow ·
+  .action-cards__head .eyebrow · .problems__head .eyebrow
+  A 12px uppercase Inter label sitting on a 3px red rule is the single most
+  repeated visual device on the site.
+
+--- COMPOSITE CTAs ---
+  NO avatar stacks, "+ you" chips, or badges-inside-buttons. The only composite
+  CTA is the `.btn-pill` (label + circular arrow puck). The footer CTA label
+  carries an animated live-dot before it (see §8). [VERIFIED]
+
+================================================================================
+5. CARDS & COMPONENTS
+================================================================================
+All [VERIFIED].
+
+--- CARD FAMILY 1: .svc-card (homepage service cards) ---
+  background white · border 1px #E6E2D8 · border-radius 14px · overflow hidden
+  flex column
+  hover: translateY(-2px) + --shadow-card
+  __photo: aspect-ratio 4/3 · background #F4EFE6 center/cover ·
+    ::after gradient `linear-gradient(rgba(20,35,71,0) 50%, rgba(20,35,71,.4))`
+  __icon-badge: absolute top 16 left 16 · 44×44 · radius 6px ·
+    background rgba(255,255,255,.96) · colour #142347 · --shadow-sm
+  __body: padding 24px · gap 8px · flex:1
+  __body .desc: `min-height: 3em` ← forces card-title alignment across the row
+  __arrow: margin-top auto (pins to bottom)
+
+--- CARD FAMILY 2: .feature (3-up triptych) ---
+  background white · border 1px #E6E2D8 · radius 14px · padding 40px 36px
+  __icon: 40×40 SVG, stroke-width 1.5, colour #142347, margin-bottom 24px
+  hover: translateY(-2px) + shadow-card
+  No photo. Generous padding — the most "editorial" card on the site.
+
+--- CARD FAMILY 3: .action-card-lg (category-page path cards) ---
+  Same skeleton as .svc-card but padding 28px, hover lift is -3px (not -2px),
+  and the body contains a checklist (`.action-card-lg__list`) whose bullets are
+  16px #1B7C4F discs with an inline-SVG white checkmark as a background-image
+  data URI, background-size 10px.
+
+--- CARD FAMILY 4: .problem-card (6-up problem grid) ---
+  background white · border 1px #E6E2D8 · radius 14px · padding 24px
+  __icon: 40×40 · radius 6px · background #F4EFE6 · colour --red (the only
+  place a red icon sits in a warm chip)
+  hover: translateY(-2px) + shadow-card
+
+--- CARD FAMILY 5: .compact-tile (dense link tiles) ---
+  padding 16px 18px · background white · border 1px #E6E2D8 · radius 14px
+  horizontal flex, gap 12px
+  __icon 36×36 radius 6px background #F4EFE6 colour #142347
+  __arrow pushed right with margin-left auto
+  hover: translateY(-2px) + shadow-card + border-color → #C8C0AE
+
+--- CARD FAMILY 6: .upgrade-slide (carousel slide) ---
+  flex 0 0 360px (82% at ≤540px) · scroll-snap-align start
+  background white · radius 14px · border 1px #E6E2D8
+  __photo aspect-ratio 16/10 with the same navy bottom gradient
+  __icon absolute 44×44 white chip, top-left
+  __band: the lower half is DARK — background #0E1A3C, padding 28px 24px, and
+    `::before` paints a 4px full-width --red bar across the top of the band.
+    This two-tone (photo above / navy block below with a red rule) is the most
+    distinctive card in the system.
+  hover: translateY(-2px) + shadow-card
+
+--- CARD FAMILY 7: .review-card ---
+  min-height 324px · scroll-snap-align start
+  padding clamp(28px, 3vw, 38px) · background white · border 1px #E6E2D8 ·
+  radius 14px · box-shadow 0 20px 55px rgba(13,26,48,.08)
+  flex column, `justify-content: space-between` so the quote sits top and the
+  attribution pins to the bottom
+  __stars: colour --red, 20px, letter-spacing 3px
+  p: FRAUNCES at clamp(22px,1.7vw,30px)/1.28 — the quote is set as display type
+  footer strong: 17px, colour #0F1729
+
+--- CARD FAMILY 8: .hoboken-reality__card ---
+  min-height 292px · padding clamp(20px,2.2vw,28px) · border 1px #E6E2D8 ·
+  radius 14px · background white · box-shadow 0 16px 44px rgba(13,26,48,.07)
+  __icon: 38×38 CIRCLE, background #F4EFE6, colour --red, Inter 800 12px
+    (a numeral/letter glyph rather than an SVG)
+
+--- CARD FAMILY 9: .rvr__col (repair-vs-replace) ---
+  Base: background #F4EFE6 · border 1px #E6E2D8 · radius 14px · padding 32px
+  __icon 48×48 radius 6px background white colour #142347
+  Bullets: 18px #1B7C4F discs + white checkmark SVG data URI, size 11px
+  FEATURED MODIFIER (.rvr__col--featured): background and border-color both
+    #0E1A3C, text on dark, the icon chip flips to --red on white glyph, the
+    bullet discs become rgba(250,248,244,.18), and a
+    `radial-gradient(circle, rgba(229,48,43,.18), transparent 60%)` glow is
+    painted at top:-10% right:-10% at 50%×80%.
+    NOTE: the CSS carries an explicit comment that these overrides "MUST come
+    after base styles to win cascade" — a hand-authored cascade fix.
+
+--- CARD FAMILY 10: .neif-card (financing) ---
+  padding 24px · border 1px rgba(20,35,71,.16) · BORDER-LEFT 5px solid --red ·
+  radius 14px · background white · box-shadow 0 22px 70px rgba(13,26,48,.1)
+  `::before` paints a 135° gradient wash rgba(238,46,43,.09) → transparent 50%
+  Children lifted with `position: relative; z-index: 1`.
+
+--- CARD FAMILY 11: .plan-detail (pricing panel) ---
+  background rgba(250,248,244,.04) · border 1px rgba(250,248,244,.14) ·
+  radius 20px · padding 36px · `display: none`, switched to `flex` by
+  `.is-active`
+  __icon 36×36 radius 6px background rgba(250,248,244,.1)
+  __list bullets: 18px discs, background rgba(250,248,244,.12), white checkmark
+  SVG data URI at 11px, with a 1px top divider and 10px vertical item padding.
+
+--- CHIPS / TAGS ---
+  Covered under §4 "Pills / badges / chips". There is no generic `.tag` or
+  `.chip` class — each context defines its own pill.
+
+--- AVATARS ---
+  NONE. No avatar component, no avatar stack, no ring/overlap treatment
+  anywhere in the CSS. [VERIFIED]
+
+--- STAT COUNTERS ---
+  `.stat` — flex column, gap 6px
+  `.stat__num` — Fraunces 500, clamp(2.25rem,4vw,3rem), lh 1, ls -.025em,
+    colour #142347. `.stat__num .star` colours the ★ glyph --red.
+  `.stat__lbl` — Inter 500 13px, colour #525B73
+  `.stat-grid` is `align-items: end` so numbers of different heights sit on a
+  shared baseline. Sits above a `border-top: 1px solid rgba(20,35,71,.12)` rule
+  (`.hero__stats`).
+  Second stat style: `.local-snapshot__panel` — a 3-cell bordered panel with
+  `border-right` dividers, red Fraunces figures at clamp(30px,3vw,44px).
+  Third: `.hoboken-reality__stats` — 3 glass cells on navy, min-height 86px,
+  border rgba(255,255,255,.16), background rgba(255,255,255,.07), 26px white
+  Fraunces figures.
+
+--- TESTIMONIAL / QUOTE BLOCKS ---
+  `.review-card` (above). There is no blockquote styling, no quotation-mark
+  ornament, no author photo. Attribution is a `<footer>` inside the card.
+
+--- CHAT / MESSENGER-STYLE BLOCKS ---
+  NONE. [VERIFIED]
+
+--- ACCORDIONS (FAQ) ---
+  `.faq-list` flex column
+  `.faq-row` — `border-bottom: 1px solid #C8C0AE`; `:first-child` also gets a
+    `border-top`. No background, no radius, no card — pure rules.
+  `.faq-row__q` — full-width button, space-between, gap 18px,
+    padding 26px 0, text-align left,
+    Fraunces 500 clamp(22px, 18px + .65vw, 28px)/1.22, colour #0F1729
+    hover → colour #1B2C5E
+  `.faq-row__icon` — 32×32 circle, border 1.5px #C8C0AE
+  `.faq-row.open .faq-row__icon` — `transform: rotate(45deg)`, border and colour
+    → --red
+  `.faq-row__a` — `display: none`, padding 0 0 24px, `max-width: 640px`,
+    15.5px/1.7. `.faq-row.open .faq-row__a { display: block }`
+  IMPORTANT: the open/close is a hard `display` toggle with NO height
+  transition — the panel appears instantly while the icon rotates over 220ms.
+  [VERIFIED]
+  `.faq-side__cta` — the left rail card: padding 24px, background #F4EFE6,
+    radius 14px; `strong` Fraunces 500 18px; `a` Fraunces 600 24px #142347;
+    `small` 13px #525B73.
+  `.faq-simple` — a `max-width: 880px; margin: 0 auto` variant with no split.
+
+--- TABS ---
+  `.plan-selector` / `.plan-option` is the only tab-like control.
+  `.plan-option` — full-width button, space-between, gap 16px,
+    padding 18px 18px 18px 22px, background rgba(250,248,244,.04),
+    border 1px rgba(250,248,244,.1), radius 14px, text-align left
+    hover → background .07 / border .18
+    `.is-active` → background .08 / border .3, and the arrow puck fills --red
+  `.plan-option__name` 600 17px white · `__sub` 13.5px rgba(...,.6) → .8 active
+
+--- FORMS & INPUTS ---
+  TWO input systems coexist [VERIFIED]:
+
+  A) `.hero-form__row input/select` (the hand-built form)
+     font Inter 16px  ← 16px specifically prevents iOS zoom-on-focus
+     padding 10px 12px
+     border 1.5px solid #C8C0AE
+     border-radius 6px
+     background white · colour #2A3147
+     transition border 220ms, box-shadow 220ms
+     :focus → outline none · border-color #1B2C5E ·
+              box-shadow 0 0 0 3px rgba(27,44,94,.12)
+     Label: Inter 500 13px #0F1729, 5px above the field.
+
+  B) `.hero-form--gravity` (Gravity Forms, restyled with !important)
+     min-height 42px · padding 10px 12px
+     border 1px solid #C8C0AE · radius 6px
+     background #F4EFE6  ← warm fill, unlike system A's white
+     colour #2A3147 · Inter 14px  ← NOT 16px, so iOS WILL zoom on focus
+     box-shadow none
+     :focus → same navy border + 3px rgba(27,44,94,.12) ring
+     textarea min-height 96px, resize vertical
+     Label `.gfield_label`: Inter 600 12px #0F1729, 5px gap
+     Submit: full-width pill, see §4
+     `.gfield_validation_message`: 12px, colour --red, 5px above
+     HIDDEN by the theme: `.gform_heading`, `.gform_required_legend`,
+       `.gfield_required`, `.gform_validation_errors`
+     Honeypot `.gform_validation_container` / `.gfield--type-honeypot` is
+       visually hidden via the standard clip/clip-path/-9999px combo (declared
+       twice — once inline in <head>, once in the stylesheet).
+
+  C) `.hero-form__field input/select/textarea` (the dark "prototype" form)
+     min-height 48px · border 1px rgba(255,255,255,.18) · radius 6px ·
+     background rgba(255,255,255,.96) · colour #0F1729 · 15px · padding 11px 12px
+     Labels: rgba(255,255,255,.8), Inter 600 12px uppercase ls .08em
+
+  Form container `.hero-form`: background white · border 1px #E6E2D8 ·
+    radius 14px · padding 28px (24px for --gravity, 20px @640) ·
+    box-shadow --shadow-card
+  Dark variant `.hero-form--prototype`: background #0E1A3C, white text,
+    border rgba(255,255,255,.12), box-shadow 0 24px 70px rgba(13,26,48,.24),
+    padding 30px.
+
+  ERROR STATE: only the inline field message, coloured with the brand red.
+  There is no error border colour, no error background, no icon. [VERIFIED]
+  SUCCESS STATE `.tanous-form-confirmation`:
+    padding 22px · border 1px rgba(27,124,79,.24) · radius 14px ·
+    background `linear-gradient(135deg, rgba(27,124,79,.1), rgba(255,255,255,.98))`
+    · box-shadow --shadow-card
+    eyebrow: Inter 700 11px uppercase ls .14em colour #137247
+    h3: Fraunces 600 clamp(1.45rem, 2vw, 1.9rem)/1.15
+    p: 15px/1.55 · a: colour #1B2C5E, weight 800
+
+  SELECT/DROPDOWN: no custom arrow, no appearance:none — native select
+  chrome is retained, only the box is styled. [VERIFIED]
+
+--- TABLES ---
+  NONE. No table styling exists. The site uses grid panels with 1px gaps
+  (`.hero-choice__after-grid`) or border-right dividers
+  (`.local-snapshot__panel`) where a table would normally be used. [VERIFIED]
+
+--- MARQUEES / CAROUSELS / SLIDERS ---
+  MARQUEE (see §8 for motion):
+    `.marquee` — overflow hidden, with a symmetric edge fade:
+      mask-image: linear-gradient(to right, transparent 0, black 3%, black 97%,
+      transparent 100%)   (with -webkit- prefix)
+    `.marquee__track` — flex, gap 28px, padding 20px 0, `width: max-content`
+    `.marquee__cell` — 76px tall, min-width 184px, padding 12px 24px,
+      background #fff, border 1px rgba(250,248,244,.18), radius 8px,
+      box-shadow 0 16px 36px rgba(0,0,0,.18)
+      → on the dark `.marquee-section`, logos sit in WHITE CARDS
+    `.marquee__cell img` — max-height 52px, max-width 170px, object-fit contain,
+      `filter: none; opacity: 1` (explicitly no greyscale — logos keep brand
+      colour)
+    LIGHT VARIANT `.brand-band` — background white, section padding
+      clamp(18px,2.5vw,28px), gap raised to 58px, cell height 58px,
+      min-width auto, NO card (transparent background, no border, no shadow),
+      img max-height 58px / max-width 226px, opacity .94 → 1 on hover.
+    One per-logo hack: the AprilAire PNG is recoloured to navy with a
+      `filter: brightness(0) saturate(100%) invert(21%) sepia(99%)
+      saturate(1799%) hue-rotate(192deg) brightness(92%) contrast(104%)`.
+      [VERIFIED — a real one-off]
+
+  CAROUSELS — all native CSS, no JS library:
+    `.upgrade-carousel` — flex, gap 20px, `overflow-x: auto`,
+      `scroll-snap-type: x mandatory`, `scrollbar-width: none` +
+      `::-webkit-scrollbar { display: none }`, `-webkit-overflow-scrolling:
+      touch`, and the container-aligned left padding trick described in §3.
+    `.review-carousel__viewport` — `display: grid; grid-auto-flow: column;
+      grid-auto-columns: minmax(380px, 40%)`, gap 18px, overflow-x auto,
+      `overscroll-behavior-x: contain`, scroll-snap x mandatory,
+      padding 4px 2px 26px, scrollbars hidden. At ≤960px auto-columns become
+      `minmax(82vw, 1fr)`.
+    Navigation: `.upgrade-nav` (48px circles) and `.review-carousel__arrow`
+      (42px circles) — but NO JS in app.js binds them. See §16.
+
+--- MODALS / DRAWERS ---
+  MODAL `.hero-choice-modal` — a native `<dialog>`:
+    width min(640px, calc(100vw - 28px)) · max-height min(860px, calc(100vh -
+    28px)) · margin auto · border 0 · radius 14px · padding 0 ·
+    box-shadow 0 24px 80px rgba(13,26,48,.28) · overflow auto
+    `::backdrop` → background rgba(13,26,48,.56) + `backdrop-filter: blur(5px)`
+    `__head` — background #142347, white, padding 24px; h3 Fraunces 30px/1.08
+      with `margin: 4px 40px 8px 0` to clear the close button
+    `__body` — padding 24px, background #F4EFE6
+  DRAWER `.mobile-drawer`:
+    fixed top/right/bottom · width min(420px, 100%) ·
+    `transform: translateX(100%)` → `translateX(0)` on `.is-open` ·
+    transition 380ms cubic-bezier(.4,0,.2,1) · z-index 100 ·
+    overflow-y auto · flex column ·
+    box-shadow -8px 0 32px rgba(15,23,41,.12)
+    `__backdrop` — fixed inset 0, background rgba(14,26,60,.55), opacity 0 →
+      1, with the `visibility 0s linear 380ms` delay trick so it stays
+      interactive-hidden until the animation completes.
+    `__head` — padding 16px 20px, border-bottom 1px #E6E2D8, logo max-height 36px
+    `__nav` — flex 1, overflow-y auto
+    `.mobile-nav-item` — border-bottom 1px #E6E2D8
+    `.mobile-nav-item__trigger` — padding 18px 20px, Inter 600 16px,
+      hover background #FAF8F4
+    `.mobile-nav-item__panel` — `display: none` → `block` on `.is-open`,
+      padding 4px 20px 16px, background #FAF8F4 (an inset tint)
+    `__cta` — padding 20px, border-top 1px #E6E2D8, background #FAF8F4,
+      full-width buttons
+    `.mobile-drawer__phone a` — Fraunces 500 24px #142347, hover → --red
+
+--- TOOLTIPS ---
+  NONE. [VERIFIED]
+
+--- DIVIDERS ---
+  Six distinct divider techniques [VERIFIED]:
+   1. `border-bottom: 1px solid #E6E2D8` — header, aeo-intro, brand-band,
+      local-snapshot, finance-hero
+   2. `border-bottom: 1px solid #C8C0AE` — FAQ rows, editorial sublinks
+      (the stronger warm rule, used where the list IS the content)
+   3. `border-bottom: 1px solid rgba(250,248,244,.14)` — footer top and links
+   4. `border-top: 1px solid rgba(20,35,71,.12)` — `.hero__stats`
+   5. `border-block: 1px solid #E6E2D8` — `.brand-band`, `.hero-choice__after`
+   6. `gap: 1px` over a `background: var(--border)` on a grid —
+      `.hero-choice__after-grid` (hairline cell dividers without borders)
+   Plus `border-top: 2px solid #142347` on `.aeo-structured__col` — a heavier,
+   deliberate "column rule" that reads as an editorial device rather than a
+   divider.
+
+--- ICON STYLE ---
+  Inline SVG, LINE style (never filled, never duotone). [VERIFIED]
+    .icon      { width 20px; height 20px; flex-shrink 0; stroke currentColor;
+                 stroke-width 2; fill none; stroke-linecap round;
+                 stroke-linejoin round; }
+    .icon--sm  16×16
+    .icon--lg  24×24
+    .icon--xl  32×32, stroke-width 1.75
+  Contextual overrides: `.feature__icon .icon` 40×40 @1.5 · `.rvr__icon .icon`
+  22×22 @1.75 · `.problem-card__icon .icon` 20×20 @1.75 ·
+  `.compact-tile__icon .icon` 18×18 · `.plan-detail__icon .icon` 18×18 ·
+  `.plan-option__arrow .icon` 14×14 @2.25 · `.nav-item__chevron` 12×12 @2.5 ·
+  `.mobile-nav-item__chevron` 18×18 @2 · `.upgrade-nav .icon` 20×20
+  Stroke weight is inversely scaled with size (2.5 at 12px down to 1.5 at 40px)
+  so optical weight stays even — a deliberate, well-executed choice.
+  The icon set is not a named library — the SVGs are inlined per-instance and
+  are stylistically Feather/Lucide-like. [EST — geometry matches the
+  24×24 viewBox, round caps, 2px stroke convention of Feather/Lucide, and the
+  checkmark data URI uses the exact Feather `polyline points='20 6 9 17 4 12'`]
+
+--- IMAGERY STYLE ---
+  PHOTOGRAPHY ONLY. No illustration, no 3D, no diagrams. [VERIFIED]
+  Aspect ratios in use: 4/3 (svc-card photo, hero__photo, editorial-row media,
+  action-card photo) · 16/10 (upgrade-slide photo, and hero__photo at ≤1023px)
+  Corner radii: 20px on large media (`.hero__photo`, `.editorial-row__media`),
+  14px on card media containers (inherited via `overflow: hidden`).
+  OVERLAYS — three recurring gradient recipes:
+    `linear-gradient(rgba(20,35,71,0) 50%, rgba(20,35,71,.4))` — card photos
+    `linear-gradient(180deg, transparent 60%, rgba(20,35,71,.18))` — hero photo
+    `linear-gradient(180deg, rgba(13,26,48,0) 45%, rgba(13,26,48,.74) 100%)` —
+      hero image card (the strongest, because a caption sits on it)
+  MASKS: only the marquee edge fade. No clip-path, no shape masks.
+  BLEND MODES: none used.
+  Hero background photography is applied as a `background-image` on `::before`
+  at low opacity (.16 / .28 / .34 / .36) with `filter: saturate(.92)
+  contrast(1.04)`, then a heavy cream gradient on `::after` — see §7.
+
+================================================================================
+6. SHADOWS & BORDERS
+================================================================================
+
+--- SHADOW TOKENS [VERIFIED] ---
+  --shadow-sm:   0 1px 2px rgba(15,23,41,.05)
+                 → header when scrolled; `.svc-card__icon-badge`;
+                   `.editorial-row__icon-badge`; `.action-card-lg__icon-badge`
+  --shadow-md:   0 8px 24px rgba(15,23,41,.08)
+                 → the mega-menu panel only
+  --shadow-card: 0 2px 6px rgba(15,23,41,.04), 0 12px 32px rgba(15,23,41,.06)
+                 → a TWO-LAYER shadow. Used on: hero photo, editorial media,
+                   hero form, form confirmation, hero-choice photo,
+                   hero-choice map, and as the HOVER shadow on svc-card,
+                   feature, compact-tile, upgrade-slide, action-card-lg,
+                   problem-card, process-step.
+  --shadow-cta:  0 4px 14px rgba(229,48,43,.25)
+                 → red glow on primary/pill/gform button hover only
+
+--- ONE-OFF SHADOWS (not tokenised) [ALL VERIFIED] ---
+  0 -4px 16px rgba(15,23,41,.06)     sticky mobile CTA bar (upward)
+  -8px 0 32px rgba(15,23,41,.12)     mobile drawer (leftward)
+  0 16px 36px rgba(0,0,0,.18)        marquee logo cell (pure black, the only
+                                     non-tinted shadow on the site)
+  0 18px 50px rgba(13,26,48,.10)     hero-e reviews card
+  0 18px 55px rgba(13,26,48,.09)     hero-e--parent-image reviews card
+  0 28px 90px rgba(13,26,48,.18)     hero image card / hero map card (the
+                                     deepest ambient shadow)
+  0 24px 60px rgba(13,26,48,.18)     hoboken-reality lead panel
+  0 24px 70px rgba(13,26,48,.24)     hero-form--prototype
+  0 24px 80px rgba(13,26,48,.28)     modal dialog (the darkest)
+  0 22px 70px rgba(13,26,48,.10)     neif-card
+  0 20px 55px rgba(13,26,48,.08)     review-card
+  0 16px 44px rgba(13,26,48,.07)     hoboken-reality card
+  0 16px 44px rgba(13,26,48,.06)     hoboken-reality cta
+  0 16px 44px rgba(13,26,48,.16)     hero-choice map card
+  0 12px 28px rgba(238,46,43,.20/.22) star pill red glow
+  0 8px 20px rgba(13,26,48,.06)      review-carousel arrow
+  0 0 0 3px rgba(27,44,94,.12)       INPUT FOCUS RING
+  0 0 0 4px / 0 0 0 8px rgba(229,48,43,…)  the animated footer pulse dot
+  0 0 0 42px / 0 0 0 86px rgba(255,255,255,.035/.03)  the concentric ring
+    ornament on `.hoboken-reality__lead::after`
+  Pattern: shadows deepen with elevation — 1–2px blur for chips, 12–32px for
+  cards, 44–90px for hero-level panels and modals. Colour shifts from the
+  text-strong tint (#0F1729) in the token set to a slightly different
+  #0D1A30 tint in the newer sections. [VERIFIED inconsistency]
+
+--- BORDER WIDTHS / COLOURS ---
+  1px    the default everywhere (#E6E2D8 on light, rgba(250,248,244,.14) on dark)
+  1.5px  input borders (system A); `.upgrade-nav`; `.faq-row__icon`
+  2px    `.btn--secondary` / `.btn--on-dark-secondary`;
+         `.aeo-structured__col` top rule
+  3px    the eyebrow underline (--red) — the signature
+  4px    `.upgrade-slide__band::before` red top bar;
+         `.hero-e__reviews` red left border
+  5px    `.neif-card` red left border
+  Stronger warm border #C8C0AE is reserved for: inputs, FAQ rows, editorial
+  sublinks, circular nav arrows, chips, and compact-tile hover.
+
+--- FULL RADIUS SCALE [VERIFIED] ---
+  --r-sm:   6px   inputs · icon chips · hamburger · drawer close ·
+                  header call button · figcaption panels · hero-choice map card
+                  · hoboken-reality stat cells
+  --r:      10px  the default `.btn` radius
+  --r-md:   14px  cards · mega-menu featured panel · hero form · promo banner ·
+                  plan-option · compact-tile · modal · hero image/map card ·
+                  neif-card · review-card · local-snapshot panel
+  --r-lg:   20px  the largest media and panels: `.hero__photo`,
+                  `.editorial-row__media`, `.plan-detail`, `.promo-banner`
+  --r-pill: 999px `.btn-pill` · all badges and chips · the gform submit ·
+                  `.hero-e__stars`
+  50%             circles: `.btn-pill__arrow`, `.upgrade-nav`,
+                  `.review-carousel__arrow`, `.plan-option__arrow`,
+                  `.faq-row__icon`, `.hoboken-reality__icon`, checkmark discs,
+                  the footer pulse dot, the modal close button
+  8px             ONE off-scale value — `.marquee__cell`. [VERIFIED — the only
+                  radius in the file that isn't a token or 50%]
+  16px            TWO off-scale values — `.hero-e__reviews` in both variants.
+
+================================================================================
+7. BACKGROUNDS / GRADIENTS / SHADERS
+================================================================================
+
+--- PAGE AND SECTION BACKGROUNDS ---
+  body            #FAF8F4 (--bg-soft)
+  .bg-base        #FFFFFF
+  .bg-warm        #F4EFE6
+  .bg-deeper      #0E1A3C + colour #FAF8F4, with an explicit rule flipping
+                  h1–h4 to the light colour inside it
+  The homepage alternates warm → white → warm → navy → white → navy → white →
+  navy (footer). [VERIFIED]
+
+--- GRADIENTS, WITH EXACT STOPS AND ANGLES [ALL VERIFIED] ---
+  IMAGE SCRIMS
+    linear-gradient(rgba(20,35,71,0) 50%, rgba(20,35,71,.4))
+      → svc-card photo, upgrade-slide photo, action-card photo
+    linear-gradient(180deg, transparent 60%, rgba(20,35,71,.18))
+      → hero__photo
+    linear-gradient(rgba(20,35,71,0) 60%, rgba(20,35,71,.18))
+      → editorial-row media
+    linear-gradient(180deg, rgba(20,35,71,0) 50%, rgba(20,35,71,.4))
+      → upgrade-slide photo (duplicate recipe, different syntax)
+    linear-gradient(180deg, rgba(13,26,48,0) 45%, rgba(13,26,48,.74) 100%)
+      → hero-e image card (heaviest — carries a caption)
+    linear-gradient(180deg, transparent 45%, rgba(13,26,48,.64))
+      → hero-choice photo
+  HERO CREAM WASHES (the site's signature background treatment)
+    linear-gradient(115deg, rgba(244,239,230,0.94) 0%,
+                            rgba(244,239,230,0.7) 55%,
+                            rgba(244,239,230,0.5) 100%)
+      → `.hero-e::after` (base)
+    linear-gradient(112deg, rgba(244,239,230,.96) 0%,
+                            rgba(244,239,230,.84) 42%,
+                            rgba(244,239,230,.58) 72%,
+                            rgba(244,239,230,.46) 100%)
+      → `.hero-e--service-detail::after` and the `:not(--parent-image)` default
+      A 4-stop cream veil over a low-opacity photo, angled ~112–115° so the
+      left (text) side is nearly opaque and the right side shows more image.
+      This is the most distinctive background device on the site.
+  RED WASHES ON CARDS
+    linear-gradient(115deg, rgba(238,46,43,.08), rgba(255,255,255,0) 48%)
+      → `.hero-e__reviews::before`
+    linear-gradient(115deg, rgba(238,46,43,.08), rgba(255,255,255,0) 46%)
+      → `.hero-e--parent-image .hero-e__reviews::before`
+    linear-gradient(135deg, rgba(238,46,43,.09), rgba(255,255,255,0) 50%)
+      → `.neif-card::before`
+  SUCCESS WASH
+    linear-gradient(135deg, rgba(27,124,79,.1), rgba(255,255,255,.98))
+      → `.tanous-form-confirmation`
+  MARQUEE EDGE MASK (not a background, but a gradient)
+    linear-gradient(to right, transparent 0, black 3%, black 97%, transparent
+    100%)
+
+--- RADIAL "GLOW" BLOBS [ALL VERIFIED] ---
+  `.pricing-section::before`
+    top:-10% right:-10% · 70% × 90%
+    radial-gradient(circle, rgba(229,48,43,.18) 0, rgba(229,48,43,.04) 35%,
+    transparent 65%)  · z-index 1, pointer-events none
+  `.promo-banner::before`
+    top:-10% right:-5% · 50% × 120%
+    radial-gradient(circle, rgba(229,48,43,.18) 0, transparent 60%)
+  `.rvr__col--featured::before`
+    top:-10% right:-10% · 50% × 80%
+    radial-gradient(circle, rgba(229,48,43,.18), transparent 60%)
+  All three are the SAME red-at-18% glow, always anchored top-right, always on a
+  navy surface. Three instances, one idea, consistently applied.
+
+--- CONCENTRIC RING ORNAMENT ---
+  `.hoboken-reality__lead::after`
+    right:-50px bottom:-60px · 230×230 · border 1px rgba(255,255,255,.14) ·
+    border-radius 50% ·
+    box-shadow 0 0 0 42px rgba(255,255,255,.035), 0 0 0 86px
+    rgba(255,255,255,.03)
+  A three-ring halo built entirely from one element plus two spread-only
+  shadows. [VERIFIED — the most inventive decorative element in the file]
+
+--- NOISE / GRAIN, PATTERNS, WATERMARKS, WEBGL, VIDEO ---
+  NO noise or grain overlay. [VERIFIED]
+  NO dot grids, line patterns or geometric tiling. [VERIFIED]
+  NO oversized watermark or ghost logo layer. [VERIFIED]
+  NO WebGL, canvas or shader of any kind. [VERIFIED]
+  NO video backgrounds. [VERIFIED]
+  NO blurred mesh blobs beyond the three radial glows above.
+
+--- BACKDROP-FILTER USAGE (5 instances) [VERIFIED] ---
+  blur(10px)  `.site-header` (over rgba(255,255,255,.96))
+  blur(10px)  `.hero-e__reviews` (over rgba(255,255,255,.74))
+  blur(10px)  `.hero-choice__map-card` (over rgba(255,255,255,.94))
+  blur(8px)   `.hero-e__image-card figcaption` and `.hero-e__map-caption`
+              (over rgba(13,26,48,.72/.76))
+  blur(12px)  `.hero-choice__mini` glass chip
+  blur(5px)   `.hero-choice-modal::backdrop`
+
+--- IFRAME FILTERS ---
+  `.hero-e__map-card iframe`   filter: saturate(.9) contrast(1.02)
+  `.hero-choice__map iframe`   filter: saturate(.9) contrast(.98)
+  Google Maps embeds are desaturated slightly so they sit inside the warm
+  palette. [VERIFIED — a thoughtful touch]
+
+================================================================================
+8. ANIMATIONS & SCROLL EFFECTS
+================================================================================
+This is a deliberately LOW-MOTION site. Only TWO @keyframes exist in 1,108 lines
+of CSS, and app.js is 74 lines with no animation code at all. [VERIFIED]
+
+--- PRELOADER ---
+  NONE.
+
+--- PAGE TRANSITIONS ---
+  NONE. Standard full page loads.
+
+--- HERO ENTRANCE SEQUENCE ---
+  NONE. No fade-in, no stagger, no split-text. The hero renders statically.
+  [VERIFIED — a significant deviation from the agency-site convention]
+
+--- TEXT EFFECTS ---
+  NONE. No split-text, no word rotator/ticker, no typewriter, no gradient text.
+  The only text-adjacent effect is the `.nav-item__trigger::after` underline
+  (below).
+
+--- SCROLL REVEALS ---
+  NONE. There is no IntersectionObserver, no `[data-animate]` attribute, no
+  opacity/translate reveal rule anywhere. All content is visible on load.
+  [VERIFIED]
+
+--- PARALLAX / PINNING / SCRUBBING ---
+  NONE.
+
+--- SMOOTH SCROLL ---
+  Native only: `html { scroll-behavior: smooth; }` — used for the in-page
+  anchor links (#brownstones, #sizing, #permits, etc.). No lerp, no library.
+
+--- THE TWO @KEYFRAMES ---
+  1. @keyframes marquee { from { transform: translateX(0); }
+                          to   { transform: translateX(-50%); } }
+     Applied: `.marquee__track { animation: marquee 60s linear infinite; }`
+     Direction: right-to-left. Duration 60s. Timing: linear. Infinite.
+     PAUSE ON HOVER: `.marquee:hover .marquee__track { animation-play-state:
+     paused; }`
+     The `-50%` implies the logo set is duplicated in the markup for a seamless
+     loop. [VERIFIED]
+  2. @keyframes footerPulse {
+       0%,100% { box-shadow: 0 0 0 4px rgba(229,48,43,.22); }
+       50%     { box-shadow: 0 0 0 8px rgba(229,48,43,.04); }
+     }
+     Applied: `.footer__cta-label::before` — a 7×7 red dot with an expanding,
+     fading ring. `animation: footerPulse 2.4s ease-in-out infinite;`
+     A "live / we're open" availability signal. [VERIFIED]
+
+--- HOVER MICRO-INTERACTIONS (the site's real motion vocabulary) ---
+  LIFT: `translateY(-1px)` on buttons and pills;
+        `translateY(-2px)` on svc-card, feature, compact-tile, upgrade-slide,
+        problem-card, process-step, review-carousel arrow, marquee logo img;
+        `translateY(-3px)` on action-card-lg (the only -3px).
+  ARROW NUDGE: `translateX(3px)` on `.btn .arrow`, editorial sublink icon,
+        compact-tile arrow; `translateX(4px)` on svc-card, upgrade-slide and
+        action-card CTA icons.
+  UNDERLINE SLIDE: `.nav-item__trigger::after` — a 2px red bar, `transform:
+        scaleX(0)` with `transform-origin: left`, → `scaleX(1)` on
+        `.nav-item:hover`. 220ms. The cleanest interaction on the site.
+  CHEVRON FLIP: `.nav-item:hover .nav-item__chevron { rotate(180deg) }` and
+        `.mobile-nav-item.is-open .mobile-nav-item__chevron { rotate(180deg) }`
+  PILL ARROW ROTATE: `.btn-pill:hover .btn-pill__arrow { rotate(-45deg) }`
+  PLUS-TO-CROSS: `.faq-row.open .faq-row__icon { rotate(45deg) }` + colour flip
+  COLOUR-ONLY hovers: mega-menu links → red, footer links → white,
+        breadcrumb → navy, FAQ question → navy, drawer trigger background tint.
+  BORDER/FILL INVERT: `.upgrade-nav:hover` and `.btn--secondary:hover` fully
+        invert (transparent → solid navy).
+  NO magnetic buttons, NO scale transforms on hover, NO 3D tilt.
+
+--- CUSTOM CURSOR ---
+  NONE.
+
+--- COUNTERS / NUMBER ANIMATIONS ---
+  NONE. Stats render statically. [VERIFIED — no counter script in app.js]
+
+--- 3D / SPLINE / LOTTIE / RIVE ---
+  NONE of any kind.
+
+--- JAVASCRIPT-DRIVEN BEHAVIOUR (all of app.js, 3 IIFEs) ---
+  1. HEADER SCROLL SHADOW
+     `h.classList.toggle('scrolled', window.scrollY > 8)` on a passive scroll
+     listener, run once on load. `.site-header.scrolled` adds `--shadow-sm`,
+     transitioned over 220ms. That is the entire scroll effect on the site.
+  2. MOBILE DRAWER + ACCORDION
+     open() adds `.is-open` to drawer and backdrop, sets
+     `aria-expanded="true"` on the hamburger, and sets
+     `document.body.style.overflow = 'hidden'` (scroll lock).
+     close() reverses all of it. Bound to: hamburger click, close-button click,
+     backdrop click, Escape keydown, and ANY link click inside the drawer.
+     Accordion: clicking `.mobile-nav-item__trigger` toggles `.is-open` on the
+     parent and syncs `aria-expanded`.
+  3. STICKY MOBILE CTA BAR
+     Shows when `window.scrollY > heroHeight * 0.6` AND the footer's
+     `getBoundingClientRect().top >= window.innerHeight - 80`.
+     Toggles `.is-show` (transform translateY(100%) → 0, 280ms).
+     Guarded with a `last` flag so the class is only written on change.
+     Listens to scroll and resize, both passive.
+
+  NOT IN app.js (and therefore presumed inline elsewhere or non-functional):
+     · the FAQ accordion open/close (`.faq-row.open`)
+     · the pricing plan tab switching (`.plan-option.is-active` /
+       `.plan-detail.is-active`)
+     · the carousel prev/next arrows
+     · the modal open/close (`[data-tanous-open-modal]` is referenced by the GA4
+       tracker but no handler exists in app.js)
+     See §16.
+
+--- REDUCED-MOTION HANDLING ---
+  NONE. There is no `@media (prefers-reduced-motion: reduce)` block anywhere in
+  the 1,108-line stylesheet. [VERIFIED]
+  The 60s marquee and the 2.4s infinite pulse both run regardless of user
+  preference. This is the clearest accessibility defect in the design system.
+
+--- OVERALL MOTION "FEEL" ---
+  Restrained and utilitarian. One easing curve and one duration for essentially
+  everything:
+    --ease: cubic-bezier(.4,0,.2,1)   (Material "standard" easing)
+    --duration: 220ms
+  Exceptions: 280ms (mobile CTA bar), 380ms (drawer + backdrop), 60s (marquee),
+  2.4s (pulse), and `visibility 0s linear <duration>` delay tricks on the
+  mega-menu and drawer backdrop.
+  The character is: instant feedback, small distances (1–4px), no easing
+  personality, no entrance animation. Motion is used to confirm interaction,
+  never to decorate.
+
+================================================================================
+9. NAVIGATION STYLE
+================================================================================
+All [VERIFIED].
+
+  POSITION      `position: sticky; top: 0; z-index: 90;`
+  HEIGHT        80px fixed (`.site-header { height: 80px; display: flex;
+                align-items: center; }`). `.nav-item` also has `height: 80px`
+                so the whole item is the hover target.
+  BACKGROUND    rgba(255,255,255,.96) + `backdrop-filter: blur(10px)` —
+                translucent, not solid.
+  BORDER        `border-bottom: 1px solid #E6E2D8` (always present)
+  SHADOW        none at rest; `--shadow-sm` once `.scrolled` (scrollY > 8),
+                transitioned over 220ms.
+  INNER         `.site-header__inner` — flex, space-between, gap 24px,
+                width 100%, inside `.container` (1200px).
+  LOGO          `.site-header__logo img { max-height: 44px; width: auto; }`
+                Footer logo is larger at 58px (42px on mobile);
+                drawer logo 36px.
+  NAV LINKS     `.site-header__nav { display: flex; gap: 28px; }`
+                `.nav-item__trigger` — Inter 500 15px, colour #0F1729,
+                padding 6px 0, gap 4px to its chevron.
+                Hover: colour → #1B2C5E AND a 2px red bar scales in from the
+                left (`::after`, bottom -2px, scaleX 0→1, 220ms).
+  CHEVRON       12×12, stroke 2.5, rotates 180° on hover.
+  ACTIVE STATE  NONE. There is no `.is-current` / `aria-current` styling — the
+                nav does not indicate which section you are in. [VERIFIED gap]
+  NAV CTA       a text phone link + `.btn--primary` "Schedule Service", in
+                `.site-header__cta { display: flex; gap: 10px; }`
+
+--- MEGA-MENU ---
+  `position: absolute; top: 80px; left: 0; right: 0;` — FULL-BLEED panel that
+  spans the viewport, anchored to the header bottom. (`.nav-item` is
+  `position: static` specifically so the absolute panel resolves against the
+  header, not the item.)
+  background #FFFFFF · `border-bottom: 1px solid #E6E2D8` · `--shadow-md` ·
+  padding 36px 0 40px · z-index 50
+  RESTING: `opacity: 0; visibility: hidden; transform: translateY(-8px);
+           pointer-events: none;`
+  OPEN (on `.nav-item:hover` OR `:focus-within` — keyboard accessible):
+           `opacity: 1; visibility: visible; transform: translateY(0);
+            pointer-events: auto;`
+  The visibility transition uses the standard delay trick:
+    closing → `visibility 0s linear var(--duration)` (waits for the fade)
+    opening → `visibility 0s` (immediate)
+  `.megamenu__inner` re-contains to 1200px with `--container-pad`, `display:
+  grid`, `gap: 36px`, with per-menu column templates (see §3).
+  Column headers `.megamenu__col h4` are forced to Inter 11px uppercase
+  ls .14em #525B73 (overriding the global serif h4).
+  Links: 14.5px/500, padding 7px 0, hover → --red. Optional `<small>`
+  descriptor beneath at 12.5px/400 muted, lh 1.4, margin-top 2px.
+  FEATURED PANEL `.megamenu__featured`: background #F4EFE6, radius 14px,
+  padding 24px, flex column gap 10px, with a red 11px eyebrow, a Fraunces 500
+  18px h5, a 13.5px muted paragraph, and a `width: fit-content` `.btn`.
+
+--- MOBILE MENU ---
+  Trigger: `.hamburger` 44×44, radius 6px, colour #142347, `display: none` →
+  `flex` at ≤1023px. Type: a standard 3-line icon (inline SVG).
+  Panel: a RIGHT-SIDE DRAWER (not a full overlay), `width: min(420px, 100%)`,
+  sliding in with `translateX(100% → 0)` over 380ms.
+  Backdrop: rgba(14,26,60,.55), fades over 380ms.
+  Contents: logo + close row → scrollable accordion nav (same 5 sections) →
+  a pinned CTA footer with the label, the phone number as Fraunces 24px, a
+  "Financing options" link and a full-width primary button.
+  Body scroll is locked while open.
+  Above 1024px both drawer and backdrop are `display: none`.
+
+--- SCROLL BEHAVIOUR ---
+  The header does NOT hide on scroll, does NOT shrink, does NOT become a
+  floating pill, and does NOT change background. The ONLY scroll response is
+  the shadow appearing past 8px. [VERIFIED]
+
+--- STICKY MOBILE CTA BAR ---
+  `.mobile-cta-bar` — fixed bottom 0, left 0, right 0, padding 8px 12px, gap
+  8px, background white, `border-top: 1px solid #E6E2D8`,
+  `box-shadow: 0 -4px 16px rgba(15,23,41,.06)`, z-index 80.
+  Hidden by `transform: translateY(100%)`, revealed with `.is-show`, 280ms.
+  Two flex:1 buttons at min-height 48px / 14px.
+  Only rendered ≤1023px. The footer gets 88px of bottom padding at ≤640px to
+  clear it.
+
+--- BREADCRUMBS ---
+  `.breadcrumb` — padding 16px 0 8px, 13px, colour #525B73, flex wrap, gap 8px,
+  align-items center.
+  `a` → #525B73, hover #1B2C5E · `__sep` → `opacity: .5` ·
+  `__current` → #0F1729, weight 500.
+
+--- SKIP LINKS ---
+  Present ONLY on /privacy-policy/ and /terms/ (a Bricks default:
+  "Skip to main content" → #brx-content). The 58 designed pages have NO skip
+  link. [VERIFIED gap]
+
+--- Z-INDEX LAYERS [VERIFIED] ---
+  100  .mobile-drawer
+   99  .mobile-drawer__backdrop
+   90  .site-header
+   80  .mobile-cta-bar
+   50  .megamenu
+    2  card icon badges, promo/pricing content above their glows,
+       rvr featured content, hero-choice caption
+    1  hero-e container, neif-card children, hero reviews content,
+       pricing glow, figcaptions
+   (native <dialog> handles the modal via the top layer)
+
+================================================================================
+10. HERO LAYOUT
+================================================================================
+There are FIVE distinct hero components in the system. [ALL VERIFIED]
+
+--- HERO A: `.hero--split` (HOMEPAGE ONLY) ---
+  TEXT DIAGRAM (desktop ≥1024px):
+
+    ┌─────────────────────────────── container 1200 ───────────────────────────┐
+    │                                                                          │
+    │  ┌──────── 1.1fr ─────────┐  gap 56  ┌────────── 1fr ──────────┐        │
+    │  │ eyebrow (12px caps)    │          │                          │        │
+    │  │ H1  clamp(36→56px)     │          │   PHOTO                  │        │
+    │  │     mb 20px            │          │   aspect-ratio 4/3       │        │
+    │  │ lead 18px, max-w 540   │          │   radius 20px            │        │
+    │  │     mb 28px            │          │   --shadow-card          │        │
+    │  │ [Schedule] [Call ###]  │          │   ::after bottom scrim   │        │
+    │  └────────────────────────┘          └──────────────────────────┘        │
+    │                                                                          │
+    │  ───── border-top rgba(20,35,71,.12), pt clamp(24→32) ─────              │
+    │  25        4.8★        5.0★        230+        24/7      ← 5-col, gap 32 │
+    │  Years…    Google…     Yelp…       Five-…      Calls…       align-end    │
+    └──────────────────────────────────────────────────────────────────────────┘
+
+  ALIGNMENT      left, text column first
+  HEIGHT         not vh-based. Padding: top clamp(40px,5vw,64px),
+                 bottom clamp(36px,4vw,56px). Total ≈ 640px at 1440px. [EST]
+  EYEBROW/BADGE  `.eyebrow` — 12px Inter 600 uppercase ls .14em, colour #142347.
+                 NOTE: the homepage hero eyebrow does NOT get the 3px red
+                 underline that inner-page eyebrows get.
+  HEADLINE       `.h1` clamp(2.25rem, 5vw, 3.5rem), Fraunces 600, lh 1.1,
+                 ls -.02em. No explicit max-width — it fills the 1.1fr column.
+  SUBHEAD        `.lead` 18px/1.65, `max-width: 540px`, mb 28px
+  CTA GROUP      `.btn-row` — flex wrap, gap 12px, align-items center.
+                 Primary red + a phone link with an icon.
+  SOCIAL PROOF   the 5-stat row, BELOW the CTAs, separated by a hairline rule.
+                 No avatars, no star glyphs (except inside the ★ numerals), no
+                 client logos in the hero itself.
+  MEDIA          right column, 4/3 photo, radius 20px, shadow-card, with a
+                 `linear-gradient(180deg, transparent 60%, rgba(20,35,71,.18))`
+                 bottom scrim on `::after`.
+  DECORATIVE     none. No floating elements, no blobs.
+  BACKGROUND     `#F4EFE6` applied as an INLINE style on the section
+                 (`style="background: var(--bg-warm);"`) rather than via a
+                 class. [VERIFIED — a small inconsistency]
+  MOBILE REFLOW (≤1023px): single column, gap 28px, and
+                 `.hero__photo { order: -1; aspect-ratio: 16/10; }` — the PHOTO
+                 MOVES ABOVE THE TEXT and becomes wider/shorter.
+  MOBILE (≤768px): section padding drops to 28px/40px; H1 shrinks to
+                 clamp(1.625rem, 6.5vw, 2rem) = 26→32px with lh 1.15;
+                 lead drops to 16px and loses its max-width;
+                 `.hero__stats { display: none; }` — THE ENTIRE STAT ROW IS
+                 HIDDEN ON MOBILE;
+                 buttons become `flex: 1` at 12px 14px / 14px so the two CTAs
+                 split the row evenly.
+
+--- HERO B: `.page-hero` (compact, text-only) ---
+  background #F4EFE6, padding clamp(32→56) / clamp(48→80),
+  `.page-hero__inner { max-width: 880px }`
+  eyebrow WITH the 3px red underline → h1 clamp(36→60px) lh 1.05 ls -.025em
+  → lead 18px/1.65 muted, max-width 640px.
+  No media, no form, no stats.
+
+--- HERO C: `.hero-e` (the workhorse — services, systems, commercial) ---
+  Two-column `1.1fr / .9fr`, gap clamp(32→56), align-items center.
+  LEFT: eyebrow (red-underlined) → h1 clamp(36→56) → lead 17px/1.6 max-w 480
+        → `.hero-e__reviews` card → `.hero-e__cta-row` (flex wrap, gap 12,
+        mt 28).
+  RIGHT: either `.hero-form` (Gravity Forms card) or `.hero-e__image-card`
+        (min-height clamp(460px, 48vw, 650px), radius 14px, cover image,
+        bottom scrim, glass figcaption) or `.hero-e__map-card` (same box with
+        a desaturated Maps iframe and a glass caption).
+  BACKGROUND: the signature two-layer treatment —
+    `::before` a full-bleed cover background-image at `opacity: .28` (or .34 /
+      .36 / .16 depending on variant) with `filter: saturate(.92) contrast(1.04)`
+    `::after` the 112–115° four-stop cream gradient veil
+    `.container` lifted with `position: relative; z-index: 2`
+    ~30 `.hero-e--photo-<name>::before` modifier classes swap the image, plus a
+    `--hero-bg` custom-property fallback.
+  THE REVIEWS CARD `.hero-e__reviews` (a genuinely distinctive component):
+    grid `auto minmax(0,1fr)`, width min(100%, 520px), gap 10px 14px,
+    padding 16px 18px, border 1px rgba(20,35,71,.14),
+    BORDER-LEFT 4px solid --red, radius 16px,
+    background rgba(255,255,255,.74), `backdrop-filter: blur(10px)`,
+    box-shadow 0 18px 50px rgba(13,26,48,.1), overflow hidden.
+    `::before` paints a 115° red-to-transparent wash.
+    `::after` INJECTS A TEXT LINE VIA CSS `content` — the licence/availability
+      strap is a CSS-generated string, not markup. It spans `grid-column: 1/-1`
+      at Inter 700 12px uppercase ls .08em muted.
+    `.hero-e__stars` becomes a solid red PILL (min-height 40px, radius 999px,
+      white, ls 1px, red glow shadow) rather than plain star glyphs.
+  MOBILE: ≤1023px → single column, gap 32px, image/map cards to 380px min.
+          ≤560px → CTAs full-width, the reviews card collapses to one column
+          with the star pill sized to content.
+
+--- HERO D: `.hero-choice` (the largest type on the site) ---
+  padding clamp(28→44) top / clamp(60→92) bottom, background #FFFFFF
+  grid `minmax(0,1.02fr) / minmax(360px,.98fr)`, gap clamp(36→68)
+  h1 `clamp(48px, 7vw, 82px)` with `line-height: .98` and `letter-spacing: 0` —
+    a deliberately huge, tightly-leaded, un-tracked display setting.
+  lead clamp(18px,1.45vw,22px)/1.55, max-width 640px
+  `__actions` (flex, gap 12, mb 24) then `__proof` (flex, gap 12, 14px muted
+    with `strong` in #0F1729).
+  RIGHT: `__photo` (min-height clamp(390→560), radius 14px, cover, bottom
+    scrim, absolutely-positioned `__caption` with a glass `__mini` chip) OR
+    `__map` (bordered, radius 14px, desaturated iframe, a floating white
+    `__map-card` at 22px inset with blur(10px)) OR `.hero-form--prototype`
+    (the dark navy form, translated down 6px).
+  `.hero-choice__after` — a 3-cell hairline-gap panel band immediately below.
+  MOBILE ≤960px: single column, h1 clamp(42px, 11vw, 58px), media to 360px.
+
+--- HERO E: `.finance-hero` ---
+  background #F4EFE6, `border-bottom: 1px solid #E6E2D8`
+  grid `minmax(0,1.08fr) / minmax(340px,.74fr)`, gap clamp(28→64),
+  `align-items: end`
+  h1 clamp(38→56) lh 1.02 ls 0 · lead clamp(19→22)/1.58
+  `__points` — a row of uppercase pill chips
+  RIGHT: `.neif-card` (white, 5px red left border, gradient wash, full-width
+    pill button, uppercase footer chips).
+  MOBILE ≤560px: h1 to clamp(34px,9.4vw,42px), lead 18px,
+    `.finance-hero__points { display: none; }` — the chips are dropped entirely.
+
+================================================================================
+11. FOOTER LAYOUT
+================================================================================
+All [VERIFIED].
+
+  STRUCTURE DIAGRAM (desktop ≥901px)
+
+  ┌─── .footer  background #0E1A3C · padding 48px 0 30px ────────────────────┐
+  │ ┌── .footer__top  grid minmax(0,1fr) / minmax(420px,auto) ─────────────┐ │
+  │ │  gap clamp(28→64) · align-items start · pb 34 · border-b 1px .14     │ │
+  │ │                                                                       │ │
+  │ │  LEFT .footer__brand              RIGHT .footer__cta (pt 54px,       │ │
+  │ │   ├ logo img max-h 58, mb 14              align-items: flex-end)      │ │
+  │ │   ├ .tagline Fraunces 500 17px          ├ ● label (uppercase 11px)   │ │
+  │ │   │   lh 1.45 max-w 560 mb 14           │   with pulsing red dot     │ │
+  │ │   ├ .badges (flex wrap gap 8 mb 14)     └ [Schedule] [Call ###]      │ │
+  │ │   │   4 pill badges, 1px .14 border         min-height 54px each      │ │
+  │ │   └ .footer__brand-meta 13px/1.65                                     │ │
+  │ │       phone · email · address, .sep opacity .4 margin 0 8px           │ │
+  │ └───────────────────────────────────────────────────────────────────────┘ │
+  │ ┌── .footer__links  grid 4 × 1fr · gap 32 · py 38 · border-b 1px .14 ──┐ │
+  │ │  SERVICES        HVAC SYSTEMS      SERVICE AREAS     COMPANY          │ │
+  │ │  h4: Inter 600 12px uppercase ls .14em WHITE, mb 16                   │ │
+  │ │  li: padding 5px 0 · a: 14px rgba(250,248,244,.78) → white on hover   │ │
+  │ └───────────────────────────────────────────────────────────────────────┘ │
+  │ ┌── .footer__bottom  pt 24 · flex space-between wrap gap 12 ───────────┐ │
+  │ │  © line · 12px rgba(250,248,244,.6) lh 1.6                            │ │
+  │ │                              Privacy · Terms · Sitemap (ml 8px each)  │ │
+  │ └───────────────────────────────────────────────────────────────────────┘ │
+  └───────────────────────────────────────────────────────────────────────────┘
+
+  LOGO/WATERMARK  A white-variant logo image at max-height 58px. NO oversized
+                  watermark, NO ghost lettering, NO decorative logo layer.
+  NEWSLETTER      NONE — there is no input in the footer at all.
+  SOCIAL ICONS    NONE — no social row exists.
+  LEGAL ROW       12px at 60% opacity, links at 78% → white on hover.
+  BACKGROUND      #0E1A3C (--bg-deeper), flat. No gradient, no glow, no
+                  pattern.
+  TOP DIVIDER     none above the footer — the preceding `.final-cta` band
+                  (#F4EFE6) provides the contrast edge.
+  INTERNAL RULES  two `1px solid rgba(250,248,244,.14)` rules: below __top and
+                  below __links.
+  SPACING         48px top · 34px to first rule · 38px link block · 24px to
+                  legal · 30px bottom.
+
+  MOBILE STACKING (≤900px):
+    `.footer__top` → 1 column, gap 28px, align-items flex-start
+    `.footer__cta` → align-items flex-start, padding-top 0
+    `.footer__links` → 2 columns
+  MOBILE (≤540px): `.footer__links` → 1 column
+  MOBILE COMPACTION (≤640px — a dedicated launch-tuning block):
+    footer padding → 28px 0 88px  (88px bottom clears the sticky CTA bar)
+    `.footer .container` → `width: min(100% - 32px, 1200px)`
+    `.footer__top` gap 18px, pb 20px
+    logo → max-height 42px, mb 10px
+    tagline → 15px/1.45, mb 10px
+    `.footer__brand .badges { display: none; }`  ← BADGES DROPPED ENTIRELY
+    `.footer__brand-meta` → `display: grid; gap: 4px` (one line per item) and
+      `.sep { display: none }` — the "·" separators are removed
+    `.footer__cta-buttons` → full-width 1-column grid, buttons min-height 48px
+    `.footer__links` → 2 columns, gap 18px/20px, py 22px
+    `.footer__col h4` → 10.5px, ls .1em, mb 8px
+    `.footer__col a` → display block, 12.5px, lh 1.25; li padding 1px 0
+    `.footer__bottom` → pt 16px, 11px; links margin-left 0, margin-right 8px
+    This is the most carefully hand-tuned responsive block in the file.
+
+  BRICKS COMPAT   `.footer.brxe-section { padding: 48px 0 30px; display: block }`
+                  and `.footer > .brxe-html/.brxe-section/.brxe-container
+                  { width: 100% }`.
+
+================================================================================
+12. SECTION-BY-SECTION HOMEPAGE MAP  (build checklist)
+================================================================================
+
+□ 1. HEADER  <header id="header" class="site-header">
+     Pattern: sticky bar, `.container` > flex space-between
+     Components: logo (44px) · 5 mega-menu nav items (gap 28) · phone text
+       link · primary button · [≤1023] red call icon + hamburger
+     Motion: underline scaleX on link hover · chevron 180° · mega-menu
+       fade+translateY(-8px→0) 220ms · shadow-sm past 8px scroll
+     Background: rgba(255,255,255,.96) + blur(10px), 1px bottom border
+     Height: 80px
+
+□ 2. HERO  <section id="hero" class="hero hero--split">
+     Pattern: 2-col split `1.1fr / 1fr`, gap 56, align center; stat row beneath
+     Components: eyebrow · h1 · lead · btn-row (primary + phone) ·
+       4/3 photo with bottom scrim · 5-col stat grid above a hairline
+     Motion: none (static)
+     Background: #F4EFE6 (set inline)
+     Mobile: photo reorders to top at 16/10; stats hidden ≤768; CTAs flex:1
+
+□ 3. SERVICES  <section id="services" class="section bg-base">
+     Pattern: `.section-header` (max-w 720) + `.card-grid-4`
+     Components: red-underlined eyebrow · h2 · 4 × `.svc-card`
+       (4/3 photo + 44px white icon badge + 24px body + bottom-pinned arrow;
+       `.desc { min-height: 3em }` keeps titles aligned)
+     Motion: card lift -2px + shadow-card; arrow icon translateX(4px)
+     Background: #FFFFFF
+     Responsive: 4 → 2 @1023 → 1 @540
+
+□ 4. WHY  <section id="why" class="section bg-warm">
+     Pattern: `.why-header` asymmetric `1fr auto` align-end, then
+       `.features` 3-col
+     Components: `.why-eyebrow` (3px red rule) · `.why-h2`
+       clamp(36→68px)/1.02 with `.line` spans forcing 3 lines · `.why-lead`
+       (max-w 520, muted) · a right-aligned `.btn-pill` · 3 × `.feature`
+       (40px 36px padding, 40px line icon @1.5 stroke)
+     Motion: card lift -2px; pill arrow rotate(-45deg) on hover
+     Background: #F4EFE6
+     Responsive: header → 1 col @900 (align start); features → 1 col @900
+
+□ 5. PRICING  <section id="pricing" class="pricing-section bg-deeper">
+     Pattern: 2-col `1fr 1fr`, gap 56, align-items start, over a red radial glow
+     Components: `.pricing-eyebrow` · `.pricing-h2` clamp(36→60) ·
+       `.pricing-subtitle` (max-w 420) · `.plan-selector` (3 × `.plan-option`
+       with 36px arrow pucks) · `.plan-detail-wrap` with 3 stacked
+       `.plan-detail` panels (radius 20, padding 36) each carrying an icon
+       chip, a Fraunces price at clamp(40→48px), a `.btn-pill`, and a
+       checkmark list
+     Motion: option background/border transitions; active arrow fills red;
+       panel switching is a `display: none/flex` swap (no animation)
+     Background: #0E1A3C + `::before` radial rgba(229,48,43,.18) at top-right,
+       70%×90%
+     Padding: clamp(64px, 9vw, 120px) — the tallest section
+     Responsive: → 1 col @1023, gap 40
+
+□ 6. UPGRADE  <section id="upgrade" class="upgrade-section bg-base">
+     Pattern: centered header (max-w 720, margin auto) + full-bleed
+       scroll-snap carousel + a footer row
+     Components: `.upgrade-eyebrow` · `.upgrade-h2` clamp(32→52) ·
+       `.upgrade-lead` · `.upgrade-carousel` (flex, gap 20, snap x mandatory,
+       scrollbars hidden, container-aligned left padding) · 6 ×
+       `.upgrade-slide` (360px fixed; 16/10 photo + white icon chip; navy
+       `__band` with a 4px red top bar) · `.upgrade-footer` (space-between:
+       a primary CTA + two 48px circular `.upgrade-nav` arrows)
+     Motion: slide lift -2px; arrow icon translateX(4px); nav button
+       invert-on-hover
+     Background: #FFFFFF (the slide bands are #0E1A3C)
+     Padding: clamp(64px, 9vw, 120px)
+     Responsive: slide width → 82% @540
+
+□ 7. BRANDS  <section id="brands" class="marquee-section">
+     Pattern: full-bleed edge-masked marquee on navy
+     Components: eyebrow + h2 + `.marquee` > `.marquee__track` (gap 28,
+       py 20, width max-content) > N × `.marquee__cell` (76px tall,
+       min-width 184px, WHITE card, radius 8px, 1px .18 border,
+       0 16px 36px rgba(0,0,0,.18) shadow) each holding a logo img
+       (max-h 52, max-w 170, contain, full colour)
+     Motion: `animation: marquee 60s linear infinite` translating X 0→-50%;
+       `animation-play-state: paused` on marquee hover; img translateY(-1px)
+       on cell hover
+     Background: #0E1A3C; mask-image fade at 3%/97%
+     Note: a light `.brand-band` variant (white bg, no cards, 58px logos,
+       gap 58) is used on all inner pages
+
+□ 8. FAQ  <section id="faq" class="section bg-base">
+     Pattern: `.faq-split` grid `5fr / 7fr`, gap 64, align-items start
+     Components: LEFT — h2 + lead + `.faq-side__cta` card (#F4EFE6, radius 14,
+       padding 24, Fraunces 24px phone link);
+       RIGHT — `.faq-list` of `.faq-row` (1px #C8C0AE rules top and bottom;
+       question button padding 26px 0, Fraunces 500 clamp(22→28px)/1.22;
+       32px circular +/× icon; answer max-w 640, 15.5px/1.7)
+     Motion: icon rotate(45deg) + red on open; question colour → navy on hover;
+       answer is an instant `display` toggle (no height animation)
+     Background: #FFFFFF
+     Responsive: → 1 col @900, gap 32
+
+□ 9. FOOTER  <footer id="footer" class="footer">
+     See §11 in full.
+
+□ 10. GLOBAL OVERLAYS
+     · `.mobile-drawer` + `.mobile-drawer__backdrop` (z 100/99)
+     · `.mobile-cta-bar` (z 80, ≤1023 only)
+     · `.hero-choice-modal` native `<dialog>` with blurred backdrop
+     · Gravity Forms markup + the honeypot hiding rule
+
+================================================================================
+13. RESPONSIVE BEHAVIOR
+================================================================================
+All [VERIFIED]. Listed by breakpoint, largest to smallest.
+
+--- ≥1024px (DESKTOP) ---
+  Full mega-menu nav visible · hamburger and mobile call button hidden ·
+  drawer and backdrop `display: none` · sticky CTA bar hidden ·
+  all multi-column grids at full column count ·
+  container caps at 1200px with 56px side padding from ~1400px up.
+
+--- ≤1023px (THE STRUCTURAL BREAK) ---
+  NAV        `.site-header__nav { display: none }` — desktop nav gone
+             `.site-header__cta .btn--secondary { display: none }`
+             `.site-header__cta .btn--primary { display: none }`
+             `.hamburger { display: flex }`
+             `.header-call-mobile { display: flex }`
+             `.mobile-cta-bar { display: flex }`
+             → the header reduces to logo + red call icon + hamburger
+  GRIDS      card-grid-4 → 2 cols · action-cards__grid--4 → 2 cols
+  HEROES     hero--split → 1 col (gap 28) with the PHOTO REORDERED TO TOP at
+             16/10 · hero-e__inner → 1 col (gap 32) ·
+             hero-e--parent-image → 1 col, h1 to clamp(36px, 8vw, 48px) ·
+             hero image/map cards → min-height 380px ·
+             finance-hero__grid → 1 col, align-items stretch
+  PRICING    pricing-grid → 1 col, gap 40
+
+--- ≤960px ---
+  hero-choice (all three variants), hero-choice__after-grid,
+  local-snapshot__grid, hoboken-reality__grid/stats/cards → 1 col
+  hero-choice h1 → clamp(42px, 11vw, 58px)
+  hero-choice photo/map → min-height 360px
+  local-snapshot__panel → 1 col; stat dividers flip from border-right to
+    border-bottom
+  review-carousel__head → column, align-items flex-start; actions wrap
+  review-carousel__viewport auto-columns → minmax(82vw, 1fr) (near-full-width
+    cards)
+  hoboken-reality__card → `min-height: auto`
+  hoboken-reality__cta → column, button full-width
+
+--- ≤900px ---
+  features · why-header (align-items start) · faq-split (gap 32) ·
+  editorial-row (gap 24, padding 40px 0) · aeo-structured__grid (gap 32) ·
+  action-cards__grid (gap 16) · problems__grid → 2 · process__grid → 2 ·
+  compact-grid → 2 · footer__top (gap 28) · footer__links → 2 ·
+  rvr__grid (gap 16) · Bricks hero__inner → 1 col, form max-width 100%
+  editorial-row__media forced to `order: -1` in BOTH normal and reverse
+    variants — media always precedes text on mobile
+
+--- ≤768px ---
+  stat-grid → 2 cols, gap 24
+  promo-banner → 1 col, gap 24, padding 36px 28px
+  HERO MOBILE BLOCK:
+    hero--split padding → 28px / 40px, inner gap 24
+    h1 → clamp(1.625rem, 6.5vw, 2rem), mb 12, lh 1.15
+    lead → 16px, mb 20, max-width removed
+    `.hero__stats { display: none }`  ← stats removed on mobile
+    btn-row gap → 8; `.btn { flex: 1; min-width: 0; padding: 12px 14px;
+      font-size: 14px }`
+
+--- ≤720px ---
+  action-cards__grid--2 → 1 col
+
+--- ≤640px ---
+  hero-form--gravity padding → 20px; gform_fields → 1 col
+  THE FOOTER COMPACTION BLOCK (17 declarations — see §11)
+
+--- ≤620px ---
+  hero-form__grid → 1 col; `--full` fields revert to `grid-column: auto`
+
+--- ≤560px ---
+  hero-e__cta-row .btn → width 100%
+  hero-e reviews cards → 1 col, padding 16px, star pill `width: fit-content`
+  figcaption / map caption insets → 16px, padding 16px
+  finance-hero h1 → clamp(34px, 9.4vw, 42px); lead 18px, mb 0
+  `.finance-hero__points { display: none }`
+  neif-card padding → 20px
+
+--- ≤540px ---
+  card-grid-4 · compact-grid · problems__grid · action-cards__grid--4 ·
+  footer__links → 1 col
+  upgrade-slide → `flex: 0 0 82%`
+
+--- ≤520px ---
+  process__grid → 1 col
+
+--- TYPE SCALE ACROSS BREAKPOINTS ---
+  Nearly all headings use `clamp()`, so type scales fluidly rather than
+  stepping — the explicit overrides above (hero h1, hero-choice h1,
+  finance-hero h1, footer type) are the only hard resets.
+
+--- HIDDEN / REORDERED ELEMENTS SUMMARY ---
+  HIDDEN on mobile: desktop nav · header secondary + primary buttons ·
+    hero stat row (≤768) · footer badges (≤640) · footer meta separators
+    (≤640) · finance-hero chips (≤560)
+  SHOWN on mobile: hamburger · red call icon · sticky CTA bar · drawer
+  REORDERED: hero photo → above text (≤1023) · editorial-row media → above
+    text in both directions (≤900)
+
+--- TOUCH-SPECIFIC BEHAVIOUR ---
+  `min-height: 44px` on `.btn` and 44×44 on all icon buttons (meets the
+    44px target).
+  `-webkit-overflow-scrolling: touch` on `.upgrade-carousel`.
+  `overscroll-behavior-x: contain` on `.review-carousel__viewport` so
+    horizontal swipes don't trigger browser back-navigation.
+  `scroll-snap-type: x mandatory` on both carousels for thumb-friendly paging.
+  Body scroll lock while the drawer is open.
+  `font-size: 16px` on the hand-built form inputs prevents iOS zoom — but the
+    Gravity Forms inputs are 14px and WILL zoom on focus. [VERIFIED
+    inconsistency]
+  Hover-only affordances (the nav underline, marquee pause, card lifts) have no
+    touch equivalent, and the mega-menu is hover/focus-driven only — on touch
+    the parent label navigates instead, which is a reasonable fallback since
+    every parent is also a real link.
+
+================================================================================
+14. ACCESSIBILITY & PERFORMANCE NOTES
+================================================================================
+
+--- CONTRAST OBSERVATIONS [computed from the verified hex values] ---
+  PASSING COMFORTABLY:
+    #0F1729 on #FFFFFF  ≈ 17.4:1   AAA — all headings
+    #0F1729 on #F4EFE6  ≈ 15.5:1   AAA
+    #2A3147 on #FFFFFF  ≈ 12.6:1   AAA — body copy
+    #2A3147 on #F4EFE6  ≈ 11.2:1   AAA
+    #525B73 on #FFFFFF  ≈ 7.2:1    AAA — muted text
+    #525B73 on #F4EFE6  ≈ 6.4:1    AA (AAA for large text)
+    #FAF8F4 on #0E1A3C  ≈ 15.9:1   AAA — light text on navy
+    #142347 on #FFFFFF  ≈ 13.9:1   AAA — secondary button text
+    white on #E5302B    ≈ 4.1:1    ⚠ FAILS AA for normal text (needs 4.5:1).
+                                   Passes AA for large text (≥18.66px bold /
+                                   ≥24px). `.btn--primary` is 15px/600 — so the
+                                   PRIMARY BUTTON LABEL IS BELOW AA. The same
+                                   applies to `.gform_button` (14px/700) and
+                                   `.hero-e__stars`.
+    #E5302B on #FFFFFF  ≈ 4.4:1    ⚠ marginal — used for `.aeo-structured__num`
+                                   (13px), `.neif-card__label` (12px),
+                                   `.process-step__num` (40px, fine),
+                                   `.hero-form__eyebrow` (11px) and Gravity
+                                   Forms validation messages (12px). The small
+                                   uses fail AA.
+    rgba(250,248,244,.6) on #0E1A3C ≈ 8.5:1 — footer bottom row still passes.
+  [All ratios EST — computed arithmetically from the verified hex values, not
+   measured in a rendered browser.]
+
+--- FOCUS-VISIBLE STYLES ---
+  NONE for buttons, links, nav items, accordions, tabs, carousels or the
+  hamburger. There is no `:focus`, `:focus-visible` or `outline` rule anywhere
+  in the stylesheet except the two that REMOVE it (`outline: none` on form
+  inputs, replaced by a border + 3px ring).
+  [VERIFIED — this is the most significant a11y defect in the design system.]
+  Partial credit: `.megamenu` opens on `:focus-within`, so keyboard users CAN
+  reach mega-menu contents even without a visible ring.
+
+--- PREFERS-REDUCED-MOTION ---
+  NO support. The 60s infinite marquee and the 2.4s infinite footer pulse run
+  unconditionally. [VERIFIED]
+
+--- OTHER A11Y OBSERVATIONS ---
+  GOOD:
+    · 44px minimum touch targets throughout
+    · `aria-expanded` is correctly set and synced on the hamburger and on every
+      mobile accordion trigger (in app.js)
+    · Escape closes the drawer
+    · The mega-menu responds to `:focus-within`
+    · `<dialog>` is used natively for the modal (free focus trap + Escape)
+    · Real semantic landmarks: `<header>`, `<section>`, `<footer>`, `<nav>`
+    · Descriptive `alt` text on hero and brand images
+    · `img, svg { display: block; max-width: 100%; height: auto; }` prevents
+      layout overflow
+  PROBLEMS:
+    · No skip link on the 58 designed pages (only on the two Bricks legal pages)
+    · No visible focus indicator (above)
+    · No `prefers-reduced-motion` (above)
+    · `ul { list-style: none }` is applied globally without a compensating
+      `role="list"`, which suppresses list semantics in Safari/VoiceOver
+    · No active/current-page indication in the nav
+    · `.gform_validation_errors` (the summary error region) is
+      `display: none` — screen-reader users lose the aggregated error message
+    · Error state is communicated by colour alone (red text, no icon, no border
+      change)
+    · The `.hero-e__reviews::after` strapline is CSS `content` — generated
+      content is inconsistently exposed to assistive tech
+    · Gravity Forms inputs at 14px trigger iOS zoom-on-focus
+    · `.faq-row__a` toggles via `display`, so there is no `aria-hidden` /
+      `aria-controls` relationship visible in the CSS layer
+
+--- PERFORMANCE ---
+  STRENGTHS:
+    · ONE 97KB stylesheet and ONE 2.7KB script — a remarkably small critical
+      path for a 60-page site
+    · Zero third-party JS frameworks or animation libraries
+    · Fully server-rendered — no hydration cost, content is visible immediately
+    · `preconnect` to both Google Fonts origins
+    · `font-display: swap`
+    · GA4 loaded `async`
+    · Passive scroll listeners (`{ passive: true }`) on both scroll handlers
+    · The sticky-CTA handler guards writes with a `last` flag to avoid layout
+      thrash
+    · `aspect-ratio` on all media containers prevents CLS from images
+    · CSS-only carousels and accordions — no JS bundle for interactivity
+  WEAKNESSES:
+    · The stylesheet is UNMINIFIED (97KB with comments and indentation;
+      realistically ~55–60KB minified, ~12KB gzipped) [EST]
+    · NO lazy loading — `loading="lazy"` does not appear on any image
+      [VERIFIED across all 60 raw HTML files]
+    · Hero photography is delivered via CSS `background-image`, so it cannot be
+      lazy-loaded, `srcset`-ed, `fetchpriority`-ed or served responsively —
+      every viewport downloads the full-size asset
+    · ~30 `.hero-e--photo-*` rules ship to every page even though each page uses
+      one; the browser only fetches the matched one, but the CSS weight is
+      carried site-wide
+    · Mixed image formats (.png/.jpg/.webp/.svg) with no AVIF and no evident
+      optimisation pipeline
+    · The marquee duplicates the full logo set in markup (required for the
+      -50% loop), doubling image element count on every page
+    · Fonts are loaded via a plain `<link>` rather than `preload` — a
+      render-blocking round trip after the CSS
+    · No skeletons or placeholders — cards render empty-then-filled as images
+      arrive (mitigated by `aspect-ratio` + the `--bg-warm` placeholder colour
+      on every media container, which is a deliberate and effective choice)
+    · `backdrop-filter` on the sticky header repaints on every scroll frame
+      (minor, but measurable on low-end devices)
+
+================================================================================
+15. REPLICATION QUICK-START
+================================================================================
+
+--- READY-TO-PASTE CSS VARIABLES BLOCK ---
+(the site's own token block, plus the de-facto values it uses literally)
+
+:root {
+  /* ---- Colour ---- */
+  --bg-base:        #FFFFFF;
+  --bg-soft:        #FAF8F4;
+  --bg-warm:        #F4EFE6;
+  --bg-deeper:      #0E1A3C;
+  --navy:           #1B2C5E;
+  --navy-deep:      #142347;
+  --red:            #E5302B;
+  --red-hover:      #C82822;
+  --red-soft:       #FBE8E6;          /* declared but unused on the source */
+  --text-strong:    #0F1729;
+  --text-base:      #2A3147;
+  --text-muted:     #525B73;
+  --text-on-dark:   #FAF8F4;
+  --border:         #E6E2D8;
+  --border-strong:  #C8C0AE;
+  --border-on-dark: rgba(250,248,244,.14);
+  --success:        #1B7C4F;
+
+  /* ---- Type ---- */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ---- Type scale (add these — the source hardcodes them) ---- */
+  --fs-h1:      clamp(2.25rem, 5vw, 3.5rem);      /* 36 → 56 */
+  --fs-h1-page: clamp(2.25rem, 5vw, 3.75rem);     /* 36 → 60 */
+  --fs-h1-mega: clamp(48px, 7vw, 82px);           /* hero-choice */
+  --fs-h2:      clamp(1.875rem, 4vw, 2.75rem);    /* 30 → 44 */
+  --fs-h2-lg:   clamp(2.25rem, 5.5vw, 4.25rem);   /* 36 → 68 */
+  --fs-h3:      1.5rem;                            /* 24 */
+  --fs-lead:    1.125rem;                          /* 18 */
+  --fs-lead-sm: 1.0625rem;                         /* 17 */
+  --fs-body:    15px;
+  --fs-sm:      14px;
+  --fs-xs:      13px;
+  --fs-label:   12px;
+  --fs-micro:   11px;
+
+  /* ---- Layout ---- */
+  --container:     1200px;
+  --container-pad: clamp(20px, 4vw, 56px);
+  --section-py:    clamp(56px, 8vw, 96px);
+  --section-py-lg: clamp(64px, 9vw, 120px);
+  --section-py-sm: clamp(56px, 7vw, 88px);
+
+  /* ---- Radii ---- */
+  --r-sm:   6px;
+  --r:      10px;
+  --r-md:   14px;
+  --r-lg:   20px;
+  --r-pill: 999px;
+
+  /* ---- Shadows ---- */
+  --shadow-sm:   0 1px 2px rgba(15,23,41,.05);
+  --shadow-md:   0 8px 24px rgba(15,23,41,.08);
+  --shadow-card: 0 2px 6px rgba(15,23,41,.04), 0 12px 32px rgba(15,23,41,.06);
+  --shadow-cta:  0 4px 14px rgba(229,48,43,.25);
+  --shadow-deep: 0 28px 90px rgba(13,26,48,.18);
+  --shadow-modal:0 24px 80px rgba(13,26,48,.28);
+  --focus-ring:  0 0 0 3px rgba(27,44,94,.12);
+
+  /* ---- Spacing (add these — the source hardcodes them) ---- */
+  --sp-1:  4px;  --sp-2:  8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px;  --sp-6: 24px;  --sp-7: 28px; --sp-8: 32px;
+  --sp-9: 36px;  --sp-10:40px;  --sp-12:48px; --sp-14:56px;
+  --sp-16:64px;  --sp-20:80px;  --sp-24:96px; --sp-30:120px;
+
+  /* ---- Motion ---- */
+  --ease:     cubic-bezier(.4,0,.2,1);
+  --duration: 220ms;
+  --duration-bar:    280ms;   /* sticky mobile CTA bar */
+  --duration-drawer: 380ms;   /* mobile drawer */
+
+  /* ---- Breakpoints (documentation only) ---- */
+  --bp-xs: 520px; --bp-sm: 540px; --bp-md: 640px;  --bp-lg: 768px;
+  --bp-xl: 900px; --bp-2xl:960px; --bp-nav:1023px; --bp-desk:1024px;
+}
+
+/* Recommended additions the source is MISSING */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+--- SIGNATURE COMPONENT SNIPPETS ---
+
+/* The eyebrow — the single most repeated device on the site */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600; font-size: .75rem;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--navy-deep);
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--red);
+  margin-bottom: 24px;
+}
+
+/* The pill CTA with the rotating arrow puck */
+.btn-pill {
+  display: inline-flex; align-items: center; gap: 16px;
+  background: var(--red); color: #fff;
+  border-radius: var(--r-pill);
+  padding: 6px 6px 6px 28px;
+  font: 600 15px var(--font-body);
+  transition: background var(--duration) var(--ease),
+              transform var(--duration) var(--ease),
+              box-shadow var(--duration) var(--ease);
+}
+.btn-pill:hover { background: var(--red-hover); transform: translateY(-1px);
+                  box-shadow: var(--shadow-cta); }
+.btn-pill__arrow {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--bg-deeper); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--duration) var(--ease);
+}
+.btn-pill:hover .btn-pill__arrow { transform: rotate(-45deg); }
+
+/* The hero cream veil over a photo */
+.hero-e { position: relative; overflow: hidden; background: var(--bg-warm); }
+.hero-e::before {
+  content: ""; position: absolute; inset: 0;
+  background: var(--hero-bg) center/cover no-repeat;
+  opacity: .34; filter: saturate(.92) contrast(1.04);
+  pointer-events: none;
+}
+.hero-e::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(112deg,
+    rgba(244,239,230,.96) 0%,
+    rgba(244,239,230,.84) 42%,
+    rgba(244,239,230,.58) 72%,
+    rgba(244,239,230,.46) 100%);
+}
+.hero-e .container { position: relative; z-index: 2; }
+
+/* The red glow blob (pricing / promo / featured card) */
+.glow-tr::before {
+  content: ""; position: absolute; top: -10%; right: -10%;
+  width: 70%; height: 90%; pointer-events: none; z-index: 1;
+  background: radial-gradient(circle,
+    rgba(229,48,43,.18) 0, rgba(229,48,43,.04) 35%, transparent 65%);
+}
+
+/* Container-aligned full-bleed carousel */
+.carousel {
+  display: flex; gap: 20px; overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  padding-left: max(var(--container-pad),
+    calc((100vw - var(--container)) / 2 + var(--container-pad)));
+  padding-right: var(--container-pad);
+}
+.carousel::-webkit-scrollbar { display: none; }
+
+/* The marquee */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 3%,
+                       #000 97%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 3%,
+                       #000 97%, transparent 100%);
+}
+.marquee__track {
+  display: flex; gap: 28px; padding: 20px 0; width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); }
+                     to   { transform: translateX(-50%); } }
+
+--- FONT LINK (paste into <head>) ---
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+
+--- LIBRARIES TO INSTALL ---
+  NONE ARE REQUIRED. This design is fully reproducible with vanilla CSS plus
+  ~75 lines of JS. That is the headline finding of this extraction.
+  What you need to write yourself (the source does it this way too):
+    · header scroll-shadow toggle           ~6 lines
+    · mobile drawer open/close + accordion  ~40 lines
+    · sticky mobile CTA bar show/hide       ~20 lines
+    · FAQ accordion `.open` toggle          ~8 lines   (missing from app.js)
+    · pricing tab `.is-active` swap         ~12 lines  (missing from app.js)
+    · carousel prev/next scrollBy handlers  ~12 lines  (missing from app.js)
+    · modal open/close via <dialog>         ~8 lines   (missing from app.js)
+  Optional only if you want them: an icon set (Feather or Lucide, to match the
+  2px round-cap line style) and a form plugin.
+
+--- KEY MEASUREMENTS ---
+  Nav height ....................... 80px (fixed, sticky, z-index 90)
+  Nav link gap ..................... 28px
+  Logo max-height .................. 44px (footer 58px, drawer 36px)
+  Container max-width .............. 1200px
+  Container side padding ........... clamp(20px, 4vw, 56px)
+  Effective text column ............ 1088px at ≥1400px
+  Section padding (default) ........ clamp(56px, 8vw, 96px)
+  Section padding (tall) ........... clamp(64px, 9vw, 120px)
+  Hero (home) ...................... clamp(40→64) top / clamp(36→56) bottom
+  Hero split ratio ................. 1.1fr / 1fr, gap 56px
+  Hero media aspect ................ 4/3 desktop → 16/10 mobile
+  Hero (inner, image card) ......... min-height clamp(460px, 48vw, 650px)
+  Card grid gap .................... 20px (12px for compact tiles)
+  Card padding ..................... 24px (28px action cards, 32px rvr,
+                                     36px plan detail, 40px 36px feature)
+  Card radius ...................... 14px (20px for large media)
+  Button height .................... min 44px (54px footer, 48px mobile bar,
+                                     46px gform)
+  Button padding ................... 14px 22px
+  Button radius .................... 10px (999px for pills)
+  Input height ..................... 42px (gform) / ~40px (custom) / 48px (dark)
+  Input radius ..................... 6px
+  Focus ring ....................... 0 0 0 3px rgba(27,44,94,.12)
+  Carousel slide width ............. 360px desktop / 82% mobile
+  Review card min-height ........... 324px
+  Marquee cell ..................... 76px tall × 184px min (58px on light band)
+  Primary breakpoint ............... 1023 / 1024px
+  Transition ....................... 220ms cubic-bezier(.4,0,.2,1)
+  Drawer width ..................... min(420px, 100%), 380ms slide
+  Footer padding ................... 48px 0 30px (28px 0 88px on mobile)
+
+================================================================================
+16. UNVERIFIABLE / NOT RETRIEVABLE
+================================================================================
+
+Nothing was blocked, gated or unreachable. The following are the only items in
+this document that are NOT [VERIFIED], and the reason for each.
+
+1. RENDERED APPEARANCE. No browser rendering or screenshot was available in
+   this environment. Everything about how the design LOOKS in aggregate —
+   actual visual density of the marquee, how the cream hero veil reads over
+   each specific photo, whether text ever collides at intermediate widths,
+   perceived hierarchy — is inferred from code, not observed.
+
+2. SECTION HEIGHTS in §3 and §12 are [EST]. They are computed from padding +
+   estimated content height at a 1440px viewport, not measured.
+
+3. CONTRAST RATIOS in §14 are [EST]. They are arithmetically derived from the
+   verified hex values using the standard WCAG relative-luminance formula, not
+   measured against rendered pixels. Values involving alpha compositing (e.g.
+   the .96-alpha header over arbitrary page content) are approximations.
+
+4. THE ICON LIBRARY is [EST] as Feather/Lucide-family. The SVGs are inlined
+   per-instance with no library attribution. The identification rests on the
+   24×24 viewBox, 2px round-cap/round-join convention, and the fact that the
+   checkmark data URI uses Feather's exact `polyline points='20 6 9 17 4 12'`.
+   It could equally be a hand-drawn set following the same conventions.
+
+5. MISSING JAVASCRIPT. app.js (74 lines) contains ONLY the header shadow, the
+   mobile drawer, and the sticky CTA bar. It does NOT contain handlers for:
+     · the FAQ accordion (`.faq-row.open`)
+     · the pricing tab switcher (`.plan-option.is-active` /
+       `.plan-detail.is-active`)
+     · the carousel prev/next arrows (`.upgrade-nav`,
+       `.review-carousel__arrow`)
+     · the modal trigger (`[data-tanous-open-modal]`, which the GA4 script
+       explicitly listens for)
+   These behaviours are fully STYLED in the CSS, and the state classes are
+   clearly designed for. The handlers must therefore live in inline scripts
+   emitted per-section by Bricks Builder, which I did not isolate from the
+   page HTML. I have NOT verified whether these interactions actually function
+   on the live site. If you are replicating, budget for writing ~40 lines of JS
+   to make the FAQ, tabs, carousels and modal work.
+
+6. MARQUEE MARKUP DUPLICATION. The `translateX(-50%)` keyframe implies the logo
+   set is duplicated in the DOM for a seamless loop. I confirmed 22 logo images
+   with alt text plus 22 with empty alt on the homepage, which is consistent
+   with duplication, but I did not verify the wrapper structure that makes the
+   loop seamless.
+
+7. GRAVITY FORMS' OWN STYLESHEET. Gravity Forms normally enqueues its own CSS.
+   No such stylesheet link appears in the page <head>, which suggests GF's
+   default CSS is disabled and the theme's `!important` overrides carry the
+   entire form appearance. I could not confirm the plugin setting, so the exact
+   cascade in a live browser is unverified.
+
+8. ACTUAL IMAGE DIMENSIONS AND FILE SIZES were not fetched. The performance
+   commentary about unoptimised delivery is based on format mix, the absence of
+   `srcset`/`loading="lazy"`, and the use of CSS background-images — not on
+   measured payload.
+
+9. THE `--red-soft: #FBE8E6` TOKEN is verified as declared and verified as
+   never referenced in design-system.css. It could conceivably be used by an
+   inline Bricks style I did not enumerate exhaustively across all 60 pages.
+
+10. TWO PARALLEL DARK/RED VALUES (#EE2E2B vs --red #E5302B; #0D1A30 vs
+    --bg-deeper #0E1A3C) are verified as present in the CSS. Whether this is an
+    intentional secondary accent or drift from a later design pass is not
+    determinable from the code.
+
+11. NO BRAND PAGE EXISTS to confirm the palette and typography as
+    *officially* sanctioned. /brand, /brand-kit, /press, /media-kit and
+    /style-guide all 404 or are absent from the sitemap, and no footer link
+    points to one. The `:root` block is therefore the highest available
+    authority — which is strong, but it is a developer artifact rather than a
+    published brand standard.
+
+================================================================================
+END OF designReference.txt
+================================================================================
