@@ -24,3 +24,4 @@ yarn-error.log*
 Thumbs.db
 desktop.ini
 *.lnk
+sgi-hvac/dev.log
