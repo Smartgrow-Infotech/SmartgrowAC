@@ -95,7 +95,7 @@ export default function HomePage() {
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Button asChild size="lg" className="bg-action hover:bg-action-hover">
+                <Button asChild size="lg">
                   <Link href="/contact">Schedule Service</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">

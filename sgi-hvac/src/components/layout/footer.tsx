@@ -16,8 +16,8 @@ const badges = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-white">
-      <div className="mx-auto max-w-[1200px] px-5 pb-8 pt-14 sm:px-8 lg:px-14">
+    <footer className="brand-glow relative overflow-hidden bg-navy text-white">
+      <div className="relative z-10 mx-auto max-w-[1200px] px-5 pb-8 pt-14 sm:px-8 lg:px-14">
         {/* top: brand + CTA */}
         <div className="grid gap-8 border-b border-white/12 pb-9 lg:grid-cols-[minmax(0,1fr)_minmax(380px,auto)]">
           <div>

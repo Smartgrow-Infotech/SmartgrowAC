@@ -51,6 +51,19 @@ const WIDTH = 1800
 
 await fs.mkdir(OUT, { recursive: true })
 
+/**
+ * Records which Unsplash id each local file was built from. Without this, an
+ * existing file is skipped even after its manifest id changes — so swapping a
+ * photo silently does nothing. Refetch is keyed on the id, not just presence.
+ */
+const LOCK = path.join(OUT, '.sources.json')
+let lock = {}
+try {
+  lock = JSON.parse(await fs.readFile(LOCK, 'utf8'))
+} catch {
+  /* first run */
+}
+
 const credits = []
 let fetched = 0
 let skipped = 0
@@ -63,13 +76,13 @@ for (const e of entries) {
     `- **${e.key}** — ${e.alt}\n  Unsplash \`${e.unsplashId}\` · https://images.unsplash.com/${e.unsplashId}`,
   )
 
-  if (!FORCE) {
+  if (!FORCE && lock[e.key] === e.unsplashId) {
     try {
       await fs.access(outPath)
       skipped++
       continue
     } catch {
-      /* not present — fetch it */
+      /* recorded but missing on disk — fall through and refetch */
     }
   }
 
@@ -93,8 +106,15 @@ for (const e of entries) {
   console.log(
     `  ok   ${e.key.padEnd(24)} ${WIDTH}x${height}  ${(size / 1024).toFixed(0)}KB`,
   )
+  lock[e.key] = e.unsplashId
   fetched++
 }
+
+// prune keys no longer in the manifest, then persist
+for (const key of Object.keys(lock)) {
+  if (!entries.some((e) => e.key === key)) delete lock[key]
+}
+await fs.writeFile(LOCK, JSON.stringify(lock, null, 2) + '\n', 'utf8')
 
 await fs.writeFile(
   path.join(OUT, 'CREDITS.md'),

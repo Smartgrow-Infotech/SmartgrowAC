@@ -4,10 +4,12 @@ All photography sourced from [Unsplash](https://unsplash.com) under the
 [Unsplash License](https://unsplash.com/license), which permits free commercial
 use with or without attribution.
 
-- **heroHome** — A modern home exterior with an outdoor heat-pump unit installed alongside it
+- **heroHome** — Two SmartgrowInfotech service technicians working from a ladder at a residential property
+  Unsplash `photo-1739203469638-d6f54c24a5da` · https://images.unsplash.com/photo-1739203469638-d6f54c24a5da
+- **heroTechnician** — A service technician in uniform outside a building
+  Unsplash `photo-1732395805034-e0bf859665e5` · https://images.unsplash.com/photo-1732395805034-e0bf859665e5
+- **heroEquipment** — A modern home exterior with an outdoor heat-pump unit installed alongside it
   Unsplash `photo-1776860155275-eee24bfb1dee` · https://images.unsplash.com/photo-1776860155275-eee24bfb1dee
-- **heroRooftop** — Two technicians working on rooftop mechanical equipment
-  Unsplash `photo-1642749776312-aa42ce20c9f5` · https://images.unsplash.com/photo-1642749776312-aa42ce20c9f5
 - **serviceAc** — A wall-mounted air-conditioning unit on a brick exterior
   Unsplash `photo-1718203862467-c33159fdc504` · https://images.unsplash.com/photo-1718203862467-c33159fdc504
 - **serviceHeating** — Two hydronic radiators against a clean interior wall

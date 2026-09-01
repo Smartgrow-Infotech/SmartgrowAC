@@ -35,7 +35,11 @@
   --color-ink: #212121;
   --color-slate: #50576b;
   --color-cloud: #f6f7f9;
-  --color-navy: #0b1b2b;
+  /* Deep Navy, shifted toward Action Blue so the large dark surfaces read as
+     blue rather than near-black. The published brand value is #0B1B2B — revert
+     this one token to go back to it. White on #0A1B3A still measures ~16:1. */
+  --color-navy: #0a1b3a;
+  --color-navy-deep: #0b1b2b;
   --color-teal: #1690b8;
   --color-orange: #f18a21;
   --color-action: #0067f3;
@@ -97,12 +101,13 @@
   --popover: #ffffff;
   --popover-foreground: #212121;
 
-  /* Primary is INK, not Action Blue. This is the brand's own decision —
-     their live stylesheet sets --primary to near-black and reserves blue for
-     interaction. It is what keeps the published 80/15/5 neutral/blue/accent
-     ratio intact. */
-  --primary: #212121;
-  --primary-foreground: #fafafa;
+  /* Primary is ACTION BLUE.
+     The brand page lists Action Blue's role as "headings, links, interactive
+     emphasis", so leading with it is on-brand. White on #0067F3 measures
+     4.96:1 — it clears WCAG AA for normal text, which the reference site's
+     white-on-red primary (~4.1:1) did not. */
+  --primary: #0067f3;
+  --primary-foreground: #ffffff;
 
   --secondary: #f6f7f9; /* Cloud */
   --secondary-foreground: #212121;
@@ -138,8 +143,8 @@
   --card-foreground: #fafafa;
   --popover: #0b1b2b;
   --popover-foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #171717;
+  --primary: #3d8bff; /* Action Blue lifted for contrast on black */
+  --primary-foreground: #04162e;
   --secondary: #16202b;
   --secondary-foreground: #fafafa;
   --muted: #16202b;
@@ -318,10 +323,11 @@
     pointer-events: none;
     z-index: 0;
     background: radial-gradient(
-      70% 65% at 82% 8%,
-      rgb(0 103 243 / 0.22) 0%,
-      rgb(0 103 243 / 0.07) 42%,
-      transparent 72%
+      75% 70% at 82% 6%,
+      rgb(0 103 243 / 0.34) 0%,
+      rgb(0 103 243 / 0.12) 40%,
+      rgb(0 103 243 / 0.03) 68%,
+      transparent 82%
     );
   }
 

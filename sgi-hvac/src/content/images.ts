@@ -34,16 +34,25 @@ const w43 = { width: W, height: Math.round((W * 3) / 4) }
 const w1610 = { width: W, height: Math.round((W * 10) / 16) }
 
 export const images = {
+  /** Hero: two U.S. service technicians on a residential call. */
   heroHome: {
     src: '/images/hero-home.webp',
-    unsplashId: 'photo-1776860155275-eee24bfb1dee',
-    alt: 'A modern home exterior with an outdoor heat-pump unit installed alongside it',
+    unsplashId: 'photo-1739203469638-d6f54c24a5da',
+    alt: 'Two SmartgrowInfotech service technicians working from a ladder at a residential property',
     ...w43,
   },
-  heroRooftop: {
-    src: '/images/hero-rooftop.webp',
-    unsplashId: 'photo-1642749776312-aa42ce20c9f5',
-    alt: 'Two technicians working on rooftop mechanical equipment',
+  /** Portrait of a technician in branded workwear — about, careers, metros. */
+  heroTechnician: {
+    src: '/images/hero-technician.webp',
+    unsplashId: 'photo-1732395805034-e0bf859665e5',
+    alt: 'A service technician in uniform outside a building',
+    ...w43,
+  },
+  /** Equipment-led alternative for commercial and system pages. */
+  heroEquipment: {
+    src: '/images/hero-equipment.webp',
+    unsplashId: 'photo-1776860155275-eee24bfb1dee',
+    alt: 'A modern home exterior with an outdoor heat-pump unit installed alongside it',
     ...w43,
   },
 
