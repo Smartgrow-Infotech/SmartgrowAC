@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { fontVariables } from './fonts'
 import { site } from '@/config/site'
+import { Header } from '@/components/layout/header'
+import { Footer } from '@/components/layout/footer'
+import { StickyCtaBar } from '@/components/layout/sticky-cta-bar'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -33,7 +36,12 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         <a href="#main" className="skip-link">
           Skip to main content
         </a>
-        {children}
+        <Header />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+        <StickyCtaBar />
       </body>
     </html>
   )
