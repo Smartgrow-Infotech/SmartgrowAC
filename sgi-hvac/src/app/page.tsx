@@ -1,8 +1,10 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Droplets, Flame, Phone, Snowflake, Wind } from 'lucide-react'
 
 import { site, installBrands, servicedBrands } from '@/config/site'
 import { homeFaqs } from '@/content/faqs'
+import { images } from '@/content/images'
 import { Eyebrow, DotGrid } from '@/components/brand'
 import { Container, Section, SectionHeader } from '@/components/sections/section'
 import { CoverageGrid } from '@/components/sections/coverage'
@@ -22,6 +24,7 @@ const stats = [
 const services = [
   {
     icon: Snowflake,
+    image: images.serviceAc,
     title: 'Air Conditioning',
     body: 'Repair, maintenance and replacement for split systems, packaged units, ductless and PTAC.',
     href: '/services/air-conditioning',
@@ -29,6 +32,7 @@ const services = [
   },
   {
     icon: Flame,
+    image: images.serviceHeating,
     title: 'Heating',
     body: 'Furnaces, heat pumps, boilers and hydronic systems — diagnosed before we quote.',
     href: '/services/heating',
@@ -36,6 +40,7 @@ const services = [
   },
   {
     icon: Wind,
+    image: images.serviceIaq,
     title: 'Indoor Air Quality',
     body: 'Filtration, humidity control and fresh-air ventilation for tight modern buildings.',
     href: '/services/indoor-air-quality',
@@ -43,6 +48,7 @@ const services = [
   },
   {
     icon: Droplets,
+    image: images.serviceWaterHeaters,
     title: 'Water Heaters',
     body: 'Tank, tankless, hybrid heat-pump and commercial units.',
     href: '/services/water-heaters',
@@ -101,10 +107,19 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Media slot — real photography drops in here. */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-cloud shadow-[0_24px_60px_rgb(11_27_43_/_0.14)] lg:aspect-[4/3]">
-              <div className="dot-grid" />
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy/18 to-transparent" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-cloud shadow-[0_24px_60px_rgb(11_27_43_/_0.14)]">
+              <Image
+                src={images.heroHome.src}
+                alt={images.heroHome.alt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+              <div
+                className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy/25 to-transparent"
+                aria-hidden
+              />
             </div>
           </div>
 
@@ -146,7 +161,17 @@ export default function HomePage() {
                     className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden bg-cloud">
-                      <div className="dot-grid opacity-70" />
+                      <Image
+                        src={s.image.src}
+                        alt={s.image.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                      <div
+                        className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent"
+                        aria-hidden
+                      />
                       <span className="absolute left-4 top-4 inline-flex size-11 items-center justify-center rounded-lg bg-background/96 text-action shadow-[0_1px_2px_rgb(11_27_43_/_0.06)]">
                         <Icon className="size-5" aria-hidden strokeWidth={1.75} />
                       </span>

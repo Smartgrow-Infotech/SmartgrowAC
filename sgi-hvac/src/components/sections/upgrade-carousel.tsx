@@ -1,7 +1,10 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+
+import { images } from '@/content/images'
 
 import {
   Carousel,
@@ -24,31 +27,37 @@ const upgrades = [
     title: 'Ductless Mini-Splits',
     body: 'Heating and cooling without ductwork. The answer for older LA and Philadelphia homes, additions, and any room the existing system never reached.',
     href: '/hvac-systems/ductless-mini-splits',
+    image: images.upgradeDuctless,
   },
   {
     title: 'Heat Pumps',
     body: 'One system for both seasons. Cold-climate models hold full output to 5°F, and federal 25C credits still apply.',
     href: '/hvac-systems/heat-pumps',
+    image: images.upgradeHeatPump,
   },
   {
     title: 'Smart Zoning',
     body: 'Different temperatures upstairs and down without running two systems. The fix for two-story homes that fight their thermostat.',
     href: '/hvac-systems/zoning-systems',
+    image: images.upgradeZoning,
   },
   {
     title: 'Whole-Home Dehumidification',
     body: 'The real fix for Houston, Miami and Atlanta summers. Your AC cools; it was never designed to dry.',
     href: '/services/indoor-air-quality/dehumidifiers',
+    image: images.upgradeDehumidification,
   },
   {
     title: 'High-Efficiency Filtration',
     body: 'MERV 13 and above, sized so it does not choke your blower. Wildfire smoke, pollen, and construction dust.',
     href: '/services/indoor-air-quality/air-purifiers',
+    image: images.upgradeFiltration,
   },
   {
     title: 'Smart Thermostats',
     body: 'Ecobee and Honeywell, installed and actually paired right — including with two-stage and ductless equipment.',
     href: '/hvac-systems/smart-thermostats',
+    image: images.upgradeThermostat,
   },
 ]
 
@@ -65,10 +74,14 @@ export function UpgradeCarousel() {
               href={u.href}
               className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
             >
-              {/* Photo slot — a real image drops in here. Until then the brand
-                  dot grid on Cloud carries it rather than a grey box. */}
               <div className="relative aspect-[16/10] overflow-hidden bg-cloud">
-                <div className="dot-grid opacity-70" />
+                <Image
+                  src={u.image.src}
+                  alt={u.image.alt}
+                  fill
+                  sizes="(max-width: 640px) 84vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
               </div>
 
               <div className="relative flex flex-1 flex-col gap-2.5 bg-navy p-6 text-white">

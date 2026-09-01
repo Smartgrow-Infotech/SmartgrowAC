@@ -9,20 +9,28 @@
 export type Plan = {
   id: string
   name: string
+  /** Headline figure, e.g. "$189" or "Custom". */
   price: string
-  cadence: string
+  /** Billing unit appended directly to the price, e.g. "/yr". Empty for custom. */
+  unit: string
+  /** What you get, rendered after a separator. */
+  note: string
   badge?: string
   summary: string
   features: string[]
   cta: { label: string; href: string }
 }
 
+/** "$189/yr · 1 annual visit" — and "Custom · Priced per building". */
+export const priceLine = (p: Plan) => `${p.price}${p.unit} · ${p.note}`
+
 export const plans: Plan[] = [
   {
     id: 'essential',
     name: 'Essential',
     price: '$189',
-    cadence: '/yr · 1 annual visit',
+    unit: '/yr',
+    note: '1 annual visit',
     summary:
       'One full system tune-up per year. Right for single-system homes in mild climates where one seasonal check is enough.',
     features: [
@@ -38,7 +46,8 @@ export const plans: Plan[] = [
     id: 'complete',
     name: 'Complete',
     price: '$259',
-    cadence: '/yr · 2 visits',
+    unit: '/yr',
+    note: '2 visits',
     badge: 'Most popular',
     summary:
       'Pre-season cooling tune-up plus pre-season heating tune-up. The right choice in any metro with a real winter and a real summer.',
@@ -55,7 +64,8 @@ export const plans: Plan[] = [
     id: 'facility',
     name: 'Facility',
     price: 'Custom',
-    cadence: 'Priced per building',
+    unit: '',
+    note: 'Priced per building',
     summary:
       'Multi-system, rooftop, PTAC and multi-site facility contracts. Priced on equipment count, visit frequency and response tier.',
     features: [
@@ -65,6 +75,9 @@ export const plans: Plan[] = [
       'Quarterly, semi-annual or annual cadence',
       'Defined response SLAs in writing',
     ],
-    cta: { label: 'Talk to our commercial team', href: '/commercial/national-accounts' },
+    cta: {
+      label: 'Talk to our commercial team',
+      href: '/commercial/national-accounts',
+    },
   },
 ]

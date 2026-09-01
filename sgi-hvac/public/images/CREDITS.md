@@ -1,0 +1,30 @@
+# Image credits
+
+All photography sourced from [Unsplash](https://unsplash.com) under the
+[Unsplash License](https://unsplash.com/license), which permits free commercial
+use with or without attribution.
+
+- **heroHome** — A modern home exterior with an outdoor heat-pump unit installed alongside it
+  Unsplash `photo-1776860155275-eee24bfb1dee` · https://images.unsplash.com/photo-1776860155275-eee24bfb1dee
+- **heroRooftop** — Two technicians working on rooftop mechanical equipment
+  Unsplash `photo-1642749776312-aa42ce20c9f5` · https://images.unsplash.com/photo-1642749776312-aa42ce20c9f5
+- **serviceAc** — A wall-mounted air-conditioning unit on a brick exterior
+  Unsplash `photo-1718203862467-c33159fdc504` · https://images.unsplash.com/photo-1718203862467-c33159fdc504
+- **serviceHeating** — Two hydronic radiators against a clean interior wall
+  Unsplash `photo-1744063909793-8a1e85ace349` · https://images.unsplash.com/photo-1744063909793-8a1e85ace349
+- **serviceIaq** — An air-handling unit suspended from a ceiling structure
+  Unsplash `photo-1759646827242-cf09e30709aa` · https://images.unsplash.com/photo-1759646827242-cf09e30709aa
+- **serviceWaterHeaters** — Pipework and mechanical equipment installed on a wall
+  Unsplash `photo-1751486289950-5c4898a4c773` · https://images.unsplash.com/photo-1751486289950-5c4898a4c773
+- **upgradeDuctless** — A ductless mini-split indoor head mounted high on an interior wall
+  Unsplash `photo-1757219525975-03b5984bc6e8` · https://images.unsplash.com/photo-1757219525975-03b5984bc6e8
+- **upgradeHeatPump** — Several outdoor heat-pump condenser units side by side
+  Unsplash `photo-1698479603408-1a66a6d9e80f` · https://images.unsplash.com/photo-1698479603408-1a66a6d9e80f
+- **upgradeZoning** — A wall thermostat displaying the current room temperature
+  Unsplash `photo-1619140099965-06d74aaf51fa` · https://images.unsplash.com/photo-1619140099965-06d74aaf51fa
+- **upgradeDehumidification** — Flexible metal ductwork running through a mechanical space
+  Unsplash `photo-1780590105333-11af9647816d` · https://images.unsplash.com/photo-1780590105333-11af9647816d
+- **upgradeFiltration** — A louvered return-air grille on a wall
+  Unsplash `photo-1781431304403-72720232aeb6` · https://images.unsplash.com/photo-1781431304403-72720232aeb6
+- **upgradeThermostat** — A smart thermostat mounted on an interior wall
+  Unsplash `photo-1545259741-2ea3ebf61fa3` · https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3

@@ -1,0 +1,34 @@
+
+> sgi-hvac@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.110:3000
+✓ Ready in 354ms
+✓ Running next.config.ts took 27ms
+
+⚠ Blocked cross-origin request to Next.js dev resource /_next/hmr from "192.168.0.110".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['192.168.0.110'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 1838ms (next.js: 1542ms, application-code: 296ms)
+ GET / 200 in 114ms (next.js: 9ms, application-code: 105ms)
+ GET / 200 in 110ms (next.js: 4ms, application-code: 106ms)
+ GET / 200 in 109ms (next.js: 4ms, application-code: 105ms)
+[browser] Image with src "/images/service-heating.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 103ms (next.js: 4ms, application-code: 99ms)
+ GET / 200 in 106ms (next.js: 4ms, application-code: 103ms)
+ GET / 200 in 102ms (next.js: 3ms, application-code: 98ms)
+[browser] Image with src "/images/service-heating.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 107ms (next.js: 6ms, application-code: 101ms)
+✓ Compiled in 145ms

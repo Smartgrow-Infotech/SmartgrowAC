@@ -308,20 +308,20 @@
 
   /* Radial brand glow used on the dark bands (pricing, brands, footer).
      Same geometry as the reference's red glow, recoloured to Action Blue. */
+  /* Spans the full box via `inset: 0` and uses an explicitly-sized ellipse.
+     A `circle` inside a 70%-wide box is sized by the SHORTER axis, so on narrow
+     viewports it clipped and left a visible vertical seam down the section. */
   .brand-glow::before {
     content: "";
     position: absolute;
-    top: -10%;
-    right: -10%;
-    width: 70%;
-    height: 90%;
+    inset: 0;
     pointer-events: none;
     z-index: 0;
     background: radial-gradient(
-      circle,
-      rgb(0 103 243 / 0.2) 0,
-      rgb(0 103 243 / 0.05) 35%,
-      transparent 65%
+      70% 65% at 82% 8%,
+      rgb(0 103 243 / 0.22) 0%,
+      rgb(0 103 243 / 0.07) 42%,
+      transparent 72%
     );
   }
 
