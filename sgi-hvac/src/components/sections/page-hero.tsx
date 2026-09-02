@@ -79,6 +79,7 @@ export function PageHero({
   badge,
   tone = 'mist',
   variant = 'split',
+  hideActions = false,
   children,
 }: {
   eyebrow: string
@@ -90,6 +91,8 @@ export function PageHero({
   badge?: string
   tone?: Extract<Tone, 'default' | 'mist' | 'frost' | 'sand' | 'cloud'>
   variant?: 'split' | 'compact'
+  /** Suppress the stock CTA pair — used on /contact, where they link to self. */
+  hideActions?: boolean
   children?: React.ReactNode
 }) {
   const toneClass = {
@@ -132,17 +135,19 @@ export function PageHero({
               </p>
             )}
 
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <Button asChild size="lg">
-                <Link href="/contact">Schedule Service</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <a href={site.phoneHref}>
-                  <Phone className="size-4" aria-hidden />
-                  Call {site.phone}
-                </a>
-              </Button>
-            </div>
+            {!hideActions && (
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <Button asChild size="lg">
+                  <Link href="/contact">Schedule Service</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a href={site.phoneHref}>
+                    <Phone className="size-4" aria-hidden />
+                    Call {site.phone}
+                  </a>
+                </Button>
+              </div>
+            )}
 
             {children}
           </div>

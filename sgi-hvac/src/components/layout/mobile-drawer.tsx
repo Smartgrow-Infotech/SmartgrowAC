@@ -94,11 +94,11 @@ export function MobileDrawer() {
             {site.phone}
           </a>
           <Link
-            href="/financing"
+            href="/maintenance-plan"
             onClick={close}
             className="mt-2 inline-block text-sm font-medium text-action underline-offset-4 hover:underline"
           >
-            Financing options
+            Maintenance plans
           </Link>
           <Button asChild className="mt-4 w-full" size="lg">
             <Link href="/contact" onClick={close}>

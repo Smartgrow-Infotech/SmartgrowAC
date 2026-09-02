@@ -24,9 +24,13 @@ use with or without attribution.
   Unsplash `photo-1698479603408-1a66a6d9e80f` · https://images.unsplash.com/photo-1698479603408-1a66a6d9e80f
 - **upgradeZoning** — A wall thermostat displaying the current room temperature
   Unsplash `photo-1619140099965-06d74aaf51fa` · https://images.unsplash.com/photo-1619140099965-06d74aaf51fa
-- **upgradeDehumidification** — Flexible metal ductwork running through a mechanical space
-  Unsplash `photo-1780590105333-11af9647816d` · https://images.unsplash.com/photo-1780590105333-11af9647816d
+- **upgradeDehumidification** — Clean flexible ventilation ducts running below a ceiling
+  Unsplash `photo-1786840671711-bdabee8634cf` · https://images.unsplash.com/photo-1786840671711-bdabee8634cf
 - **upgradeFiltration** — A louvered return-air grille on a wall
   Unsplash `photo-1781431304403-72720232aeb6` · https://images.unsplash.com/photo-1781431304403-72720232aeb6
 - **upgradeThermostat** — A smart thermostat mounted on an interior wall
   Unsplash `photo-1545259741-2ea3ebf61fa3` · https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3
+- **commercialRooftop** — A row of large commercial air-conditioning units outside a building
+  Unsplash `photo-1681042803902-f79c240d8f03` · https://images.unsplash.com/photo-1681042803902-f79c240d8f03
+- **blogHumidity** — Condensation beaded across an interior window pane
+  Unsplash `photo-1522841147685-ec3230fd52f9` · https://images.unsplash.com/photo-1522841147685-ec3230fd52f9

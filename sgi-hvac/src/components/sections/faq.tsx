@@ -108,7 +108,9 @@ export function FinalCta({
 }: {
   title: string
   lead?: string
-  primary?: { label: string; href: string }
+  /** `null` drops the form CTA and promotes the phone — used on /emergency-hvac,
+   *  where telling someone in a crisis to fill in a form is the wrong advice. */
+  primary?: { label: string; href: string } | null
 }) {
   return (
     <Section tone="gradient" id="cta" className="overflow-hidden">
@@ -121,15 +123,21 @@ export function FinalCta({
           {lead && <p className="mt-3.5 text-lead text-white/85">{lead}</p>}
 
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link
-              href={primary.href}
-              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-white px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
-            >
-              {primary.label}
-            </Link>
+            {primary && (
+              <Link
+                href={primary.href}
+                className="inline-flex min-h-11 items-center justify-center rounded-lg bg-white px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                {primary.label}
+              </Link>
+            )}
             <a
               href={site.phoneHref}
-              className="inline-flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-white/55 px-6 text-[15px] font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
+              className={
+                primary
+                  ? 'inline-flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-white/55 px-6 text-[15px] font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-navy'
+                  : 'inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-7 text-[17px] font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5'
+              }
             >
               Call {site.phone}
             </a>

@@ -101,10 +101,15 @@ export const images = {
     alt: 'A wall thermostat displaying the current room temperature',
     ...w1610,
   },
+  // Replaced photo-1780590105333-11af9647816d here: it was a dark, dirty flex
+  // duct hanging loose in a crawlspace. Correct subject, but it read as
+  // neglect — the opposite of what a comfort-upgrade card should signal.
+  // (Keep comments OUTSIDE the object literal: scripts/fetch-images.mjs parses
+  // this file with a regex that expects src/unsplashId/alt to be adjacent.)
   upgradeDehumidification: {
     src: '/images/upgrade-dehumidification.webp',
-    unsplashId: 'photo-1780590105333-11af9647816d',
-    alt: 'Flexible metal ductwork running through a mechanical space',
+    unsplashId: 'photo-1786840671711-bdabee8634cf',
+    alt: 'Clean flexible ventilation ducts running below a ceiling',
     ...w1610,
   },
   upgradeFiltration: {
@@ -118,6 +123,24 @@ export const images = {
     unsplashId: 'photo-1545259741-2ea3ebf61fa3',
     alt: 'A smart thermostat mounted on an interior wall',
     ...w1610,
+  },
+
+  // ── Commercial ─────────────────────────────────────────────────────────
+  /** Packaged rooftop units — the right image for facilities and multi-site. */
+  commercialRooftop: {
+    src: '/images/commercial-rooftop.webp',
+    unsplashId: 'photo-1681042803902-f79c240d8f03',
+    alt: 'A row of large commercial air-conditioning units outside a building',
+    ...w43,
+  },
+
+  // ── Editorial ──────────────────────────────────────────────────────────
+  /** Condensation on interior glass — the visible symptom of high humidity. */
+  blogHumidity: {
+    src: '/images/blog-humidity.webp',
+    unsplashId: 'photo-1522841147685-ec3230fd52f9',
+    alt: 'Condensation beaded across an interior window pane',
+    ...w43,
   },
 } as const satisfies Record<string, SiteImage>
 

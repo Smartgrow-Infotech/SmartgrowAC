@@ -286,15 +286,13 @@ export const navSections: NavSection[] = [
         links: [
           { label: 'Maintenance Plan', href: '/maintenance-plan' },
           { label: 'Emergency HVAC', href: '/emergency-hvac' },
-          { label: 'Financing', href: '/financing' },
+          { label: 'Commercial Contracts', href: '/commercial/maintenance-contracts' },
         ],
       },
       {
         heading: 'Company',
         links: [
           { label: 'About', href: '/about' },
-          { label: 'Reviews', href: '/reviews' },
-          { label: 'Careers', href: '/careers' },
           { label: 'Blog', href: '/blog' },
           { label: 'Contact', href: '/contact' },
         ],
@@ -347,11 +345,9 @@ export const footerColumns: NavColumn[] = [
     heading: 'Company',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Reviews', href: '/reviews' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'Financing', href: '/financing' },
       { label: 'Blog', href: '/blog' },
       { label: 'Contact', href: '/contact' },
+      { label: 'Emergency HVAC', href: '/emergency-hvac' },
     ],
   },
 ]
