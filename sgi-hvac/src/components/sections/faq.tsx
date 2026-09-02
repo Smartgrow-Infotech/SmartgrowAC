@@ -2,8 +2,9 @@ import Link from 'next/link'
 import type { FAQPage, WithContext } from 'schema-dts'
 
 import { site } from '@/config/site'
-import { Container, Section } from './section'
+import { Container, Section, type Tone } from './section'
 import { JsonLd } from '@/components/seo/json-ld'
+import { DotGrid } from '@/components/brand'
 import {
   Accordion,
   AccordionContent,
@@ -31,7 +32,7 @@ export function FaqSection({
   eyebrow?: string
   title?: string
   lead?: string
-  tone?: 'default' | 'cloud'
+  tone?: Tone
 }) {
   const schema: WithContext<FAQPage> = {
     '@context': 'https://schema.org',
@@ -93,7 +94,13 @@ export function FaqSection({
   )
 }
 
-/** Final CTA band — closes nearly every page. */
+/**
+ * Final CTA band — closes nearly every page.
+ *
+ * Gradient rather than another grey panel, so the page ends on the brand's
+ * blue instead of fading out. Centred copy sits over the gradient's mid-tone
+ * (~#0A3FA0), where white measures 9.4:1.
+ */
 export function FinalCta({
   title,
   lead,
@@ -104,23 +111,25 @@ export function FinalCta({
   primary?: { label: string; href: string }
 }) {
   return (
-    <Section tone="cloud">
-      <Container>
+    <Section tone="gradient" id="cta" className="overflow-hidden">
+      <DotGrid onDark className="opacity-70" />
+      <Container className="relative z-10">
         <div className="mx-auto max-w-[46ch] text-center">
-          <h2 className="text-section font-bold text-balance">{title}</h2>
-          {lead && (
-            <p className="mt-3.5 text-lead text-muted-foreground">{lead}</p>
-          )}
+          <h2 className="text-section font-bold text-balance text-white">
+            {title}
+          </h2>
+          {lead && <p className="mt-3.5 text-lead text-white/85">{lead}</p>}
+
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link
               href={primary.href}
-              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-action px-6 text-[15px] font-semibold text-white transition-colors hover:bg-action-hover"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-white px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
             >
               {primary.label}
             </Link>
             <a
               href={site.phoneHref}
-              className="inline-flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-[#d4d6db] px-6 text-[15px] font-semibold text-foreground transition-colors hover:border-foreground hover:bg-background"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-white/55 px-6 text-[15px] font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
             >
               Call {site.phone}
             </a>

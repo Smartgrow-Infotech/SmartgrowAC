@@ -144,7 +144,7 @@ export default function HomePage() {
       </section>
 
       {/* ── What we service ──────────────────────────────────────────────── */}
-      <Section tone="cloud" id="services">
+      <Section tone="mist" id="services">
         <Container>
           <SectionHeader
             eyebrow="What we service"
@@ -266,7 +266,7 @@ export default function HomePage() {
       </Section>
 
       {/* ── Comfort upgrades ─────────────────────────────────────────────── */}
-      <Section size="lg" id="upgrades">
+      <Section tone="sand" size="lg" id="upgrades">
         <Container>
           <SectionHeader
             eyebrow="Comfort upgrades"
@@ -278,7 +278,7 @@ export default function HomePage() {
       </Section>
 
       {/* ── Brands ───────────────────────────────────────────────────────── */}
-      <Section tone="navy" glow id="brands">
+      <Section tone="abyss" glow id="brands">
         <Container>
           <SectionHeader
             eyebrow="Equipment we install & service"
@@ -305,6 +305,7 @@ export default function HomePage() {
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
       <FaqSection
+        tone="mist"
         faqs={homeFaqs}
         title="Straight answers to the six questions we get most."
       />

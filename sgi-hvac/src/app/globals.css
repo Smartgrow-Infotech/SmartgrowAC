@@ -46,6 +46,17 @@
   --color-action-hover: #0052c4;
   --color-success: #1e8a54;
 
+  /* ── Surface ladder ───────────────────────────────────────────────────
+     Every tint below is the brand's OWN hue dropped onto white, so the page
+     can alternate through several backgrounds without introducing a colour
+     that isn't in the palette. Ink (#212121) clears 13:1 on all of them and
+     Slate (#50576B) clears 6:1, so body copy is safe on every surface. */
+  --color-mist: #eff4ff;   /* Action Blue, ~4%  — the default cool surface */
+  --color-sky: #e3ecfe;    /* Action Blue, ~11% — stronger blue band       */
+  --color-frost: #edf6fa;  /* Teal, ~6%         — coverage / geography     */
+  --color-sand: #fdf6ee;   /* Orange, ~7%       — one warm band for relief */
+  --color-abyss: #061530;  /* below Navy        — footer, deepest surface  */
+
   /* typography — sizes are the brand's published values, extended where the
      brand page stopped. Tracking is in px at the brand's stated sizes. */
   --font-display: var(--font-display), "Inter", system-ui, sans-serif;

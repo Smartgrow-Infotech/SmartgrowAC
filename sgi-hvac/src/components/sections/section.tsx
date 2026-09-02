@@ -21,13 +21,41 @@ export function Container({
   )
 }
 
-type Tone = 'default' | 'cloud' | 'navy'
+/**
+ * Section background tones.
+ *
+ * The page alternates through these so it never reads as one flat white
+ * document. Every light tint is a brand hue dropped onto white, so nothing
+ * here introduces a colour that isn't already in the palette. See the rhythm
+ * applied in app/page.tsx.
+ */
+export type Tone =
+  | 'default' // white
+  | 'cloud' // neutral grey
+  | 'mist' // soft Action Blue
+  | 'sky' // stronger Action Blue
+  | 'frost' // Teal tint
+  | 'sand' // Orange tint — used sparingly, for warmth
+  | 'navy' // dark blue
+  | 'abyss' // deepest blue
+  | 'gradient' // Action Blue -> Navy, for the closing CTA
 
 const toneClass: Record<Tone, string> = {
   default: 'bg-background',
   cloud: 'bg-cloud',
+  mist: 'bg-mist',
+  sky: 'bg-sky',
+  frost: 'bg-frost',
+  sand: 'bg-sand',
   navy: 'bg-navy text-white',
+  abyss: 'bg-abyss text-white',
+  gradient:
+    'bg-[linear-gradient(135deg,#0067f3_0%,#0a3fa0_46%,#0a1b3a_100%)] text-white',
 }
+
+/** True when a tone needs light text and on-dark component variants. */
+export const isDarkTone = (t: Tone) =>
+  t === 'navy' || t === 'abyss' || t === 'gradient'
 
 export function Section({
   children,

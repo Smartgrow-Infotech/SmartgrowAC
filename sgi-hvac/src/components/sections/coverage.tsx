@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { site } from '@/config/site'
 import { metros } from '@/content/metros'
-import { Container, Section, SectionHeader } from './section'
+import { Container, Section, SectionHeader, type Tone } from './section'
 
 /**
  * Full coverage grid — the homepage and /service-areas hub.
@@ -12,7 +12,7 @@ import { Container, Section, SectionHeader } from './section'
  * cities" is worth nothing and "humidity is the real problem in Houston" is
  * worth reading.
  */
-export function CoverageGrid({ tone = 'cloud' }: { tone?: 'default' | 'cloud' }) {
+export function CoverageGrid({ tone = 'frost' }: { tone?: Tone }) {
   return (
     <Section tone={tone} id="coverage">
       <Container>
@@ -73,11 +73,13 @@ export function CoverageGrid({ tone = 'cloud' }: { tone?: 'default' | 'cloud' })
  */
 export function CoverageStrip({
   title = 'Service across all 10 metros.',
+  tone = 'cloud',
 }: {
   title?: string
+  tone?: Tone
 }) {
   return (
-    <Section tone="cloud" size="sm">
+    <Section tone={tone} size="sm">
       <Container>
         <h2 className="text-sub font-bold">{title}</h2>
         <p className="mt-2 text-sm text-muted-foreground">

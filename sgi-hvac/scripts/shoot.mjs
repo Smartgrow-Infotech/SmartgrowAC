@@ -19,7 +19,7 @@ const OUT = path.resolve(import.meta.dirname, '../screenshots')
 const routes = process.argv.slice(2).length ? process.argv.slice(2) : ['/']
 
 /** Sections worth capturing on their own, by element id. */
-const SECTIONS = ['hero', 'services', 'why', 'coverage', 'pricing', 'upgrades', 'brands', 'faq']
+const SECTIONS = ['hero', 'services', 'why', 'coverage', 'pricing', 'upgrades', 'brands', 'faq', 'cta']
 
 const VIEWPORTS = [
   { name: 'desktop', width: 1440, height: 900 },
