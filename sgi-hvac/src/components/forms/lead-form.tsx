@@ -183,6 +183,7 @@ export function ServiceForm({
     <form
       noValidate
       className={cn('flex flex-col gap-5', className)}
+      // eslint-disable-next-line react-hooks/refs -- startedAt is read only on submit (event handler), not during render
       onSubmit={handleSubmit(async (values) => {
         setFormError(null)
         const res = await submitLead({ ...values, startedAt: startedAt.current })
@@ -380,6 +381,7 @@ export function AccountsForm({ className }: { className?: string }) {
     <form
       noValidate
       className={cn('flex flex-col gap-5', className)}
+      // eslint-disable-next-line react-hooks/refs -- startedAt is read only on submit (event handler), not during render
       onSubmit={handleSubmit(async (values) => {
         setFormError(null)
         const res = await submitLead({ ...values, startedAt: startedAt.current })
