@@ -31,9 +31,9 @@ export const site = {
   phone: '(888) 555-0142',
   phoneHref: 'tel:+18885550142',
 
-  email: 'service@vgbtechnologies.com', // TODO
-  accountsEmail: 'accounts@vgbtechnologies.com', // TODO
-  careersEmail: 'careers@vgbtechnologies.com', // TODO
+  email: 'contact@vgbtechnologies.in',
+  accountsEmail: 'contact@vgbtechnologies.in',
+  careersEmail: 'contact@vgbtechnologies.in',
 
   // TODO REPLACE — invented address
   address: {
