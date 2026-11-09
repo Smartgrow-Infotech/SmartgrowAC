@@ -17,8 +17,8 @@ export const site = {
   description:
     'Nationwide HVAC repair, replacement and maintenance for homes and multi-site facilities. Licensed local technicians in 10 major U.S. metros. Dispatch answered 24/7.',
 
-  // TODO confirm production domain — affects canonical URLs and schema @id
-  url: 'https://hvac.vgbtechnologies.com',
+  // Production domain — affects canonical URLs and schema @id
+  url: 'https://vgbtechnologies.in',
 
   founded: 2009, // TODO verify
   get yearsInService() {
