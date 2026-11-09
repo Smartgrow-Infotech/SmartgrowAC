@@ -121,7 +121,6 @@ export default async function MetroPage({
           { label: m.name },
         ]}
         image={m.isHeadquarters ? images.heroHome : images.heroTechnician}
-        tone="frost"
       />
 
       {/* AEO intro — the dense, quotable paragraph */}
@@ -153,7 +152,7 @@ export default async function MetroPage({
               <li key={s.href}>
                 <Link
                   href={s.href}
-                  className="inline-flex min-h-10 items-center rounded-full border border-[#d4d6db] bg-background px-4 text-sm font-medium transition-colors hover:border-action hover:text-action"
+                  className="inline-flex min-h-10 items-center rounded-full border border-input bg-background px-4 text-sm font-medium transition-colors hover:border-action hover:text-action"
                 >
                   {s.label}
                 </Link>
@@ -209,7 +208,7 @@ export default async function MetroPage({
               </p>
               <a
                 href={site.phoneHref}
-                className="mt-6 inline-flex min-h-11 items-center rounded-lg bg-white px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
+                className="mt-6 inline-flex min-h-11 items-center rounded-lg bg-gold px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
               >
                 Call {site.phone}
               </a>

@@ -60,7 +60,6 @@ export default function ContactPage() {
         lead="Dispatch answered 24/7. Web forms and email get a callback the same business day — from a dispatcher, not an answering service reading a script."
         crumbs={[{ label: 'Contact' }]}
         variant="compact"
-        tone="cloud"
         hideActions
       >
         <div className="mt-7">
@@ -72,7 +71,7 @@ export default function ContactPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-            <div>
+            <div className="min-w-0">
               <SectionHeader
                 eyebrow="How to reach us"
                 title="Three ways in."

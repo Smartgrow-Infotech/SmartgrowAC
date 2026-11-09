@@ -30,7 +30,7 @@ export type MetroContent = {
 export const metroContent: Record<string, MetroContent> = {
   'dallas-fort-worth': {
     intro:
-      'SmartgrowInfotech has served the Dallas–Fort Worth metroplex since 2009, and DFW remains our headquarters and largest market. We install and service air conditioning, heat pumps, furnaces, ductless mini-splits, water heaters and indoor air quality systems for single-family homes, multifamily properties and commercial facilities across Dallas, Fort Worth, Plano, Arlington, Irving, Frisco, Garland and Richardson. Our technicians are licensed in Texas and dispatch is answered 24 hours a day.',
+      'VGB Technologies has served the Dallas–Fort Worth metroplex since 2009, and DFW remains our headquarters and largest market. We install and service air conditioning, heat pumps, furnaces, ductless mini-splits, water heaters and indoor air quality systems for single-family homes, multifamily properties and commercial facilities across Dallas, Fort Worth, Plano, Arlington, Irving, Frisco, Garland and Richardson. Our technicians are licensed in Texas and dispatch is answered 24 hours a day.',
     whyTitle: 'Eight months of cooling, and an air handler in a 140°F attic.',
     why: [
       'DFW runs its air conditioning roughly eight months a year, and that duty cycle defines the work here. A system that would last eighteen years in Philadelphia sees its compressor work twice as hard, and we see failures cluster around year ten to twelve rather than fifteen.',
@@ -88,7 +88,7 @@ export const metroContent: Record<string, MetroContent> = {
 
   phoenix: {
     intro:
-      'SmartgrowInfotech serves the Phoenix metropolitan area with air conditioning repair, replacement and maintenance, heat pump service, water heaters and indoor air quality systems. We work across Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale and Peoria, on both residential packaged units and commercial rooftop systems. Our technicians are licensed in Arizona and dispatch is answered 24 hours a day — with summer calls triaged by heat-exposure risk rather than strictly in order.',
+      'VGB Technologies serves the Phoenix metropolitan area with air conditioning repair, replacement and maintenance, heat pump service, water heaters and indoor air quality systems. We work across Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale and Peoria, on both residential packaged units and commercial rooftop systems. Our technicians are licensed in Arizona and dispatch is answered 24 hours a day — with summer calls triaged by heat-exposure risk rather than strictly in order.',
     whyTitle: 'The hardest cooling duty cycle in the country.',
     why: [
       'Phoenix is the most demanding cooling market in the United States and the equipment reflects it. A system that runs 2,000 hours a year in Atlanta runs closer to 3,500 here, against 115°F ambient temperatures that push condensers to the edge of their design envelope. The practical consequence: we see ten-to-twelve-year replacement cycles where other markets see fifteen to eighteen, and refrigerant loss is a leading failure mode rather than an occasional one.',
@@ -146,7 +146,7 @@ export const metroContent: Record<string, MetroContent> = {
 
   houston: {
     intro:
-      'SmartgrowInfotech serves greater Houston with air conditioning, heating, indoor air quality and water heater service across Houston, Katy, Sugar Land, The Woodlands, Pearland, Pasadena, Cypress and Spring. We work single-family, multifamily and light commercial properties, are licensed in Texas, and answer dispatch 24 hours a day. In this market most of our work is humidity control as much as cooling.',
+      'VGB Technologies serves greater Houston with air conditioning, heating, indoor air quality and water heater service across Houston, Katy, Sugar Land, The Woodlands, Pearland, Pasadena, Cypress and Spring. We work single-family, multifamily and light commercial properties, are licensed in Texas, and answer dispatch 24 hours a day. In this market most of our work is humidity control as much as cooling.',
     whyTitle: 'Humidity is the problem here. Cooling is just how you get at it.',
     why: [
       'Houston runs 80% relative humidity for months at a time, and that changes what a working system looks like. Your air conditioner removes moisture only as a side effect of running long enough to condense it. A correctly sized system does that; an oversized one satisfies the thermostat in eight minutes, shuts off, and leaves the house cool and clammy at 60% indoor humidity.',
@@ -200,7 +200,7 @@ export const metroContent: Record<string, MetroContent> = {
 
   'los-angeles': {
     intro:
-      'SmartgrowInfotech serves Los Angeles with ductless mini-split installation, air conditioning, heating, filtration and water heater service across Los Angeles, Pasadena, Glendale, Burbank, Santa Monica, Long Beach, Torrance and Inglewood. Much of our LA work is retrofitting cooling into older homes that were never built with ductwork, and our technicians are licensed in California.',
+      'VGB Technologies serves Los Angeles with ductless mini-split installation, air conditioning, heating, filtration and water heater service across Los Angeles, Pasadena, Glendale, Burbank, Santa Monica, Long Beach, Torrance and Inglewood. Much of our LA work is retrofitting cooling into older homes that were never built with ductwork, and our technicians are licensed in California.',
     whyTitle: 'Beautiful old housing stock with nowhere to put a duct.',
     why: [
       'A large share of Los Angeles housing predates central air entirely — bungalows, Spanish revival, mid-century homes with plaster walls, no attic clearance and no chase to run a trunk line through. The textbook answer, running ductwork, means tearing into finished walls and losing closet space. That is why ductless is the right answer here far more often than in any other market we serve.',
@@ -254,7 +254,7 @@ export const metroContent: Record<string, MetroContent> = {
 
   denver: {
     intro:
-      'SmartgrowInfotech serves the Denver metro with heating, air conditioning, humidification and water heater service across Denver, Aurora, Lakewood, Littleton, Arvada, Westminster, Centennial and Thornton. Our technicians are licensed in Colorado. Altitude changes how combustion equipment has to be specified here, and dry winter air makes humidification a comfort issue rather than a luxury.',
+      'VGB Technologies serves the Denver metro with heating, air conditioning, humidification and water heater service across Denver, Aurora, Lakewood, Littleton, Arvada, Westminster, Centennial and Thornton. Our technicians are licensed in Colorado. Altitude changes how combustion equipment has to be specified here, and dry winter air makes humidification a comfort issue rather than a luxury.',
     whyTitle: 'Altitude changes the equipment. Dry air changes the comfort.',
     why: [
       'Above roughly 2,000 feet, air is thinner and combustion equipment has to be derated accordingly — Denver sits well past that. A furnace specified as if it were at sea level will not deliver its rated output here, and installers who ignore it leave customers with a system that never quite keeps up on the coldest nights. Getting the derate right is a basic competence question in this market and it is one of the first things we check on an existing system.',
@@ -308,7 +308,7 @@ export const metroContent: Record<string, MetroContent> = {
 
   chicago: {
     intro:
-      'SmartgrowInfotech serves Chicagoland with boiler, furnace, heat pump and air conditioning service across Chicago, Evanston, Oak Park, Naperville, Schaumburg, Cicero, Berwyn and Skokie. Our technicians are licensed in Illinois. A large share of the housing stock here still runs on steam or hydronic heat, and servicing it well is a different skill set from forced air.',
+      'VGB Technologies serves Chicagoland with boiler, furnace, heat pump and air conditioning service across Chicago, Evanston, Oak Park, Naperville, Schaumburg, Cicero, Berwyn and Skokie. Our technicians are licensed in Illinois. A large share of the housing stock here still runs on steam or hydronic heat, and servicing it well is a different skill set from forced air.',
     whyTitle: 'Steam and hydronic heat, in buildings a century old.',
     why: [
       'Chicago has one of the largest surviving stocks of steam and hot-water heating in the country, concentrated in the two-flats, three-flats and pre-war apartment buildings that define whole neighbourhoods. These systems are not obsolete — a sound cast-iron boiler with good piping can run another two decades — but they fail differently from forced air, and diagnosing banging radiators or uneven heat across floors is its own discipline.',
@@ -362,7 +362,7 @@ export const metroContent: Record<string, MetroContent> = {
 
   philadelphia: {
     intro:
-      'SmartgrowInfotech serves the Philadelphia area with heating, air conditioning, ductless retrofits and water heater service across Philadelphia, Bala Cynwyd, Cherry Hill, Upper Darby, King of Prussia, Conshohocken and Media. Our technicians are licensed in Pennsylvania. Rowhome geometry and oil-to-gas conversions define much of the work in this market.',
+      'VGB Technologies serves the Philadelphia area with heating, air conditioning, ductless retrofits and water heater service across Philadelphia, Bala Cynwyd, Cherry Hill, Upper Darby, King of Prussia, Conshohocken and Media. Our technicians are licensed in Pennsylvania. Rowhome geometry and oil-to-gas conversions define much of the work in this market.',
     whyTitle: 'Rowhomes, oil conversions, and no room for a duct.',
     why: [
       'The Philadelphia rowhome is a specific engineering problem: narrow, deep, three storeys, party walls on both sides, and no chase to run ductwork through. Retrofitting conventional central air means losing closet space on every floor. Ductless solves it cleanly, and high-velocity small-duct handles the cases where visible indoor heads are unacceptable in a period interior.',
@@ -416,7 +416,7 @@ export const metroContent: Record<string, MetroContent> = {
 
   'new-york': {
     intro:
-      'SmartgrowInfotech serves the New York metro with PTAC, water-source heat pump, ductless and water heater service across Manhattan, Brooklyn, Queens, the Bronx, Staten Island, Jersey City, Hoboken and Yonkers. We work high-rise condo and co-op buildings, pre-war walk-ups and light commercial, and coordinate directly with building management on access and approvals.',
+      'VGB Technologies serves the New York metro with PTAC, water-source heat pump, ductless and water heater service across Manhattan, Brooklyn, Queens, the Bronx, Staten Island, Jersey City, Hoboken and Yonkers. We work high-rise condo and co-op buildings, pre-war walk-ups and light commercial, and coordinate directly with building management on access and approvals.',
     whyTitle: 'The equipment is easy. The building is the project.',
     why: [
       'In most markets an HVAC job is a technical problem. In New York it is a logistics problem wearing a technical problem as a disguise. Freight elevator booking, certificates of insurance naming the right entities, board approval for anything touching a façade, restricted work windows, and a super who needs notice — all of that has to be solved before a technician touches equipment.',
@@ -470,7 +470,7 @@ export const metroContent: Record<string, MetroContent> = {
 
   atlanta: {
     intro:
-      'SmartgrowInfotech serves metro Atlanta with air conditioning, heating, ductwork and indoor air quality service across Atlanta, Marietta, Sandy Springs, Decatur, Alpharetta, Roswell, Smyrna and Dunwoody. Our technicians are licensed in Georgia. Crawlspace ductwork and humidity in both seasons define most of the residential work in this market.',
+      'VGB Technologies serves metro Atlanta with air conditioning, heating, ductwork and indoor air quality service across Atlanta, Marietta, Sandy Springs, Decatur, Alpharetta, Roswell, Smyrna and Dunwoody. Our technicians are licensed in Georgia. Crawlspace ductwork and humidity in both seasons define most of the residential work in this market.',
     whyTitle: 'The ductwork is under the house, and that is the whole story.',
     why: [
       'A large share of Atlanta homes run their ductwork through a vented crawlspace — humid, unconditioned and frequently the real reason a system underperforms. Leaky flexible duct down there pulls damp crawlspace air straight into the return, which costs you capacity, drags humidity up, and in bad cases brings a musty smell with it. Testing and sealing the duct is often a better investment than new equipment, and we will say so even though it is the smaller sale.',
@@ -524,7 +524,7 @@ export const metroContent: Record<string, MetroContent> = {
 
   miami: {
     intro:
-      'SmartgrowInfotech serves South Florida with air conditioning, indoor air quality and water heater service across Miami, Miami Beach, Coral Gables, Hialeah, Aventura, Doral, Kendall and Fort Lauderdale. Our technicians are licensed in Florida. Salt-air corrosion and high-rise condo access are the two factors that shape almost every job in this market.',
+      'VGB Technologies serves South Florida with air conditioning, indoor air quality and water heater service across Miami, Miami Beach, Coral Gables, Hialeah, Aventura, Doral, Kendall and Fort Lauderdale. Our technicians are licensed in Florida. Salt-air corrosion and high-rise condo access are the two factors that shape almost every job in this market.',
     whyTitle: 'Salt air shortens everything, and the building sets the schedule.',
     why: [
       'Coastal South Florida is genuinely corrosive. Salt-laden air attacks condenser coils, fasteners and cabinets, and equipment within a few miles of the water simply does not last as long as the same unit inland. Coil coatings and corrosion-resistant hardware are worth specifying here in a way they are not in Dallas, and rinsing coils is a real maintenance item rather than a cosmetic one.',

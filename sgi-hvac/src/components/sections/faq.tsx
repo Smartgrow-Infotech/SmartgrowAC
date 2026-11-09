@@ -4,7 +4,6 @@ import type { FAQPage, WithContext } from 'schema-dts'
 import { site } from '@/config/site'
 import { Container, Section, type Tone } from './section'
 import { JsonLd } from '@/components/seo/json-ld'
-import { DotGrid } from '@/components/brand'
 import {
   Accordion,
   AccordionContent,
@@ -77,7 +76,7 @@ export function FaqSection({
               <AccordionItem
                 key={f.q}
                 value={`faq-${i}`}
-                className="border-b border-[#d4d6db] first:border-t"
+                className="border-b border-input first:border-t"
               >
                 <AccordionTrigger className="py-6 text-left font-display text-[22px] font-bold leading-tight hover:text-action hover:no-underline lg:text-[26px]">
                   {f.q}
@@ -97,9 +96,8 @@ export function FaqSection({
 /**
  * Final CTA band — closes nearly every page.
  *
- * Gradient rather than another grey panel, so the page ends on the brand's
- * blue instead of fading out. Centred copy sits over the gradient's mid-tone
- * (~#0A3FA0), where white measures 9.4:1.
+ * Solid gold, so the page ends on its strongest colour right before the deep
+ * blue footer. Deep blue on gold measures 9.6:1.
  */
 export function FinalCta({
   title,
@@ -113,20 +111,21 @@ export function FinalCta({
   primary?: { label: string; href: string } | null
 }) {
   return (
-    <Section tone="gradient" id="cta" className="overflow-hidden">
-      <DotGrid onDark className="opacity-70" />
-      <Container className="relative z-10">
-        <div className="mx-auto max-w-[46ch] text-center">
-          <h2 className="text-section font-bold text-balance text-white">
+    <Section tone="gold" id="cta">
+      <Container>
+        <div className="mx-auto max-w-[760px] text-center">
+          <h2 className="text-[clamp(2.25rem,5vw,3.25rem)] font-black leading-[1.04] tracking-[-0.045em] text-balance text-navy">
             {title}
           </h2>
-          {lead && <p className="mt-3.5 text-lead text-white/85">{lead}</p>}
+          {lead && (
+            <p className="mx-auto mt-3.5 max-w-[52ch] text-lead text-navy">{lead}</p>
+          )}
 
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             {primary && (
               <Link
                 href={primary.href}
-                className="inline-flex min-h-11 items-center justify-center rounded-lg bg-white px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg bg-navy px-7 text-[15px] font-semibold text-white transition-colors duration-200 hover:bg-action"
               >
                 {primary.label}
               </Link>
@@ -135,8 +134,8 @@ export function FinalCta({
               href={site.phoneHref}
               className={
                 primary
-                  ? 'inline-flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-white/55 px-6 text-[15px] font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-navy'
-                  : 'inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-7 text-[17px] font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5'
+                  ? 'inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-navy px-7 text-[15px] font-semibold text-navy transition-colors hover:bg-navy hover:text-white'
+                  : 'inline-flex min-h-13 items-center justify-center rounded-lg bg-navy px-8 text-[17px] font-bold text-white transition-colors duration-200 hover:bg-action'
               }
             >
               Call {site.phone}

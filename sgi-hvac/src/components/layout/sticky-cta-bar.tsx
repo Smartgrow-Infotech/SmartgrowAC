@@ -37,7 +37,7 @@ export function StickyCtaBar() {
     <div
       className={cn(
         'fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-border bg-background p-2',
-        'shadow-[0_-4px_16px_rgb(11_27_43_/_0.06)] transition-transform duration-300 lg:hidden',
+        'shadow-[0_-4px_16px_rgb(0_10_141_/_0.06)] transition-transform duration-300 lg:hidden',
         show ? 'translate-y-0' : 'translate-y-full',
       )}
       // hidden from AT when off-screen — the links are all reachable elsewhere

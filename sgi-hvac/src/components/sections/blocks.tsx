@@ -154,7 +154,7 @@ export function ActionCards({
                 <ul role="list" className="mt-4 flex flex-1 flex-col gap-2">
                   {c.features.map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-sm">
-                      <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-success">
+                      <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-action">
                         <Check
                           className="size-2.5 text-white"
                           aria-hidden
@@ -204,7 +204,7 @@ export function PriceBand({
   tone?: Tone
 }) {
   return (
-    <Section tone={tone} glow={tone === 'navy' || tone === 'abyss'}>
+    <Section tone={tone} glow={tone === 'navy'}>
       <Container>
         <SectionHeader eyebrow={eyebrow} title={title} lead={lead} onDark />
         <dl className="mt-9 divide-y divide-white/12 border-y border-white/12">

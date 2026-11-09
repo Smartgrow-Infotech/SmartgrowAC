@@ -68,8 +68,8 @@ function Field({
 
 function Success({ kind }: { kind: 'service' | 'accounts' }) {
   return (
-    <div className="rounded-xl border border-success/25 bg-success/6 p-7 text-center">
-      <CheckCircle2 className="mx-auto size-9 text-success" aria-hidden />
+    <div className="rounded-xl border border-action/25 bg-action/6 p-7 text-center">
+      <CheckCircle2 className="mx-auto size-9 text-action" aria-hidden />
       <p className="mt-4 font-display text-cardtitle font-bold">Request received.</p>
       <p className="mx-auto mt-2 max-w-[46ch] text-[15px] text-muted-foreground">
         {kind === 'service'

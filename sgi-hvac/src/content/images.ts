@@ -38,7 +38,7 @@ export const images = {
   heroHome: {
     src: '/images/hero-home.webp',
     unsplashId: 'photo-1739203469638-d6f54c24a5da',
-    alt: 'Two SmartgrowInfotech service technicians working from a ladder at a residential property',
+    alt: 'Two service technicians working from a ladder at a residential property',
     ...w43,
   },
   /** Portrait of a technician in branded workwear — about, careers, metros. */

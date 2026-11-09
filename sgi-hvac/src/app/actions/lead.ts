@@ -26,9 +26,9 @@ function rows(pairs: [string, string | undefined][]) {
     .filter(([, v]) => v && v.trim().length > 0)
     .map(
       ([k, v]) =>
-        `<tr><td style="padding:6px 16px 6px 0;color:#50576b;font:600 13px system-ui;vertical-align:top;white-space:nowrap">${escape(
+        `<tr><td style="padding:6px 16px 6px 0;color:#3f4585;font:600 13px system-ui;vertical-align:top;white-space:nowrap">${escape(
           k,
-        )}</td><td style="padding:6px 0;color:#212121;font:400 15px system-ui">${escape(
+        )}</td><td style="padding:6px 0;color:#000a8d;font:400 15px system-ui">${escape(
           (v ?? '').replace(/\n/g, '<br>'),
         )}</td></tr>`,
     )
@@ -64,12 +64,12 @@ function render(lead: Lead) {
   return {
     subject: heading,
     html: `<div style="max-width:620px;margin:0 auto;padding:24px;font-family:system-ui,sans-serif">
-  <p style="margin:0 0 4px;font:600 11px system-ui;letter-spacing:.12em;text-transform:uppercase;color:#0067f3">${
+  <p style="margin:0 0 4px;font:600 11px system-ui;letter-spacing:.12em;text-transform:uppercase;color:#0012ff">${
     isService ? 'Service request' : 'National accounts'
   }</p>
-  <h1 style="margin:0 0 20px;font:700 22px system-ui;color:#0a1b3a">${escape(heading)}</h1>
+  <h1 style="margin:0 0 20px;font:700 22px system-ui;color:#000a8d">${escape(heading)}</h1>
   <table style="border-collapse:collapse;width:100%">${body}</table>
-  <p style="margin:24px 0 0;padding-top:16px;border-top:1px solid #e5e7eb;font:400 13px system-ui;color:#50576b">
+  <p style="margin:24px 0 0;padding-top:16px;border-top:1px solid #dfe1f7;font:400 13px system-ui;color:#3f4585">
     Submitted via ${escape(site.url)} · ${new Date().toUTCString()}
   </p>
 </div>`,

@@ -4,7 +4,7 @@ All photography sourced from [Unsplash](https://unsplash.com) under the
 [Unsplash License](https://unsplash.com/license), which permits free commercial
 use with or without attribution.
 
-- **heroHome** — Two SmartgrowInfotech service technicians working from a ladder at a residential property
+- **heroHome** — Two service technicians working from a ladder at a residential property
   Unsplash `photo-1739203469638-d6f54c24a5da` · https://images.unsplash.com/photo-1739203469638-d6f54c24a5da
 - **heroTechnician** — A service technician in uniform outside a building
   Unsplash `photo-1732395805034-e0bf859665e5` · https://images.unsplash.com/photo-1732395805034-e0bf859665e5

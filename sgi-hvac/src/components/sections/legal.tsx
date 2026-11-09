@@ -42,7 +42,6 @@ export function LegalPage({
         lead={lead}
         crumbs={[{ label: title }]}
         variant="compact"
-        tone="cloud"
         hideActions
       >
         <p className="mt-6 font-mono text-[12px] uppercase tracking-[0.12em] text-muted-foreground">
@@ -53,8 +52,8 @@ export function LegalPage({
       <Section>
         <Container>
           <div className="mx-auto max-w-[74ch]">
-            <div className="flex gap-3.5 rounded-xl border border-orange/35 bg-sand p-5">
-              <AlertTriangle className="mt-0.5 size-5 shrink-0 text-orange" aria-hidden />
+            <div className="flex gap-3.5 rounded-xl border border-gold-deep/40 bg-sand p-5">
+              <AlertTriangle className="mt-0.5 size-5 shrink-0 text-gold-deep" aria-hidden />
               <p className="text-[15px] leading-relaxed">
                 <strong className="font-semibold">Draft pending legal review.</strong>{' '}
                 {reviewNote}

@@ -10,15 +10,15 @@
 
 export const site = {
   // ── Identity ──────────────────────────────────────────────────────────
-  name: 'SmartgrowInfotech',
-  legalName: 'SmartgrowInfotech LLC', // TODO verify actual registered entity
-  shortName: 'SGI',
+  name: 'VGB Technologies',
+  legalName: 'VGB Technologies LLC', // TODO verify actual registered entity
+  shortName: 'VGB',
   tagline: 'Nationwide HVAC. Local technicians.',
   description:
     'Nationwide HVAC repair, replacement and maintenance for homes and multi-site facilities. Licensed local technicians in 10 major U.S. metros. Dispatch answered 24/7.',
 
   // TODO confirm production domain — affects canonical URLs and schema @id
-  url: 'https://hvac.smartgrowinfotech.com',
+  url: 'https://hvac.vgbtechnologies.com',
 
   founded: 2009, // TODO verify
   get yearsInService() {
@@ -31,9 +31,9 @@ export const site = {
   phone: '(888) 555-0142',
   phoneHref: 'tel:+18885550142',
 
-  email: 'service@smartgrowinfotech.com', // TODO
-  accountsEmail: 'accounts@smartgrowinfotech.com', // TODO
-  careersEmail: 'careers@smartgrowinfotech.com', // TODO
+  email: 'service@vgbtechnologies.com', // TODO
+  accountsEmail: 'accounts@vgbtechnologies.com', // TODO
+  careersEmail: 'careers@vgbtechnologies.com', // TODO
 
   // TODO REPLACE — invented address
   address: {

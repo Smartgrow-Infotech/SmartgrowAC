@@ -69,7 +69,6 @@ export default async function SystemPage({
           { label: s.name },
         ]}
         image={images[s.image]}
-        tone="frost"
       />
 
       {/* Plain-English explainer */}
@@ -96,7 +95,7 @@ export default async function SystemPage({
       />
 
       {/* Brands */}
-      <Section tone="abyss" glow size="sm">
+      <Section tone="electric" size="sm">
         <Container>
           <SectionHeader
             eyebrow="Equipment we install"
@@ -113,7 +112,7 @@ export default async function SystemPage({
               </li>
             ))}
           </ul>
-          <p className="mt-6 max-w-[70ch] text-sm leading-relaxed text-white/70">
+          <p className="mt-6 max-w-[70ch] text-sm leading-relaxed text-white/90">
             We service every major brand regardless of who installed it. Brand
             matters far less than whether the system was sized and installed
             correctly in the first place.

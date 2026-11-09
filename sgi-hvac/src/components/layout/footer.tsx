@@ -16,12 +16,12 @@ const badges = [
 
 export function Footer() {
   return (
-    <footer className="brand-glow relative overflow-hidden bg-navy text-white">
+    <footer className="on-dark brand-glow relative overflow-hidden bg-navy text-white">
       <div className="relative z-10 mx-auto max-w-[1200px] px-5 pb-8 pt-14 sm:px-8 lg:px-14">
         {/* top: brand + CTA */}
         <div className="grid gap-8 border-b border-white/12 pb-9 lg:grid-cols-[minmax(0,1fr)_minmax(380px,auto)]">
           <div>
-            <Logo surface="dark" height={44} />
+            <Logo surface="dark" className="text-[32px]" />
             <p className="mt-4 max-w-[46ch] font-display text-[17px] font-medium leading-snug text-white/85">
               Nationwide HVAC service, delivered by licensed local technicians.
               Serving {site.stats.metros} major U.S. metros since {site.founded}.
@@ -57,7 +57,7 @@ export function Footer() {
           <div className="flex flex-col gap-3.5 lg:items-end lg:pt-12">
             <AvailabilityBadge onDark />
             <div className="flex flex-wrap gap-2.5 lg:justify-end">
-              <Button asChild variant="secondary" size="lg">
+              <Button asChild size="lg">
                 <Link href="/contact">Schedule Service</Link>
               </Button>
               <Button

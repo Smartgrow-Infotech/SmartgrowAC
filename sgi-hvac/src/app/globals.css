@@ -5,9 +5,19 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ==========================================================================
-   SMARTGROWINFOTECH DESIGN SYSTEM
-   Brand values are authoritative — published at smartgrowinfotech.com/brand
-   and read from that site's live stylesheet. See smartgrow/designReference.txt
+   VGB TECHNOLOGIES DESIGN SYSTEM
+
+   Palette      #000a8d deep blue · #0012ff electric blue · #ffffff white
+                #ffca00 gold      · #a78400 deep gold
+
+   Measured contrast decides where each colour may go:
+     White on deep blue       14.7:1   any text
+     White on electric blue    8.3:1   any text
+     Gold on deep blue         9.6:1   any text
+     Gold on electric blue     5.4:1   any text
+     Deep blue on gold         9.6:1   any text
+     Deep gold on white        3.5:1   LARGE text and icons only
+     Gold on white             1.5:1   decoration only, never text
    ========================================================================== */
 
 @theme inline {
@@ -20,6 +30,7 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -31,31 +42,25 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* brand palette — the five published colours */
-  --color-ink: #212121;
-  --color-slate: #50576b;
-  --color-cloud: #f6f7f9;
-  /* Deep Navy, shifted toward Action Blue so the large dark surfaces read as
-     blue rather than near-black. The published brand value is #0B1B2B — revert
-     this one token to go back to it. White on #0A1B3A still measures ~16:1. */
-  --color-navy: #0a1b3a;
-  --color-navy-deep: #0b1b2b;
-  --color-teal: #1690b8;
-  --color-orange: #f18a21;
-  --color-action: #0067f3;
-  --color-action-hover: #0052c4;
-  --color-success: #1e8a54;
+  /* brand palette */
+  --color-navy: #000a8d;
+  --color-action: #0012ff;
+  --color-action-hover: #000a8d;
+  --color-gold: #ffca00;
+  --color-gold-deep: #a78400;
+
+  /* text shades of the deep blue */
+  --color-ink: #000a8d;
+  --color-slate: #3f4585;
 
   /* ── Surface ladder ───────────────────────────────────────────────────
-     Every tint below is the brand's OWN hue dropped onto white, so the page
-     can alternate through several backgrounds without introducing a colour
-     that isn't in the palette. Ink (#212121) clears 13:1 on all of them and
-     Slate (#50576B) clears 6:1, so body copy is safe on every surface. */
-  --color-mist: #eff4ff;   /* Action Blue, ~4%  — the default cool surface */
-  --color-sky: #e3ecfe;    /* Action Blue, ~11% — stronger blue band       */
-  --color-frost: #edf6fa;  /* Teal, ~6%         — coverage / geography     */
-  --color-sand: #fdf6ee;   /* Orange, ~7%       — one warm band for relief */
-  --color-abyss: #061530;  /* below Navy        — footer, deepest surface  */
+     Tints of the palette on white. Deep blue clears 12:1 and Slate clears
+     6:1 on all of them, so body copy is safe on every surface. */
+  --color-cloud: #f6f6fd;
+  --color-mist: #f0f1ff;   /* electric blue, ~6%  */
+  --color-sky: #e0e3ff;    /* electric blue, ~12% */
+  --color-frost: #e9ebff;  /* electric blue, ~9%  */
+  --color-sand: #fff8d9;   /* gold, ~15%          */
 
   /* typography — sizes are the brand's published values, extended where the
      brand page stopped. Tracking is in px at the brand's stated sizes. */
@@ -95,77 +100,62 @@
   --radius-xl: calc(var(--radius) * 1.4);   /* 14px — cards */
   --radius-2xl: calc(var(--radius) * 2);    /* 20px — large media */
 
-  /* shadows — recoloured from the reference's tint to Deep Navy */
+  /* shadows — tinted with the deep blue */
   --shadow-card:
-    0 2px 6px rgb(11 27 43 / 0.05), 0 12px 32px rgb(11 27 43 / 0.07);
-  --shadow-lg-brand: 0 24px 60px rgb(11 27 43 / 0.14);
-  --shadow-brand: 0 4px 16px rgb(0 103 243 / 0.3);
+    0 2px 6px rgb(0 10 141 / 0.06), 0 12px 32px rgb(0 10 141 / 0.08);
+  --shadow-lg-brand: 0 24px 60px rgb(0 10 141 / 0.16);
+  --shadow-brand: 0 4px 16px rgb(0 18 255 / 0.3);
 
   --ease-brand: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #212121; /* Ink */
+  --foreground: #000a8d;
   --card: #ffffff;
-  --card-foreground: #212121;
+  --card-foreground: #000a8d;
   --popover: #ffffff;
-  --popover-foreground: #212121;
+  --popover-foreground: #000a8d;
 
-  /* Primary is ACTION BLUE.
-     The brand page lists Action Blue's role as "headings, links, interactive
-     emphasis", so leading with it is on-brand. White on #0067F3 measures
-     4.96:1 — it clears WCAG AA for normal text, which the reference site's
-     white-on-red primary (~4.1:1) did not. */
-  --primary: #0067f3;
+  --primary: #0012ff;
   --primary-foreground: #ffffff;
+  --primary-hover: #000a8d;
 
-  --secondary: #f6f7f9; /* Cloud */
-  --secondary-foreground: #212121;
-  --muted: #f6f7f9;
-  --muted-foreground: #50576b; /* Slate */
+  --secondary: #f0f1ff;
+  --secondary-foreground: #000a8d;
+  --muted: #f0f1ff;
+  --muted-foreground: #3f4585;
+  --accent: #f0f1ff;
+  --accent-foreground: #000a8d;
 
-  /* NOTE — deliberate deviation from the live site, for accessibility.
-     Their stylesheet sets --accent to Orange with WHITE foreground. White on
-     #F18A21 measures 2.50:1, which fails WCAG AA for any text size. shadcn
-     uses --accent as the hover fill for menu items, so that would put failing
-     text on every dropdown row.
-     We keep --accent as a subtle neutral (correct shadcn semantics) and expose
-     Orange separately as `--color-orange` for its published DECORATIVE role:
-     eyebrow nodes, circuit traces, highlights. Orange as a background with Ink
-     text measures 6.45:1 and is fine — see .chip-accent below. */
-  --accent: #f6f7f9;
-  --accent-foreground: #212121;
-
-  --destructive: #d32f2f;
-  --border: #ebebeb;
-  --input: #ebebeb;
-  --ring: #0067f3; /* Action Blue — focus rings and interactive emphasis */
+  --destructive: #d32f2f; /* outside the palette: errors must read as errors */
+  --border: #dfe1f7;
+  --input: #c9ccef;
+  --ring: #0012ff;
 
   --radius: 0.625rem;
 }
 
-/* Dark mode is authored but not enabled — no toggle ships at launch.
-   Pure Black is the brand's published dark-mode background. */
-.dark {
-  --background: #000000;
-  --foreground: #fafafa;
-  --card: #0b1b2b; /* Deep Navy raises off black */
-  --card-foreground: #fafafa;
-  --popover: #0b1b2b;
-  --popover-foreground: #fafafa;
-  --primary: #3d8bff; /* Action Blue lifted for contrast on black */
-  --primary-foreground: #04162e;
-  --secondary: #16202b;
-  --secondary-foreground: #fafafa;
-  --muted: #16202b;
-  --muted-foreground: #a3a9b8;
-  --accent: #16202b;
-  --accent-foreground: #fafafa;
-  --destructive: #ef5350;
-  --border: rgb(255 255 255 / 0.12);
-  --input: rgb(255 255 255 / 0.16);
-  --ring: #0067f3;
+/* Blue surfaces. Scoping the tokens means everything inside (headings,
+   breadcrumbs, default buttons, focus rings) adapts without per-component
+   overrides: the default button turns gold, the outline button turns white. */
+.on-dark {
+  --background: transparent;
+  --foreground: #ffffff;
+  --card: rgb(255 255 255 / 0.06);
+  --card-foreground: #ffffff;
+  --primary: #ffca00;
+  --primary-foreground: #000a8d;
+  --primary-hover: #ffffff;
+  --secondary: rgb(255 255 255 / 0.12);
+  --secondary-foreground: #ffffff;
+  --muted: rgb(255 255 255 / 0.12);
+  --muted-foreground: rgb(255 255 255 / 0.84);
+  --accent: rgb(255 255 255 / 0.12);
+  --accent-foreground: #ffffff;
+  --border: rgb(255 255 255 / 0.28);
+  --input: rgb(255 255 255 / 0.28);
+  --ring: #ffca00;
 }
 
 @layer base {
@@ -219,11 +209,8 @@
 }
 
 @layer components {
-  /* ── Signature device 1: the circuit eyebrow ──────────────────────────
-     Brand spec: "Orange node with fading trace and mono label".
-     Replaces the reference site's 3px red underline, which was its single
-     most-repeated visual device. Orange here is pure decoration — it never
-     carries text, because it cannot pass contrast on white. */
+  /* Eyebrow: a gold bar and a mono label. The bar is decoration, so gold's
+     low contrast on white does not matter; the label carries the meaning. */
   .eyebrow {
     @apply inline-flex items-center gap-2.5 font-mono uppercase text-muted-foreground;
     font-size: 0.75rem;
@@ -234,39 +221,25 @@
 
   .eyebrow::before {
     content: "";
-    width: 46px;
-    height: 6px;
+    width: 28px;
+    height: 4px;
     flex-shrink: 0;
-    background:
-      radial-gradient(
-        circle 3px at 3px 50%,
-        var(--color-orange) 0 3px,
-        transparent 3px
-      ),
-      linear-gradient(
-        90deg,
-        rgb(241 138 33 / 0.85) 0 6px,
-        rgb(241 138 33 / 0.35) 40%,
-        rgb(241 138 33 / 0) 100%
-      );
-    background-repeat: no-repeat;
+    background: var(--color-gold);
   }
 
+  .on-dark .eyebrow,
   .eyebrow-on-dark {
-    color: rgb(255 255 255 / 0.72);
+    color: var(--color-gold);
   }
 
-  /* ── Signature device 2: the dotted grid ──────────────────────────────
-     Brand spec: "Blue-tinted radial fade behind heroes".
-     Replaces the reference's warm cream photo veil. Cooler and more technical,
-     which is the point. */
+  /* Dotted grid with a radial fade, behind hero content. */
   .dot-grid {
     position: absolute;
     inset: 0;
     pointer-events: none;
     background-image: radial-gradient(
       circle 1px at 1px 1px,
-      rgb(0 103 243 / 0.16) 1px,
+      rgb(0 18 255 / 0.16) 1px,
       transparent 0
     );
     background-size: 24px 24px;
@@ -285,23 +258,18 @@
   .dot-grid-on-dark {
     background-image: radial-gradient(
       circle 1px at 1px 1px,
-      rgb(255 255 255 / 0.1) 1px,
+      rgb(255 255 255 / 0.14) 1px,
       transparent 0
     );
   }
 
-  /* ── Signature device 3: the availability badge ───────────────────────
-     Brand spec: "Pulsing green dot".
-     The brand page pairs this with scarcity messaging; we use it for
-     AVAILABILITY instead ("DISPATCH ANSWERED 24/7"), because the content
-     strategy deliberately rejects scarcity mechanics. Same component, honest
-     message. */
+  /* Availability badge: a pulsing dot beside a mono label. */
   .availability-dot {
     @apply inline-block shrink-0 rounded-full;
     width: 7px;
     height: 7px;
-    background: var(--color-success);
-    box-shadow: 0 0 0 4px rgb(30 138 84 / 0.22);
+    background: var(--color-gold);
+    box-shadow: 0 0 0 4px rgb(255 202 0 / 0.28);
     animation: availability-pulse 2.4s var(--ease-brand) infinite;
   }
 
@@ -311,22 +279,18 @@
     }
   }
 
-  /* Orange chip — the ONE place orange is allowed behind text.
-     #F18A21 with Ink text measures 6.45:1 (passes AA). */
+  /* Gold chip: deep blue text on gold measures 9.6:1. */
   .chip-accent {
     @apply inline-flex items-center rounded-full font-mono uppercase;
-    background: var(--color-orange);
-    color: var(--color-ink);
+    background: var(--color-gold);
+    color: var(--color-navy);
     font-size: 0.6875rem;
     letter-spacing: 0.1em;
     padding: 0.375rem 0.625rem;
   }
 
-  /* Radial brand glow used on the dark bands (pricing, brands, footer).
-     Same geometry as the reference's red glow, recoloured to Action Blue. */
-  /* Spans the full box via `inset: 0` and uses an explicitly-sized ellipse.
-     A `circle` inside a 70%-wide box is sized by the SHORTER axis, so on narrow
-     viewports it clipped and left a visible vertical seam down the section. */
+  /* Radial glow for blue bands. An explicitly sized ellipse spanning the box:
+     a `circle` would clip on narrow viewports and leave a visible seam. */
   .brand-glow::before {
     content: "";
     position: absolute;
@@ -335,9 +299,9 @@
     z-index: 0;
     background: radial-gradient(
       75% 70% at 82% 6%,
-      rgb(0 103 243 / 0.34) 0%,
-      rgb(0 103 243 / 0.12) 40%,
-      rgb(0 103 243 / 0.03) 68%,
+      rgb(0 18 255 / 0.55) 0%,
+      rgb(0 18 255 / 0.22) 40%,
+      rgb(0 18 255 / 0.05) 68%,
       transparent 82%
     );
   }
@@ -375,10 +339,10 @@
 @keyframes availability-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 4px rgb(30 138 84 / 0.22);
+    box-shadow: 0 0 0 4px rgb(255 202 0 / 0.28);
   }
   50% {
-    box-shadow: 0 0 0 9px rgb(30 138 84 / 0.04);
+    box-shadow: 0 0 0 9px rgb(255 202 0 / 0.05);
   }
 }
 

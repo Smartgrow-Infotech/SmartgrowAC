@@ -62,7 +62,6 @@ export default async function ServicePillarPage({
         lead={p.lead}
         crumbs={[{ label: 'Services', href: '/services' }, { label: p.name }]}
         image={images[p.image]}
-        tone="mist"
       />
 
       {/* AEO intro — dense and quotable */}

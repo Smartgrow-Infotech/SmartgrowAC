@@ -1,14 +1,8 @@
 import { cn } from '@/lib/utils'
 
-export { Logo, LogoMark } from './logo'
+export { Logo } from './logo'
 
-/**
- * The circuit eyebrow — orange node, fading trace, mono label.
- *
- * The brand's signature section-opener. Structural equivalent of the reference
- * site's red-underlined eyebrow, which appeared on eleven different selectors;
- * this is the same job done in SmartgrowInfotech's own visual language.
- */
+/** The section-opening eyebrow: a gold bar and a mono label. */
 export function Eyebrow({
   children,
   onDark = false,
@@ -27,10 +21,7 @@ export function Eyebrow({
   )
 }
 
-/**
- * Blue-tinted dot grid with a radial fade. Sits behind hero content.
- * Purely decorative, so it is hidden from assistive tech.
- */
+/** Dot grid with a radial fade behind hero content. Decorative, so hidden from assistive tech. */
 export function DotGrid({
   onDark = false,
   className,
@@ -46,13 +37,7 @@ export function DotGrid({
   )
 }
 
-/**
- * Pulsing green dot + mono label.
- *
- * The brand page pairs this device with scarcity messaging. We use it for
- * availability instead — the content strategy deliberately rejects scarcity
- * mechanics (no countdowns, no "3 slots left"). Same component, honest claim.
- */
+/** Pulsing dot and mono label, used for availability rather than scarcity. */
 export function AvailabilityBadge({
   label,
   onDark = false,

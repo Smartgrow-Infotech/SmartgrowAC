@@ -42,7 +42,7 @@ export function MobileDrawer() {
         <SheetHeader className="border-b border-border px-5 py-4">
           <SheetTitle asChild>
             <Link href="/" onClick={close} aria-label={`${site.name} — home`}>
-              <Logo height={32} />
+              <Logo />
             </Link>
           </SheetTitle>
         </SheetHeader>

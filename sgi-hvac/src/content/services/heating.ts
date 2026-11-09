@@ -10,7 +10,7 @@ export const heating: ServicePillar = {
     'Furnace, boiler and heat pump repair, maintenance and installation across 10 U.S. metros. Combustion safety checks, altitude-correct sizing, licensed technicians.',
   image: 'serviceHeating',
   intro:
-    'SmartgrowInfotech services heating across ten major U.S. metros — gas and electric furnaces, cold-climate heat pumps, steam and hydronic boilers, and hybrid systems. We run calibrated combustion analysis on every gas tune-up rather than a visual check, size replacements with a Manual J load calculation, and derate combustion equipment correctly for altitude in Denver. Technicians are licensed in the state they work in and dispatch is answered 24 hours a day.',
+    'VGB Technologies services heating across ten major U.S. metros — gas and electric furnaces, cold-climate heat pumps, steam and hydronic boilers, and hybrid systems. We run calibrated combustion analysis on every gas tune-up rather than a visual check, size replacements with a Manual J load calculation, and derate combustion equipment correctly for altitude in Denver. Technicians are licensed in the state they work in and dispatch is answered 24 hours a day.',
 
   actionsEyebrow: 'All heating services',
   actionsTitle: 'Pick your path.',

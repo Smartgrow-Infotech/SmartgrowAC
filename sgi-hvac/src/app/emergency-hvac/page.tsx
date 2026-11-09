@@ -151,13 +151,12 @@ export default function EmergencyPage() {
         lead="A person answers, day or night. What you'll get is an honest arrival window based on the actual situation, your location and what's already on the board — not a marketing promise."
         crumbs={[{ label: 'Emergency HVAC' }]}
         variant="compact"
-        tone="sand"
         hideActions
       >
         <div className="mt-7 flex flex-wrap items-center gap-4">
           <a
             href={site.phoneHref}
-            className="inline-flex min-h-13 items-center gap-2.5 rounded-lg bg-action px-7 text-[17px] font-bold text-white transition-colors hover:bg-action-hover"
+            className="inline-flex min-h-13 items-center gap-2.5 rounded-lg bg-gold px-7 text-[17px] font-bold text-navy transition-colors hover:bg-white"
           >
             <Phone className="size-5" aria-hidden />
             Call {site.phone} now
@@ -270,7 +269,7 @@ export default function EmergencyPage() {
           </div>
           <a
             href={site.phoneHref}
-            className="mt-8 inline-flex min-h-12 items-center gap-2.5 rounded-lg bg-white px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
+            className="mt-8 inline-flex min-h-12 items-center gap-2.5 rounded-lg bg-gold px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
           >
             <Phone className="size-4" aria-hidden />
             Call {site.phone}

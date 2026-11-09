@@ -30,7 +30,7 @@ export function PlanSelector() {
           <TabsTrigger
             key={plan.id}
             value={plan.id}
-            className="h-auto w-full items-start justify-between gap-4 whitespace-normal rounded-xl border border-white/12 bg-white/5 px-5 py-4 text-left text-white/70 transition-colors hover:bg-white/10 hover:text-white data-active:border-white/30 data-active:bg-white/10 data-active:text-white data-active:shadow-none"
+            className="h-auto w-full items-start justify-between gap-4 whitespace-normal rounded-xl border border-white/12 bg-white/5 px-5 py-4 text-left text-white/70 transition-colors hover:bg-white/10 hover:text-white data-active:border-gold data-active:bg-white/10 data-active:text-white data-active:shadow-none"
           >
             <span className="flex min-w-0 flex-col gap-1">
               <span className="font-display text-[17px] font-bold leading-tight text-white">
@@ -41,7 +41,7 @@ export function PlanSelector() {
               </span>
             </span>
             {plan.badge && (
-              <span className="mt-0.5 shrink-0 rounded-full bg-action px-2.5 py-1 font-mono text-[10px] uppercase leading-none tracking-[0.08em] text-white">
+              <span className="mt-0.5 shrink-0 rounded-full bg-gold px-2.5 py-1 font-mono text-[10px] uppercase leading-none tracking-[0.08em] text-navy">
                 {plan.badge}
               </span>
             )}
@@ -73,7 +73,7 @@ export function PlanSelector() {
 
           <Link
             href={plan.cta.href}
-            className="mt-6 inline-flex min-h-11 items-center rounded-full bg-action px-6 text-[15px] font-semibold text-white transition-colors hover:bg-action-hover"
+            className="mt-6 inline-flex min-h-11 items-center rounded-full bg-gold px-6 text-[15px] font-semibold text-navy transition-colors hover:bg-white"
           >
             {plan.cta.label}
           </Link>
@@ -84,8 +84,8 @@ export function PlanSelector() {
                 key={f}
                 className="flex items-start gap-3 py-2.5 text-[15px] leading-snug text-white/92"
               >
-                <span className="mt-0.5 flex size-[18px] shrink-0 items-center justify-center rounded-full bg-white/12">
-                  <Check className="size-3 text-white" aria-hidden strokeWidth={3} />
+                <span className="mt-0.5 flex size-[18px] shrink-0 items-center justify-center rounded-full bg-gold">
+                  <Check className="size-3 text-navy" aria-hidden strokeWidth={3} />
                 </span>
                 {f}
               </li>

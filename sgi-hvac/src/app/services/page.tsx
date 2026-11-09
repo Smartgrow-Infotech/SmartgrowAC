@@ -41,13 +41,12 @@ export default function ServicesPage() {
         lead="From a single no-cool call to a 40-location rooftop program. Licensed local technicians, national standards, dispatch answered 24/7."
         crumbs={[{ label: 'Services' }]}
         image={images.heroEquipment}
-        tone="mist"
       />
 
       <Section size="sm">
         <Container>
           <p className="max-w-[78ch] text-lead leading-relaxed text-foreground">
-            SmartgrowInfotech services air conditioning, heating, indoor air
+            VGB Technologies services air conditioning, heating, indoor air
             quality and water heaters across {site.stats.metros} major U.S.
             metros. We repair every major brand regardless of who installed it,
             size replacements with a Manual J load calculation rather than a rule

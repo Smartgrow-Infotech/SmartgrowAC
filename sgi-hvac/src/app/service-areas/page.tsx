@@ -51,7 +51,6 @@ export default function ServiceAreasPage() {
         badge={`Headquarters — ${headquartersMetro.city}`}
         crumbs={[{ label: 'Coverage' }]}
         image={images.heroTechnician}
-        tone="frost"
       />
 
       <CoverageGrid tone="default" />

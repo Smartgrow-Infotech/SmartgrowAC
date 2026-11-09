@@ -10,7 +10,7 @@ export const waterHeaters: ServicePillar = {
     'Water heater repair, maintenance and installation across 10 U.S. metros. Tank, tankless, hybrid heat pump. Gas line and venting scoped up front.',
   image: 'serviceWaterHeaters',
   intro:
-    'SmartgrowInfotech repairs, maintains and installs water heaters across ten major U.S. metros — conventional tank, condensing tankless, hybrid heat pump and light commercial. We size to actual peak demand rather than to whatever came out, and we scope gas line capacity and venting at the estimate so a tankless conversion does not turn into a change order on install day.',
+    'VGB Technologies repairs, maintains and installs water heaters across ten major U.S. metros — conventional tank, condensing tankless, hybrid heat pump and light commercial. We size to actual peak demand rather than to whatever came out, and we scope gas line capacity and venting at the estimate so a tankless conversion does not turn into a change order on install day.',
 
   actionsEyebrow: 'All water heater services',
   actionsTitle: 'Pick your path.',

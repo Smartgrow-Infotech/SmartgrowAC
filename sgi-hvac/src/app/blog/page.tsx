@@ -56,7 +56,6 @@ export default function BlogPage() {
         lead="Three long pieces rather than thirty short ones. Each covers a decision we get asked about constantly, in enough depth to actually settle it."
         crumbs={[{ label: 'Blog' }]}
         variant="compact"
-        tone="cloud"
         hideActions
       />
 

@@ -75,26 +75,28 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section id="hero" className="relative overflow-hidden bg-background">
-        <DotGrid />
-        <Container className="relative py-[clamp(3rem,6vw,4.5rem)]">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+      <section
+        id="hero"
+        className="on-dark brand-glow relative overflow-hidden bg-navy text-white"
+      >
+        <DotGrid onDark />
+        <Container className="relative z-10 py-[clamp(3.5rem,7vw,6rem)]">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
             <div>
-              <Eyebrow>
-                Nationwide HVAC · Since {site.founded}
-              </Eyebrow>
+              <Eyebrow>Nationwide HVAC · Since {site.founded}</Eyebrow>
 
-              <h1 className="mt-5 max-w-[16ch] text-hero font-bold text-balance">
-                Nationwide HVAC service. Local licensed technicians.
+              <h1 className="mt-6 text-[clamp(2.75rem,6vw,4.5rem)] font-black leading-[1] tracking-[-0.05em] text-balance">
+                Nationwide HVAC service.{' '}
+                <span className="text-gold">Local licensed technicians.</span>
               </h1>
 
-              <p className="mt-5 max-w-[54ch] text-lead text-muted-foreground">
+              <p className="mt-6 max-w-[50ch] text-lead text-white/85">
                 Repair, replacement and maintenance for homes and multi-site
                 facilities across {site.stats.metros} major U.S. metros. One
                 number, one standard, one invoice.
               </p>
 
-              <div className="mt-7 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button asChild size="lg">
                   <Link href="/contact">Schedule Service</Link>
                 </Button>
@@ -107,34 +109,33 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-cloud shadow-[0_24px_60px_rgb(11_27_43_/_0.14)]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/20">
               <Image
-                src={images.heroHome.src}
-                alt={images.heroHome.alt}
+                src={images.heroEquipment.src}
+                alt={images.heroEquipment.alt}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
               />
-              <div
-                className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy/25 to-transparent"
-                aria-hidden
-              />
             </div>
           </div>
+        </Container>
+      </section>
 
-          {/* Stat row — kept visible on mobile, unlike the reference, which hid
-              its strongest proof below 768px. */}
+      {/* ── Stats ────────────────────────────────────────────────────────── */}
+      <section aria-label="Company at a glance" className="bg-gold text-navy">
+        <Container>
           <ul
             role="list"
-            className="mt-[clamp(2rem,4vw,3rem)] grid grid-cols-2 gap-6 border-t border-border pt-[clamp(1.5rem,3vw,2rem)] sm:grid-cols-3 lg:grid-cols-5"
+            className="grid grid-cols-2 gap-x-6 gap-y-7 py-9 sm:grid-cols-3 lg:grid-cols-5"
           >
             {stats.map((s) => (
               <li key={s.label}>
-                <p className="font-display text-stat font-bold text-foreground">
+                <p className="font-display text-stat font-black text-navy">
                   {s.figure}
                 </p>
-                <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                <p className="mt-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-navy">
                   {s.label}
                 </p>
               </li>
@@ -144,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* ── What we service ──────────────────────────────────────────────── */}
-      <Section tone="mist" id="services">
+      <Section id="services">
         <Container>
           <SectionHeader
             eyebrow="What we service"
@@ -158,7 +159,7 @@ export default function HomePage() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
+                    className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background transition-all duration-200 hover:-translate-y-0.5 hover:border-action hover:shadow-card"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden bg-cloud">
                       <Image
@@ -168,11 +169,7 @@ export default function HomePage() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                       />
-                      <div
-                        className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent"
-                        aria-hidden
-                      />
-                      <span className="absolute left-4 top-4 inline-flex size-11 items-center justify-center rounded-lg bg-background/96 text-action shadow-[0_1px_2px_rgb(11_27_43_/_0.06)]">
+                      <span className="absolute left-4 top-4 inline-flex size-11 items-center justify-center rounded-lg bg-gold text-navy">
                         <Icon className="size-5" aria-hidden strokeWidth={1.75} />
                       </span>
                     </div>
@@ -200,12 +197,12 @@ export default function HomePage() {
       </Section>
 
       {/* ── Why ──────────────────────────────────────────────────────────── */}
-      <Section id="why">
+      <Section tone="mist" id="why">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-12">
             <div className="max-w-[52ch]">
               <Eyebrow>Why teams standardize on us</Eyebrow>
-              <h2 className="mt-5 text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.045em]">
+              <h2 className="mt-5 text-[clamp(2.25rem,5vw,3.5rem)] font-black leading-[1.02] tracking-[-0.045em]">
                 <span className="block">One vendor.</span>
                 <span className="block">Every market.</span>
                 <span className="block">One standard.</span>
@@ -220,22 +217,28 @@ export default function HomePage() {
 
             <Link
               href="/about"
-              className="group inline-flex shrink-0 items-center gap-4 rounded-full bg-action py-1.5 pl-7 pr-1.5 text-[15px] font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-action-hover hover:shadow-[0_4px_16px_rgb(0_103_243_/_0.3)]"
+              className="group inline-flex shrink-0 items-center gap-4 rounded-full bg-action py-1.5 pl-7 pr-1.5 text-[15px] font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-action-hover hover:shadow-[0_4px_16px_rgb(0_18_255_/_0.3)]"
             >
               How we operate
-              <span className="inline-flex size-11 items-center justify-center rounded-full bg-navy transition-transform duration-200 group-hover:-rotate-45">
+              <span className="inline-flex size-11 items-center justify-center rounded-full bg-gold text-navy transition-transform duration-200 group-hover:-rotate-45">
                 <ArrowRight className="size-4" aria-hidden />
               </span>
             </Link>
           </div>
 
           <ul role="list" className="mt-12 grid gap-5 lg:grid-cols-3">
-            {differentiators.map((d) => (
+            {differentiators.map((d, i) => (
               <li
                 key={d.title}
-                className="rounded-xl border border-border bg-background p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
+                className="rounded-xl border-t-4 border-gold bg-background p-8 shadow-card"
               >
-                <h3 className="font-display text-cardtitle font-bold text-balance">
+                <p
+                  aria-hidden
+                  className="font-display text-[2.5rem] font-black leading-none tracking-[-0.04em] text-gold-deep"
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </p>
+                <h3 className="mt-4 font-display text-cardtitle font-bold text-balance">
                   {d.title}
                 </h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
@@ -248,7 +251,7 @@ export default function HomePage() {
       </Section>
 
       {/* ── Coverage ─────────────────────────────────────────────────────── */}
-      <CoverageGrid />
+      <CoverageGrid tone="default" />
 
       {/* ── Maintenance plan ─────────────────────────────────────────────── */}
       <Section tone="navy" size="lg" glow id="pricing">
@@ -278,7 +281,7 @@ export default function HomePage() {
       </Section>
 
       {/* ── Brands ───────────────────────────────────────────────────────── */}
-      <Section tone="abyss" glow id="brands">
+      <Section tone="electric" id="brands">
         <Container>
           <SectionHeader
             eyebrow="Equipment we install & service"
@@ -289,13 +292,13 @@ export default function HomePage() {
             {installBrands.map((b) => (
               <li
                 key={b}
-                className="rounded-full border border-white/14 bg-white/6 px-4 py-2 font-mono text-[12px] uppercase tracking-[0.1em] text-white"
+                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 font-mono text-[12px] uppercase tracking-[0.1em] text-white"
               >
                 {b}
               </li>
             ))}
           </ul>
-          <p className="mt-6 max-w-[70ch] text-[15px] leading-relaxed text-white/72">
+          <p className="mt-6 max-w-[70ch] text-[15px] leading-relaxed text-white/90">
             We service every major brand regardless of who installed it —
             including {servicedBrands.slice(0, -1).join(', ')} and{' '}
             {servicedBrands.at(-1)}.
@@ -305,7 +308,6 @@ export default function HomePage() {
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
       <FaqSection
-        tone="mist"
         faqs={homeFaqs}
         title="Straight answers to the six questions we get most."
       />

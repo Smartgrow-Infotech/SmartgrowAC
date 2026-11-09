@@ -52,13 +52,12 @@ export default function SystemsPage() {
         lead="Ductless, heat pumps, central split systems, zoning, PTAC, water-source and commercial rooftop. Which one is right depends on the building — so here is what each is genuinely good at, and what it is not."
         crumbs={[{ label: 'Systems' }]}
         image={images.upgradeHeatPump}
-        tone="frost"
       />
 
       <Section size="sm">
         <Container>
           <p className="max-w-[78ch] text-lead leading-relaxed text-foreground">
-            SmartgrowInfotech installs and services every major HVAC system type
+            VGB Technologies installs and services every major HVAC system type
             across {site.stats.metros} U.S. metros. Each page below explains what
             the system actually is, where it wins, where it does not, what it
             costs, and what installing it genuinely involves — including the

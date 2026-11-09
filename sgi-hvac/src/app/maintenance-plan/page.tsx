@@ -86,7 +86,6 @@ export default function MaintenancePlanPage() {
         lead="Pre-season cooling and heating tune-ups, front-of-line scheduling, discounted replacement pricing, and a written report every visit. Cancel any time."
         crumbs={[{ label: 'Maintenance Plan' }]}
         image={images.serviceAc}
-        tone="frost"
       />
 
       {/* What's included */}

@@ -54,13 +54,12 @@ export default function CommercialPage() {
         lead="Single-site offices to 200-location national programs. One agreement, defined SLAs, consolidated reporting — and the rooftop crane work most contractors decline."
         crumbs={[{ label: 'Commercial' }]}
         image={images.commercialRooftop}
-        tone="cloud"
       />
 
       <Section size="sm">
         <Container>
           <p className="max-w-[78ch] text-lead leading-relaxed text-foreground">
-            SmartgrowInfotech serves commercial clients across{' '}
+            VGB Technologies serves commercial clients across{' '}
             {site.stats.metros} U.S. metros: multi-site national accounts,
             property management portfolios, condo and co-op buildings,
             hospitality, and single-site light commercial. We run our own
@@ -96,10 +95,10 @@ export default function CommercialPage() {
 
             <Link
               href="/commercial/national-accounts"
-              className="group inline-flex shrink-0 items-center gap-4 rounded-full bg-white py-1.5 pl-7 pr-1.5 text-[15px] font-semibold text-navy transition-all duration-200 hover:-translate-y-0.5"
+              className="group inline-flex shrink-0 items-center gap-4 rounded-full bg-gold py-1.5 pl-7 pr-1.5 text-[15px] font-semibold text-navy transition-all duration-200 hover:-translate-y-0.5"
             >
               See national accounts
-              <span className="inline-flex size-11 items-center justify-center rounded-full bg-action text-white transition-transform duration-200 group-hover:-rotate-45">
+              <span className="inline-flex size-11 items-center justify-center rounded-full bg-navy text-white transition-transform duration-200 group-hover:-rotate-45">
                 <ArrowRight className="size-4" aria-hidden />
               </span>
             </Link>

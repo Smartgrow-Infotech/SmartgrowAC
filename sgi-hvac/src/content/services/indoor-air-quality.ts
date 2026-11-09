@@ -15,7 +15,7 @@ export const indoorAirQuality: ServicePillar = {
     'Whole-home air purifiers, humidifiers, dehumidifiers and ERV/HRV ventilation across 10 U.S. metros. We measure before recommending.',
   image: 'serviceIaq',
   intro:
-    'SmartgrowInfotech installs and services whole-home indoor air quality systems across ten major U.S. metros: media filtration and UV-C purification, bypass and steam humidifiers, whole-home dehumidifiers, and ERV/HRV fresh-air ventilation sized to ASHRAE 62.2. What you need depends almost entirely on your climate, so we measure indoor humidity and airflow before recommending equipment rather than selling the full catalogue.',
+    'VGB Technologies installs and services whole-home indoor air quality systems across ten major U.S. metros: media filtration and UV-C purification, bypass and steam humidifiers, whole-home dehumidifiers, and ERV/HRV fresh-air ventilation sized to ASHRAE 62.2. What you need depends almost entirely on your climate, so we measure indoor humidity and airflow before recommending equipment rather than selling the full catalogue.',
 
   actionsEyebrow: 'All IAQ solutions',
   actionsTitle: 'Pick your problem.',

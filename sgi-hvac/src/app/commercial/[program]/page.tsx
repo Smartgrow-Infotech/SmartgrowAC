@@ -69,7 +69,6 @@ export default async function CommercialProgramPage({
           { label: p.name },
         ]}
         image={images[p.image]}
-        tone="cloud"
       />
 
       {/* The problem this program solves */}
@@ -130,7 +129,7 @@ export default async function CommercialProgramPage({
           </p>
           <a
             href={site.phoneHref}
-            className="mt-7 inline-flex min-h-11 items-center rounded-lg bg-white px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
+            className="mt-7 inline-flex min-h-11 items-center rounded-lg bg-gold px-6 text-[15px] font-semibold text-navy transition-transform duration-200 hover:-translate-y-0.5"
           >
             Call {site.phone}
           </a>

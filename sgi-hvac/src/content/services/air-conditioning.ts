@@ -10,7 +10,7 @@ export const airConditioning: ServicePillar = {
     'Air conditioning repair, maintenance and installation nationwide. Split systems, packaged units, ductless and PTAC. Licensed local technicians in 10 metros, dispatch answered 24/7.',
   image: 'serviceAc',
   intro:
-    'SmartgrowInfotech services air conditioning across ten major U.S. metros — split systems, packaged rooftop units, ductless mini-splits and PTAC. We repair every major brand regardless of who installed it, run annual and semi-annual maintenance programs, and size replacements with a Manual J load calculation rather than a rule of thumb. Technicians are licensed in the state they work in and dispatch is answered 24 hours a day.',
+    'VGB Technologies services air conditioning across ten major U.S. metros — split systems, packaged rooftop units, ductless mini-splits and PTAC. We repair every major brand regardless of who installed it, run annual and semi-annual maintenance programs, and size replacements with a Manual J load calculation rather than a rule of thumb. Technicians are licensed in the state they work in and dispatch is answered 24 hours a day.',
 
   actionsEyebrow: 'All AC services',
   actionsTitle: 'Pick your path.',

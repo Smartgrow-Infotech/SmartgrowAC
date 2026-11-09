@@ -25,20 +25,19 @@ export function Container({
  * Section background tones.
  *
  * The page alternates through these so it never reads as one flat white
- * document. Every light tint is a brand hue dropped onto white, so nothing
- * here introduces a colour that isn't already in the palette. See the rhythm
- * applied in app/page.tsx.
+ * document. `on-dark` re-scopes the colour tokens for the blue surfaces (see
+ * globals.css), so what sits inside them adapts on its own.
  */
 export type Tone =
   | 'default' // white
-  | 'cloud' // neutral grey
-  | 'mist' // soft Action Blue
-  | 'sky' // stronger Action Blue
-  | 'frost' // Teal tint
-  | 'sand' // Orange tint — used sparingly, for warmth
-  | 'navy' // dark blue
-  | 'abyss' // deepest blue
-  | 'gradient' // Action Blue -> Navy, for the closing CTA
+  | 'cloud' // faint blue
+  | 'mist' // soft blue
+  | 'sky' // stronger blue
+  | 'frost' // cool blue
+  | 'sand' // gold tint
+  | 'gold' // solid gold, deep blue text
+  | 'navy' // deep blue
+  | 'electric' // electric blue
 
 const toneClass: Record<Tone, string> = {
   default: 'bg-background',
@@ -47,15 +46,13 @@ const toneClass: Record<Tone, string> = {
   sky: 'bg-sky',
   frost: 'bg-frost',
   sand: 'bg-sand',
-  navy: 'bg-navy text-white',
-  abyss: 'bg-abyss text-white',
-  gradient:
-    'bg-[linear-gradient(135deg,#0067f3_0%,#0a3fa0_46%,#0a1b3a_100%)] text-white',
+  gold: 'bg-gold text-navy',
+  navy: 'on-dark bg-navy text-white',
+  electric: 'on-dark bg-action text-white',
 }
 
 /** True when a tone needs light text and on-dark component variants. */
-export const isDarkTone = (t: Tone) =>
-  t === 'navy' || t === 'abyss' || t === 'gradient'
+export const isDarkTone = (t: Tone) => t === 'navy' || t === 'electric'
 
 export function Section({
   children,
@@ -69,7 +66,7 @@ export function Section({
   tone?: Tone
   /** `lg` is used for the hero-adjacent, pricing and carousel bands. */
   size?: 'default' | 'lg' | 'sm'
-  /** Action Blue radial glow — only meaningful on the navy tone. */
+  /** Electric blue radial glow — only meaningful on the navy tone. */
   glow?: boolean
   className?: string
   id?: string
@@ -93,7 +90,7 @@ export function Section({
 }
 
 /**
- * Standard section header: circuit eyebrow, Satoshi heading, optional lead.
+ * Standard section header: eyebrow, Satoshi heading, optional lead.
  * Constrained to ~720px because that is where the reference's measured
  * line-length worked, and our type scale is tighter still.
  */

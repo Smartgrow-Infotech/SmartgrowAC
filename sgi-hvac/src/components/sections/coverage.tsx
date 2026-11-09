@@ -90,7 +90,7 @@ export function CoverageStrip({
             <li key={m.slug}>
               <Link
                 href={`/service-areas/${m.slug}`}
-                className="inline-flex min-h-9 items-center rounded-full border border-[#d4d6db] bg-background px-3.5 text-sm font-medium transition-colors hover:border-action hover:text-action"
+                className="inline-flex min-h-9 items-center rounded-full border border-input bg-background px-3.5 text-sm font-medium transition-colors hover:border-action hover:text-action"
               >
                 {m.name}
               </Link>

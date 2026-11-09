@@ -5,7 +5,7 @@ import { Phone } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { site } from '@/config/site'
 import type { SiteImage } from '@/content/images'
-import { Container, type Tone } from './section'
+import { Container } from './section'
 import { Eyebrow, DotGrid } from '@/components/brand'
 import { Button } from '@/components/ui/button'
 import {
@@ -68,7 +68,8 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
  * Inner-page hero.
  *
  * Two shapes: `split` puts a photo beside the copy (category hubs, metros),
- * `compact` is text-only on a tinted band (legal, about, utility pages).
+ * `compact` is text-only (legal, about, utility pages). Both sit on deep blue,
+ * which carries the brand from the homepage through every inner page.
  */
 export function PageHero({
   eyebrow,
@@ -77,7 +78,6 @@ export function PageHero({
   crumbs,
   image,
   badge,
-  tone = 'mist',
   variant = 'split',
   hideActions = false,
   children,
@@ -89,27 +89,18 @@ export function PageHero({
   image?: SiteImage
   /** Small mono chip beside the rating line — e.g. "Headquarters metro". */
   badge?: string
-  tone?: Extract<Tone, 'default' | 'mist' | 'frost' | 'sand' | 'cloud'>
   variant?: 'split' | 'compact'
   /** Suppress the stock CTA pair — used on /contact, where they link to self. */
   hideActions?: boolean
   children?: React.ReactNode
 }) {
-  const toneClass = {
-    default: 'bg-background',
-    mist: 'bg-mist',
-    frost: 'bg-frost',
-    sand: 'bg-sand',
-    cloud: 'bg-cloud',
-  }[tone]
-
   return (
     <section
-      className={cn('relative overflow-hidden', toneClass)}
+      className="on-dark brand-glow relative overflow-hidden bg-navy text-white"
       id="page-hero"
     >
-      <DotGrid />
-      <Container className="relative z-10 pb-[clamp(2.5rem,5vw,4rem)] pt-4">
+      <DotGrid onDark />
+      <Container className="relative z-10 pb-[clamp(3rem,6vw,4.5rem)] pt-5">
         <Breadcrumbs items={crumbs} />
 
         <div
@@ -121,7 +112,7 @@ export function PageHero({
           <div className={cn(variant === 'compact' && 'max-w-[62ch]')}>
             <Eyebrow>{eyebrow}</Eyebrow>
 
-            <h1 className="mt-5 max-w-[20ch] text-[clamp(2.125rem,4.4vw,3.125rem)] font-bold leading-[1.04] tracking-[-0.045em] text-balance">
+            <h1 className="mt-5 max-w-[20ch] text-[clamp(2.125rem,4.4vw,3.125rem)] font-black leading-[1.04] tracking-[-0.045em] text-balance">
               {title}
             </h1>
 
@@ -130,7 +121,7 @@ export function PageHero({
             </p>
 
             {badge && (
-              <p className="mt-5 inline-flex items-center rounded-full border border-action/25 bg-action/8 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-action">
+              <p className="mt-5 inline-flex items-center rounded-full bg-gold px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-navy">
                 {badge}
               </p>
             )}
@@ -153,7 +144,7 @@ export function PageHero({
           </div>
 
           {variant === 'split' && image && (
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-cloud shadow-[0_24px_60px_rgb(11_27_43_/_0.14)]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-cloud shadow-[0_24px_60px_rgb(0_10_141_/_0.14)]">
               <Image
                 src={image.src}
                 alt={image.alt}

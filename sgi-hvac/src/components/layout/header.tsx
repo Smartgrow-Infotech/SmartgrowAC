@@ -34,21 +34,19 @@ export function Header() {
         'sticky top-0 z-50 h-[76px] border-b border-border',
         'bg-background/92 backdrop-blur-md',
         'transition-shadow duration-200',
-        scrolled && 'shadow-[0_1px_2px_rgb(11_27_43_/_0.06)]',
+        scrolled && 'shadow-[0_1px_2px_rgb(0_10_141_/_0.06)]',
       )}
     >
-      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-14">
+      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-14">
         <Link href="/" aria-label={`${site.name} — home`} className="shrink-0">
-          <Logo priority />
+          <Logo />
         </Link>
 
         {/* Desktop navigation */}
         <NavigationMenu viewport={false} className="hidden max-w-none lg:flex">
-          <NavigationMenuList className="gap-7">
+          <NavigationMenuList className="gap-5 xl:gap-7">
             {navSections.map((section) => (
-              // `static` so the mega-menu panel positions against the header,
-              // not the item — that is what makes it full-bleed.
-              <NavigationMenuItem key={section.label} className="static">
+              <NavigationMenuItem key={section.label}>
                 <NavigationMenuTrigger
                   className={cn(
                     'h-auto rounded-none bg-transparent px-0 py-1.5 text-[15px] font-medium',
@@ -65,10 +63,15 @@ export function Header() {
                   {section.label}
                 </NavigationMenuTrigger>
 
+                {/* Full-bleed panel. Radix wraps the list in an inline
+                    `position: relative`, so `absolute` cannot reach the header;
+                    `fixed` can. The 76px matches the header's height. */}
                 <NavigationMenuContent
                   className={cn(
-                    'left-0 top-full w-screen rounded-none border-b border-border',
-                    'bg-background p-0 shadow-[0_8px_24px_rgb(11_27_43_/_0.09)]',
+                    'left-0 right-0 border-b border-border md:fixed',
+                    'group-data-[viewport=false]/navigation-menu:top-[76px] group-data-[viewport=false]/navigation-menu:mt-0',
+                    'group-data-[viewport=false]/navigation-menu:rounded-none group-data-[viewport=false]/navigation-menu:ring-0',
+                    'bg-background p-0 shadow-[0_8px_24px_rgb(0_10_141_/_0.09)]',
                   )}
                 >
                   <div className="mx-auto max-w-[1200px] px-5 py-9 sm:px-8 lg:px-14">
@@ -125,7 +128,7 @@ export function Header() {
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <a
             href={site.phoneHref}
-            className="inline-flex items-center gap-2 text-[15px] font-medium text-foreground transition-colors hover:text-action"
+            className="hidden items-center gap-2 text-[15px] font-medium text-foreground transition-colors hover:text-action xl:inline-flex"
           >
             <Phone className="size-4" aria-hidden />
             {site.phone}

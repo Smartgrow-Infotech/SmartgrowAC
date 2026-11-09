@@ -87,7 +87,6 @@ export default function AboutPage() {
         lead={`Founded ${site.founded}. ${site.stats.technicians} technicians. ${site.stats.metros} metros. Every one of them employed, licensed and trained to the same standard.`}
         crumbs={[{ label: 'About' }]}
         image={images.heroTechnician}
-        tone="cloud"
       />
 
       <Explainer
